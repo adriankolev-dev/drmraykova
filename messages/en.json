@@ -69,7 +69,8 @@
     "cabinet": "Clinic",
     "worksNhif": "Works with NHIF",
     "openMap": "Open in Google Maps",
-    "howToGet": "How to get there"
+    "howToGet": "How to get there",
+    "madeBy": "Built by"
   },
   "hero": {
     "eyebrow": "Obstetrician-Gynecologist · Sofia",

@@ -68,9 +68,22 @@ export async function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-ink-foreground/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {year} {doctor.name}. {tc("footerNote")}
-          </p>
+          <div className="space-y-1.5">
+            <p>
+              © {year} {doctor.name}. {tc("footerNote")}
+            </p>
+            <p>
+              {tc("madeBy")}{" "}
+              <a
+                href="https://www.adrexio.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink-foreground/70 underline-offset-4 transition-colors hover:text-ink-foreground hover:underline"
+              >
+                Adrexio
+              </a>
+            </p>
+          </div>
           <div className="flex gap-5">
             <Link
               href="/politika-za-poveritelnost"
