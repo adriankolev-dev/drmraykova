@@ -26,7 +26,7 @@ export function pageOpenGraph({
     siteName: siteConfig.shortName,
     images: [
       {
-        url: absoluteUrl("/opengraph-image"),
+        url: absoluteUrl("/og.png"),
         width: 1200,
         height: 630,
         alt: siteConfig.title,

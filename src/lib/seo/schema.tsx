@@ -2,7 +2,7 @@ import { doctor } from "@/lib/doctor";
 import { siteConfig } from "@/lib/site";
 import { bookingConfig } from "@/lib/booking";
 
-const ogImage = `${siteConfig.url}/opengraph-image`;
+const ogImage = `${siteConfig.url}/og.png`;
 
 export function getPhysicianSchema() {
   return {
