@@ -83,7 +83,7 @@
   "intro": {
     "eyebrow": "01 · Sobre la doctora",
     "title": "Exploración atenta. Conversación clara.",
-    "body": "La Dra. Maria Raykova es especialista en formación en obstetricia y ginecología. Ejerce en SHATOG “St. Sofia” y el Centro Médico Lyulin Med. Las pacientes destacan a menudo las explicaciones tranquilas, la exploración minuciosa y la sensación de cuidado.",
+    "body": "La Dra. Maria Raykova es especialista en formación en obstetricia y ginecología. Ejerce en PSAGBAL “Saint Sophia” y el Centro Médico Lyulin Med. Las pacientes destacan a menudo las explicaciones tranquilas, la exploración minuciosa y la sensación de cuidado.",
     "points": [
       "Título de la Universidad Médica — Varna",
       "Especialización en obstetricia y ginecología",
@@ -171,7 +171,7 @@
   },
   "about": {
     "eyebrow": "Sobre la doctora",
-    "lead": "Especialista en formación en obstetricia y ginecología, centrada en prevención, diagnóstico y explicación serena en cada paso. Ejerce en SHATOG “St. Sofia” y el Centro Médico Lyulin Med. Las pacientes destacan la atención, la exploración minuciosa y la conversación clara."
+    "lead": "Especialista en formación en obstetricia y ginecología, centrada en prevención, diagnóstico y explicación serena en cada paso. Ejerce en PSAGBAL “Saint Sophia” y el Centro Médico Lyulin Med. Las pacientes destacan la atención, la exploración minuciosa y la conversación clara."
   },
   "contact": {
     "eyebrow": "Contacto",
@@ -271,7 +271,7 @@
   },
   "workplaces": {
     "items": [
-      "SHATOG “St. Sofia”",
+      "PSAGBAL “Saint Sophia”",
       "Centro Médico Lyulin Med"
     ]
   },
