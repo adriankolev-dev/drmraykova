@@ -5,6 +5,7 @@ import { IBM_Plex_Mono, Literata, Onest } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { CookieConsent } from "@/components/cookies/CookieConsent";
+import { BackToTop } from "@/components/layout/BackToTop";
 import { PageEnter } from "@/components/motion/PageEnter";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
@@ -60,6 +61,7 @@ export default async function LocaleLayout({
             <PageEnter>{children}</PageEnter>
           </div>
           <Footer />
+          <BackToTop />
           <CookieConsent />
         </NextIntlClientProvider>
       </body>
