@@ -26,10 +26,10 @@ export function LocaleSwitcher({ className }: { className?: string }) {
           type="button"
           onClick={() => router.replace(pathname, { locale: code })}
           className={cn(
-            "rounded px-2 py-1 font-mono text-[10px] uppercase tracking-[0.14em] transition-colors",
+            "cursor-pointer rounded px-2 py-1 font-mono text-[10px] uppercase tracking-[0.14em] transition-colors",
             locale === code
               ? "bg-foreground text-background"
-              : "text-muted-foreground hover:text-foreground",
+              : "text-muted-foreground hover:bg-accent hover:text-foreground",
           )}
           aria-pressed={locale === code}
         >
