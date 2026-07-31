@@ -1,0 +1,325 @@
+{
+  "meta": {
+    "title": "Dra. Maria Raykova — Obstetra-ginecóloga en Sofía",
+    "description": "Atención obstétrica y ginecológica cuidadosa en Sofía. Revisiones preventivas, diagnóstico y consultas de salud femenina. Reserve cita online.",
+    "aboutTitle": "Sobre la doctora",
+    "aboutDescription": "Dra. Maria Raykova — obstetra-ginecóloga en Sofía. Formación, cualificaciones, experiencia y enfoque con la paciente.",
+    "servicesTitle": "Servicios",
+    "servicesDescription": "Revisiones ginecológicas preventivas, ecografía, colposcopia, histeroscopia y consultas de salud femenina en Sofía.",
+    "handbookTitle": "Guía médica",
+    "handbookDescription": "Artículos educativos sobre salud femenina, prevención y preparación para una consulta ginecológica.",
+    "contactTitle": "Contacto",
+    "contactDescription": "Dirección, teléfono, mapa y reserva de cita con la Dra. Maria Raykova — calle Dobrila 10, frente a VMA, Sofía.",
+    "privacyTitle": "Política de privacidad y cookies",
+    "privacyDescription": "Esta política describe cómo el sitio web de la Dra. Maria Raykova trata datos personales y utiliza cookies. El sitio es informativo y dirige la reserva de citas a Superdoc.",
+    "faqTitle": "Preguntas frecuentes",
+    "faqDescription": "Cómo reservar cita con la Dra. Maria Raykova, NHIF, alcance de la atención, idiomas y preparación para la primera visita."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre la doctora",
+    "services": "Servicios",
+    "handbook": "Guía",
+    "contact": "Contacto",
+    "book": "Reservar cita",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "homeAria": "Dra. Maria Raykova — inicio",
+    "faq": "Preguntas"
+  },
+  "common": {
+    "bookCta": "Reservar cita",
+    "learnMore": "Saber más",
+    "viewServices": "Ver servicios",
+    "callUs": "Llámenos",
+    "directions": "Cómo llegar",
+    "privacy": "Privacidad",
+    "specialty": "Obstetra-ginecóloga",
+    "specialtyStatus": "especialista en formación",
+    "city": "Sofía",
+    "readingTime": "{minutes} min de lectura",
+    "allCategories": "Todas",
+    "footerNote": "Información médica con fines educativos — no sustituye una consulta personal.",
+    "bookingViaSuperdoc": "Reserva a través de Superdoc",
+    "confirmedData": "Datos confirmados de la consulta\ny del perfil de Superdoc",
+    "internationalAccent": "Destacado internacional",
+    "step": "Paso {n}",
+    "workplace": "Lugar de trabajo",
+    "reception": "Consulta",
+    "importantScope": "Importante: la Dra. Raykova no realiza seguimiento del embarazo ni atiende a niños.",
+    "readyCta": "¿Lista para una consulta en un ambiente tranquilo?",
+    "booking": "Reserva",
+    "profile": "Perfil",
+    "educationQualTitle": "Formación y cualificaciones",
+    "educationQualBody": "Base académica, formación especializada y cursos que respaldan un enfoque clínico calmado y preciso.",
+    "education": "Formación",
+    "qualifications": "Cualificaciones",
+    "wherePractices": "Dónde ejerce",
+    "patientApproach": "Enfoque con la paciente",
+    "approachQuote": "La consulta empieza con una conversación.",
+    "approachBody": "El objetivo es que entienda qué ocurre, cuáles son las opciones y cuáles son los siguientes pasos — sin jerga innecesaria y sin prisas.",
+    "experience": "Experiencia",
+    "experienceValue": "Menos de 5 años",
+    "experienceDetail": "Menos de 5 años de experiencia",
+    "rating": "Valoración",
+    "access": "Acceso",
+    "location": "Ubicación",
+    "languages": "Idiomas",
+    "navigation": "Navegación",
+    "cabinet": "Consulta",
+    "worksNhif": "Trabaja con NHIF",
+    "openMap": "Abrir en Google Maps",
+    "howToGet": "Cómo llegar"
+  },
+  "hero": {
+    "eyebrow": "Obstetra-ginecóloga · Sofía",
+    "brand": "Dra. Maria Raykova",
+    "headline": "Cuidado sereno de la salud femenina",
+    "support": "Revisiones preventivas, diagnóstico y consultas — con atención, explicaciones claras y tiempo para sus preguntas.",
+    "chipAppointment": "Con cita previa",
+    "chipNhif": "NHIF",
+    "chipClinic": "Consulta · Sofía"
+  },
+  "intro": {
+    "eyebrow": "01 · Sobre la doctora",
+    "title": "Exploración atenta. Conversación clara.",
+    "body": "La Dra. Maria Raykova es especialista en formación en obstetricia y ginecología. Ejerce en SHATOG “St. Sofia” y el Centro Médico Lyulin Med. Las pacientes destacan a menudo las explicaciones tranquilas, la exploración minuciosa y la sensación de cuidado.",
+    "points": [
+      "Título de la Universidad Médica — Varna",
+      "Especialización en obstetricia y ginecología",
+      "Ecografía, colposcopia e histeroscopia",
+      "Consultas en búlgaro, inglés y español"
+    ],
+    "moreAbout": "Más sobre la doctora →"
+  },
+  "trust": {
+    "eyebrow": "02 · Confianza",
+    "title": "Lo que saben las pacientes antes de la consulta",
+    "ratingDetail": "{count} valoraciones en Superdoc",
+    "accessValue": "NHIF",
+    "accessDetail": "Trabaja con NHIF y aseguradoras principales",
+    "languagesValue": "3",
+    "languagesDetail": "Búlgaro · Inglés · Español",
+    "locationValue": "VMA",
+    "locationDetail": "Calle Dobrila 10, frente a VMA"
+  },
+  "servicesHome": {
+    "eyebrow": "03 · Servicios",
+    "title": "Cuidado adaptado a sus necesidades",
+    "description": "Enfoque en prevención, diagnóstico y salud femenina. Cada consulta empieza con una conversación y un plan claro de siguientes pasos.",
+    "allServices": "Todos los servicios →"
+  },
+  "serviceBlurbs": {
+    "profilaktichen-ginekologichen-pregled": "Revisión periódica para tranquilidad y detección temprana de cambios.",
+    "akushero-ginekologichni-pregledi": "Consulta primaria o de seguimiento ante síntomas.",
+    "ultrazvukovi-izsledvaniya": "Ecografía del sistema reproductor femenino con explicación de los hallazgos.",
+    "kolposkopiya": "Exploración precisa ante sospecha de alteraciones cervicales.",
+    "histeroskopiya": "Enfoque mínimamente invasivo cuando está indicada la histeroscopia.",
+    "zhensko-zdrave": "Consulta sobre síntomas, prevención y siguientes pasos."
+  },
+  "serviceNames": {
+    "profilaktichen-ginekologichen-pregled": "Revisiones ginecológicas preventivas",
+    "akushero-ginekologichni-pregledi": "Consultas obstétrico-ginecológicas",
+    "ultrazvukovi-izsledvaniya": "Ecografías",
+    "kolposkopiya": "Colposcopia",
+    "histeroskopiya": "Histeroscopia",
+    "zhensko-zdrave": "Consultas de salud femenina"
+  },
+  "why": {
+    "eyebrow": "04 · Enfoque",
+    "title": "Por qué vuelven las pacientes",
+    "items": [
+      {
+        "title": "Explica con calma",
+        "body": "Qué se hace, por qué se hace y cuáles son las opciones — en un lenguaje comprensible."
+      },
+      {
+        "title": "Exploración minuciosa",
+        "body": "Tiempo para preguntas y atención al detalle, sin prisas."
+      },
+      {
+        "title": "Diagnóstico moderno",
+        "body": "Ecografía, colposcopia y enfoques mínimamente invasivos según indicación."
+      },
+      {
+        "title": "Acceso fácil",
+        "body": "Cita online por Superdoc, cobertura NHIF y ubicación cómoda frente a VMA."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "05 · Opiniones",
+    "title": "Opiniones verificadas de pacientes",
+    "description": "Opiniones públicas reales de Superdoc. Valoración media {rating}/5 de {count} reseñas.",
+    "ratingLabel": "Valoración en Superdoc"
+  },
+  "clinic": {
+    "eyebrow": "06 · Consulta",
+    "title": "Dónde encontrarnos",
+    "description": "Consultas en el Centro Médico Lyulin Med — filial Dobrila 10, frente a VMA. Reserve online o llame."
+  },
+  "handbookTeaser": {
+    "eyebrow": "07 · Guía",
+    "title": "Respuestas claras antes de la consulta",
+    "description": "Artículos educativos breves sobre prevención, preparación y preguntas frecuentes.",
+    "cta": "Ir a la guía",
+    "allArticles": "Todos los artículos →"
+  },
+  "finalCta": {
+    "title": "¿Lista para el siguiente paso?",
+    "description": "Reserve online por Superdoc — rápido, claro y sin esperas telefónicas."
+  },
+  "about": {
+    "eyebrow": "Sobre la doctora",
+    "lead": "Especialista en formación en obstetricia y ginecología, centrada en prevención, diagnóstico y explicación serena en cada paso. Ejerce en SHATOG “St. Sofia” y el Centro Médico Lyulin Med. Las pacientes destacan la atención, la exploración minuciosa y la conversación clara."
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Reserva fácil. Ubicación clara.",
+    "lead": "Reserve online por Superdoc o llame. La consulta está en el Centro Médico Lyulin Med, calle Dobrila 10, frente a VMA.",
+    "mapTitle": "Ubicación en el mapa",
+    "hoursNote": "Con cita previa",
+    "phoneLabel": "Teléfono",
+    "addressLabel": "Dirección",
+    "languagesLabel": "Idiomas de consulta"
+  },
+  "handbook": {
+    "eyebrow": "Guía",
+    "title": "Guía médica",
+    "lead": "Materiales educativos sobre salud femenina — para llegar preparada y tranquila.",
+    "articlesOnlyBg": "",
+    "disclaimer": "Este material es educativo y no sustituye una consulta médica personal, un diagnóstico ni un tratamiento."
+  },
+  "servicesPage": {
+    "eyebrow": "Servicios",
+    "title": "Cuidado de la salud femenina",
+    "lead": "Elija un servicio para saber más sobre la consulta y cómo prepararse."
+  },
+  "privacy": {
+    "title": "Política de privacidad y cookies",
+    "updated": "Última actualización: 31 de julio de 2026",
+    "intro": "Esta política describe cómo el sitio web de la Dra. Maria Raykova trata datos personales y utiliza cookies. El sitio es informativo y dirige la reserva de citas a Superdoc.",
+    "controllerTitle": "Responsable del tratamiento",
+    "controllerBody": "La responsable de los datos en relación con este sitio es la Dra. Maria Raykova, consulta en el Centro Médico Lyulin Med — Filial Dobrila 10, calle Dobrila 10, frente a VMA, Sofía. Contacto: 0894 972 626.",
+    "scopeTitle": "Ámbito de la política",
+    "scopeBody": "La política se aplica a las visitas a este sitio web. La reserva de citas, el registro y la comunicación a través de Superdoc los gestiona Superdoc según sus propias condiciones y política de privacidad.",
+    "dataTitle": "Qué datos tratamos",
+    "dataItems": [
+      "Datos técnicos de la visita: dirección IP, tipo de dispositivo/navegador, páginas vistas y tiempo aproximado — en la medida necesaria para el funcionamiento y la seguridad del sitio.",
+      "Datos de cookies y almacenamiento local — según su elección en el banner de cookies.",
+      "Si nos llama por teléfono, tratamos la información que nos facilita voluntariamente para responder a su consulta."
+    ],
+    "purposesTitle": "Finalidades del tratamiento",
+    "purposesItems": [
+      "Garantizar el funcionamiento, la seguridad y la visualización correcta del sitio.",
+      "Recordar preferencias de idioma y elección de cookies.",
+      "Mejorar el contenido y la experiencia si acepta cookies opcionales.",
+      "Responder a consultas telefónicas."
+    ],
+    "legalTitle": "Bases jurídicas",
+    "legalBody": "Tratamos datos con base en: interés legítimo para mantener y proteger el sitio; atención de su solicitud al llamar; y consentimiento — para cookies opcionales.",
+    "cookiesTitle": "Cookies",
+    "cookiesIntro": "Utilizamos las siguientes categorías:",
+    "cookiesEssentialTitle": "Necesarias",
+    "cookiesEssentialBody": "Imprescindibles para el funcionamiento básico — por ejemplo recordar su elección de cookies e idioma. No requieren consentimiento.",
+    "cookiesOptionalTitle": "Opcionales",
+    "cookiesOptionalBody": "Pueden usarse para estadísticas o mejoras solo tras su consentimiento en el banner. Puede aceptar solo las necesarias.",
+    "thirdTitle": "Terceros",
+    "thirdBody": "El sitio puede redirigir a Superdoc para reservar cita y a Google Maps para la navegación. Esos servicios tienen políticas propias. No controlamos cómo tratan los datos tras abandonar este sitio.",
+    "retentionTitle": "Plazo de conservación",
+    "retentionBody": "Los datos técnicos y de cookies se conservan solo mientras sean necesarios para las finalidades indicadas, o hasta que retire el consentimiento / limpie el navegador. Las consultas telefónicas no se archivan de forma sistemática a través del sitio.",
+    "rightsTitle": "Sus derechos",
+    "rightsIntro": "Según el RGPD tiene derecho a:",
+    "rightsItems": [
+      "acceso a sus datos;",
+      "rectificación;",
+      "supresión (“derecho al olvido”), cuando proceda;",
+      "limitación del tratamiento;",
+      "oposición;",
+      "portabilidad — cuando proceda;",
+      "retirar el consentimiento de cookies opcionales en cualquier momento."
+    ],
+    "rightsContact": "Para ejercer sus derechos, llame al 0894 972 626. También puede presentar una reclamación ante la Comisión búlgara de Protección de Datos Personales (CPDP).",
+    "securityTitle": "Seguridad",
+    "securityBody": "Aplicamos medidas técnicas y organizativas razonables para proteger el sitio. Ningún sistema online es completamente seguro.",
+    "changesTitle": "Cambios",
+    "changesBody": "Podemos actualizar esta política cuando sea necesario. La versión vigente siempre está publicada en esta página.",
+    "backHome": "Volver al inicio",
+    "placeholder": ""
+  },
+  "language": {
+    "bg": "БГ",
+    "en": "EN",
+    "es": "ES",
+    "label": "Idioma"
+  },
+  "education": {
+    "items": [
+      "Universidad Médica — Varna",
+      "Especialización en obstetricia y ginecología (en curso)"
+    ]
+  },
+  "qualifications": {
+    "items": [
+      "Cualificación de posgrado en genética, Harvard Medical School, Boston, EE. UU.",
+      "Diagnóstico por ecografía",
+      "Curso de histeroscopia de consulta",
+      "Curso teórico y práctico de histeroscopia operatoria",
+      "Miembro de la Asociación Médica Búlgara",
+      "Miembro de la Sociedad Búlgara de Obstetricia y Ginecología"
+    ]
+  },
+  "workplaces": {
+    "items": [
+      "SHATOG “St. Sofia”",
+      "Centro Médico Lyulin Med"
+    ]
+  },
+  "servicePage": {
+    "suitableHeading": "Para quién es adecuada",
+    "visitHeading": "Cómo discurre la visita",
+    "faqHeading": "Preguntas frecuentes",
+    "withDoctor": "Con {name} en {city}, la visita es calmada, con tiempo para preguntas y explicación clara.",
+    "bookHeading": "Reserve cita para {service}",
+    "bookLead": "Online por Superdoc — rápido y cómodo.",
+    "breadcrumbServices": "Servicios",
+    "breadcrumbHome": "Inicio"
+  },
+  "contactPage": {
+    "leadExtra": "La consulta está en {clinic} — {address}. Reserve online o llame directamente.",
+    "callUs": "Llámenos",
+    "bookOnlineTitle": "Reservar online",
+    "bookOnlineBody": "Elija un hueco libre en Superdoc — sin esperas telefónicas.",
+    "toSuperdoc": "Ir a Superdoc",
+    "callTitle": "Llámenos",
+    "callBody": "Para una pregunta rápida o reserva por teléfono.",
+    "navTitle": "Cómo llegar",
+    "navBody": "Abra la ruta en Google Maps hasta la consulta frente a VMA.",
+    "showRoute": "Ver ruta",
+    "clinicData": "Datos de la consulta",
+    "hoursLabel": "Horario",
+    "hoursValue": "Según la agenda actual en Superdoc",
+    "hoursHint": "Los huecos libres se ven al reservar online.",
+    "accessLabel": "Acceso",
+    "accessNhif": "Trabaja con NHIF",
+    "accessPrivate": "Consulta privada",
+    "accessHint": "Algunas pruebas pueden requerir copago.",
+    "languagesLabel": "Idiomas",
+    "beforeVisitTitle": "Antes de la consulta",
+    "beforeVisitBody": "Lleve documentación médica previa si la tiene. Para orientarse, use el referente “frente a VMA”.",
+    "prepChecklist": "Checklist de preparación →",
+    "mapTitle": "Mapa — consulta Dra. Maria Raykova",
+    "mapCaption": "Calle Dobrila 10 · frente a VMA",
+    "openMaps": "Abrir en Google Maps",
+    "finalTitle": "¿Lista para el siguiente paso?",
+    "finalBody": "Reserve con {name} online o llame al {phone}.",
+    "languagesValue": "Búlgaro · Inglés · Español"
+  },
+  "cookies": {
+    "title": "Cookies",
+    "body": "Usamos cookies necesarias para el funcionamiento del sitio y — solo con su consentimiento — cookies opcionales para mejoras. Más en la",
+    "policyLink": "política de privacidad",
+    "accept": "Aceptar todas",
+    "essential": "Solo necesarias"
+  }
+}

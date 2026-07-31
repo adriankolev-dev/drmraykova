@@ -1,0 +1,325 @@
+{
+  "meta": {
+    "title": "Dr. Maria Raykova — Obstetrician-Gynecologist in Sofia",
+    "description": "Thoughtful obstetric and gynecological care in Sofia. Preventive exams, diagnostics, and women's health consultations. Book online.",
+    "aboutTitle": "About the doctor",
+    "aboutDescription": "Dr. Maria Raykova — obstetrician-gynecologist in Sofia. Education, qualifications, experience, and patient approach.",
+    "servicesTitle": "Services",
+    "servicesDescription": "Preventive gynecological exams, ultrasound, colposcopy, hysteroscopy, and women's health consultations in Sofia.",
+    "handbookTitle": "Medical handbook",
+    "handbookDescription": "Educational articles on women's health, prevention, and preparing for a gynecological visit.",
+    "contactTitle": "Contact",
+    "contactDescription": "Address, phone, map, and appointment booking with Dr. Maria Raykova — 10 Dobrila St., opposite VMA, Sofia.",
+    "privacyTitle": "Privacy and cookie policy",
+    "privacyDescription": "This policy explains how Dr. Maria Raykova’s website processes personal data and uses cookies. The site is informational and directs appointment booking to Superdoc.",
+    "faqTitle": "Frequently asked questions",
+    "faqDescription": "How to book with Dr. Maria Raykova, NHIF, scope of care, languages, and preparing for a first visit."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "handbook": "Handbook",
+    "contact": "Contact",
+    "book": "Book appointment",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "homeAria": "Dr. Maria Raykova — home",
+    "faq": "FAQ"
+  },
+  "common": {
+    "bookCta": "Book appointment",
+    "learnMore": "Learn more",
+    "viewServices": "View services",
+    "callUs": "Call us",
+    "directions": "Directions",
+    "privacy": "Privacy",
+    "specialty": "Obstetrician-Gynecologist",
+    "specialtyStatus": "resident",
+    "city": "Sofia",
+    "readingTime": "{minutes} min read",
+    "allCategories": "All",
+    "footerNote": "Medical information for educational purposes — it does not replace a personal consultation.",
+    "bookingViaSuperdoc": "Booking via Superdoc",
+    "confirmedData": "Confirmed details from the practice\nand Superdoc profile",
+    "internationalAccent": "International highlight",
+    "step": "Step {n}",
+    "workplace": "Workplace",
+    "reception": "Clinic",
+    "importantScope": "Important: Dr. Raykova does not provide pregnancy follow-up and does not examine children.",
+    "readyCta": "Ready for an appointment in a calm setting?",
+    "booking": "Booking",
+    "profile": "Profile",
+    "educationQualTitle": "Education and qualifications",
+    "educationQualBody": "An academic foundation, specialist training, and courses that support a calm, precise clinical approach.",
+    "education": "Education",
+    "qualifications": "Qualifications",
+    "wherePractices": "Where she practices",
+    "patientApproach": "Patient approach",
+    "approachQuote": "Every visit starts with a conversation.",
+    "approachBody": "The goal is for you to understand what is happening, what the options are, and what the next steps are — without unnecessary jargon and without feeling rushed.",
+    "experience": "Experience",
+    "experienceValue": "Under 5 yrs",
+    "experienceDetail": "Under 5 years of experience",
+    "rating": "Rating",
+    "access": "Access",
+    "location": "Location",
+    "languages": "Languages",
+    "navigation": "Navigation",
+    "cabinet": "Clinic",
+    "worksNhif": "Works with NHIF",
+    "openMap": "Open in Google Maps",
+    "howToGet": "How to get there"
+  },
+  "hero": {
+    "eyebrow": "Obstetrician-Gynecologist · Sofia",
+    "brand": "Dr. Maria Raykova",
+    "headline": "Calm care for women's health",
+    "support": "Preventive exams, diagnostics, and consultations — with attention, clear explanations, and time for your questions.",
+    "chipAppointment": "By appointment",
+    "chipNhif": "NHIF",
+    "chipClinic": "Clinic · Sofia"
+  },
+  "intro": {
+    "eyebrow": "01 · About",
+    "title": "A careful exam. A clear conversation.",
+    "body": "Dr. Maria Raykova is a resident in obstetrics and gynecology. She practices at SHATOG “St. Sofia” and Lyulin Med Medical Center. Patients often note the calm explanations, thorough examination, and sense of care.",
+    "points": [
+      "Degree from Medical University — Varna",
+      "Specialization in obstetrics and gynecology",
+      "Ultrasound, colposcopy, and hysteroscopy",
+      "Consultations in Bulgarian, English, and Spanish"
+    ],
+    "moreAbout": "More about the doctor →"
+  },
+  "trust": {
+    "eyebrow": "02 · Trust",
+    "title": "What patients know before the visit",
+    "ratingDetail": "{count} reviews on Superdoc",
+    "accessValue": "NHIF",
+    "accessDetail": "Works with NHIF and leading insurers",
+    "languagesValue": "3",
+    "languagesDetail": "Bulgarian · English · Spanish",
+    "locationValue": "VMA",
+    "locationDetail": "10 Dobrila St., opposite VMA"
+  },
+  "servicesHome": {
+    "eyebrow": "03 · Services",
+    "title": "Care tailored to your needs",
+    "description": "Focus on prevention, diagnostics, and women's health. Every visit starts with a conversation and a clear plan for next steps.",
+    "allServices": "All services →"
+  },
+  "serviceBlurbs": {
+    "profilaktichen-ginekologichen-pregled": "A regular exam for peace of mind and early detection of changes.",
+    "akushero-ginekologichni-pregledi": "Primary or follow-up visit for symptoms and monitoring.",
+    "ultrazvukovi-izsledvaniya": "Ultrasound of the female reproductive system with clear findings explained.",
+    "kolposkopiya": "A precise examination when cervical changes are suspected.",
+    "histeroskopiya": "A minimally invasive approach when hysteroscopy is indicated.",
+    "zhensko-zdrave": "Consultation on symptoms, prevention, and next steps."
+  },
+  "serviceNames": {
+    "profilaktichen-ginekologichen-pregled": "Preventive gynecological exams",
+    "akushero-ginekologichni-pregledi": "Obstetric-gynecological exams",
+    "ultrazvukovi-izsledvaniya": "Ultrasound examinations",
+    "kolposkopiya": "Colposcopy",
+    "histeroskopiya": "Hysteroscopy",
+    "zhensko-zdrave": "Women's health consultations"
+  },
+  "why": {
+    "eyebrow": "04 · Approach",
+    "title": "Why patients return",
+    "items": [
+      {
+        "title": "Calm explanations",
+        "body": "What is done, why it is done, and what the options are — in clear language."
+      },
+      {
+        "title": "Thorough exam",
+        "body": "Time for questions and attention to detail, without feeling rushed."
+      },
+      {
+        "title": "Modern diagnostics",
+        "body": "Ultrasound, colposcopy, and minimally invasive approaches when indicated."
+      },
+      {
+        "title": "Easy access",
+        "body": "Online booking via Superdoc, NHIF coverage, and a convenient location opposite VMA."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "05 · Reviews",
+    "title": "Verified patient feedback",
+    "description": "Real public reviews from Superdoc. Overall rating {rating}/5 from {count} reviews.",
+    "ratingLabel": "Superdoc rating"
+  },
+  "clinic": {
+    "eyebrow": "06 · Clinic",
+    "title": "Where to find us",
+    "description": "Appointments at Lyulin Med Medical Center — Dobrila 10 branch, opposite VMA. Book online or call."
+  },
+  "handbookTeaser": {
+    "eyebrow": "07 · Handbook",
+    "title": "Clear answers before your visit",
+    "description": "Short educational articles on prevention, preparation, and common questions.",
+    "cta": "Go to handbook",
+    "allArticles": "All articles →"
+  },
+  "finalCta": {
+    "title": "Ready for the next step?",
+    "description": "Book online via Superdoc — quickly, clearly, and without waiting on the phone."
+  },
+  "about": {
+    "eyebrow": "About the doctor",
+    "lead": "A resident in obstetrics and gynecology focused on prevention, diagnostics, and calm explanation at every step. She practices at SHATOG “St. Sofia” and Lyulin Med Medical Center. Patients often note the attention, thorough exam, and clear conversation."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Easy booking. Clear location.",
+    "lead": "Book online via Superdoc or call. The clinic is at Lyulin Med Medical Center, 10 Dobrila St., opposite VMA.",
+    "mapTitle": "Location on the map",
+    "hoursNote": "By appointment",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "languagesLabel": "Consultation languages"
+  },
+  "handbook": {
+    "eyebrow": "Handbook",
+    "title": "Medical handbook",
+    "lead": "Educational materials on women's health — so you arrive prepared and at ease.",
+    "articlesOnlyBg": "",
+    "disclaimer": "This material is educational and does not replace a personal medical consultation, diagnosis, or treatment."
+  },
+  "servicesPage": {
+    "eyebrow": "Services",
+    "title": "Care for women's health",
+    "lead": "Choose a service to learn more about the visit and how to prepare."
+  },
+  "privacy": {
+    "title": "Privacy and cookie policy",
+    "updated": "Last updated: 31 July 2026",
+    "intro": "This policy explains how Dr. Maria Raykova’s website processes personal data and uses cookies. The site is informational and directs appointment booking to Superdoc.",
+    "controllerTitle": "Data controller",
+    "controllerBody": "The data controller for this website is Dr. Maria Raykova, clinic at Lyulin Med Medical Center — Dobrila 10 Branch, 10 Dobrila St., opposite VMA, Sofia. Contact: 0894 972 626.",
+    "scopeTitle": "What this policy covers",
+    "scopeBody": "This policy covers visits to this website. Appointment booking, registration, and communication via Superdoc are handled by Superdoc under their own terms and privacy policy.",
+    "dataTitle": "What data we process",
+    "dataItems": [
+      "Technical visit data: IP address, device/browser type, pages viewed, and approximate visit time — as needed for site operation and security.",
+      "Cookie and local-storage data — according to your choice in the cookie banner.",
+      "If you call us, we process the information you voluntarily provide so we can respond."
+    ],
+    "purposesTitle": "Purposes of processing",
+    "purposesItems": [
+      "Keeping the website working, secure, and correctly displayed.",
+      "Remembering language preference and cookie choice.",
+      "Improving content and experience if you accept optional cookies.",
+      "Responding to phone enquiries."
+    ],
+    "legalTitle": "Legal bases",
+    "legalBody": "We process data based on: legitimate interest in maintaining and securing the site; handling your request when you call; and consent — for optional cookies.",
+    "cookiesTitle": "Cookies",
+    "cookiesIntro": "We use the following categories:",
+    "cookiesEssentialTitle": "Essential",
+    "cookiesEssentialBody": "Required for basic site functions — for example remembering your cookie and language choices. These do not require consent.",
+    "cookiesOptionalTitle": "Optional",
+    "cookiesOptionalBody": "May be used for statistics or improvements only after consent via the banner. You can accept essential cookies only.",
+    "thirdTitle": "Third parties",
+    "thirdBody": "The site may redirect to Superdoc for booking and to Google Maps for directions. Those services have their own policies. We do not control how they process data after you leave this site.",
+    "retentionTitle": "Retention",
+    "retentionBody": "Technical and cookie data are kept only as long as needed for the stated purposes, or until you withdraw consent / clear your browser. Phone enquiries are not systematically archived via the website.",
+    "rightsTitle": "Your rights",
+    "rightsIntro": "Under the GDPR you have the right to:",
+    "rightsItems": [
+      "access your data;",
+      "rectification;",
+      "erasure (“right to be forgotten”), where applicable;",
+      "restriction of processing;",
+      "objection;",
+      "data portability — where applicable;",
+      "withdraw consent for optional cookies at any time."
+    ],
+    "rightsContact": "To exercise your rights, call 0894 972 626. You may also lodge a complaint with the Bulgarian Commission for Personal Data Protection (CPDP).",
+    "securityTitle": "Security",
+    "securityBody": "We apply reasonable technical and organisational measures to protect the site. No online system is completely secure.",
+    "changesTitle": "Changes",
+    "changesBody": "We may update this policy when needed. The current version is always published on this page.",
+    "backHome": "Back to home",
+    "placeholder": ""
+  },
+  "language": {
+    "bg": "БГ",
+    "en": "EN",
+    "es": "ES",
+    "label": "Language"
+  },
+  "education": {
+    "items": [
+      "Medical University — Varna",
+      "Specialization in obstetrics and gynecology (in progress)"
+    ]
+  },
+  "qualifications": {
+    "items": [
+      "Postgraduate qualification in genetics, Harvard Medical School, Boston, USA",
+      "Ultrasound diagnostics",
+      "Office hysteroscopy course",
+      "Theoretical and practical course in operative hysteroscopy",
+      "Member of the Bulgarian Medical Association",
+      "Member of the Bulgarian Society of Obstetrics and Gynecology"
+    ]
+  },
+  "workplaces": {
+    "items": [
+      "SHATOG “St. Sofia”",
+      "Lyulin Med Medical Center"
+    ]
+  },
+  "servicePage": {
+    "suitableHeading": "Who it is for",
+    "visitHeading": "How the visit goes",
+    "faqHeading": "Frequently asked questions",
+    "withDoctor": "With {name} in {city}, the visit is calm, with time for questions and clear explanations.",
+    "bookHeading": "Book an appointment for {service}",
+    "bookLead": "Online via Superdoc — fast and convenient.",
+    "breadcrumbServices": "Services",
+    "breadcrumbHome": "Home"
+  },
+  "contactPage": {
+    "leadExtra": "The clinic is at {clinic} — {address}. Book online or call directly.",
+    "callUs": "Call us",
+    "bookOnlineTitle": "Book online",
+    "bookOnlineBody": "Choose an available slot via Superdoc — without waiting on the phone.",
+    "toSuperdoc": "Go to Superdoc",
+    "callTitle": "Call us",
+    "callBody": "For a quick question or phone booking.",
+    "navTitle": "Directions",
+    "navBody": "Open the route in Google Maps to the clinic opposite VMA.",
+    "showRoute": "Show route",
+    "clinicData": "Clinic details",
+    "hoursLabel": "Hours",
+    "hoursValue": "According to the current Superdoc schedule",
+    "hoursHint": "Available times are visible when booking online.",
+    "accessLabel": "Access",
+    "accessNhif": "Works with NHIF",
+    "accessPrivate": "Private care",
+    "accessHint": "Some tests may require co-payment.",
+    "languagesLabel": "Languages",
+    "beforeVisitTitle": "Before the visit",
+    "beforeVisitBody": "Bring previous medical records if you have them. For navigation, use the landmark “opposite VMA”.",
+    "prepChecklist": "Preparation checklist →",
+    "mapTitle": "Map — Dr. Maria Raykova clinic",
+    "mapCaption": "10 Dobrila St. · opposite VMA",
+    "openMaps": "Open in Google Maps",
+    "finalTitle": "Ready for the next step?",
+    "finalBody": "Book with {name} online or call {phone}.",
+    "languagesValue": "Bulgarian · English · Spanish"
+  },
+  "cookies": {
+    "title": "Cookies",
+    "body": "We use essential cookies for the site to work and — only with your consent — optional cookies for improvements. More in the",
+    "policyLink": "privacy policy",
+    "accept": "Accept all",
+    "essential": "Essential only"
+  }
+}

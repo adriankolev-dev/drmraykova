@@ -1,26 +1,209 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Canvas — soft clinical linen */
+  --background: #f7f5f2;
+  --foreground: #1a2332;
+
+  /* Surfaces */
+  --muted: #efebe6;
+  --muted-foreground: #5a6570;
+  --card: #fffcf9;
+  --card-foreground: #1a2332;
+  --popover: #fffcf9;
+  --popover-foreground: #1a2332;
+
+  /* Brand accent — soft baby pink */
+  --primary: #e8a4b0;
+  --primary-foreground: #2b1a20;
+  --secondary: #f3d8df;
+  --secondary-foreground: #2b1a20;
+  --accent: #f8eaee;
+  --accent-foreground: #2b1a20;
+
+  /* Quiet clinical sage — trust micro-accent */
+  --clinical: #7a8f88;
+  --clinical-soft: #e7eeeb;
+
+  /* Ink band (CTA / footer contrast) */
+  --ink: #15202b;
+  --ink-foreground: #f3f1ed;
+
+  /* UI */
+  --border: #ddd6cd;
+  --input: #ddd6cd;
+  --ring: #e8a4b0;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+
+  /* Geometry — slightly softer, more clinic stationery */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.65rem;
+  --radius-lg: 1.1rem;
+  --radius: var(--radius-md);
+
+  /* Rhythm */
+  --space-section: clamp(4rem, 8vw, 8rem);
+  --space-block: clamp(2rem, 4vw, 3.5rem);
+  --container: 72rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-clinical: var(--clinical);
+  --color-clinical-soft: var(--clinical-soft);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --font-sans: var(--font-onest);
+  --font-display: var(--font-literata);
+  --font-mono: var(--font-ibm-plex-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: calc(var(--radius-lg) + 0.25rem);
+
+  --spacing-section: var(--space-section);
+  --spacing-block: var(--space-block);
+
+  --max-width-container: var(--container);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01" on, "kern" on;
+    background-image:
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.42 0 0 0 0 0.38 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      radial-gradient(ellipse 120% 80% at 50% -10%, color-mix(in srgb, var(--primary) 9%, transparent), transparent 55%),
+      radial-gradient(ellipse 80% 50% at 100% 30%, color-mix(in srgb, var(--clinical-soft) 65%, transparent), transparent 45%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+
+  .font-display {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+    letter-spacing: -0.025em;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--primary) 28%, white);
+    color: var(--foreground);
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .container-page {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  .section-space {
+    padding-block: var(--space-section);
+  }
+
+  /* Hint browser to defer offscreen work */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 720px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .article-prose {
+    @apply text-base leading-relaxed text-foreground/90;
+  }
+
+  .article-prose h2 {
+    @apply mt-10 mb-4 font-display text-2xl font-medium tracking-tight text-foreground;
+  }
+
+  .article-prose h3 {
+    @apply mt-8 mb-3 font-display text-xl font-medium text-foreground;
+  }
+
+  .article-prose p {
+    @apply mb-4 text-muted-foreground;
+  }
+
+  .article-prose ul,
+  .article-prose ol {
+    @apply mb-4 ml-5 space-y-2 text-muted-foreground;
+  }
+
+  .article-prose ul {
+    list-style: disc;
+  }
+
+  .article-prose ol {
+    list-style: decimal;
+  }
+
+  .article-prose strong {
+    @apply font-medium text-foreground;
+  }
+
+  .article-prose a {
+    @apply text-foreground underline underline-offset-4;
+  }
 }
