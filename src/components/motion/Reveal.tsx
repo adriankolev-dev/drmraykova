@@ -2,10 +2,11 @@
 
 import {
   motion,
+  useInView,
   useReducedMotion,
   type MotionProps,
 } from "framer-motion";
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -27,7 +28,13 @@ export function Reveal({
   once = true,
   ...props
 }: RevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
+  const inView = useInView(ref, {
+    once,
+    amount: 0.12,
+    margin: "0px 0px -8% 0px",
+  });
 
   if (reduceMotion) {
     return <div className={className}>{children}</div>;
@@ -35,10 +42,10 @@ export function Reveal({
 
   return (
     <motion.div
+      ref={ref}
       className={cn(className)}
       initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, amount: 0.18, margin: "0px 0px -6% 0px" }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
       transition={{
         duration: 0.5,
         delay,
@@ -65,7 +72,13 @@ export function RevealGroup({
   stagger = 0.07,
   delay = 0,
 }: StaggerProps) {
+  const ref = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
+  const inView = useInView(ref, {
+    once: true,
+    amount: 0.08,
+    margin: "0px 0px -8% 0px",
+  });
 
   if (reduceMotion) {
     return <div className={className}>{children}</div>;
@@ -73,10 +86,10 @@ export function RevealGroup({
 
   return (
     <motion.div
+      ref={ref}
       className={className}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.15 }}
+      animate={inView ? "show" : "hidden"}
       variants={{
         hidden: {},
         show: {
