@@ -327,7 +327,7 @@ export default async function ContactPage({ params }: Props) {
       <section className="pb-[var(--space-section)]">
         <div className="container-page">
           <Reveal>
-            <div className="rounded-lg bg-ink px-8 py-12 text-ink-foreground md:px-12 md:py-14">
+            <div className="panel-ink rounded-lg px-8 py-12 md:px-12 md:py-14">
               <h2 className="max-w-xl font-display text-3xl font-medium tracking-tight md:text-4xl">
                 {tcp("finalTitle")}
               </h2>

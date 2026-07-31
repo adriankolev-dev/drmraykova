@@ -1,11 +1,19 @@
-import { Star } from "lucide-react";
+import { Award, Building2, GraduationCap, MapPin, Quote, Star } from "lucide-react";
+import type { ComponentType, ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
-import { ClinicCross, ClinicPulse, ClinicRule } from "@/components/brand/ClinicMotifs";
+import { ClinicCross, ClinicRule } from "@/components/brand/ClinicMotifs";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
+import { CertificateLightbox } from "@/components/ui/CertificateLightbox";
 import { doctor } from "@/lib/doctor";
 import { cn } from "@/lib/utils";
+
+const HARVARD_CERTIFICATE_SRC = "/certificates/harvard-hmx-genetics.jpg";
+
+/** High-contrast metadata for WCAG AAA on light canvas */
+const metaLabel =
+  "font-mono text-[11px] uppercase tracking-[0.16em] text-foreground/72";
 
 function RatingStars({ value }: { value: number }) {
   return (
@@ -30,6 +38,23 @@ function RatingStars({ value }: { value: number }) {
 
 function isHighlightCredential(item: string) {
   return item.toLowerCase().includes("harvard");
+}
+
+function SectionLabel({
+  icon: Icon,
+  children,
+}: {
+  icon: ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
+  children: ReactNode;
+}) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="flex size-8 items-center justify-center rounded-md bg-clinical-soft text-clinical">
+        <Icon className="size-3.5" aria-hidden />
+      </span>
+      <h3 className={metaLabel}>{children}</h3>
+    </div>
+  );
 }
 
 export async function DoctorCredentialsSection() {
@@ -62,7 +87,6 @@ export async function DoctorCredentialsSection() {
   const qualifications = tq.raw("items") as string[];
   const workplaces = tw.raw("items") as string[];
 
-
   return (
     <>
       {/* Clinical facts band */}
@@ -93,13 +117,13 @@ export async function DoctorCredentialsSection() {
                       "border-b border-border/80 md:border-b-0 md:border-r",
                   )}
                 >
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-clinical">
+                  <p className={metaLabel}>
                     {String(index + 1).padStart(2, "0")} · {fact.label}
                   </p>
                   <p className="mt-4 font-display text-4xl font-medium tracking-tight text-foreground md:text-[2.75rem]">
                     {fact.value}
                     {"rating" in fact && fact.rating ? (
-                      <span className="ml-1.5 align-baseline font-sans text-base font-normal tracking-normal text-muted-foreground">
+                      <span className="ml-1.5 align-baseline font-sans text-base font-normal tracking-normal text-foreground/65">
                         /5
                       </span>
                     ) : null}
@@ -107,7 +131,7 @@ export async function DoctorCredentialsSection() {
                   {"rating" in fact && fact.rating ? (
                     <RatingStars value={doctor.rating.value} />
                   ) : null}
-                  <p className="mt-3 max-w-[18rem] text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-3 max-w-[18rem] text-sm leading-relaxed text-foreground/70">
                     {fact.detail}
                   </p>
                 </div>
@@ -126,175 +150,207 @@ export async function DoctorCredentialsSection() {
             <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-balance md:text-4xl">
               {tc("educationQualTitle")}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-lg leading-relaxed text-foreground/70">
               {tc("educationQualBody")}
             </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-            {/* Education timeline */}
-            <Reveal>
-              <div className="flex items-center gap-3">
-                <ClinicCross className="size-3.5" />
-                <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-clinical">
-                  {tc("education")}
-                </h3>
-              </div>
-              <ClinicRule className="mt-4 max-w-[8rem]" />
+          {/* Patient approach — accent banner */}
+          <Reveal delay={0.06} className="mt-10 md:mt-12">
+            <figure className="relative overflow-hidden rounded-lg border border-primary/25 bg-accent/60 px-6 py-7 md:px-10 md:py-9">
+              <Quote
+                className="absolute -right-2 -top-2 size-16 text-primary/20 md:size-24"
+                aria-hidden
+              />
+              <figcaption className={cn(metaLabel, "text-foreground/75")}>
+                <span className="inline-flex items-center gap-2">
+                  <ClinicCross className="size-3 text-clinical" />
+                  {tc("patientApproach")}
+                </span>
+              </figcaption>
+              <blockquote className="relative mt-4 max-w-3xl">
+                <p className="font-display text-2xl font-medium leading-snug tracking-tight text-foreground md:text-3xl">
+                  {tc("approachQuote")}
+                </p>
+                <p className="mt-3 max-w-2xl text-base leading-relaxed text-foreground/72 md:text-lg">
+                  {tc("approachBody")}
+                </p>
+              </blockquote>
+              <p className="relative mt-5 text-sm leading-relaxed text-foreground/68">
+                {tc("importantScope")}
+              </p>
+            </figure>
+          </Reveal>
 
-              <ol className="relative mt-8 space-y-0 pl-1">
-                <span
-                  aria-hidden
-                  className="absolute bottom-3 left-[0.4rem] top-3 w-px bg-border"
-                />
-                {education.map((item, index) => (
-                  <li key={item} className="relative flex gap-5 pb-10 last:pb-0">
-                    <span
-                      aria-hidden
-                      className="relative z-10 mt-1.5 flex size-3.5 shrink-0 items-center justify-center rounded-full border border-primary bg-background"
+          {/* Education & quals | Practice locations */}
+          <div className="mt-12 grid gap-12 lg:mt-14 lg:grid-cols-2 lg:gap-14 xl:gap-16">
+            {/* Left: Education + Qualifications */}
+            <Reveal className="min-w-0 space-y-10">
+              <div>
+                <SectionLabel icon={GraduationCap}>{tc("education")}</SectionLabel>
+                <ClinicRule className="mt-4 max-w-32" />
+
+                <ol className="relative mt-7 space-y-0 pl-1">
+                  <span
+                    aria-hidden
+                    className="absolute bottom-2 left-[0.4rem] top-2 w-px bg-border"
+                  />
+                  {education.map((item, index) => (
+                    <li
+                      key={item}
+                      className="relative flex gap-4 pb-7 last:pb-0 md:gap-5"
                     >
-                      <span className="size-1.5 rounded-full bg-primary" />
-                    </span>
-                    <div>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                        {tc("step", { n: String(index + 1).padStart(2, "0") })}
+                      <span
+                        aria-hidden
+                        className="relative z-10 mt-1.5 flex size-3.5 shrink-0 items-center justify-center rounded-full border border-primary bg-background"
+                      >
+                        <span className="size-1.5 rounded-full bg-primary" />
+                      </span>
+                      <div>
+                        <p className={cn(metaLabel, "text-[10px]")}>
+                          {tc("step", {
+                            n: String(index + 1).padStart(2, "0"),
+                          })}
+                        </p>
+                        <p className="mt-1.5 font-display text-lg font-medium leading-snug tracking-tight text-foreground md:text-xl">
+                          {item}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div>
+                <SectionLabel icon={Award}>{tc("qualifications")}</SectionLabel>
+                <ClinicRule className="mt-4 max-w-32" />
+
+                <RevealGroup className="mt-6 space-y-1">
+                  {qualifications.map((item, index) => {
+                    const highlight = isHighlightCredential(item);
+                    return (
+                      <RevealItem key={item}>
+                        <div
+                          className={cn(
+                            "relative flex gap-3.5 py-3.5 transition-colors duration-200",
+                            highlight
+                              ? "rounded-md bg-clinical-soft/80 px-3.5 py-4 md:px-4"
+                              : "border-b border-border/80 last:border-b-0 hover:bg-muted/40",
+                          )}
+                        >
+                          <span
+                            className={cn(
+                              "mt-0.5 shrink-0 font-mono text-[11px] tracking-[0.12em]",
+                              highlight
+                                ? "text-foreground/75"
+                                : "text-foreground/65",
+                            )}
+                          >
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <div className="min-w-0 flex-1">
+                            {highlight ? (
+                              <p className={cn(metaLabel, "mb-1.5 text-[10px]")}>
+                                {tc("internationalAccent")}
+                              </p>
+                            ) : null}
+                            <p
+                              className={cn(
+                                "leading-relaxed",
+                                highlight
+                                  ? "font-display text-base font-medium tracking-tight text-foreground md:text-lg"
+                                  : "text-[15px] text-foreground/90 md:text-base",
+                              )}
+                            >
+                              {item}
+                            </p>
+                            {highlight ? (
+                              <CertificateLightbox
+                                src={HARVARD_CERTIFICATE_SRC}
+                                alt={tc("harvardCertificateAlt")}
+                                title={tc("harvardCertificateTitle")}
+                                caption={tc("harvardCertificateCaption")}
+                                triggerLabel={tc("harvardCertificateView")}
+                                closeLabel={tc("close")}
+                              />
+                            ) : null}
+                          </div>
+                        </div>
+                      </RevealItem>
+                    );
+                  })}
+                </RevealGroup>
+              </div>
+            </Reveal>
+
+            {/* Right: Practice locations */}
+            <Reveal delay={0.08} className="min-w-0 lg:pt-0">
+              <SectionLabel icon={Building2}>{tc("wherePractices")}</SectionLabel>
+              <ClinicRule className="mt-4 max-w-32" />
+
+              <ul className="mt-7 space-y-3">
+                {workplaces.map((item, index) => (
+                  <li key={item}>
+                    <div
+                      className={cn(
+                        "group rounded-md border border-border/80 bg-card/40 px-4 py-4",
+                        "transition-[border-color,background-color,transform] duration-200",
+                        "hover:border-clinical/40 hover:bg-clinical-soft/50",
+                        "motion-safe:hover:-translate-y-px",
+                      )}
+                    >
+                      <p className={cn(metaLabel, "text-[10px]")}>
+                        {String(index + 1).padStart(2, "0")} · {tc("workplace")}
                       </p>
-                      <p className="mt-2 font-display text-xl font-medium leading-snug tracking-tight text-foreground md:text-2xl">
-                        {item}
+                      <p className="mt-2 flex items-start gap-2.5 font-display text-lg font-medium tracking-tight text-foreground md:text-xl">
+                        <Building2
+                          className="mt-1 size-4 shrink-0 text-clinical transition-colors group-hover:text-foreground"
+                          aria-hidden
+                        />
+                        <span>{item}</span>
                       </p>
                     </div>
                   </li>
                 ))}
-              </ol>
-            </Reveal>
 
-            {/* Qualifications */}
-            <Reveal delay={0.08}>
-              <div className="flex items-center gap-3">
-                <ClinicCross className="size-3.5" />
-                <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-clinical">
-                  {tc("qualifications")}
-                </h3>
-              </div>
-              <ClinicRule className="mt-4 max-w-[8rem]" />
-
-              <RevealGroup className="mt-8 space-y-3">
-                {qualifications.map((item, index) => {
-                  const highlight = isHighlightCredential(item);
-                  return (
-                    <RevealItem key={item}>
-                      <div
-                        className={cn(
-                          "relative flex gap-4 py-4",
-                          highlight
-                            ? "rounded-md bg-clinical-soft/70 px-4 py-5 md:px-5"
-                            : "border-b border-border/70 last:border-b-0",
-                        )}
-                      >
-                        <span
-                          className={cn(
-                            "mt-0.5 font-mono text-[11px] tracking-[0.12em]",
-                            highlight ? "text-clinical" : "text-muted-foreground",
-                          )}
-                        >
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <div className="min-w-0">
-                          {highlight ? (
-                            <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-clinical">
-                              {tc("internationalAccent")}
-                            </p>
-                          ) : null}
-                          <p
-                            className={cn(
-                              "leading-relaxed",
-                              highlight
-                                ? "font-display text-lg font-medium tracking-tight text-foreground md:text-xl"
-                                : "text-[15px] text-foreground/85 md:text-base",
-                            )}
-                          >
-                            {item}
-                          </p>
-                        </div>
-                      </div>
-                    </RevealItem>
-                  );
-                })}
-              </RevealGroup>
-            </Reveal>
-          </div>
-
-          <div className="mt-16" aria-hidden>
-            <ClinicPulse className="mx-auto max-w-md opacity-80" />
-          </div>
-
-          {/* Practice + approach */}
-          <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <Reveal>
-              <div className="flex items-center gap-3">
-                <ClinicCross className="size-3.5" />
-                <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-clinical">
-                  {tc("wherePractices")}
-                </h3>
-              </div>
-              <ClinicRule className="mt-4 max-w-[8rem]" />
-              <ul className="mt-8 space-y-5">
-                {workplaces.map((item, index) => (
-                  <li key={item}>
-                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                      {String(index + 1).padStart(2, "0")} · {tc("workplace")}
+                <li>
+                  <div
+                    className={cn(
+                      "group rounded-md border border-primary/30 bg-accent/50 px-4 py-5",
+                      "transition-[border-color,background-color,transform] duration-200",
+                      "hover:border-primary/50 hover:bg-accent",
+                      "motion-safe:hover:-translate-y-px",
+                    )}
+                  >
+                    <p className={cn(metaLabel, "text-[10px]")}>
+                      {tc("reception")}
                     </p>
-                    <p className="mt-1.5 font-display text-xl font-medium tracking-tight text-foreground">
-                      {item}
+                    <p className="mt-2 flex items-start gap-2.5 font-display text-lg font-medium tracking-tight text-foreground md:text-xl">
+                      <MapPin
+                        className="mt-1 size-4 shrink-0 text-primary transition-colors group-hover:text-foreground"
+                        aria-hidden
+                      />
+                      <span>{doctor.clinic.name}</span>
                     </p>
-                  </li>
-                ))}
-                <li className="border-t border-border/80 pt-5">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                    {tc("reception")}
-                  </p>
-                  <p className="mt-1.5 font-display text-xl font-medium tracking-tight text-foreground">
-                    {doctor.clinic.name}
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {doctor.clinic.address}
-                  </p>
+                    <p className="mt-2 pl-6.5 text-sm leading-relaxed text-foreground/70">
+                      {doctor.clinic.address}
+                    </p>
+                  </div>
                 </li>
               </ul>
             </Reveal>
-
-            <Reveal delay={0.08}>
-              <div className="flex items-center gap-3">
-                <ClinicCross className="size-3.5" />
-                <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-clinical">
-                  {tc("patientApproach")}
-                </h3>
-              </div>
-              <ClinicRule className="mt-4 max-w-[8rem]" />
-              <blockquote className="mt-8 border-l-2 border-primary/50 pl-5">
-                <p className="font-display text-xl font-medium leading-snug tracking-tight text-foreground md:text-2xl">
-                  {tc("approachQuote")}
-                </p>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-                  {tc("approachBody")}
-                </p>
-              </blockquote>
-              <p className="mt-6 font-mono text-[11px] leading-relaxed tracking-[0.06em] text-clinical">
-                {tc("importantScope")}
-              </p>
-            </Reveal>
           </div>
 
-          <Reveal delay={0.1} className="mt-16">
-            <div className="rounded-lg bg-primary px-8 py-12 text-primary-foreground md:px-12 md:py-14">
-              <p className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-primary-foreground/70">
-                <ClinicCross className="size-3 text-primary-foreground/80" />
+          <Reveal delay={0.1} className="mt-14 md:mt-16">
+            <div className="panel-primary rounded-lg px-8 py-12 md:px-12 md:py-14">
+              <p className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-primary-foreground/80">
+                <ClinicCross className="size-3 text-primary-foreground/85" />
                 {tc("booking")}
               </p>
               <p className="mt-4 max-w-xl font-display text-3xl font-medium tracking-tight text-balance md:text-4xl">
                 {tc("readyCta")}
               </p>
-              <ClinicRule className="mt-6 max-w-[10rem] opacity-40 [&_div]:bg-primary-foreground" />
+              <ClinicRule className="mt-6 max-w-40 opacity-40 [&_div]:bg-primary-foreground" />
               <div className="mt-8">
                 <BookCta
                   variant="ink"

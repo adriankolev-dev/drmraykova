@@ -166,7 +166,7 @@ export default async function ServicePage({ params }: Props) {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <div className="mt-12 rounded-lg bg-primary px-8 py-10 text-primary-foreground">
+          <div className="panel-primary mt-12 rounded-lg px-8 py-10">
             <p className="font-display text-2xl font-medium">
               {t("bookHeading", { service: service.title })}
             </p>

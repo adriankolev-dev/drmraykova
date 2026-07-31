@@ -96,7 +96,7 @@ export default async function FaqPage({ params }: Props) {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <div className="mt-14 rounded-lg bg-primary px-8 py-10 text-primary-foreground">
+          <div className="panel-primary mt-14 rounded-lg px-8 py-10">
             <p className="font-display text-2xl font-medium tracking-tight">
               {faq.ctaHeading}
             </p>

@@ -11,7 +11,7 @@ export async function FinalCtaSection() {
     <section className="pt-4 pb-[var(--space-section)] md:pt-6">
       <div className="container-page">
         <Reveal>
-          <div className="rounded-lg bg-primary px-8 py-12 text-primary-foreground md:px-14 md:py-14">
+          <div className="panel-primary rounded-lg px-8 py-12 md:px-14 md:py-14">
             <p className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-primary-foreground/70">
               <ClinicCross className="size-3 text-primary-foreground/80" />
               {tc("bookingViaSuperdoc")}

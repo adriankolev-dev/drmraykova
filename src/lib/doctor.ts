@@ -22,7 +22,7 @@ export const doctor = {
     "Специализация по акушерство и гинекология (в ход)",
   ] as const,
   qualifications: [
-    "Следдипломна квалификация в областта на генетиката, Harvard Medical School, Бостън, САЩ",
+    "HMX Fundamentals — Genetics, Certificate of Achievement, Harvard Medical School, Бостън, САЩ (ноември 2024)",
     "Ултразвукова диагностика",
     "Курс по офис хистероскопия",
     "Теоретичен и практически курс по оперативна хистероскопия",

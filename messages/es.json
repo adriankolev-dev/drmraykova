@@ -54,6 +54,11 @@
     "educationQualBody": "Base académica, formación especializada y cursos que respaldan un enfoque clínico calmado y preciso.",
     "education": "Formación",
     "qualifications": "Cualificaciones",
+    "harvardCertificateCaption": "HMX Fundamentals — Genetics · Certificate of Achievement · 15 de noviembre de 2024",
+    "harvardCertificateAlt": "Certificado de logro de Harvard Medical School en HMX Fundamentals — Genetics otorgado a Maria Sasheva Raykova el 15 de noviembre de 2024",
+    "harvardCertificateView": "Ver certificado",
+    "harvardCertificateTitle": "Harvard Medical School",
+    "close": "Cerrar",
     "wherePractices": "Dónde ejerce",
     "patientApproach": "Enfoque con la paciente",
     "approachQuote": "La consulta empieza con una conversación.",
@@ -263,7 +268,7 @@
   },
   "qualifications": {
     "items": [
-      "Cualificación de posgrado en genética, Harvard Medical School, Boston, EE. UU.",
+      "HMX Fundamentals — Genetics, Certificate of Achievement, Harvard Medical School, Boston, EE. UU. (noviembre 2024)",
       "Diagnóstico por ecografía",
       "Curso de histeroscopia de consulta",
       "Curso teórico y práctico de histeroscopia operatoria",

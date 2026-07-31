@@ -54,6 +54,11 @@
     "educationQualBody": "Академична основа, специализиращо обучение и курсове, които подкрепят спокойния и прецизен клиничен подход.",
     "education": "Образование",
     "qualifications": "Квалификации",
+    "harvardCertificateCaption": "HMX Fundamentals — Genetics · Certificate of Achievement · 15 ноември 2024",
+    "harvardCertificateAlt": "Сертификат за постижение от Harvard Medical School: HMX Fundamentals — Genetics, издаден на Maria Sasheva Raykova на 15 ноември 2024",
+    "harvardCertificateView": "Виж сертификата",
+    "harvardCertificateTitle": "Harvard Medical School",
+    "close": "Затвори",
     "wherePractices": "Къде практикува",
     "patientApproach": "Пациентски подход",
     "approachQuote": "Прегледът започва с разговор.",
@@ -263,7 +268,7 @@
   },
   "qualifications": {
     "items": [
-      "Следдипломна квалификация в областта на генетиката, Harvard Medical School, Бостън, САЩ",
+      "HMX Fundamentals — Genetics, Certificate of Achievement, Harvard Medical School, Бостън, САЩ (ноември 2024)",
       "Ултразвукова диагностика",
       "Курс по офис хистероскопия",
       "Теоретичен и практически курс по оперативна хистероскопия",
