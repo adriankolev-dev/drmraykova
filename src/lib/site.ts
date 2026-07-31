@@ -5,7 +5,10 @@ export const siteConfig = {
   title: "Д-р Мария Райкова — Акушер-гинеколог в София",
   description:
     "Премиум акушеро-гинекологична грижа в София. Профилактични прегледи, диагностика и консултации за женско здраве. Запазете час онлайн.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://drmariaraykova.bg",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    process.env.URL ??
+    "https://drmariaraykova.bg",
   locale: "bg_BG",
   keywords: [
     "акушер гинеколог София",

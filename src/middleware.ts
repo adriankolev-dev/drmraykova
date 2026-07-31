@@ -7,6 +7,6 @@ export const config = {
   matcher: [
     "/",
     "/(bg|en|es)/:path*",
-    "/((?!api|_next|_vercel|.*\\..*).*)",
+    "/((?!api|_next|_vercel|.*\\..*|opengraph-image|twitter-image|icon|apple-icon|robots|sitemap).*)",
   ],
 };
