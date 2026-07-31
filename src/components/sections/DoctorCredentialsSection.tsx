@@ -1,5 +1,6 @@
 import { Award, Building2, GraduationCap, MapPin, Quote, Star } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
 import { ClinicCross, ClinicRule } from "@/components/brand/ClinicMotifs";
@@ -10,6 +11,7 @@ import { doctor } from "@/lib/doctor";
 import { cn } from "@/lib/utils";
 
 const HARVARD_CERTIFICATE_SRC = "/certificates/harvard-hmx-genetics.jpg";
+const DOCTOR_GESTURE_SRC = "/doctor-certificate-gesture-v2.webp";
 
 /** High-contrast metadata for WCAG AAA on light canvas */
 const metaLabel =
@@ -283,7 +285,7 @@ export async function DoctorCredentialsSection() {
               </div>
             </Reveal>
 
-            {/* Right: Practice locations */}
+            {/* Right: Practice locations + portrait gesture */}
             <Reveal delay={0.08} className="min-w-0 lg:pt-0">
               <SectionLabel icon={Building2}>{tc("wherePractices")}</SectionLabel>
               <ClinicRule className="mt-4 max-w-32" />
@@ -338,6 +340,20 @@ export async function DoctorCredentialsSection() {
                   </div>
                 </li>
               </ul>
+
+              <figure className="relative mt-8 hidden lg:mt-10 lg:block">
+                <Image
+                  src={DOCTOR_GESTURE_SRC}
+                  alt={tc("certificateGestureAlt")}
+                  width={682}
+                  height={1024}
+                  className="relative mx-auto h-auto w-full max-w-md rounded-xl object-contain object-bottom shadow-[0_10px_28px_-12px_rgba(26,35,50,0.22)]"
+                  sizes="(max-width: 1024px) 0px, 28rem"
+                />
+                <figcaption className="sr-only">
+                  {tc("certificateGestureAlt")}
+                </figcaption>
+              </figure>
             </Reveal>
           </div>
 

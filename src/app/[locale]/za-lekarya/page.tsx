@@ -91,20 +91,12 @@ export default async function AboutDoctorPage({ params }: Props) {
         />
         <div className="container-page grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-lg bg-secondary/40">
-              <div
-                aria-hidden
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "radial-gradient(circle at 50% 28%, color-mix(in srgb, var(--primary) 42%, white), transparent 65%)",
-                }}
-              />
+            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-xl bg-background shadow-[0_12px_32px_-10px_rgba(26,35,50,0.22)]">
               <Image
-                src="/doctor-hero.webp"
+                src="/doctor-about.webp"
                 alt={`${th("brand")} — ${tc("specialty")}`}
                 fill
-                className="object-contain object-bottom"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 90vw, 40vw"
                 priority
               />
