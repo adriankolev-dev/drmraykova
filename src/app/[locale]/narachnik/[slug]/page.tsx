@@ -18,7 +18,9 @@ import { pageOpenGraph } from "@/lib/seo/metadata";
 import {
   getArticleSchema,
   getBreadcrumbSchema,
+  getWebPageSchema,
   JsonLd,
+  schemaLanguage,
 } from "@/lib/seo/schema";
 
 type Props = {
@@ -80,6 +82,7 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound();
 
   const t = await getTranslations("handbook");
+  const tn = await getTranslations("nav");
   const tc = await getTranslations("common");
   const prefix = locale === "bg" ? "" : `/${locale}`;
   const articleUrl = `${siteConfig.url}${prefix}/narachnik/${article.slug}`;
@@ -90,15 +93,23 @@ export default async function ArticlePage({ params }: Props) {
         data={{
           "@context": "https://schema.org",
           "@graph": [
+            getWebPageSchema({
+              name: article.title,
+              description: article.excerpt,
+              url: articleUrl,
+              inLanguage: schemaLanguage(locale),
+              type: "MedicalWebPage",
+            }),
             getArticleSchema({
               title: article.title,
               description: article.excerpt,
               url: articleUrl,
               datePublished: article.date,
               image: article.cover,
+              inLanguage: schemaLanguage(locale),
             }),
             getBreadcrumbSchema([
-              { name: t("eyebrow"), path: prefix || "/" },
+              { name: tn("home"), path: prefix || "/" },
               { name: t("title"), path: `${prefix}/narachnik` },
               {
                 name: article.title,

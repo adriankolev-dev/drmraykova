@@ -11,17 +11,27 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { BookCta } from "@/components/booking/BookCta";
+import { SuperdocText } from "@/components/booking/SuperdocText";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
 import { buttonVariants } from "@/components/ui/button";
 import { getBookingLinkProps } from "@/lib/booking";
 import { doctor } from "@/lib/doctor";
 import { cn } from "@/lib/utils";
-import { getMedicalClinicSchema, getBreadcrumbSchema, JsonLd } from "@/lib/seo/schema";
+import {
+  getBreadcrumbSchema,
+  getLocalBusinessSchema,
+  getMedicalClinicSchema,
+  getPhysicianSchema,
+  getWebPageSchema,
+  JsonLd,
+  schemaLanguage,
+} from "@/lib/seo/schema";
 import { pageOpenGraph } from "@/lib/seo/metadata";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
 import { localeOpenGraph } from "@/lib/navigation";
+import { siteConfig } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -76,6 +86,9 @@ export default async function ContactPage({ params }: Props) {
     utmMedium: "cta",
     utmCampaign: "contact-quick-book",
   });
+  const prefix = raw === "bg" ? "" : `/${raw}`;
+  const pageUrl = `${siteConfig.url}${prefix}/kontakti`;
+  const tm = await getTranslations("meta");
 
   return (
     <main>
@@ -83,13 +96,19 @@ export default async function ContactPage({ params }: Props) {
         data={{
           "@context": "https://schema.org",
           "@graph": [
+            getWebPageSchema({
+              name: tn("contact"),
+              description: tm("contactDescription"),
+              url: pageUrl,
+              inLanguage: schemaLanguage(raw),
+              type: "ContactPage",
+            }),
+            getLocalBusinessSchema(),
             getMedicalClinicSchema(),
+            getPhysicianSchema(),
             getBreadcrumbSchema([
-              { name: tn("home"), path: raw === "bg" ? "/" : `/${raw}` },
-              {
-                name: tn("contact"),
-                path: raw === "bg" ? "/kontakti" : `/${raw}/kontakti`,
-              },
+              { name: tn("home"), path: prefix || "/" },
+              { name: tn("contact"), path: `${prefix}/kontakti` },
             ]),
           ],
         }}
@@ -114,10 +133,13 @@ export default async function ContactPage({ params }: Props) {
               {t("title")}
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              {tcp("leadExtra", {
-                clinic: doctor.clinic.name,
-                address: doctor.clinic.address,
-              })}
+              <SuperdocText
+                text={tcp("leadExtra", {
+                  clinic: doctor.clinic.name,
+                  address: doctor.clinic.address,
+                })}
+                utmCampaign="contact-lead"
+              />
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <BookCta utmCampaign="contact-hero" />
@@ -247,7 +269,10 @@ export default async function ContactPage({ params }: Props) {
                     {tcp("hoursLabel")}
                   </dt>
                   <dd className="mt-2 text-lg leading-snug text-foreground">
-                    {tcp("hoursValue")}
+                    <SuperdocText
+                      text={tcp("hoursValue")}
+                      utmCampaign="contact-hours"
+                    />
                   </dd>
                   <dd className="mt-1 text-sm text-muted-foreground">
                     {tcp("hoursHint")}

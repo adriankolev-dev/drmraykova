@@ -1,9 +1,9 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { Star } from "lucide-react";
+import { SuperdocLink } from "@/components/booking/SuperdocText";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow, SectionHeading } from "@/components/layout/Section";
 import { getTestimonials } from "@/content/testimonials.i18n";
-import { bookingConfig } from "@/lib/booking";
 import { doctor } from "@/lib/doctor";
 import type { Locale } from "@/i18n/routing";
 
@@ -75,7 +75,11 @@ export async function TestimonialsSection() {
                   <div>
                     <p className="font-medium text-foreground">{item.name}</p>
                     <p className="mt-0.5 text-xs text-muted-foreground">
-                      {item.date} · Superdoc
+                      {item.date} ·{" "}
+                      <SuperdocLink
+                        className="text-xs font-normal"
+                        utmCampaign="testimonial-source"
+                      />
                     </p>
                   </div>
                   <Stars value={item.rating} />
@@ -89,14 +93,12 @@ export async function TestimonialsSection() {
         </RevealGroup>
 
         <Reveal>
-          <a
-            href={bookingConfig.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex text-sm font-medium underline-offset-4 hover:underline"
+          <SuperdocLink
+            utmCampaign="testimonials-footer"
+            className="mt-8 inline-flex text-sm no-underline hover:underline"
           >
             Superdoc →
-          </a>
+          </SuperdocLink>
         </Reveal>
       </div>
     </section>

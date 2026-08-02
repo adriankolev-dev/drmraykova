@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
+import { SuperdocText } from "@/components/booking/SuperdocText";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
 import { getFaqPage } from "@/content/faq.i18n";
@@ -62,12 +63,17 @@ export default async function FaqPage({ params }: Props) {
   return (
     <main className="pt-10 pb-[var(--space-section)] md:pt-14">
       <JsonLd
-        data={getBreadcrumbSchema([
-          { name: tn("home"), path: homePath },
-          { name: faq.title, path },
-        ])}
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            getFaqSchema(faq.items),
+            getBreadcrumbSchema([
+              { name: tn("home"), path: homePath },
+              { name: faq.title, path },
+            ]),
+          ],
+        }}
       />
-      <JsonLd data={getFaqSchema(faq.items)} />
 
       <div className="container-page max-w-3xl">
         <Reveal>
@@ -88,7 +94,7 @@ export default async function FaqPage({ params }: Props) {
                   {item.question}
                 </h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground md:text-base">
-                  {item.answer}
+                  <SuperdocText text={item.answer} utmCampaign="faq-page" />
                 </p>
               </div>
             ))}
@@ -100,7 +106,13 @@ export default async function FaqPage({ params }: Props) {
             <p className="font-display text-2xl font-medium tracking-tight">
               {faq.ctaHeading}
             </p>
-            <p className="mt-2 text-primary-foreground/85">{faq.ctaLead}</p>
+            <p className="mt-2 text-primary-foreground/85">
+              <SuperdocText
+                text={faq.ctaLead}
+                tone="onPrimary"
+                utmCampaign="faq-page-cta"
+              />
+            </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <BookCta
                 variant="ink"

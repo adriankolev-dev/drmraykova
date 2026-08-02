@@ -3,6 +3,7 @@ import type { ComponentType, ReactNode } from "react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
+import { SuperdocText } from "@/components/booking/SuperdocText";
 import { ClinicCross, ClinicRule } from "@/components/brand/ClinicMotifs";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
@@ -134,7 +135,10 @@ export async function DoctorCredentialsSection() {
                     <RatingStars value={doctor.rating.value} />
                   ) : null}
                   <p className="mt-3 max-w-[18rem] text-sm leading-relaxed text-foreground/70">
-                    {fact.detail}
+                    <SuperdocText
+                      text={fact.detail}
+                      utmCampaign="credentials-detail"
+                    />
                   </p>
                 </div>
               ))}

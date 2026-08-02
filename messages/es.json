@@ -4,8 +4,8 @@
     "description": "Atención obstétrica y ginecológica cuidadosa en Sofía. Revisiones preventivas, diagnóstico y consultas de salud femenina. Reserve cita online.",
     "aboutTitle": "Sobre la doctora",
     "aboutDescription": "Dra. Maria Raykova — obstetra-ginecóloga en Sofía. Formación, cualificaciones, experiencia y enfoque con la paciente.",
-    "servicesTitle": "Servicios",
-    "servicesDescription": "Revisiones ginecológicas preventivas, ecografía, colposcopia, histeroscopia y consultas de salud femenina en Sofía.",
+    "servicesTitle": "Servicios ginecológicos en Sofía | Dra. Maria Raykova",
+    "servicesDescription": "Servicios ginecológicos en Sofía con la Dra. Maria Raykova: revisiones preventivas, ecografía, colposcopia, histeroscopia y consultas. Reserve online.",
     "handbookTitle": "Guía médica",
     "handbookDescription": "Artículos educativos sobre salud femenina, prevención y preparación para una consulta ginecológica.",
     "contactTitle": "Contacto",
@@ -19,6 +19,7 @@
     "home": "Inicio",
     "about": "Sobre la doctora",
     "services": "Servicios",
+    "allServices": "Todos los servicios",
     "handbook": "Guía",
     "contact": "Contacto",
     "book": "Reservar cita",
@@ -115,7 +116,9 @@
     "eyebrow": "03 · Servicios",
     "title": "Cuidado adaptado a sus necesidades",
     "description": "Enfoque en prevención, diagnóstico y salud femenina. Cada consulta empieza con una conversación y un plan claro de siguientes pasos.",
-    "allServices": "Todos los servicios →"
+    "allServices": "Todos los servicios →",
+    "prev": "Servicio anterior",
+    "next": "Siguiente servicio"
   },
   "serviceBlurbs": {
     "profilaktichen-ginekologichen-pregled": "Revisión periódica para tranquilidad y detección temprana de cambios.",
@@ -124,6 +127,18 @@
     "kolposkopiya": "Exploración precisa ante sospecha de alteraciones cervicales.",
     "histeroskopiya": "Enfoque mínimamente invasivo cuando está indicada la histeroscopia.",
     "zhensko-zdrave": "Consulta sobre síntomas, prevención y siguientes pasos."
+  },
+  "serviceCardMeta": {
+    "location": "{city}",
+    "provider": "Realizado por {name}",
+    "duration": {
+      "profilaktichen-ginekologichen-pregled": "Orientativo 30–40 minutos",
+      "akushero-ginekologichni-pregledi": "Orientativo 30–45 minutos",
+      "ultrazvukovi-izsledvaniya": "Orientativo 15–30 minutos",
+      "kolposkopiya": "Orientativo 20–40 minutos",
+      "histeroskopiya": "Consulta orientativa 30–45 minutos",
+      "zhensko-zdrave": "Orientativo 20–40 minutos"
+    }
   },
   "serviceNames": {
     "profilaktichen-ginekologichen-pregled": "Revisiones ginecológicas preventivas",
@@ -200,8 +215,61 @@
   },
   "servicesPage": {
     "eyebrow": "Servicios",
-    "title": "Cuidado de la salud femenina",
-    "lead": "Elija un servicio para saber más sobre la consulta y cómo prepararse."
+    "breadcrumbHome": "Inicio",
+    "title": "Servicios ginecológicos en Sofía",
+    "lead": "Atención obstétrica y ginecológica calmada con la Dra. Maria Raykova — prevención, diagnóstico y consultas con explicación clara en cada paso.",
+    "intro": "En esta página encontrará los servicios principales de la consulta: cómo discurre la visita, para quién es adecuada y cómo reservar. El objetivo es que llegue preparada y tranquila.",
+    "browseCatalog": "Ver el catálogo de servicios",
+    "cardCta": "Saber más",
+    "categories": {
+      "prevention": "Revisiones preventivas",
+      "diagnostics": "Diagnóstico",
+      "consultations": "Consultas y revisiones",
+      "treatment": "Procedimientos especializados"
+    },
+    "categoryLeads": {
+      "prevention": "Control regular para detección temprana y tranquilidad.",
+      "diagnostics": "Ecografía y colposcopia cuando se necesita una valoración más precisa.",
+      "consultations": "Visitas por síntomas, seguimiento y tiempo para preguntas.",
+      "treatment": "Enfoques mínimamente invasivos tras valoración clínica."
+    },
+    "whyEyebrow": "Enfoque",
+    "whyTitle": "Por qué las pacientes eligen a la Dra. Maria Raykova",
+    "whyLead": "Explicación calmada, revisión minuciosa y enfoque diagnóstico moderno — sin sensación de prisa.",
+    "howEyebrow": "Proceso",
+    "howTitle": "Cómo funcionan las consultas",
+    "howLead": "Cada cita sigue una estructura clara para que sepa qué esperar.",
+    "howSteps": [
+      "Reserve cita online por Superdoc o por teléfono.",
+      "Conversación sobre historia, síntomas y sus inquietudes.",
+      "Exploración y pruebas según las indicaciones.",
+      "Recomendaciones claras y plan de siguientes pasos."
+    ],
+    "faqHeading": "Preguntas frecuentes",
+    "faqs": [
+      {
+        "question": "¿Cómo reservo cita?",
+        "answer": "La cita se reserva online por Superdoc o llamando al teléfono de la consulta — 0894 972 626."
+      },
+      {
+        "question": "¿La consulta trabaja con NHIF?",
+        "answer": "Sí, la Dra. Raykova trabaja con NHIF (seguro público búlgaro). Algunas pruebas pueden requerir copago."
+      },
+      {
+        "question": "¿La Dra. Raykova hace seguimiento del embarazo?",
+        "answer": "No. La Dra. Raykova no hace seguimiento del embarazo ni examina niños. El foco es la prevención ginecológica, el diagnóstico y las consultas de salud femenina."
+      },
+      {
+        "question": "¿En qué idiomas se atiende?",
+        "answer": "La Dra. Maria Raykova atiende en búlgaro, inglés y español."
+      },
+      {
+        "question": "¿Dónde está la consulta?",
+        "answer": "La atención es en el Centro Médico Lyulin Med — Filial Dobrila 10, calle Dobrila 10, frente a VMA, Sofía."
+      }
+    ],
+    "ctaHeading": "Reserve cita para una revisión ginecológica",
+    "ctaLead": "Elija un horario cómodo online por Superdoc o llame a la consulta."
   },
   "privacy": {
     "title": "Política de privacidad y cookies",
@@ -285,13 +353,27 @@
   },
   "servicePage": {
     "suitableHeading": "Para quién es adecuada",
+    "importanceHeading": "Por qué es importante",
+    "importanceLead": "La atención oportuna ayuda a entender su estado de salud y a tomar decisiones tranquilas junto con la doctora.",
+    "importancePoints": [
+      "Una imagen clara de su salud — antes de que las molestias se profundicen.",
+      "Explicación en lenguaje comprensible de los hallazgos y las opciones.",
+      "Un plan individual de siguientes pasos, pruebas o control.",
+      "Un ambiente calmado con tiempo para preguntas."
+    ],
     "visitHeading": "Cómo discurre la visita",
     "faqHeading": "Preguntas frecuentes",
+    "relatedHeading": "Servicios relacionados",
+    "relatedLead": "Siguientes pasos útiles según el contexto clínico.",
+    "relatedCta": "Saber más",
     "withDoctor": "Con {name} en {city}, la visita es calmada, con tiempo para preguntas y explicación clara.",
     "bookHeading": "Reserve cita para {service}",
     "bookLead": "Online por Superdoc — rápido y cómodo.",
     "breadcrumbServices": "Servicios",
-    "breadcrumbHome": "Inicio"
+    "breadcrumbHome": "Inicio",
+    "lastUpdated": "Última actualización: {date}",
+    "disclaimer": "La información de esta página es educativa y no sustituye una consulta médica personal, un diagnóstico ni un tratamiento. El plan concreto se determina tras la exploración.",
+    "backToServices": "← Todos los servicios ginecológicos"
   },
   "contactPage": {
     "leadExtra": "La consulta está en {clinic} — {address}. Reserve online o llame directamente.",

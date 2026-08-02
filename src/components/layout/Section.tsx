@@ -1,4 +1,5 @@
 import { ClinicCross } from "@/components/brand/ClinicMotifs";
+import { SuperdocText } from "@/components/booking/SuperdocText";
 import { cn } from "@/lib/utils";
 
 export function SectionEyebrow({
@@ -27,7 +28,7 @@ export function SectionHeading({
   className,
 }: {
   title: string;
-  description?: string;
+  description?: React.ReactNode;
   className?: string;
 }) {
   return (
@@ -37,7 +38,11 @@ export function SectionHeading({
       </h2>
       {description ? (
         <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-          {description}
+          {typeof description === "string" ? (
+            <SuperdocText text={description} utmCampaign="section-heading" />
+          ) : (
+            description
+          )}
         </p>
       ) : null}
     </div>

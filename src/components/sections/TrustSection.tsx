@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Star } from "lucide-react";
+import { SuperdocText } from "@/components/booking/SuperdocText";
 import { ClinicRule } from "@/components/brand/ClinicMotifs";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow, SectionHeading } from "@/components/layout/Section";
@@ -78,7 +79,10 @@ export async function TrustSection() {
             <SectionHeading title={t("title")} className="mt-4" />
           </div>
           <p className="max-w-xs whitespace-pre-line font-mono text-[11px] leading-relaxed tracking-[0.08em] text-clinical lg:text-right">
-            {tc("confirmedData")}
+            <SuperdocText
+              text={tc("confirmedData")}
+              utmCampaign="trust-confirmed"
+            />
           </p>
         </Reveal>
 
@@ -121,7 +125,7 @@ export async function TrustSection() {
                   </p>
                   {item.rating ? <RatingStars value={doctor.rating.value} /> : null}
                   <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-muted-foreground">
-                    {item.detail}
+                    <SuperdocText text={item.detail} utmCampaign="trust-detail" />
                   </p>
                 </RevealItem>
               );

@@ -13,9 +13,13 @@ import { localeOpenGraph } from "@/lib/navigation";
 import { pageOpenGraph } from "@/lib/seo/metadata";
 import {
   getBreadcrumbSchema,
+  getMedicalClinicSchema,
   getPhysicianSchema,
+  getWebPageSchema,
   JsonLd,
+  schemaLanguage,
 } from "@/lib/seo/schema";
+import { siteConfig } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -60,6 +64,10 @@ export default async function AboutDoctorPage({ params }: Props) {
   const t = await getTranslations("about");
   const tc = await getTranslations("common");
   const th = await getTranslations("hero");
+  const tn = await getTranslations("nav");
+  const tm = await getTranslations("meta");
+  const prefix = raw === "bg" ? "" : `/${raw}`;
+  const pageUrl = `${siteConfig.url}${prefix}/za-lekarya`;
 
   return (
     <main>
@@ -67,13 +75,18 @@ export default async function AboutDoctorPage({ params }: Props) {
         data={{
           "@context": "https://schema.org",
           "@graph": [
+            getWebPageSchema({
+              name: t("eyebrow"),
+              description: tm("aboutDescription"),
+              url: pageUrl,
+              inLanguage: schemaLanguage(raw),
+              type: "AboutPage",
+            }),
             getPhysicianSchema(),
+            getMedicalClinicSchema(),
             getBreadcrumbSchema([
-              { name: "Home", path: raw === "bg" ? "/" : `/${raw}` },
-              {
-                name: t("eyebrow"),
-                path: raw === "bg" ? "/za-lekarya" : `/${raw}/za-lekarya`,
-              },
+              { name: tn("home"), path: prefix || "/" },
+              { name: t("eyebrow"), path: `${prefix}/za-lekarya` },
             ]),
           ],
         }}

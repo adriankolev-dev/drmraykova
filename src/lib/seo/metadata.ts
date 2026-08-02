@@ -34,3 +34,18 @@ export function pageOpenGraph({
     ],
   };
 }
+
+export function pageTwitter({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return {
+    card: "summary_large_image" as const,
+    title,
+    description,
+    images: [absoluteUrl("/og.png")],
+  };
+}

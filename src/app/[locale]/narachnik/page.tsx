@@ -12,7 +12,14 @@ import {
 } from "@/lib/articles";
 import { localeOpenGraph } from "@/lib/navigation";
 import { pageOpenGraph } from "@/lib/seo/metadata";
-import { getBreadcrumbSchema, JsonLd } from "@/lib/seo/schema";
+import {
+  getBreadcrumbSchema,
+  getItemListSchema,
+  getWebPageSchema,
+  JsonLd,
+  schemaLanguage,
+} from "@/lib/seo/schema";
+import { siteConfig } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -54,19 +61,42 @@ export default async function HandbookPage({ params }: Props) {
   setRequestLocale(raw);
 
   const t = await getTranslations("handbook");
+  const tn = await getTranslations("nav");
   const locale = (await getLocale()) as Locale;
   const articles = getAllArticles(locale);
+  const prefix = raw === "bg" ? "" : `/${raw}`;
+  const pageUrl = `${siteConfig.url}${prefix}/narachnik`;
+  const meta = await getTranslations({ locale: raw, namespace: "meta" });
 
   return (
     <main className="pt-10 pb-[var(--space-section)] md:pt-14">
       <JsonLd
-        data={getBreadcrumbSchema([
-          { name: "Home", path: raw === "bg" ? "/" : `/${raw}` },
-          {
-            name: t("title"),
-            path: raw === "bg" ? "/narachnik" : `/${raw}/narachnik`,
-          },
-        ])}
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            getWebPageSchema({
+              name: t("title"),
+              description: meta("handbookDescription"),
+              url: pageUrl,
+              inLanguage: schemaLanguage(raw),
+              type: "CollectionPage",
+            }),
+            getItemListSchema({
+              name: t("title"),
+              description: t("lead"),
+              url: pageUrl,
+              items: articles.map((article) => ({
+                name: article.title,
+                description: article.excerpt,
+                url: `${siteConfig.url}${prefix}/narachnik/${article.slug}`,
+              })),
+            }),
+            getBreadcrumbSchema([
+              { name: tn("home"), path: prefix || "/" },
+              { name: t("title"), path: `${prefix}/narachnik` },
+            ]),
+          ],
+        }}
       />
       <div className="container-page">
         <Reveal>

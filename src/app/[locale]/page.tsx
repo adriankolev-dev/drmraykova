@@ -12,12 +12,15 @@ import { TrustSection } from "@/components/sections/TrustSection";
 import { WhySection } from "@/components/sections/WhySection";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
 import { localeOpenGraph } from "@/lib/navigation";
-import { pageOpenGraph } from "@/lib/seo/metadata";
+import { pageOpenGraph, pageTwitter } from "@/lib/seo/metadata";
 import {
   getMedicalClinicSchema,
+  getLocalBusinessSchema,
   getPhysicianSchema,
+  getWebPageSchema,
   getWebSiteSchema,
   JsonLd,
+  schemaLanguage,
 } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site";
 
@@ -52,6 +55,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       }),
       locale: localeOpenGraph[locale],
     },
+    twitter: pageTwitter({
+      title: t("title"),
+      description: t("description"),
+    }),
+    keywords: [...siteConfig.keywords],
   };
 }
 
@@ -66,9 +74,16 @@ export default async function HomePage({ params }: Props) {
         data={{
           "@context": "https://schema.org",
           "@graph": [
-            getWebSiteSchema(),
+            getWebSiteSchema(schemaLanguage(raw)),
+            getWebPageSchema({
+              name: siteConfig.title,
+              description: siteConfig.description,
+              url: raw === "bg" ? siteConfig.url : `${siteConfig.url}/${raw}`,
+              inLanguage: schemaLanguage(raw),
+            }),
             getPhysicianSchema(),
             getMedicalClinicSchema(),
+            getLocalBusinessSchema(),
           ],
         }}
       />

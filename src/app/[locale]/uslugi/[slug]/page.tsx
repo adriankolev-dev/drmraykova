@@ -1,23 +1,34 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { BookCta } from "@/components/booking/BookCta";
 import { Reveal } from "@/components/motion/Reveal";
-import { SectionEyebrow } from "@/components/layout/Section";
+import { AppointmentCTA } from "@/components/services/AppointmentCTA";
+import { FAQSection } from "@/components/services/FAQSection";
+import { ProcessTimeline } from "@/components/services/ProcessTimeline";
+import { RelatedServices } from "@/components/services/RelatedServices";
+import { ServiceHero } from "@/components/services/ServiceHero";
 import { Link } from "@/i18n/navigation";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
 import {
   getServiceBySlug,
   getServicesContent,
 } from "@/content/services.i18n";
-import { doctor } from "@/lib/doctor";
 import { localeOpenGraph } from "@/lib/navigation";
-import { pageOpenGraph } from "@/lib/seo/metadata";
+import {
+  getRelatedServiceSlugs,
+  getServiceDuration,
+  SERVICES_LAST_UPDATED,
+} from "@/lib/services-catalog";
+import { pageOpenGraph, pageTwitter } from "@/lib/seo/metadata";
 import {
   getBreadcrumbSchema,
   getFaqSchema,
+  getItemListSchema,
   getMedicalServiceSchema,
+  getPhysicianSchema,
+  getWebPageSchema,
   JsonLd,
+  schemaLanguage,
 } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site";
 
@@ -65,6 +76,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       }),
       locale: localeOpenGraph[locale],
     },
+    twitter: pageTwitter({
+      title: service.seoTitle,
+      description: service.seoDescription,
+    }),
   };
 }
 
@@ -78,8 +93,21 @@ export default async function ServicePage({ params }: Props) {
   const t = await getTranslations("servicePage");
   const th = await getTranslations("hero");
   const tc = await getTranslations("common");
+  const blurbs = await getTranslations("serviceBlurbs");
+  const names = await getTranslations("serviceNames");
   const prefix = raw === "bg" ? "" : `/${raw}`;
   const serviceUrl = `${siteConfig.url}${prefix}/uslugi/${service.slug}`;
+
+  const related = getRelatedServiceSlugs(service.slug).map((relatedSlug) => ({
+    slug: relatedSlug,
+    title: names(relatedSlug),
+    description: blurbs(relatedSlug),
+  }));
+
+  const updatedLabel = new Intl.DateTimeFormat(
+    raw === "bg" ? "bg-BG" : raw === "es" ? "es-ES" : "en-GB",
+    { year: "numeric", month: "long", day: "numeric" },
+  ).format(new Date(SERVICES_LAST_UPDATED));
 
   return (
     <main className="section-space">
@@ -87,11 +115,30 @@ export default async function ServicePage({ params }: Props) {
         data={{
           "@context": "https://schema.org",
           "@graph": [
-            getFaqSchema(service.faqs),
+            getWebPageSchema({
+              name: service.title,
+              description: service.seoDescription,
+              url: serviceUrl,
+              inLanguage: schemaLanguage(raw),
+              type: "MedicalWebPage",
+            }),
             getMedicalServiceSchema({
               name: service.title,
               description: service.seoDescription,
               url: serviceUrl,
+              timeRequired: getServiceDuration(service.slug)?.isoMin,
+            }),
+            getPhysicianSchema(),
+            getFaqSchema(service.faqs),
+            getItemListSchema({
+              name: t("relatedHeading"),
+              description: t("relatedLead"),
+              url: `${serviceUrl}#related`,
+              items: related.map((item) => ({
+                name: item.title,
+                description: item.description,
+                url: `${siteConfig.url}${prefix}/uslugi/${item.slug}`,
+              })),
             }),
             getBreadcrumbSchema([
               { name: t("breadcrumbHome"), path: prefix || "/" },
@@ -105,27 +152,16 @@ export default async function ServicePage({ params }: Props) {
         }}
       />
       <div className="container-page max-w-3xl">
-        <Reveal>
-          <SectionEyebrow>
-            <Link href="/uslugi" className="hover:text-foreground">
-              {t("breadcrumbServices")}
-            </Link>
-            {" / "}
-            {service.title}
-          </SectionEyebrow>
-          <h1 className="mt-4 font-display text-4xl font-medium tracking-tight md:text-5xl">
-            {service.title}
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            {service.intro}
-          </p>
-          <p className="mt-4 text-muted-foreground">
-            {t("withDoctor", { name: th("brand"), city: tc("city") })}
-          </p>
-        </Reveal>
+        <ServiceHero
+          title={service.title}
+          intro={service.intro}
+          breadcrumbServices={t("breadcrumbServices")}
+          withDoctor={t("withDoctor", { name: th("brand"), city: tc("city") })}
+          utmCampaign={`service-${service.slug}`}
+        />
 
         <Reveal delay={0.05}>
-          <h2 className="mt-12 font-display text-2xl font-medium">
+          <h2 className="mt-14 font-display text-2xl font-medium tracking-tight md:text-3xl">
             {t("suitableHeading")}
           </h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
@@ -133,53 +169,61 @@ export default async function ServicePage({ params }: Props) {
           </p>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <h2 className="mt-12 font-display text-2xl font-medium">
-            {t("visitHeading")}
+        <Reveal delay={0.08}>
+          <h2 className="mt-14 font-display text-2xl font-medium tracking-tight md:text-3xl">
+            {t("importanceHeading")}
           </h2>
-          <ol className="mt-4 list-decimal space-y-3 pl-5 text-muted-foreground">
-            {service.visitSteps.map((step) => (
-              <li key={step}>{step}</li>
+          <p className="mt-4 leading-relaxed text-muted-foreground">
+            {t("importanceLead")}
+          </p>
+          <ul className="mt-6 space-y-3">
+            {(t.raw("importancePoints") as string[]).map((point) => (
+              <li
+                key={point}
+                className="flex gap-3 text-muted-foreground before:mt-2 before:size-1.5 before:shrink-0 before:rounded-full before:bg-primary before:content-['']"
+              >
+                <span className="leading-relaxed">{point}</span>
+              </li>
             ))}
-          </ol>
-          {service.notes?.length ? (
-            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-              {service.notes.map((note) => (
-                <li key={note}>— {note}</li>
-              ))}
-            </ul>
-          ) : null}
+          </ul>
         </Reveal>
 
-        <Reveal delay={0.15}>
-          <h2 className="mt-12 font-display text-2xl font-medium">
-            {t("faqHeading")}
-          </h2>
-          <div className="mt-6 divide-y divide-border border-y border-border">
-            {service.faqs.map((item) => (
-              <div key={item.question} className="py-5">
-                <h3 className="font-medium text-foreground">{item.question}</h3>
-                <p className="mt-2 text-muted-foreground">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
+        <ProcessTimeline
+          heading={t("visitHeading")}
+          steps={service.visitSteps}
+          stepLabel={(n) => tc("step", { n })}
+          notes={service.notes}
+        />
 
-        <Reveal delay={0.2}>
-          <div className="panel-primary mt-12 rounded-lg px-8 py-10">
-            <p className="font-display text-2xl font-medium">
-              {t("bookHeading", { service: service.title })}
-            </p>
-            <p className="mt-2 text-primary-foreground/80">{t("bookLead")}</p>
-            <div className="mt-6">
-              <BookCta
-                variant="ink"
-                utmCampaign={`service-${service.slug}`}
-                className="bg-ink text-ink-foreground hover:bg-ink/90"
-              />
-            </div>
-          </div>
-        </Reveal>
+        <div className="mt-14">
+          <FAQSection heading={t("faqHeading")} items={service.faqs} />
+        </div>
+
+        <RelatedServices
+          heading={t("relatedHeading")}
+          lead={t("relatedLead")}
+          services={related}
+          ctaLabel={t("relatedCta")}
+        />
+
+        <AppointmentCTA
+          heading={t("bookHeading", { service: service.title })}
+          lead={t("bookLead")}
+          eyebrow={tc("bookingViaSuperdoc")}
+          utmCampaign={`service-${service.slug}-cta`}
+        />
+
+        <footer className="mt-12 space-y-3 border-t border-border pt-8 text-sm text-muted-foreground">
+          <p>
+            {t("lastUpdated", { date: updatedLabel })}
+          </p>
+          <p>{t("disclaimer")}</p>
+          <p>
+            <Link href="/uslugi" className="underline-offset-4 hover:underline">
+              {t("backToServices")}
+            </Link>
+          </p>
+        </footer>
       </div>
     </main>
   );

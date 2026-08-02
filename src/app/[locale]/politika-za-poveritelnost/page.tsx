@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Reveal } from "@/components/motion/Reveal";
+import { SuperdocText } from "@/components/booking/SuperdocText";
 import { ClinicCross, ClinicRule } from "@/components/brand/ClinicMotifs";
 import { Link } from "@/i18n/navigation";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
@@ -75,7 +76,7 @@ export default async function PrivacyPage({ params }: Props) {
           </h1>
           <ClinicRule className="mt-6 max-w-[10rem]" />
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            {t("intro")}
+            <SuperdocText text={t("intro")} utmCampaign="privacy-intro" />
           </p>
         </Reveal>
 
@@ -85,7 +86,9 @@ export default async function PrivacyPage({ params }: Props) {
           </Section>
 
           <Section title={t("scopeTitle")}>
-            <p>{t("scopeBody")}</p>
+            <p>
+              <SuperdocText text={t("scopeBody")} utmCampaign="privacy-scope" />
+            </p>
           </Section>
 
           <Section title={t("dataTitle")}>
@@ -121,7 +124,9 @@ export default async function PrivacyPage({ params }: Props) {
           </Section>
 
           <Section title={t("thirdTitle")}>
-            <p>{t("thirdBody")}</p>
+            <p>
+              <SuperdocText text={t("thirdBody")} utmCampaign="privacy-third" />
+            </p>
           </Section>
 
           <Section title={t("retentionTitle")}>

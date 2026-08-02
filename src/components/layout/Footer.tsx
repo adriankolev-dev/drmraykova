@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
+import { SuperdocLink } from "@/components/booking/SuperdocText";
 import { BrandLogo } from "@/components/brand/BrandLogo";
 import { Link } from "@/i18n/navigation";
 import { doctor } from "@/lib/doctor";
@@ -91,14 +92,10 @@ export async function Footer() {
             >
               {tc("privacy")}
             </Link>
-            <a
-              href="https://superdoc.bg/lekar/maria-raykova"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-ink-foreground/70"
-            >
-              Superdoc
-            </a>
+            <SuperdocLink
+              utmCampaign="footer"
+              className="text-ink-foreground/55 no-underline hover:text-ink-foreground/70 hover:underline"
+            />
           </div>
         </div>
       </div>

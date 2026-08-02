@@ -2,13 +2,29 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
-import { SectionEyebrow } from "@/components/layout/Section";
+import { SectionEyebrow, SectionHeading } from "@/components/layout/Section";
+import { AppointmentCTA } from "@/components/services/AppointmentCTA";
+import { FAQSection } from "@/components/services/FAQSection";
 import { ServiceLinkCard } from "@/components/services/ServiceLinkCard";
+import { SuperdocText } from "@/components/booking/SuperdocText";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
-import { doctor } from "@/lib/doctor";
 import { localeOpenGraph } from "@/lib/navigation";
-import { pageOpenGraph } from "@/lib/seo/metadata";
-import { getBreadcrumbSchema, JsonLd } from "@/lib/seo/schema";
+import {
+  SERVICE_CATEGORIES,
+  type ServiceCategoryId,
+} from "@/lib/services-catalog";
+import { pageOpenGraph, pageTwitter } from "@/lib/seo/metadata";
+import {
+  getBreadcrumbSchema,
+  getFaqSchema,
+  getItemListSchema,
+  getLocalBusinessSchema,
+  getWebPageSchema,
+  JsonLd,
+  schemaLanguage,
+} from "@/lib/seo/schema";
+import { doctor } from "@/lib/doctor";
+import { siteConfig } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -21,9 +37,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = (isLocale(raw) ? raw : "bg") as Locale;
   const t = await getTranslations({ locale, namespace: "meta" });
   const path = locale === "bg" ? "/uslugi" : `/${locale}/uslugi`;
+  const title = t("servicesTitle");
+  const description = t("servicesDescription");
   return {
-    title: t("servicesTitle"),
-    description: t("servicesDescription"),
+    title,
+    description,
+    keywords: [...doctor.services.map((s) => s.title), locale === "bg" ? "гинеколог София" : "gynecologist Sofia"],
     alternates: {
       canonical: path,
       languages: {
@@ -34,13 +53,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      ...pageOpenGraph({
-        title: t("servicesTitle"),
-        description: t("servicesDescription"),
-        path,
-      }),
+      ...pageOpenGraph({ title, description, path }),
       locale: localeOpenGraph[locale],
     },
+    twitter: pageTwitter({ title, description }),
   };
 }
 
@@ -52,40 +68,169 @@ export default async function ServicesIndexPage({ params }: Props) {
   const t = await getTranslations("servicesPage");
   const blurbs = await getTranslations("serviceBlurbs");
   const names = await getTranslations("serviceNames");
+  const tc = await getTranslations("common");
+  const tw = await getTranslations("why");
+  const prefix = raw === "bg" ? "" : `/${raw}`;
+  const whyItems = tw.raw("items") as Array<{ title: string; body: string }>;
+  const howSteps = t.raw("howSteps") as string[];
+  const faqs = t.raw("faqs") as Array<{ question: string; answer: string }>;
+  const categoryTitles = t.raw("categories") as Record<ServiceCategoryId, string>;
+  const categoryLeads = t.raw("categoryLeads") as Record<
+    ServiceCategoryId,
+    string
+  >;
+  const pageUrl = `${siteConfig.url}${prefix}/uslugi`;
+  const serviceListItems = doctor.services.map((service) => ({
+    name: names(service.slug),
+    description: blurbs(service.slug),
+    url: `${siteConfig.url}${prefix}/uslugi/${service.slug}`,
+  }));
 
   return (
     <main className="pt-10 pb-[var(--space-section)] md:pt-14">
       <JsonLd
-        data={getBreadcrumbSchema([
-          { name: "Home", path: raw === "bg" ? "/" : `/${raw}` },
-          { name: t("eyebrow"), path: raw === "bg" ? "/uslugi" : `/${raw}/uslugi` },
-        ])}
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            getWebPageSchema({
+              name: t("title"),
+              description: t("lead"),
+              url: pageUrl,
+              inLanguage: schemaLanguage(raw),
+              type: "CollectionPage",
+            }),
+            getItemListSchema({
+              name: t("title"),
+              description: t("lead"),
+              url: pageUrl,
+              items: serviceListItems,
+            }),
+            getBreadcrumbSchema([
+              {
+                name: t("breadcrumbHome"),
+                path: prefix || "/",
+              },
+              { name: t("eyebrow"), path: `${prefix}/uslugi` },
+            ]),
+            getFaqSchema(faqs),
+            getLocalBusinessSchema(),
+          ],
+        }}
       />
+
+      {/* Hero */}
       <div className="container-page">
         <Reveal>
           <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
-          <h1 className="mt-4 max-w-2xl font-display text-4xl font-medium tracking-tight text-foreground md:text-5xl">
+          <h1 className="mt-4 max-w-3xl font-display text-4xl font-medium tracking-tight text-foreground md:text-5xl">
             {t("title")}
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-muted-foreground">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             {t("lead")}
           </p>
-          <div className="mt-8">
+          <p className="mt-4 max-w-2xl text-muted-foreground">{t("intro")}</p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <BookCta utmCampaign="services-index" />
+            <a
+              href="#uslugi-katalog"
+              className="text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+            >
+              {t("browseCatalog")}
+            </a>
           </div>
         </Reveal>
+      </div>
 
-        <RevealGroup className="mt-12 grid gap-4 sm:grid-cols-2">
-          {doctor.services.map((service) => (
-            <RevealItem key={service.slug}>
-              <ServiceLinkCard
-                slug={service.slug}
-                title={names(service.slug)}
-                description={blurbs(service.slug)}
-              />
+      {/* Categorized services */}
+      <div id="uslugi-katalog" className="container-page mt-16 scroll-mt-28">
+        {SERVICE_CATEGORIES.map((category) => (
+          <section key={category.id} className="mt-14 first:mt-0">
+            <Reveal>
+              <h2 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
+                {categoryTitles[category.id]}
+              </h2>
+              <p className="mt-2 max-w-xl text-muted-foreground">
+                {categoryLeads[category.id]}
+              </p>
+            </Reveal>
+            <RevealGroup className="mt-6 grid gap-4 sm:grid-cols-2">
+              {category.slugs.map((slug, index) => (
+                <RevealItem key={slug}>
+                  <ServiceLinkCard
+                    slug={slug}
+                    title={names(slug)}
+                    description={blurbs(slug)}
+                    ctaLabel={t("cardCta")}
+                    tone={index % 2 === 0 ? "plain" : "soft"}
+                  />
+                </RevealItem>
+              ))}
+            </RevealGroup>
+          </section>
+        ))}
+      </div>
+
+      {/* Why choose */}
+      <section className="container-page mt-20">
+        <Reveal>
+          <SectionEyebrow>{t("whyEyebrow")}</SectionEyebrow>
+          <SectionHeading title={t("whyTitle")} className="mt-4" />
+          <p className="mt-3 max-w-xl text-muted-foreground">{t("whyLead")}</p>
+        </Reveal>
+        <RevealGroup className="mt-10 grid gap-x-10 gap-y-10 md:grid-cols-2">
+          {whyItems.map((item, index) => (
+            <RevealItem key={item.title}>
+              <p className="font-mono text-xs text-primary">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-3 font-display text-xl font-medium tracking-tight md:text-2xl">
+                {item.title}
+              </h3>
+              <p className="mt-2 max-w-md leading-relaxed text-muted-foreground">
+                <SuperdocText text={item.body} utmCampaign="services-why" />
+              </p>
             </RevealItem>
           ))}
         </RevealGroup>
+      </section>
+
+      {/* How consultations work */}
+      <section className="container-page mt-20">
+        <Reveal>
+          <SectionEyebrow>{t("howEyebrow")}</SectionEyebrow>
+          <SectionHeading title={t("howTitle")} className="mt-4" />
+          <p className="mt-3 max-w-xl text-muted-foreground">{t("howLead")}</p>
+        </Reveal>
+        <RevealGroup className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {howSteps.map((step, index) => (
+            <RevealItem key={step}>
+              <p className="font-mono text-xs text-primary">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <p className="mt-3 leading-relaxed text-muted-foreground">
+                <SuperdocText text={step} utmCampaign="services-how" />
+              </p>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+        <p className="mt-8 max-w-2xl text-sm text-muted-foreground">
+          {tc("importantScope")}
+        </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="container-page mt-20">
+        <FAQSection heading={t("faqHeading")} items={faqs} />
+      </section>
+
+      {/* Appointment CTA */}
+      <div className="container-page mt-16">
+        <AppointmentCTA
+          heading={t("ctaHeading")}
+          lead={t("ctaLead")}
+          eyebrow={tc("bookingViaSuperdoc")}
+          utmCampaign="services-index-cta"
+        />
       </div>
     </main>
   );

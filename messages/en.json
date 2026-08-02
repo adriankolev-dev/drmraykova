@@ -4,8 +4,8 @@
     "description": "Thoughtful obstetric and gynecological care in Sofia. Preventive exams, diagnostics, and women's health consultations. Book online.",
     "aboutTitle": "About the doctor",
     "aboutDescription": "Dr. Maria Raykova — obstetrician-gynecologist in Sofia. Education, qualifications, experience, and patient approach.",
-    "servicesTitle": "Services",
-    "servicesDescription": "Preventive gynecological exams, ultrasound, colposcopy, hysteroscopy, and women's health consultations in Sofia.",
+    "servicesTitle": "Gynecological services in Sofia | Dr. Maria Raykova",
+    "servicesDescription": "Gynecological services in Sofia with Dr. Maria Raykova: preventive exams, ultrasound, colposcopy, hysteroscopy, and consultations. Book online.",
     "handbookTitle": "Medical handbook",
     "handbookDescription": "Educational articles on women's health, prevention, and preparing for a gynecological visit.",
     "contactTitle": "Contact",
@@ -19,6 +19,7 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
+    "allServices": "All services",
     "handbook": "Handbook",
     "contact": "Contact",
     "book": "Book appointment",
@@ -115,7 +116,9 @@
     "eyebrow": "03 · Services",
     "title": "Care tailored to your needs",
     "description": "Focus on prevention, diagnostics, and women's health. Every visit starts with a conversation and a clear plan for next steps.",
-    "allServices": "All services →"
+    "allServices": "All services →",
+    "prev": "Previous service",
+    "next": "Next service"
   },
   "serviceBlurbs": {
     "profilaktichen-ginekologichen-pregled": "A regular exam for peace of mind and early detection of changes.",
@@ -124,6 +127,18 @@
     "kolposkopiya": "A precise examination when cervical changes are suspected.",
     "histeroskopiya": "A minimally invasive approach when hysteroscopy is indicated.",
     "zhensko-zdrave": "Consultation on symptoms, prevention, and next steps."
+  },
+  "serviceCardMeta": {
+    "location": "{city}",
+    "provider": "Performed by {name}",
+    "duration": {
+      "profilaktichen-ginekologichen-pregled": "About 30–40 minutes",
+      "akushero-ginekologichni-pregledi": "About 30–45 minutes",
+      "ultrazvukovi-izsledvaniya": "About 15–30 minutes",
+      "kolposkopiya": "About 20–40 minutes",
+      "histeroskopiya": "Consultation about 30–45 minutes",
+      "zhensko-zdrave": "About 20–40 minutes"
+    }
   },
   "serviceNames": {
     "profilaktichen-ginekologichen-pregled": "Preventive gynecological exams",
@@ -200,8 +215,61 @@
   },
   "servicesPage": {
     "eyebrow": "Services",
-    "title": "Care for women's health",
-    "lead": "Choose a service to learn more about the visit and how to prepare."
+    "breadcrumbHome": "Home",
+    "title": "Gynecological services in Sofia",
+    "lead": "Calm obstetric and gynecological care with Dr. Maria Raykova — prevention, diagnostics, and consultations with a clear explanation at every step.",
+    "intro": "On this page you will find the main clinic services: how the visit goes, who it is for, and how to book. The goal is to help you arrive prepared and at ease.",
+    "browseCatalog": "Browse the service catalog",
+    "cardCta": "Learn more",
+    "categories": {
+      "prevention": "Preventive exams",
+      "diagnostics": "Diagnostics",
+      "consultations": "Exams and consultations",
+      "treatment": "Specialized procedures"
+    },
+    "categoryLeads": {
+      "prevention": "Regular check-ups for early detection and peace of mind.",
+      "diagnostics": "Ultrasound and colposcopy when a more precise assessment is needed.",
+      "consultations": "Visits for symptoms, follow-up, and time for questions.",
+      "treatment": "Minimally invasive approaches after clinical assessment."
+    },
+    "whyEyebrow": "Approach",
+    "whyTitle": "Why patients choose Dr. Maria Raykova",
+    "whyLead": "Calm explanations, a thorough exam, and a modern diagnostic approach — without feeling rushed.",
+    "howEyebrow": "Process",
+    "howTitle": "How consultations work",
+    "howLead": "Every visit follows a clear structure so you know what to expect.",
+    "howSteps": [
+      "Book online via Superdoc or by phone.",
+      "Conversation about history, symptoms, and your concerns.",
+      "Exam and tests according to indications.",
+      "Clear recommendations and a plan for next steps."
+    ],
+    "faqHeading": "Frequently asked questions",
+    "faqs": [
+      {
+        "question": "How do I book an appointment?",
+        "answer": "Book online via Superdoc or call the clinic at 0894 972 626."
+      },
+      {
+        "question": "Does the clinic work with NHIF?",
+        "answer": "Yes, Dr. Raykova works with NHIF (Bulgarian public health insurance). Some tests may require co-payment."
+      },
+      {
+        "question": "Does Dr. Raykova provide pregnancy follow-up?",
+        "answer": "No. Dr. Raykova does not provide pregnancy follow-up and does not examine children. The focus is gynecological prevention, diagnostics, and women's health consultations."
+      },
+      {
+        "question": "In which languages are visits available?",
+        "answer": "Dr. Maria Raykova sees patients in Bulgarian, English, and Spanish."
+      },
+      {
+        "question": "Where is the clinic?",
+        "answer": "Appointments are at Lyulin Med Medical Center — Dobrila 10 Branch, 10 Dobrila St., opposite VMA, Sofia."
+      }
+    ],
+    "ctaHeading": "Book a gynecological appointment",
+    "ctaLead": "Choose a convenient time online via Superdoc or call the clinic."
   },
   "privacy": {
     "title": "Privacy and cookie policy",
@@ -285,13 +353,27 @@
   },
   "servicePage": {
     "suitableHeading": "Who it is for",
+    "importanceHeading": "Why it matters",
+    "importanceLead": "Timely care helps you understand your health and make calm decisions together with your doctor.",
+    "importancePoints": [
+      "A clear picture of your health — before concerns deepen.",
+      "Plain-language explanation of findings and options.",
+      "An individual plan for next steps, tests, or follow-up.",
+      "A calm setting with time for questions."
+    ],
     "visitHeading": "How the visit goes",
     "faqHeading": "Frequently asked questions",
+    "relatedHeading": "Related services",
+    "relatedLead": "Useful next steps depending on the clinical context.",
+    "relatedCta": "Learn more",
     "withDoctor": "With {name} in {city}, the visit is calm, with time for questions and clear explanations.",
     "bookHeading": "Book an appointment for {service}",
     "bookLead": "Online via Superdoc — fast and convenient.",
     "breadcrumbServices": "Services",
-    "breadcrumbHome": "Home"
+    "breadcrumbHome": "Home",
+    "lastUpdated": "Last updated: {date}",
+    "disclaimer": "The information on this page is educational and does not replace a personal medical consultation, diagnosis, or treatment. The specific plan is determined after an examination.",
+    "backToServices": "← All gynecological services"
   },
   "contactPage": {
     "leadExtra": "The clinic is at {clinic} — {address}. Book online or call directly.",

@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { BookCta } from "@/components/booking/BookCta";
 import { BrandLogo } from "@/components/brand/BrandLogo";
 import { LocaleSwitcher } from "@/components/i18n/LocaleSwitcher";
+import { ServicesNavMenu } from "@/components/layout/ServicesNavMenu";
 import { Button } from "@/components/ui/button";
 import { Link, usePathname } from "@/i18n/navigation";
 import { getMainNav } from "@/lib/navigation";
@@ -63,6 +64,10 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label={t("home")}>
           {mainNav.map((item) => {
+            if (item.href === "/uslugi") {
+              return <ServicesNavMenu key={item.href} variant="desktop" />;
+            }
+
             const active =
               item.href === "/"
                 ? pathname === "/"
@@ -118,6 +123,16 @@ export function Header() {
           >
             <nav className="container-page flex flex-col gap-1 py-4">
               {mainNav.map((item) => {
+                if (item.href === "/uslugi") {
+                  return (
+                    <ServicesNavMenu
+                      key={item.href}
+                      variant="mobile"
+                      onNavigate={() => setOpen(false)}
+                    />
+                  );
+                }
+
                 const active =
                   item.href === "/"
                     ? pathname === "/"

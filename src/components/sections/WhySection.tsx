@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { SuperdocText } from "@/components/booking/SuperdocText";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow, SectionHeading } from "@/components/layout/Section";
 
@@ -24,7 +25,7 @@ export async function WhySection() {
                 {item.title}
               </h3>
               <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">
-                {item.body}
+                <SuperdocText text={item.body} utmCampaign="why-inline" />
               </p>
             </RevealItem>
           ))}
