@@ -95,6 +95,7 @@ export default async function ServicePage({ params }: Props) {
   const tc = await getTranslations("common");
   const blurbs = await getTranslations("serviceBlurbs");
   const names = await getTranslations("serviceNames");
+  const tsp = await getTranslations("servicesPage");
   const prefix = raw === "bg" ? "" : `/${raw}`;
   const serviceUrl = `${siteConfig.url}${prefix}/uslugi/${service.slug}`;
 
@@ -204,6 +205,7 @@ export default async function ServicePage({ params }: Props) {
           lead={t("relatedLead")}
           services={related}
           ctaLabel={t("relatedCta")}
+          categoryLabels={tsp.raw("categories") as Record<string, string>}
         />
 
         <AppointmentCTA

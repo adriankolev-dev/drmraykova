@@ -5,7 +5,7 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow, SectionHeading } from "@/components/layout/Section";
 import { AppointmentCTA } from "@/components/services/AppointmentCTA";
 import { FAQSection } from "@/components/services/FAQSection";
-import { ServiceLinkCard } from "@/components/services/ServiceLinkCard";
+import { ServicesEditorialList } from "@/components/services/ServicesEditorialList";
 import { SuperdocText } from "@/components/booking/SuperdocText";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
 import { localeOpenGraph } from "@/lib/navigation";
@@ -67,6 +67,8 @@ export default async function ServicesIndexPage({ params }: Props) {
 
   const t = await getTranslations("servicesPage");
   const blurbs = await getTranslations("serviceBlurbs");
+  const includes = await getTranslations("serviceIncludes");
+  const suitable = await getTranslations("serviceSuitable");
   const names = await getTranslations("serviceNames");
   const tc = await getTranslations("common");
   const tw = await getTranslations("why");
@@ -84,6 +86,22 @@ export default async function ServicesIndexPage({ params }: Props) {
     name: names(service.slug),
     description: blurbs(service.slug),
     url: `${siteConfig.url}${prefix}/uslugi/${service.slug}`,
+  }));
+
+  let serviceIndex = 0;
+  const categorizedServices = SERVICE_CATEGORIES.map((category) => ({
+    ...category,
+    services: category.slugs.map((slug) => {
+      serviceIndex += 1;
+      return {
+        slug,
+        title: names(slug),
+        description: blurbs(slug),
+        includes: includes(slug),
+        suitable: suitable(slug),
+        index: serviceIndex,
+      };
+    }),
   }));
 
   return (
@@ -141,31 +159,22 @@ export default async function ServicesIndexPage({ params }: Props) {
         </Reveal>
       </div>
 
-      {/* Categorized services */}
+      {/* Editorial service catalog */}
       <div id="uslugi-katalog" className="container-page mt-16 scroll-mt-28">
-        {SERVICE_CATEGORIES.map((category) => (
-          <section key={category.id} className="mt-14 first:mt-0">
+        {categorizedServices.map((category) => (
+          <section key={category.id} className="mt-6 first:mt-0 md:mt-10">
             <Reveal>
-              <h2 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
                 {categoryTitles[category.id]}
-              </h2>
+              </p>
               <p className="mt-2 max-w-xl text-muted-foreground">
                 {categoryLeads[category.id]}
               </p>
             </Reveal>
-            <RevealGroup className="mt-6 grid gap-4 sm:grid-cols-2">
-              {category.slugs.map((slug, index) => (
-                <RevealItem key={slug}>
-                  <ServiceLinkCard
-                    slug={slug}
-                    title={names(slug)}
-                    description={blurbs(slug)}
-                    ctaLabel={t("cardCta")}
-                    tone={index % 2 === 0 ? "plain" : "soft"}
-                  />
-                </RevealItem>
-              ))}
-            </RevealGroup>
+            <ServicesEditorialList
+              services={category.services}
+              ctaLabel={t("cardCta")}
+            />
           </section>
         ))}
       </div>

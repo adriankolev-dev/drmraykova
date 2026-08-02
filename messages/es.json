@@ -114,21 +114,40 @@
   },
   "servicesHome": {
     "eyebrow": "03 · Servicios",
-    "title": "Cuidado adaptado a sus necesidades",
-    "description": "Enfoque en prevención, diagnóstico y salud femenina. Cada consulta empieza con una conversación y un plan claro de siguientes pasos.",
+    "title": "Consultas y diagnóstico en la consulta",
+    "description": "Prevención, ecografía, colposcopia y consultas — con tiempo para hablar y una explicación clara de los hallazgos.",
     "allServices": "Todos los servicios →",
     "prev": "Servicio anterior",
     "next": "Siguiente servicio"
   },
   "serviceBlurbs": {
-    "profilaktichen-ginekologichen-pregled": "Revisión periódica para tranquilidad y detección temprana de cambios.",
-    "akushero-ginekologichni-pregledi": "Consulta primaria o de seguimiento ante síntomas.",
-    "ultrazvukovi-izsledvaniya": "Ecografía del sistema reproductor femenino con explicación de los hallazgos.",
-    "kolposkopiya": "Exploración precisa ante sospecha de alteraciones cervicales.",
-    "histeroskopiya": "Enfoque mínimamente invasivo cuando está indicada la histeroscopia.",
-    "zhensko-zdrave": "Consulta sobre síntomas, prevención y siguientes pasos."
+    "profilaktichen-ginekologichen-pregled": "Las revisiones preventivas periódicas ayudan a detectar cambios a tiempo — a menudo antes de que haya molestias. La visita incluye una valoración según su edad e historial.",
+    "akushero-ginekologichni-pregledi": "Consulta ante síntomas, control tras pruebas o una segunda opinión. Empezamos por sus molestias y terminamos con un plan comprensible.",
+    "ultrazvukovi-izsledvaniya": "La ecografía ayuda a valorar el útero y los ovarios. Los hallazgos se explican en la visita, junto con si hacen falta más pasos.",
+    "kolposkopiya": "Exploración especializada del cuello uterino ante alteraciones en la citología o cambios visibles. El objetivo es una valoración más precisa y un plan tranquilo.",
+    "histeroskopiya": "Consulta y orientación cuando puede estar indicado un examen de la cavidad uterina. Hablamos de si el procedimiento es adecuado y cómo prepararse.",
+    "zhensko-zdrave": "Tiempo para preguntas sobre el ciclo, los síntomas o los resultados. Juntas decidimos si hace falta una exploración y cuáles son los siguientes pasos."
+  },
+  "serviceIncludes": {
+    "profilaktichen-ginekologichen-pregled": "Conversación, exploración y orientación sobre pruebas si hace falta",
+    "akushero-ginekologichni-pregledi": "Valoración de síntomas, exploración y plan de seguimiento",
+    "ultrazvukovi-izsledvaniya": "Ecografía y explicación de los hallazgos",
+    "kolposkopiya": "Colposcopia y recomendación de siguientes pasos",
+    "histeroskopiya": "Valoración clínica y conversación sobre las indicaciones",
+    "zhensko-zdrave": "Consulta y orientación práctica"
+  },
+  "serviceSuitable": {
+    "profilaktichen-ginekologichen-pregled": "Mujeres sin molestias agudas que desean control periódico",
+    "akushero-ginekologichni-pregledi": "Ante dolor, ciclo irregular, molestias vaginales o control",
+    "ultrazvukovi-izsledvaniya": "En prevención, dolor, ciclo irregular o seguimiento de un hallazgo",
+    "kolposkopiya": "Tras una citología alterada o por indicación médica",
+    "histeroskopiya": "Tras valoración clínica ante sospecha de hallazgo intrauterino",
+    "zhensko-zdrave": "Para preguntas, segunda opinión o preparación de pruebas"
   },
   "serviceCardMeta": {
+    "durationLabel": "Duración",
+    "includesLabel": "Qué incluye",
+    "suitableLabel": "Adecuado para",
     "location": "{city}",
     "provider": "Realizado por {name}",
     "duration": {
@@ -161,8 +180,8 @@
         "body": "Tiempo para preguntas y atención al detalle, sin prisas."
       },
       {
-        "title": "Diagnóstico moderno",
-        "body": "Ecografía, colposcopia y enfoques mínimamente invasivos según indicación."
+        "title": "Diagnóstico claro",
+        "body": "Ecografía, colposcopia y orientación sobre procedimientos — cuando son clínicamente necesarios."
       },
       {
         "title": "Acceso fácil",
@@ -222,20 +241,20 @@
     "browseCatalog": "Ver el catálogo de servicios",
     "cardCta": "Saber más",
     "categories": {
-      "prevention": "Revisiones preventivas",
+      "prevention": "Prevención",
       "diagnostics": "Diagnóstico",
-      "consultations": "Consultas y revisiones",
-      "treatment": "Procedimientos especializados"
+      "consultations": "Consultas",
+      "treatment": "Procedimientos"
     },
     "categoryLeads": {
-      "prevention": "Control regular para detección temprana y tranquilidad.",
-      "diagnostics": "Ecografía y colposcopia cuando se necesita una valoración más precisa.",
-      "consultations": "Visitas por síntomas, seguimiento y tiempo para preguntas.",
-      "treatment": "Enfoques mínimamente invasivos tras valoración clínica."
+      "prevention": "Control periódico antes de que aparezcan molestias.",
+      "diagnostics": "Cuando se necesita una imagen más clara del estado de salud.",
+      "consultations": "Ante síntomas, preguntas o seguimiento de resultados.",
+      "treatment": "Tras valoración clínica y conversación sobre las indicaciones."
     },
     "whyEyebrow": "Enfoque",
     "whyTitle": "Por qué las pacientes eligen a la Dra. Maria Raykova",
-    "whyLead": "Explicación calmada, revisión minuciosa y enfoque diagnóstico moderno — sin sensación de prisa.",
+    "whyLead": "Explicación calmada, tiempo para preguntas y un plan claro tras la visita.",
     "howEyebrow": "Proceso",
     "howTitle": "Cómo funcionan las consultas",
     "howLead": "Cada cita sigue una estructura clara para que sepa qué esperar.",

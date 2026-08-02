@@ -38,7 +38,7 @@ export function HeroPortrait() {
         transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
       >
         <Image
-          src="/doctor-hero.webp"
+          src="/doctor-hero-v2.webp"
           alt={`${doctor.name} — ${doctor.specialty}`}
           fill
           priority

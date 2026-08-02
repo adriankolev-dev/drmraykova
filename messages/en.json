@@ -114,21 +114,40 @@
   },
   "servicesHome": {
     "eyebrow": "03 · Services",
-    "title": "Care tailored to your needs",
-    "description": "Focus on prevention, diagnostics, and women's health. Every visit starts with a conversation and a clear plan for next steps.",
+    "title": "Exams and diagnostics at the clinic",
+    "description": "Prevention, ultrasound, colposcopy, and consultations — with time to talk and a clear explanation of findings.",
     "allServices": "All services →",
     "prev": "Previous service",
     "next": "Next service"
   },
   "serviceBlurbs": {
-    "profilaktichen-ginekologichen-pregled": "A regular exam for peace of mind and early detection of changes.",
-    "akushero-ginekologichni-pregledi": "Primary or follow-up visit for symptoms and monitoring.",
-    "ultrazvukovi-izsledvaniya": "Ultrasound of the female reproductive system with clear findings explained.",
-    "kolposkopiya": "A precise examination when cervical changes are suspected.",
-    "histeroskopiya": "A minimally invasive approach when hysteroscopy is indicated.",
-    "zhensko-zdrave": "Consultation on symptoms, prevention, and next steps."
+    "profilaktichen-ginekologichen-pregled": "Regular preventive exams help detect changes early — often before symptoms appear. The visit includes an assessment based on your age and history.",
+    "akushero-ginekologichni-pregledi": "A visit for symptoms, follow-up after tests, or a second opinion. We start with your concerns and finish with a clear plan.",
+    "ultrazvukovi-izsledvaniya": "Ultrasound supports assessment of the uterus and ovaries. Findings are explained during the visit, including whether further steps are needed.",
+    "kolposkopiya": "A specialized exam of the cervix after an abnormal Pap smear or visible changes. The goal is a more precise assessment and a calm follow-up plan.",
+    "histeroskopiya": "Consultation and guidance when an inspection of the uterine cavity may be indicated. We discuss whether the procedure is appropriate and how to prepare.",
+    "zhensko-zdrave": "Time for questions about your cycle, symptoms, or test results. Together we decide whether an exam is needed and what comes next."
+  },
+  "serviceIncludes": {
+    "profilaktichen-ginekologichen-pregled": "Conversation, exam, and guidance on tests when needed",
+    "akushero-ginekologichni-pregledi": "Symptom assessment, exam, and a follow-up plan",
+    "ultrazvukovi-izsledvaniya": "Ultrasound exam and explanation of findings",
+    "kolposkopiya": "Colposcopic exam and next-step recommendations",
+    "histeroskopiya": "Clinical assessment and discussion of indications",
+    "zhensko-zdrave": "Consultation and practical guidance"
+  },
+  "serviceSuitable": {
+    "profilaktichen-ginekologichen-pregled": "Women without acute complaints who want regular check-ups",
+    "akushero-ginekologichni-pregledi": "For pain, irregular cycles, vaginal symptoms, or follow-up",
+    "ultrazvukovi-izsledvaniya": "For prevention, pain, irregular cycles, or monitoring a finding",
+    "kolposkopiya": "After an abnormal Pap smear or on medical advice",
+    "histeroskopiya": "After clinical assessment when an intrauterine finding is suspected",
+    "zhensko-zdrave": "For questions, a second opinion, or preparing for tests"
   },
   "serviceCardMeta": {
+    "durationLabel": "Duration",
+    "includesLabel": "What it includes",
+    "suitableLabel": "Suitable for",
     "location": "{city}",
     "provider": "Performed by {name}",
     "duration": {
@@ -161,8 +180,8 @@
         "body": "Time for questions and attention to detail, without feeling rushed."
       },
       {
-        "title": "Modern diagnostics",
-        "body": "Ultrasound, colposcopy, and minimally invasive approaches when indicated."
+        "title": "Clear diagnostics",
+        "body": "Ultrasound, colposcopy, and guidance on procedures — when clinically needed."
       },
       {
         "title": "Easy access",
@@ -222,20 +241,20 @@
     "browseCatalog": "Browse the service catalog",
     "cardCta": "Learn more",
     "categories": {
-      "prevention": "Preventive exams",
+      "prevention": "Prevention",
       "diagnostics": "Diagnostics",
-      "consultations": "Exams and consultations",
-      "treatment": "Specialized procedures"
+      "consultations": "Consultations",
+      "treatment": "Procedures"
     },
     "categoryLeads": {
-      "prevention": "Regular check-ups for early detection and peace of mind.",
-      "diagnostics": "Ultrasound and colposcopy when a more precise assessment is needed.",
-      "consultations": "Visits for symptoms, follow-up, and time for questions.",
-      "treatment": "Minimally invasive approaches after clinical assessment."
+      "prevention": "Regular check-ups before complaints appear.",
+      "diagnostics": "When a clearer picture of your health is needed.",
+      "consultations": "For symptoms, questions, or follow-up on results.",
+      "treatment": "After clinical assessment and a discussion of indications."
     },
     "whyEyebrow": "Approach",
     "whyTitle": "Why patients choose Dr. Maria Raykova",
-    "whyLead": "Calm explanations, a thorough exam, and a modern diagnostic approach — without feeling rushed.",
+    "whyLead": "Calm explanations, time for questions, and a clear plan after the visit.",
     "howEyebrow": "Process",
     "howTitle": "How consultations work",
     "howLead": "Every visit follows a clear structure so you know what to expect.",
