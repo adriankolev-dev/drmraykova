@@ -4,6 +4,9 @@ import { siteConfig } from "@/lib/site";
 import { bookingConfig } from "@/lib/booking";
 
 const ogImage = `${siteConfig.url}/og.png`;
+const bookingProfileUrl = bookingConfig.url.replace(/\?.*$/, "");
+/** Профили на лекаря — клиниката е отделен субект и не ги наследява. */
+const doctorProfiles = [bookingProfileUrl, doctor.social.instagram.url];
 
 export function schemaLanguage(locale: Locale = "bg") {
   if (locale === "en") return "en";
@@ -43,7 +46,7 @@ export function getPhysicianSchema() {
       bestRating: 5,
       worstRating: 1,
     },
-    sameAs: [bookingConfig.url.replace(/\?.*$/, "")],
+    sameAs: doctorProfiles,
   };
 }
 
@@ -72,7 +75,7 @@ export function getMedicalClinicSchema() {
       "@id": `${siteConfig.url}/#physician`,
       name: doctor.name,
     },
-    sameAs: [bookingConfig.url.replace(/\?.*$/, "")],
+    sameAs: [bookingProfileUrl],
   };
 }
 
@@ -108,7 +111,7 @@ export function getLocalBusinessSchema() {
       bestRating: 5,
       worstRating: 1,
     },
-    sameAs: [bookingConfig.url.replace(/\?.*$/, "")],
+    sameAs: doctorProfiles,
     employee: {
       "@type": "Physician",
       "@id": `${siteConfig.url}/#physician`,

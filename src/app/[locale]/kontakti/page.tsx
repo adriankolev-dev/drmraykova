@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { BookCta } from "@/components/booking/BookCta";
 import { SuperdocText } from "@/components/booking/SuperdocText";
+import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
 import { buttonVariants } from "@/components/ui/button";
@@ -375,6 +376,16 @@ export default async function ContactPage({ params }: Props) {
                   {tcp("callUs")}
                 </a>
               </div>
+              <a
+                href={doctor.social.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={tc("followInstagram")}
+                className="mt-7 inline-flex items-center gap-2 text-sm text-ink-foreground/60 transition-colors hover:text-ink-foreground"
+              >
+                <InstagramIcon className="size-4" />
+                {doctor.social.instagram.handle}
+              </a>
             </div>
           </Reveal>
         </div>

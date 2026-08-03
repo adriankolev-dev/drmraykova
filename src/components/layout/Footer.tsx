@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
 import { SuperdocLink } from "@/components/booking/SuperdocText";
 import { BrandLogo } from "@/components/brand/BrandLogo";
+import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Link } from "@/i18n/navigation";
 import { doctor } from "@/lib/doctor";
 import { getMainNav } from "@/lib/navigation";
@@ -28,6 +29,16 @@ export async function Footer() {
             <div className="mt-6">
               <BookCta variant="primary" utmCampaign="footer" />
             </div>
+            <a
+              href={doctor.social.instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={tc("followInstagram")}
+              className="mt-6 inline-flex items-center gap-2 text-sm text-ink-foreground/70 transition-colors hover:text-ink-foreground"
+            >
+              <InstagramIcon className="size-4" />
+              {doctor.social.instagram.handle}
+            </a>
           </div>
 
           <div>

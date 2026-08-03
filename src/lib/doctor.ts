@@ -33,6 +33,12 @@ export const doctor = {
     "ПСАГБАЛ „Св. София“",
     "МЦ Люлин Мед",
   ] as const,
+  social: {
+    instagram: {
+      handle: "@drmariaraykova",
+      url: "https://www.instagram.com/drmariaraykova/",
+    },
+  },
   clinic: {
     name: "МЦ Люлин Мед — Филиал Добрила 10",
     address: "ул. Добрила 10, срещу ВМА, София",
