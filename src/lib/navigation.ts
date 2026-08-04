@@ -5,6 +5,7 @@ export function getMainNav(t: (key: string) => string) {
     { href: "/", label: t("home") },
     { href: "/za-lekarya", label: t("about") },
     { href: "/uslugi", label: t("services") },
+    { href: "/tseni", label: t("pricing") },
     { href: "/narachnik", label: t("handbook") },
     { href: "/vaprosi", label: t("faq") },
     { href: "/kontakti", label: t("contact") },

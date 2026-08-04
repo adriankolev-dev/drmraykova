@@ -3,6 +3,7 @@ import { BookCta } from "@/components/booking/BookCta";
 import { ClinicCross, ClinicRule } from "@/components/brand/ClinicMotifs";
 import { Reveal } from "@/components/motion/Reveal";
 import { HeroPortrait } from "@/components/sections/HeroPortrait";
+import { Stars } from "@/components/ui/Stars";
 import { Link } from "@/i18n/navigation";
 import { doctor } from "@/lib/doctor";
 
@@ -69,10 +70,20 @@ export async function HeroSection() {
             </div>
 
             <ClinicRule className="mt-8 max-w-xs" />
-            <p className="mt-3 font-mono text-[11px] tracking-[0.08em] text-muted-foreground">
-              {doctor.clinic.address} · {doctor.rating.value}/5 ·{" "}
-              {doctor.rating.count}
-            </p>
+            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span className="inline-flex items-center gap-2">
+                <Stars value={doctor.rating.value} />
+                <span className="text-sm font-medium text-foreground">
+                  {t("ratingProof", {
+                    rating: doctor.rating.value,
+                    count: doctor.rating.count,
+                  })}
+                </span>
+              </span>
+              <span className="font-mono text-[11px] tracking-[0.08em] text-muted-foreground">
+                {doctor.clinic.address}
+              </span>
+            </div>
           </Reveal>
         </div>
       </div>

@@ -16,6 +16,14 @@ export const doctor = {
     value: 4.9,
     count: 48,
     source: "Superdoc",
+    /** Star distribution from the Superdoc profile, 5★ → 1★. */
+    distribution: [
+      { stars: 5, count: 46 },
+      { stars: 4, count: 0 },
+      { stars: 3, count: 1 },
+      { stars: 2, count: 0 },
+      { stars: 1, count: 1 },
+    ],
   },
   education: [
     "Медицински университет — Варна",
@@ -38,7 +46,12 @@ export const doctor = {
       handle: "@drmariaraykova",
       url: "https://www.instagram.com/drmariaraykova/",
     },
+    facebook: {
+      handle: "Facebook",
+      url: "https://www.facebook.com/profile.php?id=61592771282807",
+    },
   },
+
   clinic: {
     name: "МЦ Люлин Мед — Филиал Добрила 10",
     address: "ул. Добрила 10, срещу ВМА, София",

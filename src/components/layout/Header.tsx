@@ -62,7 +62,10 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label={t("home")}>
+        <nav
+          className="hidden items-center gap-5 lg:flex xl:gap-8"
+          aria-label={t("home")}
+        >
           {mainNav.map((item) => {
             if (item.href === "/uslugi") {
               return <ServicesNavMenu key={item.href} variant="desktop" />;

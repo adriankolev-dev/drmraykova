@@ -94,6 +94,9 @@ export default async function HomePage({ params }: Props) {
       <div className="cv-auto">
         <TrustSection />
       </div>
+      <div className="cv-auto">
+        <TestimonialsSection />
+      </div>
       <div className="container-page py-2" aria-hidden>
         <ClinicPulse className="mx-auto max-w-md opacity-80" />
       </div>
@@ -102,9 +105,6 @@ export default async function HomePage({ params }: Props) {
       </div>
       <div className="cv-auto">
         <WhySection />
-      </div>
-      <div className="cv-auto">
-        <TestimonialsSection />
       </div>
       <div className="container-page py-2" aria-hidden>
         <ClinicPulse className="mx-auto max-w-md opacity-80" />

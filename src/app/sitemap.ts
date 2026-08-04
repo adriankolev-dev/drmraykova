@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "",
       "/za-lekarya",
       "/uslugi",
+      "/tseni",
       "/kontakti",
       "/narachnik",
       "/vaprosi",

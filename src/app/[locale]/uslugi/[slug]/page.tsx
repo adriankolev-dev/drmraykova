@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Reveal } from "@/components/motion/Reveal";
+import { ServicePriceBlock } from "@/components/pricing/ServicePriceBlock";
 import { AppointmentCTA } from "@/components/services/AppointmentCTA";
 import { FAQSection } from "@/components/services/FAQSection";
 import { ProcessTimeline } from "@/components/services/ProcessTimeline";
@@ -14,6 +15,11 @@ import {
   getServicesContent,
 } from "@/content/services.i18n";
 import { localeOpenGraph } from "@/lib/navigation";
+import {
+  eurAmount,
+  getPricesForService,
+  hasListedPrice,
+} from "@/lib/pricing";
 import {
   getRelatedServiceSlugs,
   getServiceDuration,
@@ -95,6 +101,7 @@ export default async function ServicePage({ params }: Props) {
   const tc = await getTranslations("common");
   const blurbs = await getTranslations("serviceBlurbs");
   const names = await getTranslations("serviceNames");
+  const priceNames = await getTranslations("pricing.items");
   const tsp = await getTranslations("servicesPage");
   const prefix = raw === "bg" ? "" : `/${raw}`;
   const serviceUrl = `${siteConfig.url}${prefix}/uslugi/${service.slug}`;
@@ -104,6 +111,13 @@ export default async function ServicePage({ params }: Props) {
     title: names(relatedSlug),
     description: blurbs(relatedSlug),
   }));
+
+  const serviceOffers = hasListedPrice(service.slug)
+    ? getPricesForService(service.slug).map((item) => ({
+        name: priceNames(item.id),
+        priceEur: eurAmount(item.eur),
+      }))
+    : undefined;
 
   const updatedLabel = new Intl.DateTimeFormat(
     raw === "bg" ? "bg-BG" : raw === "es" ? "es-ES" : "en-GB",
@@ -128,6 +142,7 @@ export default async function ServicePage({ params }: Props) {
               description: service.seoDescription,
               url: serviceUrl,
               timeRequired: getServiceDuration(service.slug)?.isoMin,
+              offers: serviceOffers,
             }),
             getPhysicianSchema(),
             getFaqSchema(service.faqs),
@@ -160,6 +175,8 @@ export default async function ServicePage({ params }: Props) {
           withDoctor={t("withDoctor", { name: th("brand"), city: tc("city") })}
           utmCampaign={`service-${service.slug}`}
         />
+
+        <ServicePriceBlock slug={service.slug} />
 
         <Reveal delay={0.05}>
           <h2 className="mt-14 font-display text-2xl font-medium tracking-tight md:text-3xl">

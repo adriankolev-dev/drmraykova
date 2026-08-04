@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
 import { SuperdocLink } from "@/components/booking/SuperdocText";
 import { BrandLogo } from "@/components/brand/BrandLogo";
+import { FacebookIcon } from "@/components/icons/FacebookIcon";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Link } from "@/i18n/navigation";
 import { doctor } from "@/lib/doctor";
@@ -29,16 +30,28 @@ export async function Footer() {
             <div className="mt-6">
               <BookCta variant="primary" utmCampaign="footer" />
             </div>
-            <a
-              href={doctor.social.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={tc("followInstagram")}
-              className="mt-6 inline-flex items-center gap-2 text-sm text-ink-foreground/70 transition-colors hover:text-ink-foreground"
-            >
-              <InstagramIcon className="size-4" />
-              {doctor.social.instagram.handle}
-            </a>
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
+              <a
+                href={doctor.social.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={tc("followInstagram")}
+                className="inline-flex items-center gap-2 text-sm text-ink-foreground/70 transition-colors hover:text-ink-foreground"
+              >
+                <InstagramIcon className="size-4" />
+                {doctor.social.instagram.handle}
+              </a>
+              <a
+                href={doctor.social.facebook.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={tc("followFacebook")}
+                className="inline-flex items-center gap-2 text-sm text-ink-foreground/70 transition-colors hover:text-ink-foreground"
+              >
+                <FacebookIcon className="size-4" />
+                {doctor.social.facebook.handle}
+              </a>
+            </div>
           </div>
 
           <div>
@@ -105,6 +118,7 @@ export async function Footer() {
             </Link>
             <SuperdocLink
               utmCampaign="footer"
+              withMark
               className="text-ink-foreground/55 no-underline hover:text-ink-foreground/70 hover:underline"
             />
           </div>

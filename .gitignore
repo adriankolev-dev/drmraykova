@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .venv-rembg/
+
+# маркетинг материали (Instagram и др.) — само локално
+/assets/

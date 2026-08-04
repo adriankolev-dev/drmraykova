@@ -13,7 +13,9 @@
     "privacyTitle": "Política de privacidad y cookies",
     "privacyDescription": "Esta política describe cómo el sitio web de la Dra. Maria Raykova trata datos personales y utiliza cookies. El sitio es informativo y dirige la reserva de citas a Superdoc.",
     "faqTitle": "Preguntas frecuentes",
-    "faqDescription": "Cómo reservar cita con la Dra. Maria Raykova, NHIF, alcance de la atención, idiomas y preparación para la primera visita."
+    "faqDescription": "Cómo reservar cita con la Dra. Maria Raykova, NHIF, alcance de la atención, idiomas y preparación para la primera visita.",
+    "pricingTitle": "Precios de las consultas ginecológicas en Sofía",
+    "pricingDescription": "Precios de las consultas con la Dra. Maria Raykova en Sofía. Revisión preventiva, ecografía, colposcopia y citología. Trabaja con NHIF y visitas sin efectivo con aseguradoras."
   },
   "nav": {
     "home": "Inicio",
@@ -26,7 +28,8 @@
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "homeAria": "Dra. Maria Raykova — inicio",
-    "faq": "Preguntas"
+    "faq": "Preguntas",
+    "pricing": "Precios"
   },
   "common": {
     "bookCta": "Reservar cita",
@@ -77,6 +80,9 @@
     "worksNhif": "Trabaja con NHIF",
     "instagram": "Instagram",
     "followInstagram": "Seguir en Instagram",
+    "facebook": "Facebook",
+    "followFacebook": "Seguir en Facebook",
+
     "openMap": "Abrir en Google Maps",
     "howToGet": "Cómo llegar",
     "madeBy": "Hecho por",
@@ -89,7 +95,8 @@
     "support": "Revisiones preventivas, diagnóstico y consultas — con atención, explicaciones claras y tiempo para sus preguntas.",
     "chipAppointment": "Con cita previa",
     "chipNhif": "NHIF",
-    "chipClinic": "Consulta · Sofía"
+    "chipClinic": "Consulta · Sofía",
+    "ratingProof": "{rating} de 5 · {count} opiniones en Superdoc"
   },
   "intro": {
     "eyebrow": "01 · Sobre la doctora",
@@ -115,7 +122,7 @@
     "locationDetail": "Calle Dobrila 10, frente a VMA"
   },
   "servicesHome": {
-    "eyebrow": "03 · Servicios",
+    "eyebrow": "04 · Servicios",
     "title": "Consultas y diagnóstico en la consulta",
     "description": "Prevención, ecografía, colposcopia y consultas — con tiempo para hablar y una explicación clara de los hallazgos.",
     "allServices": "Todos los servicios →",
@@ -170,7 +177,7 @@
     "zhensko-zdrave": "Consultas de salud femenina"
   },
   "why": {
-    "eyebrow": "04 · Enfoque",
+    "eyebrow": "05 · Enfoque",
     "title": "Por qué vuelven las pacientes",
     "items": [
       {
@@ -192,10 +199,14 @@
     ]
   },
   "testimonials": {
-    "eyebrow": "05 · Opiniones",
+    "eyebrow": "03 · Opiniones",
     "title": "Opiniones verificadas de pacientes",
     "description": "Opiniones públicas reales de Superdoc. Valoración media {rating}/5 de {count} reseñas.",
-    "ratingLabel": "Valoración en Superdoc"
+    "ratingLabel": "Valoración en Superdoc",
+    "reviewsLabel": "{count} valoraciones",
+    "fiveStarShare": "{fiveStar} de {count} valoraciones son de 5 estrellas",
+    "prev": "Opinión anterior",
+    "next": "Siguiente opinión"
   },
   "clinic": {
     "eyebrow": "06 · Consulta",
@@ -425,6 +436,56 @@
     "finalTitle": "¿Lista para el siguiente paso?",
     "finalBody": "Reserve con {name} online o llame al {phone}.",
     "languagesValue": "Búlgaro · Inglés · Español"
+  },
+  "pricing": {
+    "eyebrow": "Precios",
+    "breadcrumbHome": "Inicio",
+    "title": "Precios de las consultas",
+    "lead": "Precios claros, sin sorpresas. La consulta trabaja con NHIF y con {count} aseguradoras de salud para visitas sin efectivo.",
+    "intro": "Los precios corresponden a las consultas y pruebas en el gabinete de la Dra. Maria Raykova. Si no sabe qué visita necesita, reserve una consulta primaria — el plan se acuerda durante la visita.",
+    "tableService": "Servicio",
+    "tablePrice": "Precio",
+    "fromLabel": "desde {price}",
+    "priceHeading": "Precio",
+    "priceOnRequest": "El precio se confirma tras la consulta. Llame al {phone} para un presupuesto.",
+    "allPricesLink": "Todos los precios",
+    "nhifHeading": "Trabajo con NHIF",
+    "nhifBody": "La Dra. Raykova trabaja con NHIF (seguro público búlgaro). Con derivación, las pacientes copagan 25 euros (48,90 BGN) por Microbiología y por Citología, y los comentarios de los resultados están listos en un plazo de 14 días.",
+    "insurersHeading": "Visitas sin efectivo con aseguradoras",
+    "insurersLead": "Si tiene un seguro de salud con alguna de estas aseguradoras, su visita puede ser sin efectivo.",
+    "insurersNote": "La cobertura depende de su póliza concreta. Consúltelo con su aseguradora antes de la visita.",
+    "sourceNote": "Actualizado el {date}. Fuente: {source}. El precio vigente se confirma al reservar.",
+    "ctaHeading": "¿Lista para reservar?",
+    "ctaLead": "Online a través de Superdoc o llamando a la consulta.",
+    "items": {
+      "paket-ag-pregled": "Paquete completo obstétrico-ginecológico",
+      "pervichen-pregled": "Consulta primaria",
+      "vtorichen-pregled": "Visita de seguimiento / Receta",
+      "kolposkopiya": "Colposcopia",
+      "ultrazvuk": "Ecografía",
+      "tsitonamazka": "Citología",
+      "vlagalishten-sekret": "Frotis vaginal",
+      "biopsiya-himiokoagulatsiya": "Biopsia / Quimiocoagulación"
+    },
+    "faqHeading": "Preguntas frecuentes sobre los precios",
+    "faqs": [
+      {
+        "question": "¿La consulta trabaja con NHIF?",
+        "answer": "Sí. Con derivación de NHIF solo se copaga la Microbiología y la Citología — 25 euros (48,90 BGN) cada una."
+      },
+      {
+        "question": "¿Qué incluye el paquete completo obstétrico-ginecológico?",
+        "answer": "El alcance del paquete se determina según las indicaciones. Si no está segura de si le conviene, pregunte al reservar o llame a la consulta."
+      },
+      {
+        "question": "¿Puedo usar mi seguro de salud?",
+        "answer": "Sí, la consulta trabaja con {count} aseguradoras para visitas sin efectivo. La cobertura depende de su póliza, así que consúltelo previamente con su aseguradora."
+      },
+      {
+        "question": "¿El precio incluye las pruebas?",
+        "answer": "La consulta y las pruebas son partidas separadas. La citología, el frotis vaginal y la ecografía se cobran aparte, salvo que elija el paquete completo."
+      }
+    ]
   },
   "cookies": {
     "title": "Cookies",

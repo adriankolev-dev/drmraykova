@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { SuperdocMark } from "@/components/booking/SuperdocMark";
 import { getBookingUrl } from "@/lib/booking";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +11,8 @@ type SuperdocLinkProps = {
   utmCampaign?: string;
   /** Use on pink/ink panels where default link color would clash. */
   tone?: "default" | "onPrimary";
+  /** Show the Superdoc mascot mark — for standalone links, not mid-sentence. */
+  withMark?: boolean;
 };
 
 /** Standalone Superdoc profile link. */
@@ -18,6 +21,7 @@ export function SuperdocLink({
   className,
   utmCampaign = "inline-superdoc",
   tone = "default",
+  withMark = false,
 }: SuperdocLinkProps) {
   return (
     <a
@@ -29,13 +33,14 @@ export function SuperdocLink({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "font-medium underline underline-offset-3 transition-colors",
+        "inline-flex items-center gap-1.5 font-medium underline underline-offset-3 transition-colors",
         tone === "onPrimary"
           ? "text-primary-foreground decoration-primary-foreground/55 hover:decoration-primary-foreground"
           : "text-foreground decoration-primary/50 hover:text-primary hover:decoration-primary",
         className,
       )}
     >
+      {withMark ? <SuperdocMark size={16} /> : null}
       {children}
     </a>
   );

@@ -6,7 +6,12 @@ import { bookingConfig } from "@/lib/booking";
 const ogImage = `${siteConfig.url}/og.png`;
 const bookingProfileUrl = bookingConfig.url.replace(/\?.*$/, "");
 /** Профили на лекаря — клиниката е отделен субект и не ги наследява. */
-const doctorProfiles = [bookingProfileUrl, doctor.social.instagram.url];
+const doctorProfiles = [
+  bookingProfileUrl,
+  doctor.social.instagram.url,
+  doctor.social.facebook.url,
+];
+
 
 export function schemaLanguage(locale: Locale = "bg") {
   if (locale === "en") return "en";
@@ -198,12 +203,33 @@ export function getBreadcrumbSchema(
   };
 }
 
+/** Offer for a published price. Amounts are EUR, VAT-inclusive. */
+function priceOffer(item: { name: string; priceEur: string }) {
+  return {
+    "@type": "Offer",
+    name: item.name,
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      price: item.priceEur,
+      priceCurrency: "EUR",
+      valueAddedTaxIncluded: true,
+    },
+    availability: "https://schema.org/InStock",
+    seller: {
+      "@type": "Physician",
+      "@id": `${siteConfig.url}/#physician`,
+      name: doctor.name,
+    },
+  };
+}
+
 export function getMedicalServiceSchema(service: {
   name: string;
   description: string;
   url: string;
   /** ISO-8601 duration, e.g. PT30M */
   timeRequired?: string;
+  offers?: Array<{ name: string; priceEur: string }>;
 }) {
   return {
     "@context": "https://schema.org",
@@ -215,6 +241,9 @@ export function getMedicalServiceSchema(service: {
     ...(service.timeRequired
       ? { timeRequired: service.timeRequired }
       : {}),
+    ...(service.offers?.length
+      ? { offers: service.offers.map(priceOffer) }
+      : {}),
     provider: {
       "@type": "Physician",
       "@id": `${siteConfig.url}/#physician`,
@@ -225,6 +254,30 @@ export function getMedicalServiceSchema(service: {
       "@type": "City",
       name: doctor.city,
     },
+  };
+}
+
+/** Full price list as an OfferCatalog so search engines can surface prices. */
+export function getOfferCatalogSchema({
+  name,
+  url,
+  items,
+}: {
+  name: string;
+  url: string;
+  items: Array<{ name: string; priceEur: string }>;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "@id": `${url}#pricelist`,
+    name,
+    url,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      ...priceOffer(item),
+      position: index + 1,
+    })),
   };
 }
 

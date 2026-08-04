@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { BookCta } from "@/components/booking/BookCta";
 import { SuperdocText } from "@/components/booking/SuperdocText";
+import { FacebookIcon } from "@/components/icons/FacebookIcon";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
@@ -376,16 +377,28 @@ export default async function ContactPage({ params }: Props) {
                   {tcp("callUs")}
                 </a>
               </div>
-              <a
-                href={doctor.social.instagram.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={tc("followInstagram")}
-                className="mt-7 inline-flex items-center gap-2 text-sm text-ink-foreground/60 transition-colors hover:text-ink-foreground"
-              >
-                <InstagramIcon className="size-4" />
-                {doctor.social.instagram.handle}
-              </a>
+              <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2">
+                <a
+                  href={doctor.social.instagram.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={tc("followInstagram")}
+                  className="inline-flex items-center gap-2 text-sm text-ink-foreground/60 transition-colors hover:text-ink-foreground"
+                >
+                  <InstagramIcon className="size-4" />
+                  {doctor.social.instagram.handle}
+                </a>
+                <a
+                  href={doctor.social.facebook.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={tc("followFacebook")}
+                  className="inline-flex items-center gap-2 text-sm text-ink-foreground/60 transition-colors hover:text-ink-foreground"
+                >
+                  <FacebookIcon className="size-4" />
+                  {doctor.social.facebook.handle}
+                </a>
+              </div>
             </div>
           </Reveal>
         </div>

@@ -1,32 +1,11 @@
 import { getTranslations } from "next-intl/server";
-import { Star } from "lucide-react";
 import { SuperdocText } from "@/components/booking/SuperdocText";
 import { ClinicRule } from "@/components/brand/ClinicMotifs";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow, SectionHeading } from "@/components/layout/Section";
+import { Stars } from "@/components/ui/Stars";
 import { doctor } from "@/lib/doctor";
 import { cn } from "@/lib/utils";
-
-function RatingStars({ value }: { value: number }) {
-  return (
-    <div
-      className="mt-3 flex items-center gap-0.5"
-      aria-label={`${value}/5`}
-    >
-      {Array.from({ length: 5 }).map((_, index) => (
-        <Star
-          key={index}
-          className={cn(
-            "size-3.5",
-            index < Math.round(value)
-              ? "fill-primary text-primary"
-              : "fill-transparent text-border",
-          )}
-        />
-      ))}
-    </div>
-  );
-}
 
 export async function TrustSection() {
   const t = await getTranslations("trust");
@@ -123,7 +102,12 @@ export async function TrustSection() {
                       </span>
                     ) : null}
                   </p>
-                  {item.rating ? <RatingStars value={doctor.rating.value} /> : null}
+                  {item.rating ? (
+                    <Stars
+                      value={doctor.rating.value}
+                      className="mt-3"
+                    />
+                  ) : null}
                   <p className="mt-3 max-w-[16rem] text-sm leading-relaxed text-muted-foreground">
                     <SuperdocText text={item.detail} utmCampaign="trust-detail" />
                   </p>

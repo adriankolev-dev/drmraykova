@@ -13,7 +13,9 @@
     "privacyTitle": "Privacy and cookie policy",
     "privacyDescription": "This policy explains how Dr. Maria Raykova’s website processes personal data and uses cookies. The site is informational and directs appointment booking to Superdoc.",
     "faqTitle": "Frequently asked questions",
-    "faqDescription": "How to book with Dr. Maria Raykova, NHIF, scope of care, languages, and preparing for a first visit."
+    "faqDescription": "How to book with Dr. Maria Raykova, NHIF, scope of care, languages, and preparing for a first visit.",
+    "pricingTitle": "Gynecology consultation prices in Sofia",
+    "pricingDescription": "Prices for consultations with Dr. Maria Raykova in Sofia. Preventive exam, ultrasound, colposcopy, and Pap smear. Works with NHIF and cashless visits with insurers."
   },
   "nav": {
     "home": "Home",
@@ -26,7 +28,8 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "homeAria": "Dr. Maria Raykova — home",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "pricing": "Prices"
   },
   "common": {
     "bookCta": "Book appointment",
@@ -77,6 +80,9 @@
     "worksNhif": "Works with NHIF",
     "instagram": "Instagram",
     "followInstagram": "Follow on Instagram",
+    "facebook": "Facebook",
+    "followFacebook": "Follow on Facebook",
+
     "openMap": "Open in Google Maps",
     "howToGet": "How to get there",
     "madeBy": "Built by",
@@ -89,7 +95,8 @@
     "support": "Preventive exams, diagnostics, and consultations — with attention, clear explanations, and time for your questions.",
     "chipAppointment": "By appointment",
     "chipNhif": "NHIF",
-    "chipClinic": "Clinic · Sofia"
+    "chipClinic": "Clinic · Sofia",
+    "ratingProof": "{rating} out of 5 · {count} reviews on Superdoc"
   },
   "intro": {
     "eyebrow": "01 · About",
@@ -115,7 +122,7 @@
     "locationDetail": "10 Dobrila St., opposite VMA"
   },
   "servicesHome": {
-    "eyebrow": "03 · Services",
+    "eyebrow": "04 · Services",
     "title": "Exams and diagnostics at the clinic",
     "description": "Prevention, ultrasound, colposcopy, and consultations — with time to talk and a clear explanation of findings.",
     "allServices": "All services →",
@@ -170,7 +177,7 @@
     "zhensko-zdrave": "Women's health consultations"
   },
   "why": {
-    "eyebrow": "04 · Approach",
+    "eyebrow": "05 · Approach",
     "title": "Why patients return",
     "items": [
       {
@@ -192,10 +199,14 @@
     ]
   },
   "testimonials": {
-    "eyebrow": "05 · Reviews",
+    "eyebrow": "03 · Reviews",
     "title": "Verified patient feedback",
     "description": "Real public reviews from Superdoc. Overall rating {rating}/5 from {count} reviews.",
-    "ratingLabel": "Superdoc rating"
+    "ratingLabel": "Superdoc rating",
+    "reviewsLabel": "{count} ratings",
+    "fiveStarShare": "{fiveStar} of {count} ratings are 5 stars",
+    "prev": "Previous review",
+    "next": "Next review"
   },
   "clinic": {
     "eyebrow": "06 · Clinic",
@@ -425,6 +436,56 @@
     "finalTitle": "Ready for the next step?",
     "finalBody": "Book with {name} online or call {phone}.",
     "languagesValue": "Bulgarian · English · Spanish"
+  },
+  "pricing": {
+    "eyebrow": "Prices",
+    "breadcrumbHome": "Home",
+    "title": "Consultation prices",
+    "lead": "Clear prices, no surprises. The clinic works with NHIF and with {count} health insurers for cashless visits.",
+    "intro": "These prices are for exams and tests at Dr. Maria Raykova's clinic. If you are unsure which visit you need, book a primary consultation — the plan is agreed during the visit.",
+    "tableService": "Service",
+    "tablePrice": "Price",
+    "fromLabel": "from {price}",
+    "priceHeading": "Price",
+    "priceOnRequest": "The price is confirmed after consultation. Call {phone} for a quote.",
+    "allPricesLink": "All prices",
+    "nhifHeading": "Working with NHIF",
+    "nhifBody": "Dr. Raykova works with NHIF (Bulgarian public health insurance). With a referral, patients co-pay EUR 25 (BGN 48.90) each for Microbiology and Pap smear, and result comments are ready within 14 days.",
+    "insurersHeading": "Cashless visits with insurers",
+    "insurersLead": "If you hold health insurance with one of these insurers, your visit may be cashless.",
+    "insurersNote": "Coverage depends on your specific policy. Please check with your insurer before the visit.",
+    "sourceNote": "Updated on {date}. Source: {source}. The current price is confirmed when you book.",
+    "ctaHeading": "Ready to book?",
+    "ctaLead": "Online via Superdoc or by calling the clinic.",
+    "items": {
+      "paket-ag-pregled": "Full OB-GYN package",
+      "pervichen-pregled": "Primary consultation",
+      "vtorichen-pregled": "Follow-up visit / Prescription",
+      "kolposkopiya": "Colposcopy",
+      "ultrazvuk": "Ultrasound",
+      "tsitonamazka": "Pap smear",
+      "vlagalishten-sekret": "Vaginal swab",
+      "biopsiya-himiokoagulatsiya": "Biopsy / Chemocoagulation"
+    },
+    "faqHeading": "Frequently asked questions about prices",
+    "faqs": [
+      {
+        "question": "Does the clinic work with NHIF?",
+        "answer": "Yes. With an NHIF referral, you only co-pay for Microbiology and the Pap smear — EUR 25 (BGN 48.90) each."
+      },
+      {
+        "question": "What does the full OB-GYN package include?",
+        "answer": "The scope of the package is determined by indications. If you are unsure whether it suits you, ask when booking or call the clinic."
+      },
+      {
+        "question": "Can I use my health insurance?",
+        "answer": "Yes, the clinic works with {count} insurers for cashless visits. Coverage depends on your policy, so please check with your insurer in advance."
+      },
+      {
+        "question": "Does the price include tests?",
+        "answer": "The consultation and the tests are separate items. The Pap smear, vaginal swab, and ultrasound are charged separately unless you choose the full package."
+      }
+    ]
   },
   "cookies": {
     "title": "Cookies",

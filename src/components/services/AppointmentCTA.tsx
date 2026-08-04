@@ -1,6 +1,7 @@
 import { BookCta } from "@/components/booking/BookCta";
+import { SuperdocMark } from "@/components/booking/SuperdocMark";
 import { SuperdocText } from "@/components/booking/SuperdocText";
-import { ClinicCross, ClinicRule } from "@/components/brand/ClinicMotifs";
+import { ClinicRule } from "@/components/brand/ClinicMotifs";
 import { Reveal } from "@/components/motion/Reveal";
 
 type AppointmentCTAProps = {
@@ -21,7 +22,7 @@ export function AppointmentCTA({
       <div className="panel-primary mt-14 rounded-lg px-8 py-10 md:px-12 md:py-12">
         {eyebrow ? (
           <p className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-primary-foreground/70">
-            <ClinicCross className="size-3 text-primary-foreground/80" />
+            <SuperdocMark size={16} />
             <SuperdocText
               text={eyebrow}
               tone="onPrimary"
