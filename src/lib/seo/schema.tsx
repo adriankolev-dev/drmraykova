@@ -62,7 +62,7 @@ export function getMedicalClinicSchema() {
     "@id": `${siteConfig.url}/#clinic`,
     name: doctor.clinic.name,
     url: `${siteConfig.url}/kontakti`,
-    image: `${siteConfig.url}/icon-512.png`,
+    image: `${siteConfig.url}/clinic-interior.webp`,
     telephone: doctor.clinic.phoneHref.replace("tel:", ""),
     address: {
       "@type": "PostalAddress",
@@ -94,7 +94,11 @@ export function getLocalBusinessSchema() {
     alternateName: doctor.clinic.name,
     description: siteConfig.description,
     url: siteConfig.url,
-    image: [ogImage, `${siteConfig.url}/icon-512.png`],
+    image: [
+      ogImage,
+      `${siteConfig.url}/clinic-interior.webp`,
+      `${siteConfig.url}/icon-512.png`,
+    ],
     telephone: doctor.clinic.phoneHref.replace("tel:", ""),
     priceRange: "$$",
     address: {

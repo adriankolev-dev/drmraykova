@@ -210,8 +210,10 @@
   },
   "clinic": {
     "eyebrow": "06 · Consulta",
-    "title": "Dónde encontrarnos",
-    "description": "Consultas en el Centro Médico Lyulin Med — filial Dobrila 10, frente a VMA. Reserve online o llame."
+    "title": "La consulta en Lyulin Med",
+    "description": "Consultas y diagnóstico modernos — calle Dobrila 10, frente a VMA. Reserve online o llame.",
+    "imageAlt": "Consulta de la Dra. María Raykova — sillón de exploración y ecógrafo Mindray",
+    "photoCaption": "La consulta"
   },
   "handbookTeaser": {
     "eyebrow": "07 · Guía",

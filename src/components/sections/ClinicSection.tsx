@@ -58,16 +58,16 @@ export async function ClinicSection() {
             className="group relative flex min-h-[300px] overflow-hidden rounded-lg bg-ink md:min-h-full"
           >
             <Image
-              src="/clinic-location.webp"
-              alt={doctor.clinic.name}
+              src="/clinic-interior.webp"
+              alt={t("imageAlt")}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover opacity-80 transition-transform duration-500 group-hover:scale-[1.03]"
+              className="object-cover object-[center_45%] opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-transparent" />
             <div className="relative mt-auto p-6 text-ink-foreground">
               <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-foreground/70">
-                {tc("hoursNote")}
+                {t("photoCaption")} · {tc("hoursNote")}
               </p>
               <p className="mt-2 font-display text-2xl font-medium tracking-tight">
                 {doctor.clinic.address}

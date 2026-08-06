@@ -210,8 +210,10 @@
   },
   "clinic": {
     "eyebrow": "06 · Clinic",
-    "title": "Where to find us",
-    "description": "Appointments at Lyulin Med Medical Center — Dobrila 10 branch, opposite VMA. Book online or call."
+    "title": "The clinic at Lyulin Med",
+    "description": "Modern exams and diagnostics — 10 Dobrila St., opposite VMA. Book online or call.",
+    "imageAlt": "Dr. Maria Raykova’s clinic — examination chair and Mindray ultrasound",
+    "photoCaption": "The clinic"
   },
   "handbookTeaser": {
     "eyebrow": "07 · Handbook",
