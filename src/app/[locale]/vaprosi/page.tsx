@@ -114,7 +114,7 @@ export default async function FaqPage({ params }: Props) {
               />
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <BookCta variant="superdoc" utmCampaign="faq-page" />
+              <BookCta variant="superdoc" utmCampaign="faq-page" mascotDock />
               <Link
                 href="/kontakti"
                 className="inline-flex h-11 items-center justify-center rounded-md border border-primary-foreground/35 px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"

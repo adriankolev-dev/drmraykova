@@ -34,6 +34,8 @@
   "common": {
     "bookCta": "Book appointment",
     "bookOnlineCta": "Book online",
+    "mascotCue": "Book here",
+    "mascotAria": "Book an appointment online via Superdoc",
     "learnMore": "Learn more",
     "viewServices": "View services",
     "callUs": "Call us",

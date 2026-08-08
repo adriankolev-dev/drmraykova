@@ -48,6 +48,12 @@
   --container: 72rem;
 }
 
+/* While the companion is live it owns this pill's mascot; without it the
+   static one stays, so no-JS and pre-consent renders are unchanged. */
+[data-superdoc-slot][data-superdoc-active] > img {
+  opacity: 0;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

@@ -218,6 +218,7 @@ export default async function ArticlePage({ params }: Props) {
                   variant="superdoc"
                   label={article.ctaLabel}
                   utmCampaign={`article-${article.slug}`}
+                  mascotDock
                 />
               </div>
             </div>
@@ -228,6 +229,7 @@ export default async function ArticlePage({ params }: Props) {
               <BookCta
                 variant="superdoc"
                 utmCampaign={`article-${article.slug}`}
+                mascotDock
               />
             </div>
           ) : null}

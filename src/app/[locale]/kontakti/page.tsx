@@ -365,7 +365,7 @@ export default async function ContactPage({ params }: Props) {
                 })}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <BookCta variant="superdoc" utmCampaign="contact-final" />
+                <BookCta variant="superdoc" utmCampaign="contact-final" mascotDock />
                 <a
                   href={doctor.clinic.phoneHref}
                   className={cn(

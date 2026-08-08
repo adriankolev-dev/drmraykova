@@ -15,6 +15,11 @@ type BookCtaProps = {
   utmCampaign?: string;
   /** Hide the Superdoc mark (rare — default shows it as booking provider cue). */
   hideMark?: boolean;
+  /**
+   * Marks this pill as the landing target for SuperdocCompanion. Set it on the
+   * closing CTA of a page only — a second target on the same page is ignored.
+   */
+  mascotDock?: boolean;
 } & VariantProps<typeof buttonVariants>;
 
 /**
@@ -31,6 +36,7 @@ export function BookCta({
   utmMedium = "cta",
   utmCampaign,
   hideMark = false,
+  mascotDock = false,
 }: BookCtaProps) {
   const t = useTranslations("common");
   const linkProps = getBookingLinkProps({
@@ -59,22 +65,27 @@ export function BookCta({
         )}
         aria-label={`${text} — Superdoc`}
       >
-        {/* Local partner SVG — Next/Image SVG needs dangerouslyAllowSVG */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/partners/superdoc-hero.svg"
-          alt=""
-          width={compact ? 28 : 44}
-          height={compact ? 48 : 76}
+        <span
+          data-superdoc-slot={mascotDock ? "" : undefined}
           className={cn(
-            "pointer-events-none absolute z-[1] object-contain object-bottom drop-shadow-[0_4px_8px_rgba(1,120,100,0.18)]",
+            "pointer-events-none absolute z-[1]",
             compact
-              ? "bottom-[-10%] left-[-6%] h-[2.85rem] w-auto"
-              : "bottom-[-12%] left-[-5%] h-[4.35rem] w-auto sm:h-[4.85rem]",
+              ? "bottom-[-10%] left-[-6%] h-[2.85rem] w-[1.65rem]"
+              : "bottom-[-12%] left-[-5%] h-[4.35rem] w-[2.52rem] sm:h-[4.85rem] sm:w-[2.8rem]",
           )}
-          aria-hidden
-          decoding="async"
-        />
+        >
+          {/* Local partner SVG — Next/Image SVG needs dangerouslyAllowSVG */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/partners/superdoc-hero.svg"
+            alt=""
+            width={compact ? 28 : 44}
+            height={compact ? 48 : 76}
+            className="h-full w-full object-contain object-bottom drop-shadow-[0_4px_8px_rgba(1,120,100,0.18)] transition-opacity duration-200"
+            aria-hidden
+            decoding="async"
+          />
+        </span>
         <span className="relative z-[2]">{text}</span>
       </a>
     );

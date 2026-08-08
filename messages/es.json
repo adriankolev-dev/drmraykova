@@ -34,6 +34,8 @@
   "common": {
     "bookCta": "Reservar cita",
     "bookOnlineCta": "Reservar online",
+    "mascotCue": "Reserva aquí",
+    "mascotAria": "Reservar cita online por Superdoc",
     "learnMore": "Saber más",
     "viewServices": "Ver servicios",
     "callUs": "Llámenos",

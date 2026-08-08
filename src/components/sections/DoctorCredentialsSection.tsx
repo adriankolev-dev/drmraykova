@@ -379,6 +379,7 @@ export async function DoctorCredentialsSection() {
                 <BookCta
                   variant="superdoc"
                   utmCampaign="about-doctor-bottom"
+                  mascotDock
                 />
               </div>
             </div>
