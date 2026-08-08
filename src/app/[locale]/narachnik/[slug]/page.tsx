@@ -173,15 +173,15 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-            {article.excerpt}
-          </p>
-          <div
-            className="article-prose mt-8"
-            dangerouslySetInnerHTML={{ __html: article.html }}
-          />
-        </Reveal>
+        {/* No Reveal around body copy — long articles exceed the viewport and
+            intersection-based opacity reveals can leave text invisible on mobile. */}
+        <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
+          {article.excerpt}
+        </p>
+        <div
+          className="article-prose mt-8"
+          dangerouslySetInnerHTML={{ __html: article.html }}
+        />
 
         {article.faq.length > 0 ? (
           <FAQSection

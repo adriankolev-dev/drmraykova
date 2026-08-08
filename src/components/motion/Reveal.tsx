@@ -30,10 +30,12 @@ export function Reveal({
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
+  // Use "some" (not a fraction): tall blocks (e.g. long articles) can exceed
+  // the viewport, so a % threshold never intersects and content stays opacity:0.
   const inView = useInView(ref, {
     once,
-    amount: 0.12,
-    margin: "0px 0px -8% 0px",
+    amount: "some",
+    margin: "0px 0px -5% 0px",
   });
 
   if (reduceMotion) {
@@ -76,8 +78,8 @@ export function RevealGroup({
   const reduceMotion = useReducedMotion();
   const inView = useInView(ref, {
     once: true,
-    amount: 0.08,
-    margin: "0px 0px -8% 0px",
+    amount: "some",
+    margin: "0px 0px -5% 0px",
   });
 
   if (reduceMotion) {
