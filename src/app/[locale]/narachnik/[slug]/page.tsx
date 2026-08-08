@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { locales, isLocale } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { BookCta } from "@/components/booking/BookCta";
+import { ScientificSource } from "@/components/handbook/ScientificSource";
 import { FAQSection } from "@/components/services/FAQSection";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
@@ -255,6 +256,20 @@ export default async function ArticlePage({ params }: Props) {
             {t("disclaimer")}
           </p>
         </Reveal>
+
+        {article.scientificSources.length > 0 ? (
+          <Reveal delay={0.125} className="mt-12 space-y-4">
+            {article.scientificSources.map((source) => (
+              <ScientificSource
+                key={`${source.title}-${source.url}`}
+                heading={t("scientificSourceTitle")}
+                intro={t("scientificSourceIntro")}
+                linkLabel={t("scientificSourceLink")}
+                source={source}
+              />
+            ))}
+          </Reveal>
+        ) : null}
 
         {article.sources.length > 0 ? (
           <Reveal delay={0.13} className="mt-12">

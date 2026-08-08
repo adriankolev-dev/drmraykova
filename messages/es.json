@@ -231,6 +231,25 @@
     "eyebrow": "Sobre la doctora",
     "lead": "Especialista en formación en obstetricia y ginecología, centrada en prevención, diagnóstico y explicación serena en cada paso. Ejerce en PSAGBAL “Saint Sophia” y el Centro Médico Lyulin Med. Las pacientes destacan la atención, la exploración minuciosa y la conversación clara."
   },
+  "tradition": {
+    "eyebrow": "Entorno médico",
+    "title": "Medicina con tradición. Un camino propio.",
+    "subtitle": "La medicina forma parte del entorno familiar de la Dra. Maria Raykova, pero su trayectoria profesional se construye de forma independiente — con foco en la obstetricia y ginecología contemporáneas y en el cuidado individualizado de cada paciente.",
+    "body": "Su padre, el Dr. Sasho Raykov, es especialista en obstetricia y ginecología y medicina reproductiva, con larga experiencia profesional en Bulgaria y España. Su trayectoria incluye trabajo en reproducción asistida, actividad científica y participación en proyectos profesionales internacionales.",
+    "expandCta": "Saber más sobre el entorno profesional",
+    "expandTitle": "Entorno profesional y científico",
+    "expandIntro": "El trabajo prolongado en obstetricia, ginecología y medicina reproductiva forma parte del entorno médico en el que la Dra. Maria Raykova desarrolla su interés profesional.",
+    "card1Label": "Experiencia internacional",
+    "card1Title": "Trayectoria profesional en Bulgaria y España",
+    "card1Body": "El Dr. Sasho Raykov trabaja en obstetricia, ginecología y medicina reproductiva con larga experiencia en Bulgaria y España — incluida la reproducción asistida (entre ellas FIV Recoletos) y una cualificación en Human Assisted Reproduction.",
+    "card2Label": "Actividad científica",
+    "card2Title": "Publicación en European Journal of Obstetrics & Gynecology and Reproductive Biology",
+    "card2Body": "El Dr. Sasho Raykov es coautor de una publicación científica de 2025 que analiza factores relacionados con el riesgo de aborto espontáneo, basada en 235 embarazos.",
+    "card3Label": "Tecnologías contemporáneas",
+    "card3Title": "Investigación y tecnología en medicina reproductiva",
+    "card3Body": "En su perfil profesional figura la participación como responsable científico de un proyecto internacional relacionado con un Clinical Decision Support System for Assisted Reproduction based on AI — trabajo conjunto entre socios médicos, científicos e internacionales.",
+    "pubmedLink": "Ver la publicación en PubMed"
+  },
   "contact": {
     "eyebrow": "Contacto",
     "title": "Reserva fácil. Ubicación clara.",
@@ -254,6 +273,9 @@
     "relatedTitle": "Más de la guía",
     "updated": "Actualizado",
     "sourcesTitle": "Fuentes",
+    "scientificSourceTitle": "Fuente científica",
+    "scientificSourceIntro": "Sobre este tema también existen investigaciones científicas contemporáneas en obstetricia y ginecología.",
+    "scientificSourceLink": "Ver la publicación en PubMed",
     "closingTitle": "Para cerrar"
   },
   "servicesPage": {

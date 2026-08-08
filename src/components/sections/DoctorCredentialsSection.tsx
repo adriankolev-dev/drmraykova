@@ -7,6 +7,7 @@ import { SuperdocText } from "@/components/booking/SuperdocText";
 import { ClinicCross, ClinicRule } from "@/components/brand/ClinicMotifs";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
+import { MedicalTraditionSection } from "@/components/sections/MedicalTraditionSection";
 import { CertificateLightbox } from "@/components/ui/CertificateLightbox";
 import { doctor } from "@/lib/doctor";
 import { cn } from "@/lib/utils";
@@ -360,6 +361,9 @@ export async function DoctorCredentialsSection() {
               </figure>
             </Reveal>
           </div>
+
+          {/* Family medical environment — after Maria's own credentials */}
+          <MedicalTraditionSection />
 
           <Reveal delay={0.1} className="mt-14 md:mt-16">
             <div className="panel-primary rounded-lg px-8 py-12 md:px-12 md:py-14">

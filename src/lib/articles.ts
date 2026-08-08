@@ -17,6 +17,15 @@ export type ArticleSource = {
   url: string;
 };
 
+export type ArticleScientificSource = {
+  title: string;
+  journal: string;
+  year: string;
+  url: string;
+  /** Optional override; falls back to handbook.scientificSourceIntro */
+  intro?: string;
+};
+
 export type Article = {
   slug: string;
   title: string;
@@ -32,6 +41,8 @@ export type Article = {
   readingTime: number;
   faq: ArticleFaq[];
   sources: ArticleSource[];
+  /** Thematic scientific references — only when the article topic warrants them */
+  scientificSources: ArticleScientificSource[];
   closing?: string;
   ctaLabel?: string;
   ctaLead?: string;
@@ -89,6 +100,29 @@ function loadArticles(locale: Locale): Article[] {
         })
         .filter((item): item is ArticleSource => item !== null);
 
+      const scientificRaw = Array.isArray(data.scientificSources)
+        ? data.scientificSources
+        : [];
+      const scientificSources = scientificRaw
+        .map((item): ArticleScientificSource | null => {
+          if (!item || typeof item !== "object") return null;
+          const row = item as {
+            title?: unknown;
+            journal?: unknown;
+            year?: unknown;
+            url?: unknown;
+            intro?: unknown;
+          };
+          const title = String(row.title ?? "").trim();
+          const journal = String(row.journal ?? "").trim();
+          const year = String(row.year ?? "").trim();
+          const url = String(row.url ?? "").trim();
+          if (!title || !journal || !year || !url) return null;
+          const intro = row.intro ? String(row.intro).trim() : undefined;
+          return intro ? { title, journal, year, url, intro } : { title, journal, year, url };
+        })
+        .filter((item): item is ArticleScientificSource => item !== null);
+
       return {
         slug,
         title: String(data.title ?? "Untitled"),
@@ -103,6 +137,7 @@ function loadArticles(locale: Locale): Article[] {
         readingTime: readingTimeMinutes(content),
         faq,
         sources,
+        scientificSources,
         closing: data.closing ? String(data.closing) : undefined,
         ctaLabel: data.ctaLabel ? String(data.ctaLabel) : undefined,
         ctaLead: data.ctaLead ? String(data.ctaLead) : undefined,
