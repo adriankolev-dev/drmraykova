@@ -252,7 +252,7 @@
   }
 
   .article-prose h2 {
-    @apply mt-10 mb-4 font-display text-2xl font-medium tracking-tight text-foreground;
+    @apply mt-10 mb-4 font-display text-2xl font-medium tracking-tight text-foreground md:text-[1.65rem];
   }
 
   .article-prose h3 {
@@ -276,11 +276,125 @@
     list-style: decimal;
   }
 
+  .article-prose li {
+    @apply pl-1;
+  }
+
   .article-prose strong {
     @apply font-medium text-foreground;
   }
 
   .article-prose a {
-    @apply text-foreground underline underline-offset-4;
+    @apply text-foreground underline decoration-primary/50 underline-offset-4 transition-colors hover:decoration-primary;
+  }
+
+  /* Article-only layout helpers — scoped, no global design change */
+  .article-prose .symptom-grid {
+    display: grid;
+    gap: 0.85rem;
+    margin: 1.25rem 0 1.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .article-prose .symptom-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+  }
+
+  .article-prose .symptom-card {
+    border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--card) 92%, white);
+    padding: 1.15rem 1.2rem 1.2rem;
+  }
+
+  .article-prose .symptom-card h3 {
+    margin: 0 0 0.55rem;
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  .article-prose .symptom-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .article-prose .article-callout {
+    margin: 1.5rem 0 1.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid color-mix(in srgb, var(--border) 90%, transparent);
+    background: var(--accent);
+    padding: 1.15rem 1.25rem;
+  }
+
+  .article-prose .article-callout--urgent {
+    border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+    background:
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--accent) 88%, white),
+        color-mix(in srgb, var(--secondary) 55%, white)
+      );
+  }
+
+  .article-prose .article-callout__label {
+    margin: 0 0 0.45rem;
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--foreground);
+  }
+
+  .article-prose .article-callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  .article-prose .article-note {
+    margin: 1.25rem 0 1.5rem;
+    border-left: 2px solid color-mix(in srgb, var(--primary) 55%, transparent);
+    background: color-mix(in srgb, var(--card) 80%, transparent);
+    padding: 0.95rem 1.1rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+
+  .article-prose .article-note p:last-child {
+    margin-bottom: 0;
+  }
+
+  .article-prose .sources-list {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .article-prose .sources-list li,
+  .sources-list li {
+    margin-bottom: 0.85rem;
+    padding-left: 0;
+  }
+
+  .article-prose .sources-list a {
+    font-weight: 500;
+  }
+
+  .article-prose .source-org,
+  .sources-list .source-org {
+    display: block;
+    margin-bottom: 0.15rem;
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+
+  .sources-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 }

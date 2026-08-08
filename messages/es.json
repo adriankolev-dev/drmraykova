@@ -245,7 +245,15 @@
     "title": "Guía médica",
     "lead": "Materiales educativos sobre salud femenina — para llegar preparada y tranquila.",
     "articlesOnlyBg": "",
-    "disclaimer": "Este material es educativo y no sustituye una consulta médica personal, un diagnóstico ni un tratamiento."
+    "disclaimer": "La información de este artículo tiene fines educativos y no sustituye una consulta médica individual, un diagnóstico ni un tratamiento.",
+    "faqTitle": "Preguntas frecuentes",
+    "authorLabel": "Autora médica",
+    "authorRole": "Obstetra-ginecóloga",
+    "aboutDoctor": "Más sobre la Dra. Raykova",
+    "relatedTitle": "Más de la guía",
+    "updated": "Actualizado",
+    "sourcesTitle": "Fuentes",
+    "closingTitle": "Para cerrar"
   },
   "servicesPage": {
     "eyebrow": "Servicios",

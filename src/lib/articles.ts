@@ -6,16 +6,35 @@ import type { Locale } from "@/i18n/routing";
 
 const ARTICLES_ROOT = path.join(process.cwd(), "content/articles");
 
+export type ArticleFaq = {
+  question: string;
+  answer: string;
+};
+
+export type ArticleSource = {
+  org: string;
+  title: string;
+  url: string;
+};
+
 export type Article = {
   slug: string;
   title: string;
   excerpt: string;
   category: string;
   date: string;
+  /** ISO date when the article was last substantively updated */
+  updated?: string;
   cover: string;
+  coverAlt: string;
   content: string;
   html: string;
   readingTime: number;
+  faq: ArticleFaq[];
+  sources: ArticleSource[];
+  closing?: string;
+  ctaLabel?: string;
+  ctaLead?: string;
 };
 
 function readingTimeMinutes(text: string) {
@@ -41,6 +60,34 @@ function loadArticles(locale: Locale): Article[] {
       const raw = fs.readFileSync(path.join(dir, file), "utf8");
       const { data, content } = matter(raw);
       const html = marked.parse(content, { async: false }) as string;
+      const faqRaw = Array.isArray(data.faq) ? data.faq : [];
+      const faq = faqRaw
+        .map((item) => {
+          if (!item || typeof item !== "object") return null;
+          const row = item as { question?: unknown; answer?: unknown };
+          const question = String(row.question ?? "").trim();
+          const answer = String(row.answer ?? "").trim();
+          if (!question || !answer) return null;
+          return { question, answer };
+        })
+        .filter((item): item is ArticleFaq => item !== null);
+
+      const sourcesRaw = Array.isArray(data.sources) ? data.sources : [];
+      const sources = sourcesRaw
+        .map((item) => {
+          if (!item || typeof item !== "object") return null;
+          const row = item as {
+            org?: unknown;
+            title?: unknown;
+            url?: unknown;
+          };
+          const org = String(row.org ?? "").trim();
+          const title = String(row.title ?? "").trim();
+          const url = String(row.url ?? "").trim();
+          if (!org || !title || !url) return null;
+          return { org, title, url };
+        })
+        .filter((item): item is ArticleSource => item !== null);
 
       return {
         slug,
@@ -48,10 +95,17 @@ function loadArticles(locale: Locale): Article[] {
         excerpt: String(data.excerpt ?? ""),
         category: String(data.category ?? "General"),
         date: String(data.date ?? ""),
+        updated: data.updated ? String(data.updated) : undefined,
         cover: String(data.cover ?? "/blog/cover-profilaktika.webp"),
+        coverAlt: String(data.coverAlt ?? data.title ?? ""),
         content,
         html,
         readingTime: readingTimeMinutes(content),
+        faq,
+        sources,
+        closing: data.closing ? String(data.closing) : undefined,
+        ctaLabel: data.ctaLabel ? String(data.ctaLabel) : undefined,
+        ctaLead: data.ctaLead ? String(data.ctaLead) : undefined,
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));

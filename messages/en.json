@@ -245,7 +245,15 @@
     "title": "Medical handbook",
     "lead": "Educational materials on women's health — so you arrive prepared and at ease.",
     "articlesOnlyBg": "",
-    "disclaimer": "This material is educational and does not replace a personal medical consultation, diagnosis, or treatment."
+    "disclaimer": "The information in this article is for educational purposes and does not replace individual medical consultation, diagnosis, or treatment.",
+    "faqTitle": "Frequently asked questions",
+    "authorLabel": "Medical author",
+    "authorRole": "Obstetrician-gynecologist",
+    "aboutDoctor": "More about Dr. Raykova",
+    "relatedTitle": "More from the handbook",
+    "updated": "Updated",
+    "sourcesTitle": "Sources",
+    "closingTitle": "In closing"
   },
   "servicesPage": {
     "eyebrow": "Services",
