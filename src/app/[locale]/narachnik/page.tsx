@@ -108,7 +108,7 @@ export default async function HandbookPage({ params }: Props) {
             {t("lead")}
           </p>
           <div className="mt-8">
-            <BookCta utmCampaign="handbook-index" />
+            <BookCta variant="superdoc" utmCampaign="handbook-index" />
           </div>
         </Reveal>
 

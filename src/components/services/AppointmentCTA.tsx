@@ -42,11 +42,7 @@ export function AppointmentCTA({
         </p>
         <ClinicRule className="mt-5 max-w-[8rem] opacity-40 [&_div]:bg-primary-foreground" />
         <div className="mt-6">
-          <BookCta
-            variant="ink"
-            utmCampaign={utmCampaign}
-            className="bg-ink text-ink-foreground hover:bg-ink/90"
-          />
+          <BookCta variant="superdoc" utmCampaign={utmCampaign} />
         </div>
       </div>
     </Reveal>

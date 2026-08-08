@@ -33,6 +33,7 @@
   },
   "common": {
     "bookCta": "Book appointment",
+    "bookOnlineCta": "Book online",
     "learnMore": "Learn more",
     "viewServices": "View services",
     "callUs": "Call us",

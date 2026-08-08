@@ -19,6 +19,8 @@ type BookCtaProps = {
 
 /**
  * Primary appointment CTA — always routes through the booking provider.
+ * Use `variant="superdoc"` for the partner pill (mascot + teal outline) on
+ * booking panels; keep brand `primary` for hero/header identity.
  */
 export function BookCta({
   className,
@@ -36,6 +38,47 @@ export function BookCta({
     utmMedium,
     utmCampaign,
   });
+
+  if (variant === "superdoc") {
+    const compact = size === "sm";
+    const text = label ?? t("bookOnlineCta");
+
+    return (
+      <a
+        {...linkProps}
+        className={cn(
+          "group relative inline-flex items-center justify-center whitespace-nowrap rounded-full border-2 border-[#01bfa5] bg-white font-semibold text-[#01bfa5]",
+          "transition-[color,background-color,border-color,transform,box-shadow] duration-200 ease-out",
+          "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#01bfa5]",
+          "motion-safe:hover:-translate-y-px motion-safe:hover:bg-[#e6faf7] motion-safe:hover:shadow-[0_12px_28px_-14px_rgba(1,191,165,0.65)]",
+          "motion-safe:active:translate-y-0",
+          compact
+            ? "h-10 gap-2 py-0 pl-11 pr-5 text-sm"
+            : "h-12 gap-2.5 py-0 pl-[3.35rem] pr-7 text-base sm:h-[3.25rem] sm:pl-14 sm:pr-8",
+          className,
+        )}
+        aria-label={`${text} — Superdoc`}
+      >
+        {/* Local partner SVG — Next/Image SVG needs dangerouslyAllowSVG */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/partners/superdoc-hero.svg"
+          alt=""
+          width={compact ? 28 : 44}
+          height={compact ? 48 : 76}
+          className={cn(
+            "pointer-events-none absolute z-[1] object-contain object-bottom drop-shadow-[0_4px_8px_rgba(1,120,100,0.18)]",
+            compact
+              ? "bottom-[-10%] left-[-6%] h-[2.85rem] w-auto"
+              : "bottom-[-12%] left-[-5%] h-[4.35rem] w-auto sm:h-[4.85rem]",
+          )}
+          aria-hidden
+          decoding="async"
+        />
+        <span className="relative z-[2]">{text}</span>
+      </a>
+    );
+  }
 
   const markSize = size === "sm" ? 16 : 18;
 

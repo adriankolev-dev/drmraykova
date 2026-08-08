@@ -140,7 +140,7 @@ export default async function PricingPage({ params }: Props) {
             <p className="max-w-md text-muted-foreground">{t("intro")}</p>
             <ClinicRule className="mt-6 max-w-[8rem]" />
             <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <BookCta utmCampaign="pricing-page" />
+              <BookCta utmCampaign="pricing-page" variant="superdoc" />
               <a
                 href={doctor.clinic.phoneHref}
                 className="inline-flex h-12 items-center justify-center rounded-md border border-border bg-background px-7 text-base font-medium transition-colors hover:bg-accent"

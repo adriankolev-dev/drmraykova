@@ -144,7 +144,7 @@ export default async function ContactPage({ params }: Props) {
               />
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <BookCta utmCampaign="contact-hero" />
+              <BookCta variant="superdoc" utmCampaign="contact-hero" />
               <a
                 href={doctor.clinic.phoneHref}
                 className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
@@ -365,7 +365,7 @@ export default async function ContactPage({ params }: Props) {
                 })}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <BookCta utmCampaign="contact-final" />
+                <BookCta variant="superdoc" utmCampaign="contact-final" />
                 <a
                   href={doctor.clinic.phoneHref}
                   className={cn(

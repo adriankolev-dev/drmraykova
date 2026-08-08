@@ -16,6 +16,9 @@ const buttonVariants = cva(
         ghost: "text-foreground hover:bg-accent",
         ink: "bg-ink text-ink-foreground hover:bg-ink/90 motion-safe:hover:shadow-[0_10px_24px_-12px_rgba(21,32,43,0.55)]",
         link: "text-primary underline-offset-4 hover:underline px-0 hover:translate-y-0",
+        /** Partner booking pill — prefer BookCta which adds the mascot layout. */
+        superdoc:
+          "rounded-full border-2 border-[#01bfa5] bg-white font-semibold text-[#01bfa5] hover:bg-[#e6faf7] motion-safe:hover:shadow-[0_12px_28px_-14px_rgba(1,191,165,0.65)]",
       },
       size: {
         sm: "h-9 px-3.5 text-sm",

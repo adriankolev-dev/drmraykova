@@ -373,9 +373,8 @@ export async function DoctorCredentialsSection() {
               <ClinicRule className="mt-6 max-w-40 opacity-40 [&_div]:bg-primary-foreground" />
               <div className="mt-8">
                 <BookCta
-                  variant="ink"
+                  variant="superdoc"
                   utmCampaign="about-doctor-bottom"
-                  className="bg-ink text-ink-foreground hover:bg-ink/90"
                 />
               </div>
             </div>

@@ -33,11 +33,7 @@ export async function FinalCtaSection() {
             </p>
             <ClinicRule className="mt-6 max-w-[10rem] opacity-40 [&_div]:bg-primary-foreground" />
             <div className="mt-8">
-              <BookCta
-                variant="ink"
-                utmCampaign="home-final"
-                className="bg-ink text-ink-foreground hover:bg-ink/90"
-              />
+              <BookCta variant="superdoc" utmCampaign="home-final" />
             </div>
           </div>
         </Reveal>

@@ -33,6 +33,7 @@
   },
   "common": {
     "bookCta": "Reservar cita",
+    "bookOnlineCta": "Reservar online",
     "learnMore": "Saber más",
     "viewServices": "Ver servicios",
     "callUs": "Llámenos",

@@ -214,6 +214,7 @@ export default async function ArticlePage({ params }: Props) {
               ) : null}
               <div className={article.ctaLead ? "mt-5" : undefined}>
                 <BookCta
+                  variant="superdoc"
                   label={article.ctaLabel}
                   utmCampaign={`article-${article.slug}`}
                 />
@@ -223,7 +224,10 @@ export default async function ArticlePage({ params }: Props) {
 
           {!article.ctaLead && !article.ctaLabel ? (
             <div className="mt-10">
-              <BookCta utmCampaign={`article-${article.slug}`} />
+              <BookCta
+                variant="superdoc"
+                utmCampaign={`article-${article.slug}`}
+              />
             </div>
           ) : null}
 

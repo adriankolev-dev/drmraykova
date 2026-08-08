@@ -48,7 +48,7 @@ export async function ClinicSection() {
             </div>
           </dl>
           <div className="mt-8">
-            <BookCta utmCampaign="home-clinic" />
+            <BookCta variant="superdoc" utmCampaign="home-clinic" />
           </div>
         </Reveal>
 
