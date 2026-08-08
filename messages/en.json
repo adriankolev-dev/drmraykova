@@ -209,7 +209,10 @@
     "reviewsLabel": "{count} ratings",
     "fiveStarShare": "{fiveStar} of {count} ratings are 5 stars",
     "prev": "Previous review",
-    "next": "Next review"
+    "next": "Next review",
+    "portraitAlt": "Dr. Maria Raykova — hand over heart, in gratitude to her patients",
+    "portraitCaption": "Gratitude",
+    "portraitQuote": "Trust is built exam by exam."
   },
   "clinic": {
     "eyebrow": "06 · Clinic",

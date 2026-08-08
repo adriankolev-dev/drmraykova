@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SuperdocLink } from "@/components/booking/SuperdocText";
 import { SuperdocMark } from "@/components/booking/SuperdocMark";
@@ -21,8 +22,8 @@ export async function TestimonialsSection() {
   return (
     <section className="border-y border-border bg-secondary/30 section-space">
       <div className="container-page">
-        <Reveal className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14">
+          <Reveal className="order-2 lg:order-1">
             <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
             <SectionHeading
               title={t("title")}
@@ -32,50 +33,89 @@ export async function TestimonialsSection() {
               })}
               className="mt-4"
             />
-          </div>
 
-          <div className="rounded-lg border border-border bg-background px-5 py-4 shadow-[inset_0_1px_0_color-mix(in_srgb,var(--clinical-soft)_70%,transparent)] lg:min-w-76">
-            <div className="flex items-center gap-4">
-              <div>
-                <p className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-clinical">
-                  <SuperdocMark size={14} />
-                  {t("ratingLabel")}
+            <div className="mt-8 max-w-md rounded-lg border border-border/80 bg-background/80 px-5 py-4">
+              <p className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-clinical">
+                <SuperdocMark size={14} />
+                {t("ratingLabel")}
+              </p>
+              <div className="mt-2 flex items-end justify-between gap-4">
+                <div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-display text-4xl font-medium tracking-tight text-foreground">
+                      {doctor.rating.value}
+                    </span>
+                    <span className="text-sm text-muted-foreground">/ 5</span>
+                  </div>
+                  <div className="mt-1">
+                    <Stars value={doctor.rating.value} />
+                  </div>
+                </div>
+                <p className="max-w-32 text-right text-sm leading-snug text-muted-foreground">
+                  {t("reviewsLabel", { count: doctor.rating.count })}
                 </p>
-                <div className="mt-1 flex items-baseline gap-2">
-                  <span className="font-display text-4xl font-medium tracking-tight text-foreground">
-                    {doctor.rating.value}
-                  </span>
-                  <span className="text-sm text-muted-foreground">/ 5</span>
-                </div>
-                <div className="mt-1">
-                  <Stars value={doctor.rating.value} />
-                </div>
               </div>
-              <div className="h-12 w-px bg-border" aria-hidden />
-              <p className="max-w-36 text-sm leading-snug text-muted-foreground">
-                {t("reviewsLabel", { count: doctor.rating.count })}
-              </p>
-            </div>
-
-            <div className="mt-4 border-t border-border/70 pt-3">
-              <div
-                className="h-1 w-full overflow-hidden rounded-full bg-border"
-                aria-hidden
-              >
+              <div className="mt-4 border-t border-border/70 pt-3">
                 <div
-                  className="h-full rounded-full bg-primary"
-                  style={{ width: `${fiveStarPercent}%` }}
-                />
+                  className="h-1 w-full overflow-hidden rounded-full bg-border"
+                  aria-hidden
+                >
+                  <div
+                    className="h-full rounded-full bg-primary"
+                    style={{ width: `${fiveStarPercent}%` }}
+                  />
+                </div>
+                <p className="mt-2 text-xs leading-snug text-muted-foreground">
+                  {t("fiveStarShare", {
+                    fiveStar,
+                    count: doctor.rating.count,
+                  })}
+                </p>
               </div>
-              <p className="mt-2 text-xs leading-snug text-muted-foreground">
-                {t("fiveStarShare", {
-                  fiveStar,
-                  count: doctor.rating.count,
-                })}
-              </p>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+
+          <Reveal delay={0.08} className="order-1 lg:order-2">
+            <figure className="relative mx-auto w-full max-w-md lg:max-w-none">
+              {/* Soft brand wash behind the portrait */}
+              <div
+                aria-hidden
+                className="absolute left-1/2 top-[12%] size-[78%] -translate-x-1/2 rounded-full opacity-90"
+                style={{
+                  background:
+                    "radial-gradient(circle at 42% 38%, color-mix(in srgb, var(--primary) 42%, white), color-mix(in srgb, var(--secondary) 70%, transparent) 58%, transparent 74%)",
+                }}
+              />
+
+              <div className="relative overflow-hidden rounded-lg bg-linear-to-b from-card to-secondary/40">
+                <div className="relative aspect-4/5 sm:aspect-5/6">
+                  <Image
+                    src="/doctor-gratitude.webp"
+                    alt={t("portraitAlt")}
+                    fill
+                    sizes="(max-width: 1024px) 90vw, 42vw"
+                    className="object-cover object-[center_18%]"
+                    priority={false}
+                  />
+                  {/* Soft bottom dissolve into section tone */}
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-secondary/80 via-secondary/25 to-transparent"
+                  />
+                </div>
+
+                <figcaption className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-foreground/70">
+                    {t("portraitCaption")}
+                  </p>
+                  <p className="mt-1.5 max-w-xs font-display text-xl font-medium tracking-tight text-foreground sm:text-2xl">
+                    {t("portraitQuote")}
+                  </p>
+                </figcaption>
+              </div>
+            </figure>
+          </Reveal>
+        </div>
 
         <Reveal delay={0.06}>
           <TestimonialsCarousel

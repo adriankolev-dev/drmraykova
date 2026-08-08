@@ -209,7 +209,10 @@
     "reviewsLabel": "{count} valoraciones",
     "fiveStarShare": "{fiveStar} de {count} valoraciones son de 5 estrellas",
     "prev": "Opinión anterior",
-    "next": "Siguiente opinión"
+    "next": "Siguiente opinión",
+    "portraitAlt": "Dra. Maria Raykova — mano sobre el corazón, en agradecimiento a sus pacientes",
+    "portraitCaption": "Agradecimiento",
+    "portraitQuote": "La confianza se construye consulta a consulta."
   },
   "clinic": {
     "eyebrow": "06 · Consulta",
