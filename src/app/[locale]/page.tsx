@@ -5,6 +5,7 @@ import { ClinicSection } from "@/components/sections/ClinicSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 import { HandbookTeaserSection } from "@/components/sections/HandbookTeaserSection";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { InstagramSection } from "@/components/sections/InstagramSection";
 import { IntroSection } from "@/components/sections/IntroSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
@@ -111,6 +112,9 @@ export default async function HomePage({ params }: Props) {
       </div>
       <div className="cv-auto">
         <ClinicSection />
+      </div>
+      <div className="cv-auto">
+        <InstagramSection />
       </div>
       <div className="cv-auto">
         <HandbookTeaserSection />

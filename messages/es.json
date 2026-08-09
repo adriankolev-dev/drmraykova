@@ -137,6 +137,8 @@
     "akushero-ginekologichni-pregledi": "Consulta ante síntomas, control tras pruebas o una segunda opinión. Empezamos por sus molestias y terminamos con un plan comprensible.",
     "ultrazvukovi-izsledvaniya": "La ecografía ayuda a valorar el útero y los ovarios. Los hallazgos se explican en la visita, junto con si hacen falta más pasos.",
     "kolposkopiya": "Exploración especializada del cuello uterino ante alteraciones en la citología o cambios visibles. El objetivo es una valoración más precisa y un plan tranquilo.",
+    "citonamazka": "Cribado de cambios celulares en el cuello — con explicación clara de la preparación, la toma y los siguientes pasos tras el resultado.",
+    "hpv-test": "Test de VPH cuando está indicado. Valoramos si conviene y cómo se combina con la citología.",
     "histeroskopiya": "Consulta y orientación cuando puede estar indicado un examen de la cavidad uterina. Hablamos de si el procedimiento es adecuado y cómo prepararse.",
     "zhensko-zdrave": "Tiempo para preguntas sobre el ciclo, los síntomas o los resultados. Juntas decidimos si hace falta una exploración y cuáles son los siguientes pasos."
   },
@@ -145,6 +147,8 @@
     "akushero-ginekologichni-pregledi": "Valoración de síntomas, exploración y plan de seguimiento",
     "ultrazvukovi-izsledvaniya": "Ecografía y explicación de los hallazgos",
     "kolposkopiya": "Colposcopia y recomendación de siguientes pasos",
+    "citonamazka": "Toma de citología y orientación tras el resultado",
+    "hpv-test": "Valoración de cribado de VPH y toma de muestra si está indicado",
     "histeroskopiya": "Valoración clínica y conversación sobre las indicaciones",
     "zhensko-zdrave": "Consulta y orientación práctica"
   },
@@ -153,6 +157,8 @@
     "akushero-ginekologichni-pregledi": "Ante dolor, ciclo irregular, molestias vaginales o control",
     "ultrazvukovi-izsledvaniya": "En prevención, dolor, ciclo irregular o seguimiento de un hallazgo",
     "kolposkopiya": "Tras una citología alterada o por indicación médica",
+    "citonamazka": "En cribado preventivo o por indicación médica",
+    "hpv-test": "Cuando el médico recomienda cribado de VPH según edad e historial",
     "histeroskopiya": "Tras valoración clínica ante sospecha de hallazgo intrauterino",
     "zhensko-zdrave": "Para preguntas, segunda opinión o preparación de pruebas"
   },
@@ -167,6 +173,8 @@
       "akushero-ginekologichni-pregledi": "Orientativo 30–45 minutos",
       "ultrazvukovi-izsledvaniya": "Orientativo 15–30 minutos",
       "kolposkopiya": "Orientativo 20–40 minutos",
+      "citonamazka": "Orientativo 10–20 minutos como parte de la visita",
+      "hpv-test": "Orientativo 10–20 minutos como parte de la visita",
       "histeroskopiya": "Consulta orientativa 30–45 minutos",
       "zhensko-zdrave": "Orientativo 20–40 minutos"
     }
@@ -176,6 +184,8 @@
     "akushero-ginekologichni-pregledi": "Consultas obstétrico-ginecológicas",
     "ultrazvukovi-izsledvaniya": "Ecografías",
     "kolposkopiya": "Colposcopia",
+    "citonamazka": "Citología",
+    "hpv-test": "Test de VPH",
     "histeroskopiya": "Histeroscopia",
     "zhensko-zdrave": "Consultas de salud femenina"
   },
@@ -222,11 +232,35 @@
     "photoCaption": "La consulta"
   },
   "handbookTeaser": {
-    "eyebrow": "07 · Guía",
+    "eyebrow": "08 · Guía",
     "title": "Respuestas claras antes de la consulta",
     "description": "Artículos educativos breves sobre prevención, preparación y preguntas frecuentes.",
     "cta": "Ir a la guía",
     "allArticles": "Todos los artículos →"
+  },
+  "instagramHome": {
+    "eyebrow": "07 · Instagram",
+    "title": "Orientación breve entre visitas",
+    "description": "Temas prácticos del perfil — con enlace a páginas más completas del sitio.",
+    "follow": "Ir a Instagram",
+    "handle": "@drmariaraykova",
+    "items": {
+      "prevention": {
+        "title": "Prevención",
+        "caption": "Por qué importa la revisión periódica",
+        "href": "/uslugi/citonamazka"
+      },
+      "cycle": {
+        "title": "Ciclo",
+        "caption": "Cuándo el ciclo irregular pide consulta",
+        "href": "/narachnik/menstrualni-narusheniya-koga-da-posetite-ginekolog"
+      },
+      "reviews": {
+        "title": "Opiniones",
+        "caption": "Qué comparten las pacientes tras la visita",
+        "href": "/#testimonials"
+      }
+    }
   },
   "finalCta": {
     "title": "¿Lista para el siguiente paso?",

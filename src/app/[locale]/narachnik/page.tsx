@@ -114,12 +114,12 @@ export default async function HandbookPage({ params }: Props) {
 
         <RevealGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
-            <RevealItem key={article.slug}>
+            <RevealItem key={article.slug} className="h-full">
               <Link
                 href={`/narachnik/${article.slug}`}
-                className="group block overflow-hidden rounded-lg border border-border bg-background transition-[border-color,transform] duration-200 motion-safe:hover:-translate-y-0.5 hover:border-primary/45"
+                className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-background transition-[border-color,transform] duration-200 motion-safe:hover:-translate-y-0.5 hover:border-primary/45"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
+                <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-secondary">
                   <Image
                     src={article.cover}
                     alt=""
@@ -128,15 +128,15 @@ export default async function HandbookPage({ params }: Props) {
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 </div>
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
                     {article.category} ·{" "}
                     {formatArticleDate(article.date, locale)}
                   </p>
-                  <h3 className="mt-2 font-display text-xl font-medium tracking-tight group-hover:text-primary">
+                  <h3 className="mt-2 line-clamp-3 min-h-[4.5rem] font-display text-xl font-medium tracking-tight group-hover:text-primary">
                     {article.title}
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+                  <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
                     {article.excerpt}
                   </p>
                 </div>

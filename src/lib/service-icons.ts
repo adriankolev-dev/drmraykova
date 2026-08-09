@@ -1,11 +1,13 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Dna,
   HeartPulse,
   MessageCircleHeart,
   Microscope,
   ScanLine,
   Stethoscope,
   ShieldPlus,
+  TestTubeDiagonal,
 } from "lucide-react";
 
 export const serviceIcons: Record<string, LucideIcon> = {
@@ -13,6 +15,8 @@ export const serviceIcons: Record<string, LucideIcon> = {
   "akushero-ginekologichni-pregledi": Stethoscope,
   "ultrazvukovi-izsledvaniya": ScanLine,
   kolposkopiya: Microscope,
+  citonamazka: TestTubeDiagonal,
+  "hpv-test": Dna,
   histeroskopiya: HeartPulse,
   "zhensko-zdrave": MessageCircleHeart,
 };

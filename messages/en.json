@@ -137,6 +137,8 @@
     "akushero-ginekologichni-pregledi": "A visit for symptoms, follow-up after tests, or a second opinion. We start with your concerns and finish with a clear plan.",
     "ultrazvukovi-izsledvaniya": "Ultrasound supports assessment of the uterus and ovaries. Findings are explained during the visit, including whether further steps are needed.",
     "kolposkopiya": "A specialized exam of the cervix after an abnormal Pap smear or visible changes. The goal is a more precise assessment and a calm follow-up plan.",
+    "citonamazka": "Screening for cervical cell changes — with clear guidance on preparation, sampling, and next steps after results.",
+    "hpv-test": "HPV testing when indicated. We discuss whether it is appropriate and how it pairs with a Pap smear.",
     "histeroskopiya": "Consultation and guidance when an inspection of the uterine cavity may be indicated. We discuss whether the procedure is appropriate and how to prepare.",
     "zhensko-zdrave": "Time for questions about your cycle, symptoms, or test results. Together we decide whether an exam is needed and what comes next."
   },
@@ -145,6 +147,8 @@
     "akushero-ginekologichni-pregledi": "Symptom assessment, exam, and a follow-up plan",
     "ultrazvukovi-izsledvaniya": "Ultrasound exam and explanation of findings",
     "kolposkopiya": "Colposcopic exam and next-step recommendations",
+    "citonamazka": "Pap smear sampling and guidance after results",
+    "hpv-test": "HPV screening assessment and sample collection when indicated",
     "histeroskopiya": "Clinical assessment and discussion of indications",
     "zhensko-zdrave": "Consultation and practical guidance"
   },
@@ -153,6 +157,8 @@
     "akushero-ginekologichni-pregledi": "For pain, irregular cycles, vaginal symptoms, or follow-up",
     "ultrazvukovi-izsledvaniya": "For prevention, pain, irregular cycles, or monitoring a finding",
     "kolposkopiya": "After an abnormal Pap smear or on medical advice",
+    "citonamazka": "For preventive screening or on medical advice",
+    "hpv-test": "When the doctor recommends HPV screening based on age and history",
     "histeroskopiya": "After clinical assessment when an intrauterine finding is suspected",
     "zhensko-zdrave": "For questions, a second opinion, or preparing for tests"
   },
@@ -167,6 +173,8 @@
       "akushero-ginekologichni-pregledi": "About 30–45 minutes",
       "ultrazvukovi-izsledvaniya": "About 15–30 minutes",
       "kolposkopiya": "About 20–40 minutes",
+      "citonamazka": "About 10–20 minutes as part of the visit",
+      "hpv-test": "About 10–20 minutes as part of the visit",
       "histeroskopiya": "Consultation about 30–45 minutes",
       "zhensko-zdrave": "About 20–40 minutes"
     }
@@ -176,6 +184,8 @@
     "akushero-ginekologichni-pregledi": "Obstetric-gynecological exams",
     "ultrazvukovi-izsledvaniya": "Ultrasound examinations",
     "kolposkopiya": "Colposcopy",
+    "citonamazka": "Pap smear",
+    "hpv-test": "HPV test",
     "histeroskopiya": "Hysteroscopy",
     "zhensko-zdrave": "Women's health consultations"
   },
@@ -222,11 +232,35 @@
     "photoCaption": "The clinic"
   },
   "handbookTeaser": {
-    "eyebrow": "07 · Handbook",
+    "eyebrow": "08 · Handbook",
     "title": "Clear answers before your visit",
     "description": "Short educational articles on prevention, preparation, and common questions.",
     "cta": "Go to handbook",
     "allArticles": "All articles →"
+  },
+  "instagramHome": {
+    "eyebrow": "07 · Instagram",
+    "title": "Short guidance between visits",
+    "description": "Practical topics from the profile — linked to fuller pages on the site.",
+    "follow": "Open Instagram",
+    "handle": "@drmariaraykova",
+    "items": {
+      "prevention": {
+        "title": "Prevention",
+        "caption": "Why a regular check-up matters",
+        "href": "/uslugi/citonamazka"
+      },
+      "cycle": {
+        "title": "Cycle",
+        "caption": "When an irregular cycle needs a visit",
+        "href": "/narachnik/menstrualni-narusheniya-koga-da-posetite-ginekolog"
+      },
+      "reviews": {
+        "title": "Reviews",
+        "caption": "What patients share after a visit",
+        "href": "/#testimonials"
+      }
+    }
   },
   "finalCta": {
     "title": "Ready for the next step?",

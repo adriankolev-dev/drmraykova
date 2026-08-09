@@ -146,6 +146,76 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       ]
     },
     {
+      "slug": "citonamazka",
+      "title": "Цитонамазка",
+      "seoTitle": "Цитонамазка София — профилактика",
+      "seoDescription": "Цитонамазка (Pap тест) в София при д-р Мария Райкова. Спокойно обяснение, подготовка и ясен план след резултата.",
+      "intro": "Цитонамазката е основен скрининг за ранно откриване на клетъчни промени на маточната шийка. Целта е профилактика и спокойствие — с разбираемо обяснение на всяка стъпка.",
+      "suitableFor": "Подходяща като част от профилактичен преглед, при контрол според възрастта и историята или когато лекарят препоръча скрининг. Не замества клиничния преглед.",
+      "visitSteps": [
+        "Кратък разговор за цикъл, предишни резултати и подготовка.",
+        "Вземане на цитонамазка по време на гинекологичен преглед.",
+        "Обяснение какво следва и приблизителни срокове за резултат.",
+        "При нужда — насочване към HPV тест, колпоскопия или контрол."
+      ],
+      "notes": [
+        "Цената на цитонамазката е публикувана в ценоразписа. При работа с НЗОК може да има доплащане."
+      ],
+      "faqs": [
+        {
+          "question": "Болезнена ли е цитонамазката?",
+          "answer": "Обикновено усещането е краткотраен дискомфорт, подобен на обикновен преглед. Ако сте тревожна, кажете — обяснението помага."
+        },
+        {
+          "question": "Колко време отнема резултатът?",
+          "answer": "Според Superdoc коментарите на резултатите обикновено са готови до около 14 дни. Точният срок се уточнява при посещението."
+        },
+        {
+          "question": "Как да запазя час?",
+          "answer": "Часът се запазва онлайн през Superdoc или на телефона на кабинета — 0894 972 626."
+        },
+        {
+          "question": "Работи ли кабинетът с НЗОК?",
+          "answer": "Да, д-р Райкова работи с НЗОК. За цитонамазката може да се изисква доплащане."
+        }
+      ]
+    },
+    {
+      "slug": "hpv-test",
+      "title": "HPV тест",
+      "seoTitle": "HPV тест София",
+      "seoDescription": "HPV тест в София при д-р Мария Райкова. Кога се прави, какво означава и как се комбинира с цитонамазка.",
+      "intro": "HPV тестът търси наличие на човешки папилома вирус — честа причина за клетъчни промени на шийката. При индикации се обсъжда като част от скрининга, заедно с цитонамазката и клиничната оценка.",
+      "suitableFor": "Подходящ когато лекарят препоръча HPV скрининг според възрастта, историята или резултатите. Конкретният панел и лаборатория се уточняват при посещението.",
+      "visitSteps": [
+        "Разговор за възраст, предишни изследвания и нужда от HPV скрининг.",
+        "Вземане на проба при индикации — често заедно с преглед или цитонамазка.",
+        "Обяснение какво измерва тестът и какви са следващите стъпки.",
+        "При положителен или неясен резултат — план за контрол или колпоскопия."
+      ],
+      "notes": [
+        "Цената на HPV теста не е фиксирана в публичния ценоразпис — уточнява се при посещението според избрания панел."
+      ],
+      "faqs": [
+        {
+          "question": "HPV тестът замества ли цитонамазката?",
+          "answer": "Не винаги. Двата теста дават различна информация. Кой е подходящ — или дали се комбинират — се решава според възрастта и клиничния контекст."
+        },
+        {
+          "question": "Какво означава положителен HPV?",
+          "answer": "Означава наличие на вируса, а не задължително сериозна находка. Лекарят обяснява какво следва — наблюдение, допълнителни изследвания или колпоскопия."
+        },
+        {
+          "question": "Как да запазя час?",
+          "answer": "Часът се запазва онлайн през Superdoc или на телефона на кабинета — 0894 972 626."
+        },
+        {
+          "question": "Работи ли кабинетът с НЗОК?",
+          "answer": "Да, д-р Райкова работи с НЗОК. За някои изследвания може да се изисква доплащане."
+        }
+      ]
+    },
+    {
       "slug": "histeroskopiya",
       "title": "Хистероскопия",
       "seoTitle": "Хистероскопия София",
@@ -346,6 +416,76 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       ]
     },
     {
+      "slug": "citonamazka",
+      "title": "Pap smear (cytology)",
+      "seoTitle": "Pap smear in Sofia — cervical screening",
+      "seoDescription": "Pap smear (cytology) in Sofia with Dr. Maria Raykova. Clear preparation guidance and a calm plan after results.",
+      "intro": "A Pap smear is a core screening test for early detection of cellular changes on the cervix. The goal is prevention and peace of mind — with a clear explanation at every step.",
+      "suitableFor": "Suitable as part of a preventive exam, for age- and history-based screening, or when the doctor recommends cytology. It does not replace a clinical exam.",
+      "visitSteps": [
+        "Brief conversation about your cycle, previous results, and preparation.",
+        "Pap smear taken during the gynecological exam.",
+        "Explanation of next steps and expected result timelines.",
+        "When needed — guidance toward HPV testing, colposcopy, or follow-up."
+      ],
+      "notes": [
+        "Pap smear pricing is listed on the price page. NHIF visits may still require co-payment."
+      ],
+      "faqs": [
+        {
+          "question": "Is a Pap smear painful?",
+          "answer": "Most women feel brief discomfort similar to a regular exam. If you are anxious, say so — explanation helps."
+        },
+        {
+          "question": "How long do results take?",
+          "answer": "According to Superdoc, result comments are usually ready within about 14 days. The exact timeline is confirmed during the visit."
+        },
+        {
+          "question": "How do I book an appointment?",
+          "answer": "Book online via Superdoc or call the clinic at 0894 972 626."
+        },
+        {
+          "question": "Does the clinic work with NHIF?",
+          "answer": "Yes, Dr. Raykova works with NHIF. A Pap smear may require co-payment."
+        }
+      ]
+    },
+    {
+      "slug": "hpv-test",
+      "title": "HPV test",
+      "seoTitle": "HPV test in Sofia",
+      "seoDescription": "HPV testing in Sofia with Dr. Maria Raykova. When it is done, what it means, and how it pairs with a Pap smear.",
+      "intro": "An HPV test looks for human papillomavirus — a common cause of cervical cell changes. When indicated, it is discussed as part of screening alongside cytology and clinical assessment.",
+      "suitableFor": "Suitable when the doctor recommends HPV screening based on age, history, or results. The exact panel and lab details are confirmed during the visit.",
+      "visitSteps": [
+        "Conversation about age, previous tests, and whether HPV screening is needed.",
+        "Sample collection when indicated — often with an exam or Pap smear.",
+        "Explanation of what the test measures and what comes next.",
+        "If positive or unclear — a plan for follow-up or colposcopy."
+      ],
+      "notes": [
+        "HPV test pricing is not fixed on the public price list — it is confirmed at the visit according to the chosen panel."
+      ],
+      "faqs": [
+        {
+          "question": "Does an HPV test replace a Pap smear?",
+          "answer": "Not always. The two tests provide different information. Which is appropriate — or whether they are combined — depends on age and clinical context."
+        },
+        {
+          "question": "What does a positive HPV result mean?",
+          "answer": "It means the virus is present, not necessarily a serious finding. The doctor explains next steps — monitoring, further tests, or colposcopy."
+        },
+        {
+          "question": "How do I book an appointment?",
+          "answer": "Book online via Superdoc or call the clinic at 0894 972 626."
+        },
+        {
+          "question": "Does the clinic work with NHIF?",
+          "answer": "Yes, Dr. Raykova works with NHIF. Some tests may require co-payment."
+        }
+      ]
+    },
+    {
       "slug": "histeroskopiya",
       "title": "Hysteroscopy",
       "seoTitle": "Hysteroscopy in Sofia",
@@ -542,6 +682,76 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         {
           "question": "¿La consulta trabaja con NHIF?",
           "answer": "Sí, la Dra. Raykova trabaja con NHIF (seguro público búlgaro). Algunas pruebas pueden requerir copago."
+        }
+      ]
+    },
+    {
+      "slug": "citonamazka",
+      "title": "Citología (Pap)",
+      "seoTitle": "Citología en Sofía — prevención",
+      "seoDescription": "Citología (Pap) en Sofía con la Dra. Maria Raykova. Preparación clara y un plan tranquilo tras el resultado.",
+      "intro": "La citología es un cribado clave para detectar a tiempo cambios celulares en el cuello uterino. El objetivo es prevención y tranquilidad — con una explicación comprensible en cada paso.",
+      "suitableFor": "Indicada como parte de una revisión preventiva, según edad e historial, o cuando el médico recomienda cribado. No sustituye la exploración clínica.",
+      "visitSteps": [
+        "Breve conversación sobre el ciclo, resultados previos y preparación.",
+        "Toma de citología durante la exploración ginecológica.",
+        "Explicación de los siguientes pasos y plazos aproximados del resultado.",
+        "Si hace falta — orientación hacia test de VPH, colposcopia o control."
+      ],
+      "notes": [
+        "El precio de la citología está publicado en el tarifario. Con NHIF puede haber copago."
+      ],
+      "faqs": [
+        {
+          "question": "¿Duele la citología?",
+          "answer": "Suele notarse una molestia breve, similar a una exploración habitual. Si está nerviosa, dígalo: la explicación ayuda."
+        },
+        {
+          "question": "¿Cuánto tarda el resultado?",
+          "answer": "Según Superdoc, los comentarios de resultados suelen estar listos en unos 14 días. El plazo exacto se confirma en la visita."
+        },
+        {
+          "question": "¿Cómo reservo una cita?",
+          "answer": "Reserve online a través de Superdoc o llame a la consulta al 0894 972 626."
+        },
+        {
+          "question": "¿La consulta trabaja con NHIF?",
+          "answer": "Sí, la Dra. Raykova trabaja con NHIF. La citología puede requerir copago."
+        }
+      ]
+    },
+    {
+      "slug": "hpv-test",
+      "title": "Test de VPH",
+      "seoTitle": "Test de VPH en Sofía",
+      "seoDescription": "Test de VPH en Sofía con la Dra. Maria Raykova. Cuándo se hace, qué significa y cómo se combina con la citología.",
+      "intro": "El test de VPH busca la presencia del virus del papiloma humano — una causa frecuente de cambios celulares en el cuello. Cuando está indicado, se valora como parte del cribado junto con la citología y la evaluación clínica.",
+      "suitableFor": "Indicado cuando el médico recomienda cribado de VPH según edad, historial o resultados. El panel concreto y el laboratorio se aclaran en la visita.",
+      "visitSteps": [
+        "Conversación sobre edad, pruebas previas y necesidad de cribado de VPH.",
+        "Toma de muestra cuando esté indicado — a menudo con exploración o citología.",
+        "Explicación de qué mide el test y cuáles son los siguientes pasos.",
+        "Si el resultado es positivo o poco claro — plan de control o colposcopia."
+      ],
+      "notes": [
+        "El precio del test de VPH no está fijado en el tarifario público — se confirma en la visita según el panel elegido."
+      ],
+      "faqs": [
+        {
+          "question": "¿El test de VPH sustituye a la citología?",
+          "answer": "No siempre. Las dos pruebas dan información distinta. Cuál conviene — o si se combinan — se decide según la edad y el contexto clínico."
+        },
+        {
+          "question": "¿Qué significa un VPH positivo?",
+          "answer": "Significa presencia del virus, no necesariamente un hallazgo grave. La doctora explica qué sigue: observación, más pruebas o colposcopia."
+        },
+        {
+          "question": "¿Cómo reservo una cita?",
+          "answer": "Reserve online a través de Superdoc o llame a la consulta al 0894 972 626."
+        },
+        {
+          "question": "¿La consulta trabaja con NHIF?",
+          "answer": "Sí, la Dra. Raykova trabaja con NHIF. Algunas pruebas pueden requerir copago."
         }
       ]
     },

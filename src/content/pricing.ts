@@ -55,7 +55,10 @@ export const priceItems: readonly PriceItem[] = [
   {
     id: "tsitonamazka",
     eur: 25,
-    serviceSlugs: ["profilaktichen-ginekologichen-pregled"],
+    serviceSlugs: [
+      "profilaktichen-ginekologichen-pregled",
+      "citonamazka",
+    ],
   },
   {
     id: "vlagalishten-sekret",
@@ -76,7 +79,10 @@ export const priceItems: readonly PriceItem[] = [
  * Services with no published price — quoted after consultation.
  * Do not invent a figure for these.
  */
-export const servicesWithoutListedPrice = ["histeroskopiya"] as const;
+export const servicesWithoutListedPrice = [
+  "histeroskopiya",
+  "hpv-test",
+] as const;
 
 /** Insurers accepted for cashless visits. Proper names — not translated. */
 export const insurers = [

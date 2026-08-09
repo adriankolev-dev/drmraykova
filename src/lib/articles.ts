@@ -149,6 +149,11 @@ function loadArticles(locale: Locale): Article[] {
 const cache = new Map<Locale, Article[]>();
 
 function articlesFor(locale: Locale) {
+  // In development, always re-read markdown so cover/content edits show up
+  // without restarting the server. Production keeps the in-memory cache.
+  if (process.env.NODE_ENV === "development") {
+    return loadArticles(locale);
+  }
   if (!cache.has(locale)) cache.set(locale, loadArticles(locale));
   return cache.get(locale)!;
 }

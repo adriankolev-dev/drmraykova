@@ -20,7 +20,10 @@ export async function TestimonialsSection() {
   const fiveStarPercent = Math.round((fiveStar / doctor.rating.count) * 100);
 
   return (
-    <section className="border-y border-border bg-secondary/30 section-space">
+    <section
+      id="testimonials"
+      className="border-y border-border bg-secondary/30 section-space scroll-mt-24"
+    >
       <div className="container-page">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14">
           <Reveal className="order-2 lg:order-1">

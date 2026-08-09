@@ -83,6 +83,14 @@ export const doctor = {
       title: "Колпоскопия",
     },
     {
+      slug: "citonamazka",
+      title: "Цитонамазка",
+    },
+    {
+      slug: "hpv-test",
+      title: "HPV тест",
+    },
+    {
       slug: "histeroskopiya",
       title: "Хистероскопия",
     },

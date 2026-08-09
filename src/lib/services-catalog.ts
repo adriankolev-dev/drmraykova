@@ -10,7 +10,7 @@ export type ServiceCategoryId =
   | "consultations"
   | "treatment";
 
-export const SERVICES_LAST_UPDATED = "2026-08-02";
+export const SERVICES_LAST_UPDATED = "2026-08-09";
 
 /**
  * Orientational visit length for UX cards — not a clinical guarantee.
@@ -36,6 +36,14 @@ export const SERVICE_DURATION: Record<
     isoMin: "PT20M",
     isoMax: "PT40M",
   },
+  citonamazka: {
+    isoMin: "PT10M",
+    isoMax: "PT20M",
+  },
+  "hpv-test": {
+    isoMin: "PT10M",
+    isoMax: "PT20M",
+  },
   histeroskopiya: {
     isoMin: "PT30M",
     isoMax: "PT45M",
@@ -49,11 +57,11 @@ export const SERVICE_DURATION: Record<
 /** Featured links in the Услуги dropdown (order matters). */
 export const NAV_FEATURED_SERVICE_SLUGS = [
   "profilaktichen-ginekologichen-pregled",
-  "ultrazvukovi-izsledvaniya",
+  "citonamazka",
+  "hpv-test",
   "kolposkopiya",
+  "ultrazvukovi-izsledvaniya",
   "histeroskopiya",
-  "akushero-ginekologichni-pregledi",
-  "zhensko-zdrave",
 ] as const;
 
 export const SERVICE_CATEGORIES: Array<{
@@ -62,7 +70,11 @@ export const SERVICE_CATEGORIES: Array<{
 }> = [
   {
     id: "prevention",
-    slugs: ["profilaktichen-ginekologichen-pregled"],
+    slugs: [
+      "profilaktichen-ginekologichen-pregled",
+      "citonamazka",
+      "hpv-test",
+    ],
   },
   {
     id: "diagnostics",
@@ -81,9 +93,9 @@ export const SERVICE_CATEGORIES: Array<{
 /** Related services for internal linking — clinically adjacent, not invented. */
 export const RELATED_SERVICES: Record<string, readonly string[]> = {
   "profilaktichen-ginekologichen-pregled": [
-    "ultrazvukovi-izsledvaniya",
+    "citonamazka",
+    "hpv-test",
     "kolposkopiya",
-    "zhensko-zdrave",
   ],
   "akushero-ginekologichni-pregledi": [
     "profilaktichen-ginekologichen-pregled",
@@ -96,9 +108,19 @@ export const RELATED_SERVICES: Record<string, readonly string[]> = {
     "kolposkopiya",
   ],
   kolposkopiya: [
+    "citonamazka",
+    "hpv-test",
     "profilaktichen-ginekologichen-pregled",
-    "ultrazvukovi-izsledvaniya",
-    "zhensko-zdrave",
+  ],
+  citonamazka: [
+    "profilaktichen-ginekologichen-pregled",
+    "hpv-test",
+    "kolposkopiya",
+  ],
+  "hpv-test": [
+    "citonamazka",
+    "profilaktichen-ginekologichen-pregled",
+    "kolposkopiya",
   ],
   histeroskopiya: [
     "akushero-ginekologichni-pregledi",
@@ -107,8 +129,8 @@ export const RELATED_SERVICES: Record<string, readonly string[]> = {
   ],
   "zhensko-zdrave": [
     "profilaktichen-ginekologichen-pregled",
+    "citonamazka",
     "akushero-ginekologichni-pregledi",
-    "ultrazvukovi-izsledvaniya",
   ],
 };
 
