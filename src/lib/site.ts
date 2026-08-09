@@ -28,7 +28,7 @@ export const siteConfig = {
    * Loads only after optional cookie consent.
    */
   gaMeasurementId:
-    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-CDRM3ZN8BY",
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-FX4KH956NH",
 } as const;
 
 export type SiteConfig = typeof siteConfig;
