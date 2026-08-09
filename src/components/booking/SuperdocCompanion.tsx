@@ -12,11 +12,14 @@ import {
 import { createPortal } from "react-dom";
 import { usePathname } from "@/i18n/navigation";
 import { getBookingLinkProps } from "@/lib/booking";
+import {
+  readCookieConsent,
+  subscribeCookieConsent,
+} from "@/lib/cookie-consent";
 import { cn } from "@/lib/utils";
 
 type Mode = "hidden" | "park" | "travel" | "docked";
 
-const COOKIE_KEY = "mr-cookie-consent";
 const SLOT_SELECTOR = "[data-superdoc-slot]";
 const PAD_SELECTOR = "[data-superdoc-pad]";
 /** Tells the pad to recoil when the companion jumps off it or lands back on. */
@@ -36,18 +39,8 @@ const lerp = (from: number, to: number, t: number) => from + (to - from) * t;
 const easeInOut = (t: number) =>
   t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2;
 
-function hasCookieConsent(): boolean {
-  const value = window.localStorage.getItem(COOKIE_KEY);
-  return value === "accepted" || value === "essential";
-}
-
-function subscribeConsent(onStoreChange: () => void) {
-  window.addEventListener("mr-cookie-consent", onStoreChange);
-  window.addEventListener("storage", onStoreChange);
-  return () => {
-    window.removeEventListener("mr-cookie-consent", onStoreChange);
-    window.removeEventListener("storage", onStoreChange);
-  };
+function hasCookieChoice() {
+  return readCookieConsent() !== null;
 }
 
 function subscribeViewport(onStoreChange: () => void) {
@@ -151,8 +144,8 @@ export function SuperdocCompanion() {
   const pathname = usePathname();
 
   const cookiesOk = useSyncExternalStore(
-    subscribeConsent,
-    hasCookieConsent,
+    subscribeCookieConsent,
+    hasCookieChoice,
     () => false,
   );
   const mode = useSyncExternalStore(

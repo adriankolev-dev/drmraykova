@@ -403,9 +403,9 @@
     "cookiesEssentialTitle": "Essential",
     "cookiesEssentialBody": "Required for basic site functions — for example remembering your cookie and language choices. These do not require consent.",
     "cookiesOptionalTitle": "Optional",
-    "cookiesOptionalBody": "May be used for statistics or improvements only after consent via the banner. You can accept essential cookies only.",
+    "cookiesOptionalBody": "May be used for statistics (Google Analytics) or improvements only after consent via the banner. You can accept essential cookies only.",
     "thirdTitle": "Third parties",
-    "thirdBody": "The site may redirect to Superdoc for booking and to Google Maps for directions. Those services have their own policies. We do not control how they process data after you leave this site.",
+    "thirdBody": "The site may redirect to Superdoc for booking and to Google Maps for directions. With consent for optional cookies, Google Analytics (Google Ireland Ltd.) loads for anonymized visit statistics. Those services have their own policies. We do not control how they process data after you leave this site.",
     "retentionTitle": "Retention",
     "retentionBody": "Technical and cookie data are kept only as long as needed for the stated purposes, or until you withdraw consent / clear your browser. Phone enquiries are not systematically archived via the website.",
     "rightsTitle": "Your rights",
@@ -561,7 +561,7 @@
   },
   "cookies": {
     "title": "Cookies",
-    "body": "We use essential cookies for the site to work and — only with your consent — optional cookies for improvements. More in the",
+    "body": "We use essential cookies for the site to work and — only with your consent — Google Analytics for statistics. More in the",
     "policyLink": "privacy policy",
     "accept": "Accept all",
     "essential": "Essential only"

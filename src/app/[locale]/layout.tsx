@@ -5,6 +5,7 @@ import { IBM_Plex_Mono, Literata, Onest } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { CookieConsent } from "@/components/cookies/CookieConsent";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { SuperdocCompanion } from "@/components/booking/SuperdocCompanion";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { PageEnter } from "@/components/motion/PageEnter";
@@ -65,6 +66,7 @@ export default async function LocaleLayout({
           <BackToTop />
           <SuperdocCompanion />
           <CookieConsent />
+          <GoogleAnalytics />
         </NextIntlClientProvider>
       </body>
     </html>

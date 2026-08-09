@@ -4,41 +4,29 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
+import {
+  readCookieConsent,
+  writeCookieConsent,
+} from "@/lib/cookie-consent";
 import { cn } from "@/lib/utils";
-
-const STORAGE_KEY = "mr-cookie-consent";
-
-type ConsentValue = "accepted" | "essential";
-
-function readConsent(): ConsentValue | null {
-  if (typeof window === "undefined") return null;
-  const value = window.localStorage.getItem(STORAGE_KEY);
-  if (value === "accepted" || value === "essential") return value;
-  return null;
-}
-
-function writeConsent(value: ConsentValue) {
-  window.localStorage.setItem(STORAGE_KEY, value);
-  window.dispatchEvent(new Event("mr-cookie-consent"));
-}
 
 export function CookieConsent() {
   const t = useTranslations("cookies");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setVisible(readConsent() === null);
+    setVisible(readCookieConsent() === null);
   }, []);
 
   if (!visible) return null;
 
   function acceptAll() {
-    writeConsent("accepted");
+    writeCookieConsent("accepted");
     setVisible(false);
   }
 
   function acceptEssential() {
-    writeConsent("essential");
+    writeCookieConsent("essential");
     setVisible(false);
   }
 

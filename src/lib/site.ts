@@ -23,6 +23,12 @@ export const siteConfig = {
     "акушер гинеколог Люлин",
     "гинеколог срещу ВМА",
   ],
+  /**
+   * GA4 measurement ID (public). Override with NEXT_PUBLIC_GA_MEASUREMENT_ID.
+   * Loads only after optional cookie consent.
+   */
+  gaMeasurementId:
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-CDRM3ZN8BY",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

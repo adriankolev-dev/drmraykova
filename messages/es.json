@@ -403,9 +403,9 @@
     "cookiesEssentialTitle": "Necesarias",
     "cookiesEssentialBody": "Imprescindibles para el funcionamiento básico — por ejemplo recordar su elección de cookies e idioma. No requieren consentimiento.",
     "cookiesOptionalTitle": "Opcionales",
-    "cookiesOptionalBody": "Pueden usarse para estadísticas o mejoras solo tras su consentimiento en el banner. Puede aceptar solo las necesarias.",
+    "cookiesOptionalBody": "Pueden usarse para estadísticas (Google Analytics) o mejoras solo tras su consentimiento en el banner. Puede aceptar solo las necesarias.",
     "thirdTitle": "Terceros",
-    "thirdBody": "El sitio puede redirigir a Superdoc para reservar cita y a Google Maps para la navegación. Esos servicios tienen políticas propias. No controlamos cómo tratan los datos tras abandonar este sitio.",
+    "thirdBody": "El sitio puede redirigir a Superdoc para reservar cita y a Google Maps para la navegación. Con consentimiento de cookies opcionales se carga Google Analytics (Google Ireland Ltd.) para estadísticas anonimizadas de visitas. Esos servicios tienen políticas propias. No controlamos cómo tratan los datos tras abandonar este sitio.",
     "retentionTitle": "Plazo de conservación",
     "retentionBody": "Los datos técnicos y de cookies se conservan solo mientras sean necesarios para las finalidades indicadas, o hasta que retire el consentimiento / limpie el navegador. Las consultas telefónicas no se archivan de forma sistemática a través del sitio.",
     "rightsTitle": "Sus derechos",
@@ -561,7 +561,7 @@
   },
   "cookies": {
     "title": "Cookies",
-    "body": "Usamos cookies necesarias para el funcionamiento del sitio y — solo con su consentimiento — cookies opcionales para mejoras. Más en la",
+    "body": "Usamos cookies necesarias para el funcionamiento del sitio y — solo con su consentimiento — Google Analytics para estadísticas. Más en la",
     "policyLink": "política de privacidad",
     "accept": "Aceptar todas",
     "essential": "Solo necesarias"
