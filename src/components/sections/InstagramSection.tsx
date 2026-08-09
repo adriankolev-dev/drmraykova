@@ -58,7 +58,7 @@ export async function InstagramSection() {
                 <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-secondary">
                   <Image
                     src={preview.src}
-                    alt=""
+                    alt={t(`items.${preview.key}.imageAlt`)}
                     fill
                     sizes="(max-width: 640px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"

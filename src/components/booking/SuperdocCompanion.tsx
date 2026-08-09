@@ -119,7 +119,7 @@ function MascotImg({ className }: { className?: string }) {
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src="/partners/superdoc-hero.svg"
-      alt=""
+      alt="Superdoc"
       className={cn(
         "pointer-events-none h-full w-auto select-none object-contain object-bottom",
         className,

@@ -78,7 +78,7 @@ export function BookCta({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/partners/superdoc-hero.svg"
-            alt=""
+            alt="Superdoc"
             width={compact ? 28 : 44}
             height={compact ? 48 : 76}
             className="h-full w-full object-contain object-bottom drop-shadow-[0_4px_8px_rgba(1,120,100,0.18)] transition-opacity duration-200"

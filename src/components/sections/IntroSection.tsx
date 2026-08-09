@@ -13,7 +13,11 @@ export async function IntroSection() {
           <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
           <SectionHeading title={t("title")} className="mt-4" />
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            {t("body")}
+            {t.rich("body", {
+              specialty: (chunks) => (
+                <strong className="font-semibold text-foreground">{chunks}</strong>
+              ),
+            })}
           </p>
           <Link
             href="/za-lekarya"

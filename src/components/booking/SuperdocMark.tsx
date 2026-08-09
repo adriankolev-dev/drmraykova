@@ -20,7 +20,7 @@ export function SuperdocMark({
   return (
     <Image
       src="/partners/superdoc-icon.png"
-      alt=""
+      alt="Superdoc"
       width={size}
       height={size}
       priority={priority}

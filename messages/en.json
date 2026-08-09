@@ -104,7 +104,7 @@
   "intro": {
     "eyebrow": "01 · About",
     "title": "A careful exam. A clear conversation.",
-    "body": "Dr. Maria Raykova is a resident in obstetrics and gynecology. She practices at PSAGBAL “Saint Sophia” and Lyulin Med Medical Center. Patients often note the calm explanations, thorough examination, and sense of care.",
+    "body": "Dr. Maria Raykova is a <specialty>resident in obstetrics and gynecology</specialty>. She practices at PSAGBAL “Saint Sophia” and Lyulin Med Medical Center. Patients often note the calm explanations, thorough examination, and sense of care.",
     "points": [
       "Degree from Medical University — Varna",
       "Specialization in obstetrics and gynecology",
@@ -248,16 +248,19 @@
       "prevention": {
         "title": "Prevention",
         "caption": "Why a regular check-up matters",
+        "imageAlt": "Instagram post about preventive gynecological check-ups and Pap smear",
         "href": "/uslugi/citonamazka"
       },
       "cycle": {
         "title": "Cycle",
         "caption": "When an irregular cycle needs a visit",
+        "imageAlt": "Instagram post about the menstrual cycle and when to see a gynecologist",
         "href": "/narachnik/menstrualni-narusheniya-koga-da-posetite-ginekolog"
       },
       "reviews": {
         "title": "Reviews",
         "caption": "What patients share after a visit",
+        "imageAlt": "Instagram post with patient reviews of Dr. Maria Raykova",
         "href": "/#testimonials"
       }
     }

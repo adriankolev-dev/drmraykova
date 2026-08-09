@@ -44,7 +44,7 @@ export async function HandbookTeaserSection() {
                 <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-secondary">
                   <Image
                     src={article.cover}
-                    alt=""
+                    alt={article.coverAlt || article.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"

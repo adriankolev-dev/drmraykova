@@ -104,7 +104,7 @@
   "intro": {
     "eyebrow": "01 · Sobre la doctora",
     "title": "Exploración atenta. Conversación clara.",
-    "body": "La Dra. Maria Raykova es especialista en formación en obstetricia y ginecología. Ejerce en PSAGBAL “Saint Sophia” y el Centro Médico Lyulin Med. Las pacientes destacan a menudo las explicaciones tranquilas, la exploración minuciosa y la sensación de cuidado.",
+    "body": "La Dra. Maria Raykova es <specialty>especialista en formación en obstetricia y ginecología</specialty>. Ejerce en PSAGBAL “Saint Sophia” y el Centro Médico Lyulin Med. Las pacientes destacan a menudo las explicaciones tranquilas, la exploración minuciosa y la sensación de cuidado.",
     "points": [
       "Título de la Universidad Médica — Varna",
       "Especialización en obstetricia y ginecología",
@@ -248,16 +248,19 @@
       "prevention": {
         "title": "Prevención",
         "caption": "Por qué importa la revisión periódica",
+        "imageAlt": "Publicación de Instagram sobre revisión ginecológica preventiva y citología",
         "href": "/uslugi/citonamazka"
       },
       "cycle": {
         "title": "Ciclo",
         "caption": "Cuándo el ciclo irregular pide consulta",
+        "imageAlt": "Publicación de Instagram sobre el ciclo menstrual y cuándo ver al ginecólogo",
         "href": "/narachnik/menstrualni-narusheniya-koga-da-posetite-ginekolog"
       },
       "reviews": {
         "title": "Opiniones",
         "caption": "Qué comparten las pacientes tras la visita",
+        "imageAlt": "Publicación de Instagram con opiniones de pacientes sobre la Dra. María Raykova",
         "href": "/#testimonials"
       }
     }

@@ -41,7 +41,7 @@ export function SuperdocLink({
       )}
     >
       {withMark ? <SuperdocMark size={16} /> : null}
-      {children}
+      <strong className="font-semibold">{children}</strong>
     </a>
   );
 }
@@ -53,10 +53,17 @@ type SuperdocTextProps = {
   utmCampaign?: string;
   tone?: "default" | "onPrimary";
   as?: "span" | "p";
+  /**
+   * When true, each “Superdoc” mention becomes a booking link (legacy).
+   * Default is false — brand name is emphasized with <strong> instead, so
+   * pages don’t accumulate dozens of identical “Superdoc” anchors.
+   */
+  linkMentions?: boolean;
 };
 
 /**
- * Renders plain text and turns every “Superdoc” mention into a profile link.
+ * Renders plain text and emphasizes every “Superdoc” mention.
+ * Set `linkMentions` only when the sentence itself should be a booking CTA.
  */
 export function SuperdocText({
   text,
@@ -65,6 +72,7 @@ export function SuperdocText({
   utmCampaign = "inline-superdoc",
   tone = "default",
   as: Tag = "span",
+  linkMentions = false,
 }: SuperdocTextProps) {
   if (!text.includes("Superdoc")) {
     return <Tag className={className}>{text}</Tag>;
@@ -76,12 +84,18 @@ export function SuperdocText({
     <Tag className={className}>
       {parts.map((part, index) =>
         part === "Superdoc" ? (
-          <SuperdocLink
-            key={`superdoc-${index}`}
-            className={linkClassName}
-            utmCampaign={utmCampaign}
-            tone={tone}
-          />
+          linkMentions ? (
+            <SuperdocLink
+              key={`superdoc-${index}`}
+              className={linkClassName}
+              utmCampaign={utmCampaign}
+              tone={tone}
+            />
+          ) : (
+            <strong key={`superdoc-${index}`} className="font-semibold">
+              Superdoc
+            </strong>
+          )
         ) : (
           <span key={`text-${index}`}>{part}</span>
         ),
