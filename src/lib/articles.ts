@@ -59,6 +59,14 @@ function articlesDir(locale: Locale) {
   return path.join(ARTICLES_ROOT, "bg");
 }
 
+function parseArticleHtml(content: string) {
+  const html = marked.parse(content, { async: false }) as string;
+  return html.replace(
+    /<table>/g,
+    '<div class="article-table-wrap"><table>',
+  ).replace(/<\/table>/g, "</table></div>");
+}
+
 function loadArticles(locale: Locale): Article[] {
   const dir = articlesDir(locale);
   if (!fs.existsSync(dir)) return [];
@@ -70,7 +78,7 @@ function loadArticles(locale: Locale): Article[] {
       const slug = file.replace(/\.md$/, "");
       const raw = fs.readFileSync(path.join(dir, file), "utf8");
       const { data, content } = matter(raw);
-      const html = marked.parse(content, { async: false }) as string;
+      const html = parseArticleHtml(content);
       const faqRaw = Array.isArray(data.faq) ? data.faq : [];
       const faq = faqRaw
         .map((item) => {

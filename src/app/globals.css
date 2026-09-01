@@ -294,6 +294,75 @@
     @apply text-foreground underline decoration-primary/50 underline-offset-4 transition-colors hover:decoration-primary;
   }
 
+  .article-prose .article-table-wrap {
+    margin: 1.35rem 0 1.75rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--card) 94%, white);
+  }
+
+  .article-prose .article-table-wrap table {
+    width: 100%;
+    min-width: 26rem;
+    margin: 0;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .article-prose thead {
+    background: color-mix(in srgb, var(--accent) 80%, white);
+  }
+
+  .article-prose th {
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 90%, transparent);
+  }
+
+  .article-prose td {
+    padding: 0.85rem 1rem;
+    vertical-align: top;
+    color: var(--muted-foreground);
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+  }
+
+  .article-prose tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .article-prose tbody td:first-child {
+    width: 36%;
+    min-width: 8.5rem;
+    padding-right: 1.25rem;
+    font-weight: 500;
+    color: var(--foreground);
+  }
+
+  .article-prose tbody tr:nth-child(even) {
+    background: color-mix(in srgb, var(--secondary) 35%, transparent);
+  }
+
+  @media (max-width: 639px) {
+    .article-prose th,
+    .article-prose td {
+      padding: 0.75rem 0.85rem;
+      font-size: 0.9rem;
+    }
+
+    .article-prose th {
+      font-size: 0.62rem;
+    }
+  }
+
   /* Article-only layout helpers — scoped, no global design change */
   .article-prose .symptom-grid {
     display: grid;
