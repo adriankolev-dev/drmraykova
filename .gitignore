@@ -45,3 +45,6 @@ next-env.d.ts
 
 # маркетинг материали (Instagram и др.) — само локално
 /assets/
+
+# Cursor local skills / agent config — не се комитва
+.cursor/

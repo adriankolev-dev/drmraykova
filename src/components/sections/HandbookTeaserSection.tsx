@@ -47,7 +47,7 @@ export async function HandbookTeaserSection() {
                     alt={article.coverAlt || article.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-5">

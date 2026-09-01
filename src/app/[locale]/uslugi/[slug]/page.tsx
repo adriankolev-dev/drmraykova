@@ -171,6 +171,7 @@ export default async function ServicePage({ params }: Props) {
         <ServiceHero
           title={service.title}
           intro={service.intro}
+          breadcrumbHome={t("breadcrumbHome")}
           breadcrumbServices={t("breadcrumbServices")}
           withDoctor={t("withDoctor", { name: th("brand"), city: tc("city") })}
           utmCampaign={`service-${service.slug}`}

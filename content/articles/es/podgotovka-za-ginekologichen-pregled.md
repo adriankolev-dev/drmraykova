@@ -3,7 +3,7 @@ title: "Preparación para una consulta ginecológica — checklist práctico"
 excerpt: "Qué llevar, qué preguntar y cómo sentirse más tranquila antes de la visita."
 category: "Preguntas frecuentes"
 date: "2026-07-10"
-cover: "/blog/cover-podgotovka.webp"
+cover: "/blog/cover-pregled.webp"
 ---
 
 Una buena preparación hace la visita más eficaz y calmada — para usted y para la doctora.

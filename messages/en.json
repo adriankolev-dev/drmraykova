@@ -304,8 +304,8 @@
   },
   "handbook": {
     "eyebrow": "Handbook",
-    "title": "Medical handbook",
-    "lead": "Educational materials on women's health — so you arrive prepared and at ease.",
+    "title": "Women's health handbook",
+    "lead": "Articles on prevention, HPV, cytology, colposcopy, hysteroscopy, and the menstrual cycle — clear answers before you book.",
     "articlesOnlyBg": "",
     "disclaimer": "The information in this article is for educational purposes and does not replace individual medical consultation, diagnosis, or treatment.",
     "faqTitle": "Frequently asked questions",
@@ -313,12 +313,34 @@
     "authorRole": "Obstetrician-gynecologist",
     "aboutDoctor": "More about Dr. Raykova",
     "relatedTitle": "More from the handbook",
+    "relatedServicesTitle": "Related services",
+    "relatedServicesLead": "If this topic concerns you or you want the next step — these are the main services in the practice.",
+    "clusters": {
+      "prevention": "Prevention",
+      "hpv-cytology": "HPV & cytology",
+      "colposcopy": "Colposcopy",
+      "hysteroscopy": "Hysteroscopy",
+      "menstrual": "Menstrual cycle",
+      "symptoms": "Gynecological symptoms"
+    },
+    "clusterLead": "Articles on this topic — clear answers linked to services in the practice.",
+    "viewService": "View service",
+    "categoriesLabel": "Categories",
+    "articlesLabel": "articles",
+    "noResults": "No articles in this category",
+    "clearFilters": "Show all",
     "updated": "Updated",
     "sourcesTitle": "Sources",
     "scientificSourceTitle": "Scientific source",
     "scientificSourceIntro": "There is also contemporary scientific research on this topic in obstetrics and gynecology.",
     "scientificSourceLink": "View the publication on PubMed",
     "closingTitle": "In closing"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "lead": "The link may be outdated or the address may contain a typo.",
+    "home": "Back to home",
+    "services": "Services"
   },
   "servicesPage": {
     "eyebrow": "Services",

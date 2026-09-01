@@ -40,9 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             ? 0.75
             : 0.8,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, localizedPath(l, path || "/")]),
-        ),
+        languages: {
+          ...Object.fromEntries(
+            locales.map((l) => [l, localizedPath(l, path || "/")]),
+          ),
+          "x-default": localizedPath("bg", path || "/"),
+        },
       },
     }));
   });

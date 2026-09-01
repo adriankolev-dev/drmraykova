@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getLocale, getTranslations, setRequestLocale } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
-import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
+import { HandbookBlogExplorer } from "@/components/handbook/HandbookBlogExplorer";
+import { Reveal } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
-import { Link } from "@/i18n/navigation";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
 import {
   formatArticleDate,
   getAllArticles,
+  getArticleCategories,
 } from "@/lib/articles";
 import { localeOpenGraph } from "@/lib/navigation";
 import { pageOpenGraph } from "@/lib/seo/metadata";
@@ -61,12 +62,30 @@ export default async function HandbookPage({ params }: Props) {
   setRequestLocale(raw);
 
   const t = await getTranslations("handbook");
+  const tc = await getTranslations("common");
   const tn = await getTranslations("nav");
   const locale = (await getLocale()) as Locale;
   const articles = getAllArticles(locale);
   const prefix = raw === "bg" ? "" : `/${raw}`;
   const pageUrl = `${siteConfig.url}${prefix}/narachnik`;
   const meta = await getTranslations({ locale: raw, namespace: "meta" });
+
+  const blogArticles = articles.map((article) => ({
+    slug: article.slug,
+    title: article.title,
+    excerpt: article.excerpt,
+    category: article.category,
+    dateLabel: formatArticleDate(article.date, locale),
+    cover: article.cover,
+    coverAlt: article.coverAlt,
+    readingTimeLabel: tc("readingTime", { minutes: article.readingTime }),
+  }));
+
+  const categoryNames = getArticleCategories(locale).slice(1);
+  const categories = categoryNames.map((name) => ({
+    name,
+    count: articles.filter((a) => a.category === name).length,
+  }));
 
   return (
     <main className="pt-10 pb-[var(--space-section)] md:pt-14">
@@ -100,6 +119,13 @@ export default async function HandbookPage({ params }: Props) {
       />
       <div className="container-page">
         <Reveal>
+          <Breadcrumbs
+            className="mb-4"
+            items={[
+              { label: tn("home"), href: "/" },
+              { label: t("title") },
+            ]}
+          />
           <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
           <h1 className="mt-4 max-w-2xl font-display text-4xl font-medium tracking-tight md:text-5xl">
             {t("title")}
@@ -112,38 +138,17 @@ export default async function HandbookPage({ params }: Props) {
           </div>
         </Reveal>
 
-        <RevealGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
-            <RevealItem key={article.slug} className="h-full">
-              <Link
-                href={`/narachnik/${article.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-background transition-[border-color,transform] duration-200 motion-safe:hover:-translate-y-0.5 hover:border-primary/45"
-              >
-                <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-secondary">
-                  <Image
-                    src={article.cover}
-                    alt={article.coverAlt || article.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-                    {article.category} ·{" "}
-                    {formatArticleDate(article.date, locale)}
-                  </p>
-                  <h3 className="mt-2 line-clamp-3 min-h-[4.5rem] font-display text-xl font-medium tracking-tight group-hover:text-primary">
-                    {article.title}
-                  </h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
-                    {article.excerpt}
-                  </p>
-                </div>
-              </Link>
-            </RevealItem>
-          ))}
-        </RevealGroup>
+        <HandbookBlogExplorer
+          articles={blogArticles}
+          categories={categories}
+          labels={{
+            filterAll: tc("allCategories"),
+            categoriesLabel: t("categoriesLabel"),
+            articlesLabel: t("articlesLabel"),
+            noResults: t("noResults"),
+            clearFilters: t("clearFilters"),
+          }}
+        />
       </div>
     </main>
   );

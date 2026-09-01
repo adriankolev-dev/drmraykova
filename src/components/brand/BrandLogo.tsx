@@ -21,8 +21,8 @@ const assets = {
   },
   full: {
     src: "/logo.webp",
-    width: 168,
-    height: 110,
+    width: 238,
+    height: 157,
     alt: "Д-р Мария Райкова — Специалист акушер-гинеколог",
   },
   fullOnDark: {

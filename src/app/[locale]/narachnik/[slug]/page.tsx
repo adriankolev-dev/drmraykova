@@ -13,8 +13,12 @@ import {
   formatArticleDate,
   getAllArticles,
   getArticleBySlug,
+  getRelatedArticles,
 } from "@/lib/articles";
+import { getClusterForArticle } from "@/lib/article-clusters";
 import { doctor } from "@/lib/doctor";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { ArticleRelatedServices } from "@/components/handbook/ArticleRelatedServices";
 import { siteConfig } from "@/lib/site";
 import { pageOpenGraph } from "@/lib/seo/metadata";
 import {
@@ -90,9 +94,8 @@ export default async function ArticlePage({ params }: Props) {
   const tc = await getTranslations("common");
   const prefix = locale === "bg" ? "" : `/${locale}`;
   const articleUrl = `${siteConfig.url}${prefix}/narachnik/${article.slug}`;
-  const related = getAllArticles(locale)
-    .filter((item) => item.slug !== article.slug)
-    .slice(0, 3);
+  const related = getRelatedArticles(article.slug, locale, 3);
+  const cluster = getClusterForArticle(article.slug);
 
   const schemaGraph: object[] = [
     getWebPageSchema({
@@ -141,12 +144,17 @@ export default async function ArticlePage({ params }: Props) {
       />
       <article className="container-page max-w-3xl">
         <Reveal>
+          <Breadcrumbs
+            className="mb-4"
+            items={[
+              { label: tn("home"), href: "/" },
+              { label: t("title"), href: "/narachnik" },
+              { label: article.category },
+            ]}
+          />
           <SectionEyebrow>
-            <Link href="/narachnik" className="hover:text-foreground">
-              {t("eyebrow")}
-            </Link>
-            {" / "}
-            {article.category}
+            {t("eyebrow")}
+            {cluster ? ` · ${t(`clusters.${cluster.id}`)}` : null}
           </SectionEyebrow>
           <h1 className="mt-4 font-display text-4xl font-medium tracking-tight text-balance text-foreground md:text-5xl">
             {article.title}
@@ -169,7 +177,7 @@ export default async function ArticlePage({ params }: Props) {
               fill
               priority
               sizes="(max-width: 768px) 100vw, 768px"
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
         </Reveal>
@@ -320,6 +328,11 @@ export default async function ArticlePage({ params }: Props) {
             </ul>
           </Reveal>
         ) : null}
+
+        <ArticleRelatedServices
+          articleSlug={article.slug}
+          className="mt-12"
+        />
       </article>
     </main>
   );

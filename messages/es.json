@@ -304,8 +304,8 @@
   },
   "handbook": {
     "eyebrow": "Guía",
-    "title": "Guía médica",
-    "lead": "Materiales educativos sobre salud femenina — para llegar preparada y tranquila.",
+    "title": "Guía de salud femenina",
+    "lead": "Artículos sobre prevención, VPH, citología, colposcopia, histeroscopia y ciclo menstrual — respuestas claras antes de reservar.",
     "articlesOnlyBg": "",
     "disclaimer": "La información de este artículo tiene fines educativos y no sustituye una consulta médica individual, un diagnóstico ni un tratamiento.",
     "faqTitle": "Preguntas frecuentes",
@@ -313,12 +313,34 @@
     "authorRole": "Obstetra-ginecóloga",
     "aboutDoctor": "Más sobre la Dra. Raykova",
     "relatedTitle": "Más de la guía",
+    "relatedServicesTitle": "Servicios relacionados",
+    "relatedServicesLead": "Si este tema le preocupa o quiere dar el siguiente paso — estos son los principales servicios de la consulta.",
+    "clusters": {
+      "prevention": "Prevención",
+      "hpv-cytology": "VPH y citología",
+      "colposcopy": "Colposcopia",
+      "hysteroscopy": "Histeroscopia",
+      "menstrual": "Ciclo menstrual",
+      "symptoms": "Síntomas ginecológicos"
+    },
+    "clusterLead": "Artículos sobre este tema — respuestas claras vinculadas a los servicios de la consulta.",
+    "viewService": "Ver servicio",
+    "categoriesLabel": "Categorías",
+    "articlesLabel": "artículos",
+    "noResults": "No hay artículos en esta categoría",
+    "clearFilters": "Mostrar todos",
     "updated": "Actualizado",
     "sourcesTitle": "Fuentes",
     "scientificSourceTitle": "Fuente científica",
     "scientificSourceIntro": "Sobre este tema también existen investigaciones científicas contemporáneas en obstetricia y ginecología.",
     "scientificSourceLink": "Ver la publicación en PubMed",
     "closingTitle": "Para cerrar"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "lead": "Es posible que el enlace esté desactualizado o que la dirección contenga un error.",
+    "home": "Inicio",
+    "services": "Servicios"
   },
   "servicesPage": {
     "eyebrow": "Servicios",

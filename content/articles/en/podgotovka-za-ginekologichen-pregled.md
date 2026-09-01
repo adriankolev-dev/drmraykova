@@ -3,7 +3,7 @@ title: "Preparing for a gynecological exam — a practical checklist"
 excerpt: "What to bring, which questions to ask, and how to feel calmer before the visit."
 category: "FAQ"
 date: "2026-07-10"
-cover: "/blog/cover-podgotovka.webp"
+cover: "/blog/cover-pregled.webp"
 ---
 
 Good preparation makes the visit more effective and calmer — for you and for the doctor.

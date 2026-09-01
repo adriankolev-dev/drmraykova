@@ -55,7 +55,7 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${onest.variable} ${literata.variable} ${ibmPlexMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <ScrollProgress />
           <Header />

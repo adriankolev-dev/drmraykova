@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { getBookingLinkProps, bookingConfig } from "@/lib/booking";
+import { trackBookCta } from "@/lib/analytics";
 import { SuperdocMark } from "@/components/booking/SuperdocMark";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -45,6 +46,14 @@ export function BookCta({
     utmCampaign,
   });
 
+  const handleClick = () => {
+    trackBookCta({
+      utmCampaign,
+      location: utmCampaign ?? "cta",
+      variant: variant ?? "primary",
+    });
+  };
+
   if (variant === "superdoc") {
     const compact = size === "sm";
     const text = label ?? t("bookOnlineCta");
@@ -52,6 +61,7 @@ export function BookCta({
     return (
       <a
         {...linkProps}
+        onClick={handleClick}
         className={cn(
           "group relative inline-flex items-center justify-center whitespace-nowrap rounded-full border-2 border-[#01bfa5] bg-white font-semibold text-[#01bfa5]",
           "transition-[color,background-color,border-color,transform,box-shadow] duration-200 ease-out",
@@ -96,6 +106,7 @@ export function BookCta({
   return (
     <a
       {...linkProps}
+      onClick={handleClick}
       className={cn(buttonVariants({ variant, size }), className)}
       aria-label={`${label ?? t("bookCta")} — Superdoc`}
     >

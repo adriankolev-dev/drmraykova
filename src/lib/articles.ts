@@ -184,6 +184,28 @@ export function getArticlesByCategory(category: string, locale: Locale = "bg") {
   return articles.filter((article) => article.category === category);
 }
 
+/** Related articles: same category first, then most recent. */
+export function getRelatedArticles(
+  slug: string,
+  locale: Locale = "bg",
+  limit = 3,
+) {
+  const current = getArticleBySlug(slug, locale);
+  if (!current) return [];
+
+  const sameCategory = articlesFor(locale).filter(
+    (a) => a.slug !== slug && a.category === current.category,
+  );
+  const others = articlesFor(locale).filter(
+    (a) =>
+      a.slug !== slug &&
+      a.category !== current.category &&
+      !sameCategory.some((s) => s.slug === a.slug),
+  );
+
+  return [...sameCategory, ...others].slice(0, limit);
+}
+
 export function formatArticleDate(date: string, locale: string = "bg") {
   if (!date) return "";
   const parsed = new Date(date);
