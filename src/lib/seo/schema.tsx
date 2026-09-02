@@ -97,10 +97,11 @@ export function buildSchemaGraph(
 
 export function getPhysicianSchema() {
   return schemaNode({
-    "@type": "Physician",
+    "@type": ["Person", "IndividualPhysician"],
     "@id": PHYSICIAN_ID,
     name: doctor.name,
     alternateName: "Dr. Maria Raykova",
+    jobTitle: doctor.specialty,
     description: siteConfig.description,
     medicalSpecialty: [...MEDICAL_SPECIALTIES],
     url: `${siteConfig.url}/za-lekarya`,
@@ -108,7 +109,7 @@ export function getPhysicianSchema() {
     address: clinicAddress(),
     telephone: doctor.clinic.phoneHref.replace("tel:", ""),
     knowsLanguage: [...SCHEMA_LANGUAGE_TAGS],
-    worksFor: { "@id": CLINIC_ID },
+    practicesAt: { "@id": CLINIC_ID },
     aggregateRating: clinicAggregateRating(),
     sameAs: doctorProfiles,
   });
