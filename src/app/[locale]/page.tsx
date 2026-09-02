@@ -15,8 +15,8 @@ import { isLocale, locales, type Locale } from "@/i18n/routing";
 import { localeOpenGraph } from "@/lib/navigation";
 import { pageOpenGraph, pageTwitter } from "@/lib/seo/metadata";
 import {
-  getMedicalClinicSchema,
-  getLocalBusinessSchema,
+  buildSchemaGraph,
+  getClinicSchema,
   getPhysicianSchema,
   getWebPageSchema,
   getWebSiteSchema,
@@ -72,21 +72,17 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@graph": [
-            getWebSiteSchema(schemaLanguage(raw)),
-            getWebPageSchema({
-              name: siteConfig.title,
-              description: siteConfig.description,
-              url: raw === "bg" ? siteConfig.url : `${siteConfig.url}/${raw}`,
-              inLanguage: schemaLanguage(raw),
-            }),
-            getPhysicianSchema(),
-            getMedicalClinicSchema(),
-            getLocalBusinessSchema(),
-          ],
-        }}
+        data={buildSchemaGraph(
+          getWebSiteSchema(schemaLanguage(raw)),
+          getWebPageSchema({
+            name: siteConfig.title,
+            description: siteConfig.description,
+            url: raw === "bg" ? siteConfig.url : `${siteConfig.url}/${raw}`,
+            inLanguage: schemaLanguage(raw),
+          }),
+          getPhysicianSchema(),
+          getClinicSchema(),
+        )}
       />
       <HeroSection />
       <div className="cv-auto">

@@ -22,6 +22,7 @@ import { ArticleRelatedServices } from "@/components/handbook/ArticleRelatedServ
 import { siteConfig } from "@/lib/site";
 import { pageOpenGraph } from "@/lib/seo/metadata";
 import {
+  buildSchemaGraph,
   getArticleSchema,
   getBreadcrumbSchema,
   getFaqSchema,
@@ -97,7 +98,7 @@ export default async function ArticlePage({ params }: Props) {
   const related = getRelatedArticles(article.slug, locale, 3);
   const cluster = getClusterForArticle(article.slug);
 
-  const schemaGraph: object[] = [
+  const schemaGraph = buildSchemaGraph(
     getWebPageSchema({
       name: article.title,
       description: article.excerpt,
@@ -122,11 +123,8 @@ export default async function ArticlePage({ params }: Props) {
         path: `${prefix}/narachnik/${article.slug}`,
       },
     ]),
-  ];
-
-  if (article.faq.length) {
-    schemaGraph.push(getFaqSchema(article.faq));
-  }
+    getFaqSchema(article.faq),
+  );
 
   const publishedLabel = formatArticleDate(article.date, locale);
   const updatedLabel =
@@ -136,12 +134,7 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <main className="pt-10 pb-[var(--space-section)] md:pt-14">
-      <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@graph": schemaGraph,
-        }}
-      />
+      <JsonLd data={schemaGraph} />
       <article className="container-page max-w-3xl">
         <Reveal>
           <Breadcrumbs

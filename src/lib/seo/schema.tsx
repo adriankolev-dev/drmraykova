@@ -5,13 +5,65 @@ import { bookingConfig } from "@/lib/booking";
 
 const ogImage = `${siteConfig.url}/og.png`;
 const bookingProfileUrl = bookingConfig.url.replace(/\?.*$/, "");
-/** Профили на лекаря — клиниката е отделен субект и не ги наследява. */
+/** Профили на лекаря — клиниката е отдельен субект и не ги наследява. */
 const doctorProfiles = [
   bookingProfileUrl,
   doctor.social.instagram.url,
   doctor.social.facebook.url,
 ];
 
+export const PHYSICIAN_ID = `${siteConfig.url}/#physician`;
+export const CLINIC_ID = `${siteConfig.url}/#clinic`;
+export const WEBSITE_ID = `${siteConfig.url}/#website`;
+
+/** BCP 47 language tags for schema.org ContactPoint / knowsLanguage. */
+const SCHEMA_LANGUAGE_TAGS = ["bg", "en", "es"] as const;
+
+const MEDICAL_SPECIALTIES = [
+  "https://schema.org/Gynecologic",
+  "https://schema.org/Obstetric",
+] as const;
+
+/** Graph nodes must not repeat @context — only the root document has it. */
+function schemaNode<T extends Record<string, unknown>>(node: T): T {
+  const { "@context": _removed, ...rest } = node as T & {
+    "@context"?: string;
+  };
+  return rest as T;
+}
+
+function entityId(url: string, fragment: string) {
+  return `${url.replace(/\/$/, "")}${fragment.startsWith("#") ? fragment : `#${fragment}`}`;
+}
+
+function clinicContactPoint() {
+  return {
+    "@type": "ContactPoint",
+    telephone: doctor.clinic.phoneHref.replace("tel:", ""),
+    contactType: "customer service",
+    availableLanguage: [...SCHEMA_LANGUAGE_TAGS],
+    areaServed: "BG",
+  };
+}
+
+function clinicAddress() {
+  return {
+    "@type": "PostalAddress",
+    streetAddress: "ул. Добрила 10",
+    addressLocality: doctor.city,
+    addressCountry: "BG",
+  };
+}
+
+function clinicAggregateRating() {
+  return {
+    "@type": "AggregateRating",
+    ratingValue: doctor.rating.value,
+    reviewCount: doctor.rating.count,
+    bestRating: 5,
+    worstRating: 1,
+  };
+}
 
 export function schemaLanguage(locale: Locale = "bg") {
   if (locale === "en") return "en";
@@ -19,121 +71,93 @@ export function schemaLanguage(locale: Locale = "bg") {
   return "bg-BG";
 }
 
-export function getPhysicianSchema() {
+/** Build a JSON-LD @graph document; deduplicates nodes that share the same @id. */
+export function buildSchemaGraph(
+  ...nodes: Array<object | null | undefined>
+) {
+  const seen = new Set<string>();
+  const graph: object[] = [];
+
+  for (const node of nodes) {
+    if (!node) continue;
+    const cleaned = schemaNode(node as Record<string, unknown>);
+    const id = (cleaned as { "@id"?: string })["@id"];
+    if (id) {
+      if (seen.has(id)) continue;
+      seen.add(id);
+    }
+    graph.push(cleaned);
+  }
+
   return {
     "@context": "https://schema.org",
+    "@graph": graph,
+  };
+}
+
+export function getPhysicianSchema() {
+  return schemaNode({
     "@type": "Physician",
-    "@id": `${siteConfig.url}/#physician`,
+    "@id": PHYSICIAN_ID,
     name: doctor.name,
     alternateName: "Dr. Maria Raykova",
     description: siteConfig.description,
-    medicalSpecialty: ["Gynecologic", "Obstetric"],
+    medicalSpecialty: [...MEDICAL_SPECIALTIES],
     url: `${siteConfig.url}/za-lekarya`,
     image: `${siteConfig.url}/icon-512.png`,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "ул. Добрила 10",
-      addressLocality: doctor.city,
-      addressCountry: "BG",
-    },
+    address: clinicAddress(),
     telephone: doctor.clinic.phoneHref.replace("tel:", ""),
-    availableLanguage: [...doctor.languages],
-    knowsLanguage: [...doctor.languages],
-    worksFor: {
-      "@type": "MedicalClinic",
-      "@id": `${siteConfig.url}/#clinic`,
-      name: doctor.clinic.name,
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: doctor.rating.value,
-      reviewCount: doctor.rating.count,
-      bestRating: 5,
-      worstRating: 1,
-    },
+    knowsLanguage: [...SCHEMA_LANGUAGE_TAGS],
+    worksFor: { "@id": CLINIC_ID },
+    aggregateRating: clinicAggregateRating(),
     sameAs: doctorProfiles,
-  };
+  });
 }
 
-export function getMedicalClinicSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "@id": `${siteConfig.url}/#clinic`,
+/**
+ * Canonical clinic / local business entity (single @id).
+ * Replaces separate MedicalClinic + LocalBusiness duplicates in @graph.
+ */
+export function getClinicSchema() {
+  return schemaNode({
+    "@type": ["MedicalClinic", "MedicalBusiness", "LocalBusiness"],
+    "@id": CLINIC_ID,
     name: doctor.clinic.name,
-    url: `${siteConfig.url}/kontakti`,
-    image: `${siteConfig.url}/clinic-interior.webp`,
-    telephone: doctor.clinic.phoneHref.replace("tel:", ""),
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "ул. Добрила 10",
-      addressLocality: "София",
-      addressCountry: "BG",
-    },
-    medicalSpecialty: ["Gynecologic", "Obstetric"],
-    areaServed: {
-      "@type": "City",
-      name: "София",
-    },
-    employee: {
-      "@type": "Physician",
-      "@id": `${siteConfig.url}/#physician`,
-      name: doctor.name,
-    },
-    sameAs: [bookingProfileUrl],
-  };
-}
-
-/** LocalBusiness + MedicalBusiness for local SEO (maps, NAP consistency). */
-export function getLocalBusinessSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": ["MedicalBusiness", "LocalBusiness", "MedicalClinic"],
-    "@id": `${siteConfig.url}/#localbusiness`,
-    name: doctor.name,
-    alternateName: doctor.clinic.name,
+    alternateName: doctor.name,
     description: siteConfig.description,
-    url: siteConfig.url,
+    url: `${siteConfig.url}/kontakti`,
     image: [
-      ogImage,
       `${siteConfig.url}/clinic-interior.webp`,
+      ogImage,
       `${siteConfig.url}/icon-512.png`,
     ],
     telephone: doctor.clinic.phoneHref.replace("tel:", ""),
     priceRange: "$$",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "ул. Добрила 10",
-      addressLocality: doctor.city,
-      addressCountry: "BG",
-    },
-    medicalSpecialty: ["Gynecologic", "Obstetric"],
+    address: clinicAddress(),
+    medicalSpecialty: [...MEDICAL_SPECIALTIES],
     areaServed: {
       "@type": "City",
       name: doctor.city,
     },
-    availableLanguage: [...doctor.languages],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: doctor.rating.value,
-      reviewCount: doctor.rating.count,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    sameAs: doctorProfiles,
-    employee: {
-      "@type": "Physician",
-      "@id": `${siteConfig.url}/#physician`,
-      name: doctor.name,
-    },
-  };
+    contactPoint: clinicContactPoint(),
+    aggregateRating: clinicAggregateRating(),
+    member: { "@id": PHYSICIAN_ID },
+    sameAs: [bookingProfileUrl],
+  });
 }
+
+/** @deprecated Use getClinicSchema — kept for call-site compatibility. */
+export const getMedicalClinicSchema = getClinicSchema;
+
+/** @deprecated Use getClinicSchema — kept for call-site compatibility. */
+export const getLocalBusinessSchema = getClinicSchema;
 
 export function getFaqSchema(
   items: Array<{ question: string; answer: string }>,
 ) {
-  return {
-    "@context": "https://schema.org",
+  if (!items.length) return null;
+
+  return schemaNode({
     "@type": "FAQPage",
     mainEntity: items.map((item) => ({
       "@type": "Question",
@@ -143,7 +167,7 @@ export function getFaqSchema(
         text: item.answer,
       },
     })),
-  };
+  });
 }
 
 export function getArticleSchema(article: {
@@ -155,10 +179,9 @@ export function getArticleSchema(article: {
   image?: string;
   inLanguage?: string;
 }) {
-  return {
-    "@context": "https://schema.org",
+  return schemaNode({
     "@type": "Article",
-    "@id": `${article.url}#article`,
+    "@id": entityId(article.url, "article"),
     headline: article.title,
     description: article.description,
     url: article.url,
@@ -171,7 +194,7 @@ export function getArticleSchema(article: {
     dateModified: article.dateModified ?? article.datePublished,
     author: {
       "@type": "Person",
-      "@id": `${siteConfig.url}/#physician`,
+      "@id": PHYSICIAN_ID,
       name: doctor.name,
       url: `${siteConfig.url}/za-lekarya`,
     },
@@ -189,14 +212,13 @@ export function getArticleSchema(article: {
       "@id": article.url,
     },
     inLanguage: article.inLanguage ?? "bg-BG",
-  };
+  });
 }
 
 export function getBreadcrumbSchema(
   items: Array<{ name: string; path: string }>,
 ) {
-  return {
-    "@context": "https://schema.org",
+  return schemaNode({
     "@type": "BreadcrumbList",
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
@@ -204,7 +226,7 @@ export function getBreadcrumbSchema(
       name: item.name,
       item: `${siteConfig.url}${item.path === "/" ? "" : item.path}`,
     })),
-  };
+  });
 }
 
 /** Offer for a published price. Amounts are EUR, VAT-inclusive. */
@@ -219,11 +241,7 @@ function priceOffer(item: { name: string; priceEur: string }) {
       valueAddedTaxIncluded: true,
     },
     availability: "https://schema.org/InStock",
-    seller: {
-      "@type": "Physician",
-      "@id": `${siteConfig.url}/#physician`,
-      name: doctor.name,
-    },
+    seller: { "@id": CLINIC_ID },
   };
 }
 
@@ -235,10 +253,9 @@ export function getMedicalServiceSchema(service: {
   timeRequired?: string;
   offers?: Array<{ name: string; priceEur: string }>;
 }) {
-  return {
-    "@context": "https://schema.org",
+  return schemaNode({
     "@type": "MedicalProcedure",
-    "@id": `${service.url}#procedure`,
+    "@id": entityId(service.url, "procedure"),
     name: service.name,
     description: service.description,
     url: service.url,
@@ -248,17 +265,12 @@ export function getMedicalServiceSchema(service: {
     ...(service.offers?.length
       ? { offers: service.offers.map(priceOffer) }
       : {}),
-    provider: {
-      "@type": "Physician",
-      "@id": `${siteConfig.url}/#physician`,
-      name: doctor.name,
-      url: `${siteConfig.url}/za-lekarya`,
-    },
+    provider: { "@id": PHYSICIAN_ID },
     areaServed: {
       "@type": "City",
       name: doctor.city,
     },
-  };
+  });
 }
 
 /** Full price list as an OfferCatalog so search engines can surface prices. */
@@ -271,10 +283,9 @@ export function getOfferCatalogSchema({
   url: string;
   items: Array<{ name: string; priceEur: string }>;
 }) {
-  return {
-    "@context": "https://schema.org",
+  return schemaNode({
     "@type": "OfferCatalog",
-    "@id": `${url}#pricelist`,
+    "@id": entityId(url, "pricelist"),
     name,
     url,
     numberOfItems: items.length,
@@ -282,24 +293,19 @@ export function getOfferCatalogSchema({
       ...priceOffer(item),
       position: index + 1,
     })),
-  };
+  });
 }
 
 export function getWebSiteSchema(inLanguage = "bg-BG") {
-  return {
-    "@context": "https://schema.org",
+  return schemaNode({
     "@type": "WebSite",
-    "@id": `${siteConfig.url}/#website`,
+    "@id": WEBSITE_ID,
     name: siteConfig.shortName,
     url: siteConfig.url,
     description: siteConfig.description,
     inLanguage,
-    publisher: {
-      "@type": "Physician",
-      "@id": `${siteConfig.url}/#physician`,
-      name: doctor.name,
-    },
-  };
+    publisher: { "@id": PHYSICIAN_ID },
+  });
 }
 
 /** Generic WebPage / CollectionPage / MedicalWebPage / ContactPage / AboutPage / FAQPage wrapper. */
@@ -322,24 +328,16 @@ export function getWebPageSchema({
     | "AboutPage"
     | "FAQPage";
 }) {
-  return {
-    "@context": "https://schema.org",
+  return schemaNode({
     "@type": type,
-    "@id": `${url}#webpage`,
+    "@id": entityId(url, "webpage"),
     name,
     description,
     url,
     inLanguage,
-    isPartOf: {
-      "@type": "WebSite",
-      "@id": `${siteConfig.url}/#website`,
-    },
-    about: {
-      "@type": "Physician",
-      "@id": `${siteConfig.url}/#physician`,
-      name: doctor.name,
-    },
-  };
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": PHYSICIAN_ID },
+  });
 }
 
 /** ItemList for service catalog / handbook index. */
@@ -354,10 +352,9 @@ export function getItemListSchema({
   url: string;
   items: Array<{ name: string; url: string; description?: string }>;
 }) {
-  return {
-    "@context": "https://schema.org",
+  return schemaNode({
     "@type": "ItemList",
-    "@id": `${url}#itemlist`,
+    "@id": entityId(url, "itemlist"),
     name,
     description,
     url,
@@ -378,7 +375,7 @@ export function getItemListSchema({
           }
         : { item: item.url }),
     })),
-  };
+  });
 }
 
 export function JsonLd({ data }: { data: Record<string, unknown> | object }) {

@@ -12,8 +12,9 @@ import { doctor } from "@/lib/doctor";
 import { localeOpenGraph } from "@/lib/navigation";
 import { pageOpenGraph } from "@/lib/seo/metadata";
 import {
+  buildSchemaGraph,
   getBreadcrumbSchema,
-  getMedicalClinicSchema,
+  getClinicSchema,
   getPhysicianSchema,
   getWebPageSchema,
   JsonLd,
@@ -72,24 +73,21 @@ export default async function AboutDoctorPage({ params }: Props) {
   return (
     <main>
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@graph": [
-            getWebPageSchema({
-              name: t("eyebrow"),
-              description: tm("aboutDescription"),
-              url: pageUrl,
-              inLanguage: schemaLanguage(raw),
-              type: "AboutPage",
-            }),
-            getPhysicianSchema(),
-            getMedicalClinicSchema(),
-            getBreadcrumbSchema([
-              { name: tn("home"), path: prefix || "/" },
-              { name: t("eyebrow"), path: `${prefix}/za-lekarya` },
-            ]),
-          ],
-        }}
+        data={buildSchemaGraph(
+          getWebPageSchema({
+            name: t("eyebrow"),
+            description: tm("aboutDescription"),
+            url: pageUrl,
+            inLanguage: schemaLanguage(raw),
+            type: "AboutPage",
+          }),
+          getPhysicianSchema(),
+          getClinicSchema(),
+          getBreadcrumbSchema([
+            { name: tn("home"), path: prefix || "/" },
+            { name: t("eyebrow"), path: `${prefix}/za-lekarya` },
+          ]),
+        )}
       />
       <section className="relative overflow-hidden section-space">
         <div

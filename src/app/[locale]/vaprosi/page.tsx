@@ -10,10 +10,14 @@ import { isLocale, locales, type Locale } from "@/i18n/routing";
 import { localeOpenGraph } from "@/lib/navigation";
 import { pageOpenGraph } from "@/lib/seo/metadata";
 import {
+  buildSchemaGraph,
   getBreadcrumbSchema,
   getFaqSchema,
+  getWebPageSchema,
   JsonLd,
+  schemaLanguage,
 } from "@/lib/seo/schema";
+import { siteConfig } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -63,16 +67,20 @@ export default async function FaqPage({ params }: Props) {
   return (
     <main className="pt-10 pb-[var(--space-section)] md:pt-14">
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@graph": [
-            getFaqSchema(faq.items),
-            getBreadcrumbSchema([
-              { name: tn("home"), path: homePath },
-              { name: faq.title, path },
-            ]),
-          ],
-        }}
+        data={buildSchemaGraph(
+          getWebPageSchema({
+            name: faq.title,
+            description: faq.lead,
+            url: `${siteConfig.url}${path}`,
+            inLanguage: schemaLanguage(locale),
+            type: "FAQPage",
+          }),
+          getFaqSchema(faq.items),
+          getBreadcrumbSchema([
+            { name: tn("home"), path: homePath },
+            { name: faq.title, path },
+          ]),
+        )}
       />
 
       <div className="container-page max-w-3xl">

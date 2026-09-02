@@ -18,9 +18,10 @@ import { localeOpenGraph } from "@/lib/navigation";
 import { eurAmount, getAllPrices } from "@/lib/pricing";
 import { pageOpenGraph, pageTwitter } from "@/lib/seo/metadata";
 import {
+  buildSchemaGraph,
   getBreadcrumbSchema,
+  getClinicSchema,
   getFaqSchema,
-  getLocalBusinessSchema,
   getOfferCatalogSchema,
   getWebPageSchema,
   JsonLd,
@@ -86,28 +87,25 @@ export default async function PricingPage({ params }: Props) {
   return (
     <main className="pt-10 pb-[var(--space-section)] md:pt-14">
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@graph": [
-            getWebPageSchema({
-              name: t("title"),
-              description: t("lead", { count: insurers.length }),
-              url: pageUrl,
-              inLanguage: schemaLanguage(raw),
-            }),
-            getOfferCatalogSchema({
-              name: t("title"),
-              url: pageUrl,
-              items: offerItems,
-            }),
-            getBreadcrumbSchema([
-              { name: t("breadcrumbHome"), path: prefix || "/" },
-              { name: t("eyebrow"), path: `${prefix}/tseni` },
-            ]),
-            getFaqSchema(faqs),
-            getLocalBusinessSchema(),
-          ],
-        }}
+        data={buildSchemaGraph(
+          getWebPageSchema({
+            name: t("title"),
+            description: t("lead", { count: insurers.length }),
+            url: pageUrl,
+            inLanguage: schemaLanguage(raw),
+          }),
+          getOfferCatalogSchema({
+            name: t("title"),
+            url: pageUrl,
+            items: offerItems,
+          }),
+          getBreadcrumbSchema([
+            { name: t("breadcrumbHome"), path: prefix || "/" },
+            { name: t("eyebrow"), path: `${prefix}/tseni` },
+          ]),
+          getFaqSchema(faqs),
+          getClinicSchema(),
+        )}
       />
 
       {/* Hero — deliberately compact so the table is visible without scrolling */}

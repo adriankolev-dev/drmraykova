@@ -21,9 +21,9 @@ import { getBookingLinkProps } from "@/lib/booking";
 import { doctor } from "@/lib/doctor";
 import { cn } from "@/lib/utils";
 import {
+  buildSchemaGraph,
   getBreadcrumbSchema,
-  getLocalBusinessSchema,
-  getMedicalClinicSchema,
+  getClinicSchema,
   getPhysicianSchema,
   getWebPageSchema,
   JsonLd,
@@ -95,25 +95,21 @@ export default async function ContactPage({ params }: Props) {
   return (
     <main>
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@graph": [
-            getWebPageSchema({
-              name: tn("contact"),
-              description: tm("contactDescription"),
-              url: pageUrl,
-              inLanguage: schemaLanguage(raw),
-              type: "ContactPage",
-            }),
-            getLocalBusinessSchema(),
-            getMedicalClinicSchema(),
-            getPhysicianSchema(),
-            getBreadcrumbSchema([
-              { name: tn("home"), path: prefix || "/" },
-              { name: tn("contact"), path: `${prefix}/kontakti` },
-            ]),
-          ],
-        }}
+        data={buildSchemaGraph(
+          getWebPageSchema({
+            name: tn("contact"),
+            description: tm("contactDescription"),
+            url: pageUrl,
+            inLanguage: schemaLanguage(raw),
+            type: "ContactPage",
+          }),
+          getClinicSchema(),
+          getPhysicianSchema(),
+          getBreadcrumbSchema([
+            { name: tn("home"), path: prefix || "/" },
+            { name: tn("contact"), path: `${prefix}/kontakti` },
+          ]),
+        )}
       />
 
       {/* Intro — tighter bottom */}

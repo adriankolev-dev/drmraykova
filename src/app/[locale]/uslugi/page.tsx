@@ -15,10 +15,11 @@ import {
 } from "@/lib/services-catalog";
 import { pageOpenGraph, pageTwitter } from "@/lib/seo/metadata";
 import {
+  buildSchemaGraph,
   getBreadcrumbSchema,
+  getClinicSchema,
   getFaqSchema,
   getItemListSchema,
-  getLocalBusinessSchema,
   getWebPageSchema,
   JsonLd,
   schemaLanguage,
@@ -107,33 +108,30 @@ export default async function ServicesIndexPage({ params }: Props) {
   return (
     <main className="pt-10 pb-[var(--space-section)] md:pt-14">
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@graph": [
-            getWebPageSchema({
-              name: t("title"),
-              description: t("lead"),
-              url: pageUrl,
-              inLanguage: schemaLanguage(raw),
-              type: "CollectionPage",
-            }),
-            getItemListSchema({
-              name: t("title"),
-              description: t("lead"),
-              url: pageUrl,
-              items: serviceListItems,
-            }),
-            getBreadcrumbSchema([
-              {
-                name: t("breadcrumbHome"),
-                path: prefix || "/",
-              },
-              { name: t("eyebrow"), path: `${prefix}/uslugi` },
-            ]),
-            getFaqSchema(faqs),
-            getLocalBusinessSchema(),
-          ],
-        }}
+        data={buildSchemaGraph(
+          getWebPageSchema({
+            name: t("title"),
+            description: t("lead"),
+            url: pageUrl,
+            inLanguage: schemaLanguage(raw),
+            type: "CollectionPage",
+          }),
+          getItemListSchema({
+            name: t("title"),
+            description: t("lead"),
+            url: pageUrl,
+            items: serviceListItems,
+          }),
+          getBreadcrumbSchema([
+            {
+              name: t("breadcrumbHome"),
+              path: prefix || "/",
+            },
+            { name: t("eyebrow"), path: `${prefix}/uslugi` },
+          ]),
+          getFaqSchema(faqs),
+          getClinicSchema(),
+        )}
       />
 
       {/* Hero */}

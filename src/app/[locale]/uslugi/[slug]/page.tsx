@@ -27,6 +27,7 @@ import {
 } from "@/lib/services-catalog";
 import { pageOpenGraph, pageTwitter } from "@/lib/seo/metadata";
 import {
+  buildSchemaGraph,
   getBreadcrumbSchema,
   getFaqSchema,
   getItemListSchema,
@@ -127,45 +128,42 @@ export default async function ServicePage({ params }: Props) {
   return (
     <main className="section-space">
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@graph": [
-            getWebPageSchema({
+        data={buildSchemaGraph(
+          getWebPageSchema({
+            name: service.title,
+            description: service.seoDescription,
+            url: serviceUrl,
+            inLanguage: schemaLanguage(raw),
+            type: "MedicalWebPage",
+          }),
+          getMedicalServiceSchema({
+            name: service.title,
+            description: service.seoDescription,
+            url: serviceUrl,
+            timeRequired: getServiceDuration(service.slug)?.isoMin,
+            offers: serviceOffers,
+          }),
+          getPhysicianSchema(),
+          getFaqSchema(service.faqs),
+          getItemListSchema({
+            name: t("relatedHeading"),
+            description: t("relatedLead"),
+            url: `${serviceUrl}#related`,
+            items: related.map((item) => ({
+              name: item.title,
+              description: item.description,
+              url: `${siteConfig.url}${prefix}/uslugi/${item.slug}`,
+            })),
+          }),
+          getBreadcrumbSchema([
+            { name: t("breadcrumbHome"), path: prefix || "/" },
+            { name: t("breadcrumbServices"), path: `${prefix}/uslugi` },
+            {
               name: service.title,
-              description: service.seoDescription,
-              url: serviceUrl,
-              inLanguage: schemaLanguage(raw),
-              type: "MedicalWebPage",
-            }),
-            getMedicalServiceSchema({
-              name: service.title,
-              description: service.seoDescription,
-              url: serviceUrl,
-              timeRequired: getServiceDuration(service.slug)?.isoMin,
-              offers: serviceOffers,
-            }),
-            getPhysicianSchema(),
-            getFaqSchema(service.faqs),
-            getItemListSchema({
-              name: t("relatedHeading"),
-              description: t("relatedLead"),
-              url: `${serviceUrl}#related`,
-              items: related.map((item) => ({
-                name: item.title,
-                description: item.description,
-                url: `${siteConfig.url}${prefix}/uslugi/${item.slug}`,
-              })),
-            }),
-            getBreadcrumbSchema([
-              { name: t("breadcrumbHome"), path: prefix || "/" },
-              { name: t("breadcrumbServices"), path: `${prefix}/uslugi` },
-              {
-                name: service.title,
-                path: `${prefix}/uslugi/${service.slug}`,
-              },
-            ]),
-          ],
-        }}
+              path: `${prefix}/uslugi/${service.slug}`,
+            },
+          ]),
+        )}
       />
       <div className="container-page max-w-3xl">
         <ServiceHero
