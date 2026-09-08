@@ -1,5 +1,5 @@
+import { ContentText } from "@/components/content/ContentText";
 import { Reveal } from "@/components/motion/Reveal";
-import { SuperdocText } from "@/components/booking/SuperdocText";
 
 export type FaqItem = {
   question: string;
@@ -38,7 +38,7 @@ export function FAQSection({ heading, items, className }: FAQSectionProps) {
               </span>
             </summary>
             <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
-              <SuperdocText text={item.answer} utmCampaign="faq-inline" />
+              <ContentText text={item.answer} />
             </p>
           </details>
         ))}

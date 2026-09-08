@@ -235,10 +235,10 @@ export default async function ContactPage({ params }: Props) {
                     {t("addressLabel")}
                   </dt>
                   <dd className="mt-2 text-lg leading-snug">
-                    {doctor.clinic.address}
-                  </dd>
-                  <dd className="mt-1 text-sm text-muted-foreground">
                     {doctor.clinic.name}
+                  </dd>
+                  <dd className="mt-1 text-lg leading-snug">
+                    {doctor.clinic.address}
                   </dd>
                 </div>
               </div>

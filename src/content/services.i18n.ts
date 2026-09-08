@@ -1,5 +1,11 @@
 import type { Locale } from "@/i18n/routing";
 
+export type ServiceGuideSection = {
+  heading: string;
+  paragraphs: string[];
+  bullets?: string[];
+};
+
 export type ServiceContent = {
   slug: string;
   title: string;
@@ -9,6 +15,9 @@ export type ServiceContent = {
   suitableFor: string;
   visitSteps: string[];
   notes?: string[];
+  /** Optional intent-focused sections — used when a service page is the ranking URL. */
+  guideSections?: ServiceGuideSection[];
+  relatedReading?: Array<{ href: string; label: string }>;
   faqs: Array<{ question: string; answer: string }>;
 };
 
@@ -26,6 +35,9 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "Гинекологичен преглед според възрастта и индикациите.",
         "При нужда — насочване към цитонамазка, ултразвук или допълнителни изследвания.",
         "Обяснение на находките и препоръка за следващ контрол."
+      ],
+      "notes": [
+        "При индикации прегледът може да включи насочване към [цитонамазка](/uslugi/citonamazka), [HPV тест](/uslugi/hpv-test) или [колпоскопия](/uslugi/kolposkopiya)."
       ],
       "faqs": [
         {
@@ -116,24 +128,137 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "kolposkopiya",
       "title": "Колпоскопия",
-      "seoTitle": "Колпоскопия София — ранна диагностика",
-      "seoDescription": "Колпоскопия в София при д-р Мария Райкова. Прецизен оглед при съмнение за изменения на маточната шийка.",
-      "intro": "Колпоскопията е специализиран оглед на маточната шийка с увеличение. Използва се за по-прецизна оценка при съмнение за предракови или други изменения и е част от ранната диагностика.",
-      "suitableFor": "Подходяща при отклонения в цитонамазката, видими изменения или когато лекарят препоръча допълнителна оценка на шийката.",
+      "seoTitle": "Колпоскопия в София — какво е и как протича",
+      "seoDescription": "Какво е колпоскопия, кога се препоръчва след цитонамазка или HPV, как протича и как да се подготвите. Кабинет на д-р Мария Райкова в София.",
+      "intro": "Колпоскопията е специализиран оглед на маточната шийка с увеличение. Назначава се най-често след отклонение в [цитонамазката](/uslugi/citonamazka) или при определен резултат от [HPV тест](/uslugi/hpv-test), за да се направи по-прецизна оценка. Целта е ранна диагностика — не задължително „лоша новина“.",
+      "suitableFor": "Подходяща при отклонения в цитонамазката, положителен HPV с определени находки, видими изменения или когато лекарят препоръча допълнителна оценка на шийката. Решението е индивидуално — обикновено след [профилактичен гинекологичен преглед](/uslugi/profilaktichen-ginekologichen-pregled) или консултация по резултати.",
       "visitSteps": [
         "Разговор за предишни резултати и причината за изследването.",
         "Колпоскопски оглед в спокойна обстановка.",
-        "При индикации — допълнителни процедури според находката.",
+        "При индикации — допълнителни процедури според находката, включително биопсия.",
         "Ясно обяснение на резултата и план за наблюдение или лечение."
+      ],
+      "notes": [
+        "Колпоскопията не замества скрининга. Често следва след [цитонамазка](/uslugi/citonamazka) или [HPV тест](/uslugi/hpv-test) и се планира в рамките на клиничната оценка."
+      ],
+      "guideSections": [
+        {
+          "heading": "Какво е колпоскопия?",
+          "paragraphs": [
+            "Колпоскопията е прецизен оглед на шийката на матката — и понякога на влагалището — с увеличителен апарат (колпоскоп). Колпоскопът стои на разстояние и увеличава образа; не се поставя дълбоко в тялото.",
+            "Понякога се нанася разтвор, за да се видят промените по-ясно. При нужда може да се вземе малка биопсия. Изследването се прави след клинична преценка и разговор за показанията."
+          ]
+        },
+        {
+          "heading": "Кога се препоръчва?",
+          "paragraphs": [
+            "Колпоскопията не е рутинен скрининг за всяка жена. Назначава се, когато има причина за по-подробна оценка на шийката."
+          ],
+          "bullets": [
+            "отклонения в [цитонамазката](/uslugi/citonamazka);",
+            "[положителен HPV тест](/uslugi/hpv-test) с определени комбинации от резултати;",
+            "проследяване след предишна находка;",
+            "видими изменения, които изискват по-прецизен оглед."
+          ]
+        },
+        {
+          "heading": "Как протича?",
+          "paragraphs": [
+            "Позицията е същата като при гинекологичен преглед. Лекарят поставя спекулум, оглежда шийката с колпоскопа и при нужда нанася разтвор. Ако се вземе биопсия, това се обяснява по време на посещението.",
+            "Самият оглед обикновено е кратък. Посещението включва и разговор за резултатите и следващите стъпки."
+          ]
+        },
+        {
+          "heading": "Как да се подготвите?",
+          "paragraphs": [
+            "Подготовката е близка до тази за обикновен гинекологичен преглед. Ако лекарят е дал други указания, следвайте тях."
+          ],
+          "bullets": [
+            "Носете предишни резултати — цитонамазки, HPV тестове, предишни колпоскопии.",
+            "Избягвайте вагинални кремове, тампони и спермициди 24 часа преди процедурата, ако не е казано друго.",
+            "Запишете въпросите си: ще се вземе ли биопсия и кога ще получите резултат.",
+            "Вижте и [подготовката за гинекологичен преглед](/narachnik/podgotovka-za-ginekologichen-pregled)."
+          ]
+        },
+        {
+          "heading": "Боли ли колпоскопията?",
+          "paragraphs": [
+            "Повечето жени усещат лек дискомфорт, подобен на преглед — притискане или кратко разтягане, а не силна болка. Ако се вземе биопсия, може да има кратък дискомфорт или спазъм, който обикновено отминава бързо.",
+            "Ако усетите силна болка, кажете веднага — прегледът може да бъде адаптиран. По-подробно: [Боли ли колпоскопията?](/narachnik/boli-li-kolposkopiyata)"
+          ]
+        },
+        {
+          "heading": "Колпоскопия при HPV",
+          "paragraphs": [
+            "Положителен [HPV тест](/uslugi/hpv-test) означава наличие на вируса, а не задължително сериозна находка. Колпоскопия се препоръчва при определени комбинации от HPV резултат, цитология и клинична история — не автоматично при всеки положителен тест.",
+            "Планът се обяснява след преглед на вашите резултати. Образователно: [Какво означава положителен HPV тест?](/narachnik/pozitiven-hpv-test)"
+          ]
+        },
+        {
+          "heading": "Колпоскопия след отклонение в цитонамазката",
+          "paragraphs": [
+            "Отклонение в [цитонамазката](/uslugi/citonamazka) не е диагноза рак. Следва индивидуален план: понякога е достатъчно наблюдение или [HPV тест](/uslugi/hpv-test), друг път се препоръчва колпоскопия.",
+            "Категорията на резултата, възрастта и предишните изследвания определят следващата стъпка. Подробно: [Какво следва след абнормна цитонамазка?](/narachnik/kakvo-sledva-sled-abnormalna-citonamazka)"
+          ]
+        },
+        {
+          "heading": "Какво следва след изследването?",
+          "paragraphs": [
+            "Лекарят обяснява какво е видял и дали са нужни допълнителни стъпки. Ако е взета биопсия, срокът за резултат зависи от лабораторията — обикновено няколко дни до около седмица.",
+            "Леко зацапване за 1–2 дни е възможно, особено след биопсия. Следвайте указанията за тампони и полов контакт. Следващият контрол може да включва наблюдение, лечение или нов [профилактичен преглед](/uslugi/profilaktichen-ginekologichen-pregled)."
+          ]
+        }
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/kakvo-e-kolposkopiya",
+          "label": "Какво е колпоскопия и кога се прави"
+        },
+        {
+          "href": "/narachnik/boli-li-kolposkopiyata",
+          "label": "Боли ли колпоскопията?"
+        },
+        {
+          "href": "/narachnik/kakvo-sledva-sled-abnormalna-citonamazka",
+          "label": "Какво следва след абнормна цитонамазка?"
+        },
+        {
+          "href": "/narachnik/pozitiven-hpv-test",
+          "label": "Положителен HPV тест — какво следва"
+        }
       ],
       "faqs": [
         {
-          "question": "Колпоскопията болезнена ли е?",
-          "answer": "Повечето жени усещат лек дискомфорт, подобен на преглед. Ако имате притеснения, споделете ги преди процедурата."
+          "question": "Какво е колпоскопия?",
+          "answer": "Прецизен оглед на шийката на матката с увеличителен апарат (колпоскоп). Целта е да се видят зони, които изискват по-подробна оценка — не да се постави диагноза по телефона."
+        },
+        {
+          "question": "Кога се препоръчва колпоскопия?",
+          "answer": "Най-често след отклонение в цитонамазката, при определен HPV резултат, при проследяване на предишна находка или когато лекарят види изменения, които иска да огледа по-прецизно."
+        },
+        {
+          "question": "Боли ли колпоскопията?",
+          "answer": "Повечето жени усещат лек дискомфорт, подобен на преглед. Ако се вземе биопсия, може да има кратък дискомфорт. Споделете притесненията си преди процедурата."
+        },
+        {
+          "question": "Как да се подготвя за колпоскопия?",
+          "answer": "Носете предишни резултати. Избягвайте вагинални кремове и тампони 24 часа преди процедурата, ако не е казано друго. Запишете въпросите си за биопсия и срок на резултата."
+        },
+        {
+          "question": "Прави ли се колпоскопия при всеки положителен HPV?",
+          "answer": "Не. Положителен HPV не означава задължително колпоскопия. Решението зависи от типа на резултата, цитонамазката и клиничната история."
+        },
+        {
+          "question": "След отклонение в цитонамазката винаги ли се прави колпоскопия?",
+          "answer": "Не винаги. Понякога е достатъчно наблюдение или HPV тест. При по-значими отклонения или определени комбинации от резултати колпоскопията е следващата стъпка."
+        },
+        {
+          "question": "Какво следва след колпоскопия?",
+          "answer": "Обяснение на находката и план за наблюдение, лечение или контрол. Ако е взета биопсия, лекарят ще каже очаквания срок за резултат."
         },
         {
           "question": "Кога ще са готови резултатите?",
-          "answer": "Зависи от това дали са взети проби. Лекарят ще ви обясни очакваните срокове по време на посещението."
+          "answer": "Зависи от това дали са взети проби. Ако има биопсия, резултатът обикновено идва след няколко дни до около седмица. Точният срок се уточнява на посещението."
         },
         {
           "question": "Как да запазя час?",
@@ -159,7 +284,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "При нужда — насочване към HPV тест, колпоскопия или контрол."
       ],
       "notes": [
-        "Цената на цитонамазката е публикувана в ценоразписа. При работа с НЗОК може да има доплащане."
+        "Цената на цитонамазката е публикувана в ценоразписа. При работа с НЗОК може да има доплащане.",
+        "При отклонение следващата стъпка може да е [HPV тест](/uslugi/hpv-test) или [колпоскопия](/uslugi/kolposkopiya). Скринингът често започва от [профилактичен преглед](/uslugi/profilaktichen-ginekologichen-pregled)."
       ],
       "faqs": [
         {
@@ -194,7 +320,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "При положителен или неясен резултат — план за контрол или колпоскопия."
       ],
       "notes": [
-        "Цената на HPV теста не е фиксирана в публичния ценоразпис — уточнява се при посещението според избрания панел."
+        "Цената на HPV теста не е фиксирана в публичния ценоразпис — уточнява се при посещението според избрания панел.",
+        "HPV тестът се комбинира с [цитонамазка](/uslugi/citonamazka). При определени резултати следващата стъпка може да е [колпоскопия](/uslugi/kolposkopiya)."
       ],
       "faqs": [
         {
@@ -218,9 +345,9 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "histeroskopiya",
       "title": "Хистероскопия",
-      "seoTitle": "Хистероскопия София",
-      "seoDescription": "Консултация и насочване за хистероскопия при д-р Мария Райкова в София. Миниинвазивен подход при индикации.",
-      "intro": "Хистероскопията е миниинвазивен метод за оглед на маточната кухина. Д-р Райкова има квалификация в офис и оперативна хистероскопия. Конкретният обхват на процедурата се определя според индикациите и мястото на извършване.",
+      "seoTitle": "Хистероскопия в София — консултация и насочване",
+      "seoDescription": "Хистероскопия в София при д-р Мария Райкова: консултация и насочване за офис или оперативна процедура според индикациите. Запазете час.",
+      "intro": "Хистероскопията е миниинвазивен оглед на маточната кухина. В кабинета в София д-р Райкова консултира и насочва при индикации; има квалификация в офис и оперативна хистероскопия. Конкретният обхват и мястото — кабинет или болница — се уточняват след преглед.",
       "suitableFor": "Подходяща при индикации като абнормно кървене, съмнение за вътрематочни находки или когато е нужна директна оценка на маточната кухина — след клинична преценка.",
       "visitSteps": [
         "Консултация и оценка дали хистероскопията е подходяща.",
@@ -231,7 +358,17 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       "notes": [
         "Някои процедури може да се извършват в болнична среда. Това се уточнява при консултацията."
       ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/boli-li-histeroskopiyata",
+          "label": "Боли ли хистероскопията?"
+        }
+      ],
       "faqs": [
+        {
+          "question": "Какво е хистероскопия?",
+          "answer": "Миниинвазивен оглед на маточната кухина с тънка камера. Може да е диагностична (офис) или оперативна. Обхватът и мястото се определят след консултация."
+        },
         {
           "question": "Офис и оперативна хистероскопия — каква е разликата?",
           "answer": "Офис хистероскопията обикновено е с по-малък обхват и може да се извършва в амбулаторни условия. Оперативната е при нужда от лечебни манипулации. Изборът зависи от индикациите."
@@ -296,6 +433,9 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "Gynecological exam according to age and indications.",
         "When needed — Pap smear, ultrasound, or further tests.",
         "Explanation of findings and recommendation for the next check-up."
+      ],
+      "notes": [
+        "When indicated, the visit may include referral for a [Pap smear](/uslugi/citonamazka), [HPV test](/uslugi/hpv-test), or [colposcopy](/uslugi/kolposkopiya)."
       ],
       "faqs": [
         {
@@ -386,24 +526,137 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "kolposkopiya",
       "title": "Colposcopy",
-      "seoTitle": "Colposcopy in Sofia — early assessment",
-      "seoDescription": "Colposcopy in Sofia with Dr. Maria Raykova. Precise examination when cervical changes are suspected.",
-      "intro": "Colposcopy is a magnified examination of the cervix. It is used for more precise assessment when precancerous or other changes are suspected and is part of early diagnostics.",
-      "suitableFor": "Suitable for abnormal Pap results, visible changes, or when the doctor recommends further cervical assessment.",
+      "seoTitle": "Colposcopy in Sofia — what it is and how it goes",
+      "seoDescription": "What colposcopy is, when it is recommended after a Pap smear or HPV test, how it is done, and how to prepare. Dr. Maria Raykova’s clinic in Sofia.",
+      "intro": "Colposcopy is a magnified examination of the cervix. It is most often recommended after an abnormal [Pap smear](/uslugi/citonamazka) or a specific [HPV test](/uslugi/hpv-test) result, for a more precise assessment. The aim is earlier diagnosis — not automatically “bad news”.",
+      "suitableFor": "Suitable for abnormal Pap results, a positive HPV test with certain findings, visible changes, or when the doctor recommends further cervical assessment. The decision is individual — usually after a [preventive gynecological exam](/uslugi/profilaktichen-ginekologichen-pregled) or a consultation about results.",
       "visitSteps": [
         "Conversation about previous results and the reason for the exam.",
         "Colposcopic examination in a calm setting.",
-        "When indicated — additional procedures based on findings.",
+        "When indicated — additional procedures based on findings, including biopsy.",
         "Clear explanation of the result and a plan for monitoring or treatment."
+      ],
+      "notes": [
+        "Colposcopy does not replace screening. It often follows a [Pap smear](/uslugi/citonamazka) or [HPV test](/uslugi/hpv-test) and is planned as part of the clinical assessment."
+      ],
+      "guideSections": [
+        {
+          "heading": "What is colposcopy?",
+          "paragraphs": [
+            "Colposcopy is a close examination of the cervix — and sometimes the vagina — with a magnifying device (colposcope). The colposcope stays at a distance and magnifies the image; it is not inserted deep into the body.",
+            "A solution may be applied so changes are easier to see. If needed, a small biopsy can be taken. The exam is done after clinical judgment and a conversation about the indications."
+          ]
+        },
+        {
+          "heading": "When is it recommended?",
+          "paragraphs": [
+            "Colposcopy is not routine screening for every woman. It is recommended when there is a reason for a closer look at the cervix."
+          ],
+          "bullets": [
+            "abnormal [Pap smear](/uslugi/citonamazka) results;",
+            "a [positive HPV test](/uslugi/hpv-test) with certain combinations of findings;",
+            "follow-up after a previous finding;",
+            "visible changes that need a more precise exam."
+          ]
+        },
+        {
+          "heading": "How does it proceed?",
+          "paragraphs": [
+            "The position is the same as for a gynecological exam. The doctor places a speculum, examines the cervix with the colposcope, and may apply a solution. If a biopsy is taken, this is explained during the visit.",
+            "The examination itself is usually brief. The visit also includes a conversation about findings and next steps."
+          ]
+        },
+        {
+          "heading": "How should you prepare?",
+          "paragraphs": [
+            "Preparation is similar to a regular gynecological exam. If the doctor has given other instructions, follow those."
+          ],
+          "bullets": [
+            "Bring previous results — Pap smears, HPV tests, previous colposcopies.",
+            "Avoid vaginal creams, tampons, and spermicides for 24 hours before the procedure, unless told otherwise.",
+            "Write down your questions: will a biopsy be taken, and when will results be ready?",
+            "See also [preparation for a gynecological exam](/narachnik/podgotovka-za-ginekologichen-pregled)."
+          ]
+        },
+        {
+          "heading": "Is colposcopy painful?",
+          "paragraphs": [
+            "Most women feel mild discomfort similar to an exam — pressure or brief stretching, not severe pain. If a biopsy is taken, there may be brief discomfort or a cramp that usually passes quickly.",
+            "If you feel strong pain, say so immediately — the exam can be adapted. More detail: [Is colposcopy painful?](/narachnik/boli-li-kolposkopiyata)"
+          ]
+        },
+        {
+          "heading": "Colposcopy and HPV",
+          "paragraphs": [
+            "A positive [HPV test](/uslugi/hpv-test) means the virus is present, not necessarily a serious finding. Colposcopy is recommended for certain combinations of HPV result, cytology, and clinical history — not automatically after every positive test.",
+            "The plan is explained after reviewing your results. Educational: [What does a positive HPV test mean?](/narachnik/pozitiven-hpv-test)"
+          ]
+        },
+        {
+          "heading": "Colposcopy after an abnormal Pap smear",
+          "paragraphs": [
+            "An abnormal [Pap smear](/uslugi/citonamazka) is not a cancer diagnosis. Next comes an individual plan: sometimes observation or an [HPV test](/uslugi/hpv-test) is enough; other times colposcopy is recommended.",
+            "The result category, age, and previous tests determine the next step. Details: [What follows an abnormal Pap smear?](/narachnik/kakvo-sledva-sled-abnormalna-citonamazka)"
+          ]
+        },
+        {
+          "heading": "What happens after the exam?",
+          "paragraphs": [
+            "The doctor explains what was seen and whether further steps are needed. If a biopsy was taken, the result timeline depends on the laboratory — usually a few days to about a week.",
+            "Light spotting for 1–2 days is possible, especially after biopsy. Follow instructions about tampons and intercourse. Follow-up may include observation, treatment, or another [preventive exam](/uslugi/profilaktichen-ginekologichen-pregled)."
+          ]
+        }
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/kakvo-e-kolposkopiya",
+          "label": "What is colposcopy and when is it done"
+        },
+        {
+          "href": "/narachnik/boli-li-kolposkopiyata",
+          "label": "Is colposcopy painful?"
+        },
+        {
+          "href": "/narachnik/kakvo-sledva-sled-abnormalna-citonamazka",
+          "label": "What follows an abnormal Pap smear?"
+        },
+        {
+          "href": "/narachnik/pozitiven-hpv-test",
+          "label": "Positive HPV test — what next"
+        }
       ],
       "faqs": [
         {
+          "question": "What is colposcopy?",
+          "answer": "A close examination of the cervix with a magnifying device (colposcope). The aim is to see areas that need a closer look — not to give a diagnosis over the phone."
+        },
+        {
+          "question": "When is colposcopy recommended?",
+          "answer": "Most often after an abnormal Pap smear, a specific HPV result, follow-up of a previous finding, or when the doctor sees changes that need a more precise exam."
+        },
+        {
           "question": "Is colposcopy painful?",
-          "answer": "Most women feel mild discomfort similar to an exam. If you are concerned, share this before the procedure."
+          "answer": "Most women feel mild discomfort similar to an exam. If a biopsy is taken, there may be brief discomfort. Share any concerns before the procedure."
+        },
+        {
+          "question": "How should I prepare for colposcopy?",
+          "answer": "Bring previous results. Avoid vaginal creams and tampons for 24 hours beforehand, unless told otherwise. Write down questions about biopsy and result timing."
+        },
+        {
+          "question": "Is colposcopy needed after every positive HPV test?",
+          "answer": "No. A positive HPV result does not automatically mean colposcopy. The decision depends on the type of result, the Pap smear, and clinical history."
+        },
+        {
+          "question": "Is colposcopy always done after an abnormal Pap smear?",
+          "answer": "Not always. Sometimes observation or an HPV test is enough. With more significant changes or certain combinations of results, colposcopy is the next step."
+        },
+        {
+          "question": "What happens after colposcopy?",
+          "answer": "An explanation of the finding and a plan for observation, treatment, or follow-up. If a biopsy was taken, the doctor will give the expected result timeline."
         },
         {
           "question": "When will results be ready?",
-          "answer": "It depends on whether samples were taken. The doctor will explain expected timelines during the visit."
+          "answer": "It depends on whether samples were taken. If there is a biopsy, the result usually comes in a few days to about a week. The exact timing is confirmed during the visit."
         },
         {
           "question": "How do I book an appointment?",
@@ -429,7 +682,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "When needed — guidance toward HPV testing, colposcopy, or follow-up."
       ],
       "notes": [
-        "Pap smear pricing is listed on the price page. NHIF visits may still require co-payment."
+        "Pap smear pricing is listed on the price page. NHIF visits may still require co-payment.",
+        "If the result is abnormal, the next step may be an [HPV test](/uslugi/hpv-test) or [colposcopy](/uslugi/kolposkopiya). Screening often starts with a [preventive exam](/uslugi/profilaktichen-ginekologichen-pregled)."
       ],
       "faqs": [
         {
@@ -464,7 +718,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "If positive or unclear — a plan for follow-up or colposcopy."
       ],
       "notes": [
-        "HPV test pricing is not fixed on the public price list — it is confirmed at the visit according to the chosen panel."
+        "HPV test pricing is not fixed on the public price list — it is confirmed at the visit according to the chosen panel.",
+        "An HPV test is often combined with a [Pap smear](/uslugi/citonamazka). With certain results, the next step may be [colposcopy](/uslugi/kolposkopiya)."
       ],
       "faqs": [
         {
@@ -488,9 +743,9 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "histeroskopiya",
       "title": "Hysteroscopy",
-      "seoTitle": "Hysteroscopy in Sofia",
-      "seoDescription": "Consultation and guidance for hysteroscopy with Dr. Maria Raykova in Sofia. Minimally invasive approach when indicated.",
-      "intro": "Hysteroscopy is a minimally invasive method to examine the uterine cavity. Dr. Raykova is trained in office and operative hysteroscopy. The exact scope is determined by indications and where the procedure is performed.",
+      "seoTitle": "Hysteroscopy in Sofia — consultation and guidance",
+      "seoDescription": "Hysteroscopy in Sofia with Dr. Maria Raykova: consultation and guidance for office or operative procedure when indicated. Book an appointment.",
+      "intro": "Hysteroscopy is a minimally invasive look inside the uterine cavity. In the Sofia clinic Dr. Raykova consults and guides when it may be indicated; she is trained in office and operative hysteroscopy. The exact scope and setting — clinic or hospital — are decided after examination.",
       "suitableFor": "Suitable for indications such as abnormal bleeding, suspected intrauterine findings, or when direct assessment of the uterine cavity is needed — after clinical judgment.",
       "visitSteps": [
         "Consultation and assessment of whether hysteroscopy is appropriate.",
@@ -501,7 +756,17 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       "notes": [
         "Some procedures may be performed in a hospital setting. This is clarified during consultation."
       ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/boli-li-histeroskopiyata",
+          "label": "Is hysteroscopy painful?"
+        }
+      ],
       "faqs": [
+        {
+          "question": "What is hysteroscopy?",
+          "answer": "A minimally invasive look inside the uterine cavity with a thin camera. It may be diagnostic (office) or operative. Scope and setting are decided after consultation."
+        },
         {
           "question": "Office vs operative hysteroscopy — what is the difference?",
           "answer": "Office hysteroscopy usually has a smaller scope and may be done in an outpatient setting. Operative hysteroscopy is used when therapeutic procedures are needed. The choice depends on indications."
@@ -566,6 +831,9 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "Exploración ginecológica según edad e indicaciones.",
         "Si es necesario — citología, ecografía u otras pruebas.",
         "Explicación de los hallazgos y recomendación del próximo control."
+      ],
+      "notes": [
+        "Si está indicado, la visita puede incluir derivación a [citología](/uslugi/citonamazka), [test de VPH](/uslugi/hpv-test) o [colposcopia](/uslugi/kolposkopiya)."
       ],
       "faqs": [
         {
@@ -656,24 +924,137 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "kolposkopiya",
       "title": "Colposcopia",
-      "seoTitle": "Colposcopia en Sofía — valoración temprana",
-      "seoDescription": "Colposcopia en Sofía con la Dra. Maria Raykova. Exploración precisa ante sospecha de alteraciones cervicales.",
-      "intro": "La colposcopia es una exploración ampliada del cuello uterino. Se usa para una valoración más precisa ante sospecha de cambios precancerosos u otras alteraciones y forma parte del diagnóstico temprano.",
-      "suitableFor": "Indicada ante citologías alteradas, cambios visibles o cuando el médico recomienda una valoración adicional del cuello.",
+      "seoTitle": "Colposcopia en Sofía — qué es y cómo se realiza",
+      "seoDescription": "Qué es la colposcopia, cuándo se recomienda tras una citología o un test de VPH, cómo se realiza y cómo prepararse. Consulta de la Dra. Maria Raykova en Sofía.",
+      "intro": "La colposcopia es una exploración ampliada del cuello uterino. Se recomienda sobre todo tras una [citología](/uslugi/citonamazka) alterada o un resultado concreto de [test de VPH](/uslugi/hpv-test), para una valoración más precisa. El objetivo es un diagnóstico más temprano — no automáticamente una «mala noticia».",
+      "suitableFor": "Indicada ante citologías alteradas, VPH positivo con determinados hallazgos, cambios visibles o cuando el médico recomienda una valoración adicional del cuello. La decisión es individual — habitualmente tras una [revisión ginecológica preventiva](/uslugi/profilaktichen-ginekologichen-pregled) o una consulta sobre resultados.",
       "visitSteps": [
         "Conversación sobre resultados previos y el motivo del estudio.",
         "Exploración colposcópica en un ambiente tranquilo.",
-        "Si está indicado — procedimientos adicionales según el hallazgo.",
+        "Si está indicado — procedimientos adicionales según el hallazgo, incluida biopsia.",
         "Explicación clara del resultado y plan de seguimiento o tratamiento."
+      ],
+      "notes": [
+        "La colposcopia no sustituye el cribado. A menudo sigue a una [citología](/uslugi/citonamazka) o un [test de VPH](/uslugi/hpv-test) y se planifica dentro de la valoración clínica."
+      ],
+      "guideSections": [
+        {
+          "heading": "¿Qué es la colposcopia?",
+          "paragraphs": [
+            "La colposcopia es una exploración precisa del cuello uterino — y a veces de la vagina — con un aparato de aumento (colposcopio). El colposcopio permanece a distancia y aumenta la imagen; no se introduce en profundidad en el cuerpo.",
+            "A veces se aplica una solución para ver mejor los cambios. Si hace falta, puede tomarse una biopsia pequeña. El estudio se realiza tras criterio clínico y una conversación sobre las indicaciones."
+          ]
+        },
+        {
+          "heading": "¿Cuándo se recomienda?",
+          "paragraphs": [
+            "La colposcopia no es un cribado rutinario para todas las mujeres. Se indica cuando hay un motivo para valorar el cuello con más detalle."
+          ],
+          "bullets": [
+            "alteraciones en la [citología](/uslugi/citonamazka);",
+            "[test de VPH positivo](/uslugi/hpv-test) con determinadas combinaciones de resultados;",
+            "seguimiento tras un hallazgo previo;",
+            "cambios visibles que requieren una exploración más precisa."
+          ]
+        },
+        {
+          "heading": "¿Cómo se realiza?",
+          "paragraphs": [
+            "La posición es la misma que en una exploración ginecológica. La doctora coloca un espéculo, observa el cuello con el colposcopio y, si hace falta, aplica una solución. Si se toma biopsia, se explica durante la visita.",
+            "La exploración en sí suele ser breve. La visita incluye también una conversación sobre los hallazgos y los siguientes pasos."
+          ]
+        },
+        {
+          "heading": "¿Cómo prepararse?",
+          "paragraphs": [
+            "La preparación es similar a la de una exploración ginecológica habitual. Si la doctora ha dado otras indicaciones, sígalas."
+          ],
+          "bullets": [
+            "Lleve resultados previos — citologías, tests de VPH, colposcopias anteriores.",
+            "Evite cremas vaginales, tampones y espermicidas 24 horas antes, salvo otra indicación.",
+            "Anote sus preguntas: ¿se tomará biopsia y cuándo estará el resultado?",
+            "Vea también la [preparación para una exploración ginecológica](/narachnik/podgotovka-za-ginekologichen-pregled)."
+          ]
+        },
+        {
+          "heading": "¿Duele la colposcopia?",
+          "paragraphs": [
+            "La mayoría de mujeres nota una molestia leve, similar a una exploración — presión o un breve estiramiento, no un dolor intenso. Si se toma biopsia, puede haber una molestia o un calambre breve que suele pasar rápido.",
+            "Si siente dolor intenso, dígalo de inmediato: la exploración puede adaptarse. Más detalle: [¿Duele la colposcopia?](/narachnik/boli-li-kolposkopiyata)"
+          ]
+        },
+        {
+          "heading": "Colposcopia y VPH",
+          "paragraphs": [
+            "Un [test de VPH](/uslugi/hpv-test) positivo significa presencia del virus, no necesariamente un hallazgo grave. La colposcopia se recomienda ante determinadas combinaciones de VPH, citología e historia clínica — no de forma automática tras cada resultado positivo.",
+            "El plan se explica tras revisar sus resultados. Educativo: [¿Qué significa un test de VPH positivo?](/narachnik/pozitiven-hpv-test)"
+          ]
+        },
+        {
+          "heading": "Colposcopia tras una citología alterada",
+          "paragraphs": [
+            "Una [citología](/uslugi/citonamazka) alterada no es un diagnóstico de cáncer. Sigue un plan individual: a veces basta observación o un [test de VPH](/uslugi/hpv-test); otras veces se recomienda colposcopia.",
+            "La categoría del resultado, la edad y las pruebas previas determinan el siguiente paso. Detalle: [¿Qué sigue tras una citología anormal?](/narachnik/kakvo-sledva-sled-abnormalna-citonamazka)"
+          ]
+        },
+        {
+          "heading": "¿Qué sigue después del estudio?",
+          "paragraphs": [
+            "La doctora explica lo que ha visto y si hacen falta más pasos. Si se tomó biopsia, el plazo del resultado depende del laboratorio — suele ser de unos días a aproximadamente una semana.",
+            "Un ligero manchado de 1–2 días es posible, sobre todo tras biopsia. Siga las indicaciones sobre tampones y relaciones sexuales. El control posterior puede incluir observación, tratamiento u otra [revisión preventiva](/uslugi/profilaktichen-ginekologichen-pregled)."
+          ]
+        }
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/kakvo-e-kolposkopiya",
+          "label": "Qué es la colposcopia y cuándo se hace"
+        },
+        {
+          "href": "/narachnik/boli-li-kolposkopiyata",
+          "label": "¿Duele la colposcopia?"
+        },
+        {
+          "href": "/narachnik/kakvo-sledva-sled-abnormalna-citonamazka",
+          "label": "Qué sigue tras una citología anormal"
+        },
+        {
+          "href": "/narachnik/pozitiven-hpv-test",
+          "label": "Test de VPH positivo — qué sigue"
+        }
       ],
       "faqs": [
         {
-          "question": "¿Es dolorosa la colposcopia?",
-          "answer": "La mayoría de mujeres nota una molestia leve, similar a una exploración. Si tiene preocupación, coméntelo antes del procedimiento."
+          "question": "¿Qué es la colposcopia?",
+          "answer": "Una exploración precisa del cuello uterino con un aparato de aumento (colposcopio). El objetivo es ver zonas que requieren una valoración más detallada — no dar un diagnóstico por teléfono."
+        },
+        {
+          "question": "¿Cuándo se recomienda la colposcopia?",
+          "answer": "Sobre todo tras una citología alterada, un resultado concreto de VPH, el seguimiento de un hallazgo previo o cuando la doctora ve cambios que quiere examinar con más precisión."
+        },
+        {
+          "question": "¿Duele la colposcopia?",
+          "answer": "La mayoría de mujeres nota una molestia leve, similar a una exploración. Si se toma biopsia, puede haber una molestia breve. Comente sus preocupaciones antes del procedimiento."
+        },
+        {
+          "question": "¿Cómo me preparo para la colposcopia?",
+          "answer": "Lleve resultados previos. Evite cremas vaginales y tampones 24 horas antes, salvo otra indicación. Anote preguntas sobre biopsia y plazo del resultado."
+        },
+        {
+          "question": "¿Se hace colposcopia tras cada VPH positivo?",
+          "answer": "No. Un VPH positivo no implica automáticamente colposcopia. La decisión depende del tipo de resultado, la citología y la historia clínica."
+        },
+        {
+          "question": "¿Tras una citología alterada siempre se hace colposcopia?",
+          "answer": "No siempre. A veces basta observación o un test de VPH. Ante cambios más significativos o determinadas combinaciones de resultados, la colposcopia es el siguiente paso."
+        },
+        {
+          "question": "¿Qué sigue después de la colposcopia?",
+          "answer": "Una explicación del hallazgo y un plan de observación, tratamiento o control. Si se tomó biopsia, la doctora indicará el plazo esperado del resultado."
         },
         {
           "question": "¿Cuándo estarán los resultados?",
-          "answer": "Depende de si se toman muestras. La doctora explicará los plazos esperados durante la visita."
+          "answer": "Depende de si se toman muestras. Si hay biopsia, el resultado suele llegar en unos días a aproximadamente una semana. El plazo exacto se confirma en la visita."
         },
         {
           "question": "¿Cómo reservo una cita?",
@@ -699,7 +1080,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "Si hace falta — orientación hacia test de VPH, colposcopia o control."
       ],
       "notes": [
-        "El precio de la citología está publicado en el tarifario. Con NHIF puede haber copago."
+        "El precio de la citología está publicado en el tarifario. Con NHIF puede haber copago.",
+        "Si el resultado está alterado, el siguiente paso puede ser un [test de VPH](/uslugi/hpv-test) o una [colposcopia](/uslugi/kolposkopiya). El cribado suele empezar con una [revisión preventiva](/uslugi/profilaktichen-ginekologichen-pregled)."
       ],
       "faqs": [
         {
@@ -734,7 +1116,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "Si el resultado es positivo o poco claro — plan de control o colposcopia."
       ],
       "notes": [
-        "El precio del test de VPH no está fijado en el tarifario público — se confirma en la visita según el panel elegido."
+        "El precio del test de VPH no está fijado en el tarifario público — se confirma en la visita según el panel elegido.",
+        "El test de VPH se combina con la [citología](/uslugi/citonamazka). Ante determinados resultados, el siguiente paso puede ser una [colposcopia](/uslugi/kolposkopiya)."
       ],
       "faqs": [
         {
@@ -758,9 +1141,9 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "histeroskopiya",
       "title": "Histeroscopia",
-      "seoTitle": "Histeroscopia en Sofía",
-      "seoDescription": "Consulta y orientación sobre histeroscopia con la Dra. Maria Raykova en Sofía. Enfoque mínimamente invasivo cuando está indicado.",
-      "intro": "La histeroscopia es un método mínimamente invasivo para explorar la cavidad uterina. La Dra. Raykova tiene formación en histeroscopia de consulta y operatoria. El alcance concreto se determina según indicaciones y el lugar de realización.",
+      "seoTitle": "Histeroscopia en Sofía — consulta y orientación",
+      "seoDescription": "Histeroscopia en Sofía con la Dra. Maria Raykova: consulta y orientación para procedimiento de consulta u operatorio según indicaciones. Reserve cita.",
+      "intro": "La histeroscopia es una exploración mínimamente invasiva de la cavidad uterina. En la consulta de Sofía la Dra. Raykova valora y orienta cuando puede estar indicada; tiene formación en histeroscopia de consulta y operatoria. El alcance concreto y el lugar — consulta u hospital — se aclaran tras la exploración.",
       "suitableFor": "Indicada ante sangrado anormal, sospecha de hallazgos intrauterinos o cuando se necesita valoración directa de la cavidad uterina — tras criterio clínico.",
       "visitSteps": [
         "Consulta y valoración de si la histeroscopia es adecuada.",
@@ -771,7 +1154,17 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       "notes": [
         "Algunos procedimientos pueden realizarse en entorno hospitalario. Esto se aclara en la consulta."
       ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/boli-li-histeroskopiyata",
+          "label": "¿Duele la histeroscopia?"
+        }
+      ],
       "faqs": [
+        {
+          "question": "¿Qué es la histeroscopia?",
+          "answer": "Una exploración mínimamente invasiva de la cavidad uterina con una cámara fina. Puede ser diagnóstica (de consulta) u operatoria. El alcance y el lugar se deciden tras la consulta."
+        },
         {
           "question": "Histeroscopia de consulta vs operatoria — ¿cuál es la diferencia?",
           "answer": "La de consulta suele tener menor alcance y puede hacerse en ambulatorio. La operatoria se usa cuando hacen falta manipulaciones terapéuticas. La elección depende de las indicaciones."

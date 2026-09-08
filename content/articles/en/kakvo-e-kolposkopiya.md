@@ -1,12 +1,18 @@
 ---
 title: "What is colposcopy and when is it done"
-excerpt: "A clear explanation of colposcopy — what it is, when it is recommended, and what to expect."
+excerpt: "Educational article: what colposcopy is, when it is recommended, and what to expect. To book, see the Colposcopy service page."
 category: "Gynecological conditions"
 date: "2026-07-15"
+updated: "2026-09-08"
 cover: "/blog/cover-kolposkopiya.webp"
+ctaLabel: "Go to Colposcopy"
+ctaLead: "This handbook article is educational. Booking and the clinic visit are on the Colposcopy service page."
+ctaHref: "/uslugi/kolposkopiya"
 ---
 
 Colposcopy sounds worrying to many women — mostly because the name is unfamiliar. In practice, it is a precise magnified examination of the cervix.
+
+This page is an educational handbook article. To book a visit at the clinic, see [Colposcopy](/uslugi/kolposkopiya).
 
 ## When it is recommended
 
@@ -32,4 +38,4 @@ The doctor examines the cervix with a colposcope. A sample may be taken if neede
 
 The doctor will explain what was seen and whether further steps are needed. Result timelines depend on whether samples were taken.
 
-Educational text does not replace medical consultation. Book an appointment if needed.
+Educational text does not replace a medical consultation. Booking is on the [Colposcopy](/uslugi/kolposkopiya) service page.

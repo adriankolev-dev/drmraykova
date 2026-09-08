@@ -1,4 +1,5 @@
 import { BookCta } from "@/components/booking/BookCta";
+import { ContentText } from "@/components/content/ContentText";
 import { Reveal } from "@/components/motion/Reveal";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { SectionEyebrow } from "@/components/layout/Section";
@@ -35,7 +36,7 @@ export function ServiceHero({
         {title}
       </h1>
       <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-        {intro}
+        <ContentText text={intro} />
       </p>
       <p className="mt-4 text-muted-foreground">{withDoctor}</p>
       <div className="mt-8">

@@ -4,18 +4,18 @@
     "description": "Thoughtful obstetric and gynecological care in Sofia. Preventive exams, diagnostics, and women's health consultations. Book online.",
     "aboutTitle": "About the doctor",
     "aboutDescription": "Dr. Maria Raykova — obstetrician-gynecologist in Sofia. Education, qualifications, experience, and patient approach.",
-    "servicesTitle": "Gynecological services in Sofia | Dr. Maria Raykova",
-    "servicesDescription": "Gynecological services in Sofia with Dr. Maria Raykova: preventive exams, ultrasound, colposcopy, hysteroscopy, and consultations. Book online.",
+    "servicesTitle": "Gynecological services in Sofia — book an appointment",
+    "servicesDescription": "Choose a service and book with Dr. Maria Raykova in Sofia: exams, Pap smear, colposcopy, ultrasound, and hysteroscopy. Book online.",
     "handbookTitle": "Medical handbook",
     "handbookDescription": "Educational articles on women's health, prevention, and preparing for a gynecological visit.",
-    "contactTitle": "Contact",
-    "contactDescription": "Address, phone, map, and appointment booking with Dr. Maria Raykova — 10 Dobrila St., opposite VMA, Sofia.",
+    "contactTitle": "Contact — Lyulin Med, Dobrila 10 Branch",
+    "contactDescription": "Address, phone, map, and appointment booking with Dr. Maria Raykova — Lyulin Med Medical Center, Dobrila 10 Branch, 10 Dobrila St., opposite VMA, Sofia.",
     "privacyTitle": "Privacy and cookie policy",
     "privacyDescription": "This policy explains how Dr. Maria Raykova’s website processes personal data and uses cookies. The site is informational and directs appointment booking to Superdoc.",
     "faqTitle": "Frequently asked questions",
     "faqDescription": "How to book with Dr. Maria Raykova, NHIF, scope of care, languages, and preparing for a first visit.",
-    "pricingTitle": "Gynecology consultation prices in Sofia",
-    "pricingDescription": "Prices for consultations with Dr. Maria Raykova in Sofia. Preventive exam, ultrasound, colposcopy, and Pap smear. Works with NHIF and cashless visits with insurers."
+    "pricingTitle": "Gynecology consultation prices in Sofia 2026 | NHIF",
+    "pricingDescription": "Primary consultation price with Dr. Maria Raykova in Sofia for 2026. Price list, NHIF visits, referrals, and co-payments for Pap smear and microbiology."
   },
   "nav": {
     "home": "Home",
@@ -98,7 +98,7 @@
     "support": "Preventive exams, diagnostics, and consultations — with attention, clear explanations, and time for your questions.",
     "chipAppointment": "By appointment",
     "chipNhif": "NHIF",
-    "chipClinic": "Clinic · Sofia",
+    "chipClinic": "Dobrila 10 · Sofia",
     "ratingProof": "{rating} out of 5 · {count} reviews on Superdoc"
   },
   "intro": {
@@ -121,8 +121,8 @@
     "accessDetail": "Works with NHIF and leading insurers",
     "languagesValue": "3",
     "languagesDetail": "Bulgarian · English · Spanish",
-    "locationValue": "VMA",
-    "locationDetail": "10 Dobrila St., opposite VMA"
+    "locationValue": "Dobrila 10",
+    "locationDetail": "Lyulin Med — Dobrila 10 Branch, opposite VMA"
   },
   "servicesHome": {
     "eyebrow": "04 · Services",
@@ -226,8 +226,8 @@
   },
   "clinic": {
     "eyebrow": "06 · Clinic",
-    "title": "The clinic at Lyulin Med",
-    "description": "Modern exams and diagnostics — 10 Dobrila St., opposite VMA. Book online or call.",
+    "title": "The clinic at Lyulin Med — Dobrila 10 Branch",
+    "description": "Lyulin Med Medical Center — Dobrila 10 Branch, 10 Dobrila St., opposite VMA, Sofia. Book online or call.",
     "imageAlt": "Dr. Maria Raykova’s clinic — examination chair and Mindray ultrasound",
     "photoCaption": "The clinic"
   },
@@ -295,7 +295,7 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Easy booking. Clear location.",
-    "lead": "Book online via Superdoc or call. The clinic is at Lyulin Med Medical Center, 10 Dobrila St., opposite VMA.",
+    "lead": "Book online via Superdoc or call. The clinic is at Lyulin Med Medical Center — Dobrila 10 Branch, 10 Dobrila St., opposite VMA, Sofia.",
     "mapTitle": "Location on the map",
     "hoursNote": "By appointment",
     "phoneLabel": "Phone",
@@ -346,7 +346,7 @@
     "eyebrow": "Services",
     "breadcrumbHome": "Home",
     "title": "Gynecological services in Sofia",
-    "lead": "Calm obstetric and gynecological care with Dr. Maria Raykova — prevention, diagnostics, and consultations with a clear explanation at every step.",
+    "lead": "Calm obstetric and gynecological care with Dr. Maria Raykova in Sofia — prevention, diagnostics, and booking with a clear explanation at every step.",
     "intro": "On this page you will find the main clinic services: how the visit goes, who it is for, and how to book. The goal is to help you arrive prepared and at ease.",
     "browseCatalog": "Browse the service catalog",
     "cardCta": "Learn more",
@@ -495,6 +495,8 @@
     "relatedHeading": "Related services",
     "relatedLead": "Useful next steps depending on the clinical context.",
     "relatedCta": "Learn more",
+    "relatedReadingHeading": "More in the handbook",
+    "relatedReadingLead": "Educational articles on this topic — they do not replace a personal consultation.",
     "withDoctor": "With {name} in {city}, the visit is calm, with time for questions and clear explanations.",
     "bookHeading": "Book an appointment for {service}",
     "bookLead": "Online via Superdoc — fast and convenient.",
@@ -528,7 +530,7 @@
     "beforeVisitBody": "Bring previous medical records if you have them. For navigation, use the landmark “opposite VMA”.",
     "prepChecklist": "Preparation checklist →",
     "mapTitle": "Map — Dr. Maria Raykova clinic",
-    "mapCaption": "10 Dobrila St. · opposite VMA",
+    "mapCaption": "Dobrila 10 Branch · 10 Dobrila St. · opposite VMA",
     "openMaps": "Open in Google Maps",
     "finalTitle": "Ready for the next step?",
     "finalBody": "Book with {name} online or call {phone}.",
@@ -537,8 +539,8 @@
   "pricing": {
     "eyebrow": "Prices",
     "breadcrumbHome": "Home",
-    "title": "Consultation prices",
-    "lead": "Clear prices, no surprises. The clinic works with NHIF and with {count} health insurers for cashless visits.",
+    "title": "Gynecological consultation prices in Sofia",
+    "lead": "Clear prices for {year}, no surprises. The clinic works with NHIF and with {count} health insurers for cashless visits.",
     "intro": "These prices are for exams and tests at Dr. Maria Raykova's clinic. If you are unsure which visit you need, book a primary consultation — the plan is agreed during the visit.",
     "tableService": "Service",
     "tablePrice": "Price",
@@ -546,8 +548,27 @@
     "priceHeading": "Price",
     "priceOnRequest": "The price is confirmed after consultation. Call {phone} for a quote.",
     "allPricesLink": "All prices",
-    "nhifHeading": "Working with NHIF",
-    "nhifBody": "Dr. Raykova works with NHIF (Bulgarian public health insurance). With a referral, patients co-pay EUR 25 (BGN 48.90) each for Microbiology and Pap smear, and result comments are ready within 14 days.",
+    "nhifEyebrow": "NHIF · {year}",
+    "nhifHeading": "Gynecological exams with NHIF in Sofia",
+    "nhifLead": "Dr. Maria Raykova works with NHIF (Bulgarian public health insurance). Appointments are at {clinic}, {address}. The summary below uses only published information about the primary exam, referrals, and co-payments — current for {year}.",
+    "nhifPrimaryHeading": "Primary exam with NHIF in {year}",
+    "nhifPrimaryBody": "On the {year} price list, the primary exam is listed as {primaryPrice} — that is the listed self-pay price. The clinic works with NHIF: with a referral, co-payment is described for microbiology and Pap smear. The exact combination for your visit is confirmed when you book.",
+    "nhifReferralHeading": "Referral",
+    "nhifReferralBody": "Co-payments for microbiology and Pap smear are described with a referral. For specific referrals and coverage, confirm when booking via Superdoc or by phone — {phone}.",
+    "nhifCopayHeading": "Possible co-payments",
+    "nhifCopayBody": "With a referral, patients co-pay for microbiology ({microPrice}) and Pap smear ({papPrice}). Result comments are usually ready within 14 days.",
+    "nhifIncludedHeading": "What is and is not included",
+    "nhifIncludedItems": [
+      "The clinic works with NHIF — publicly insured visits are possible.",
+      "With a referral, co-payment is described for microbiology and Pap smear.",
+      "The exam and the tests are separate items on the price list. The Pap smear, vaginal swab, and ultrasound are charged separately unless you choose the full package.",
+      "HPV test and hysteroscopy prices are not fixed on the public list — they are confirmed after consultation.",
+      "The scope of the full OB-GYN package is determined by indications — it is not published as a fixed list of procedures."
+    ],
+    "nhifNote": "Figures are as of {date}, source {source}. The current price and NHIF terms are confirmed when you book.",
+    "nhifCopayHint": "NHIF: co-payment",
+    "nhifServicesLink": "Preventive exam",
+    "nhifPrimaryLink": "Obstetric-gynecological exam",
     "insurersHeading": "Cashless visits with insurers",
     "insurersLead": "If you hold health insurance with one of these insurers, your visit may be cashless.",
     "insurersNote": "Coverage depends on your specific policy. Please check with your insurer before the visit.",
@@ -567,8 +588,24 @@
     "faqHeading": "Frequently asked questions about prices",
     "faqs": [
       {
+        "question": "What is the price of a primary exam with NHIF in {year}?",
+        "answer": "On the public {year} price list, the primary exam is {primaryPrice} when paying the listed price. The clinic works with NHIF; with a referral, you co-pay for microbiology ({microPrice}) and Pap smear ({papPrice}). Exact terms are confirmed when you book."
+      },
+      {
         "question": "Does the clinic work with NHIF?",
-        "answer": "Yes. With an NHIF referral, you only co-pay for Microbiology and the Pap smear — EUR 25 (BGN 48.90) each."
+        "answer": "Yes. With an NHIF referral, co-payment is described for microbiology ({microPrice}) and Pap smear ({papPrice})."
+      },
+      {
+        "question": "Do I need a referral for an NHIF visit?",
+        "answer": "Co-payments for microbiology and Pap smear are described with a referral. For specific referrals and coverage, confirm when booking or by phone."
+      },
+      {
+        "question": "What is co-paid on an NHIF visit?",
+        "answer": "With a referral, patients co-pay for microbiology and Pap smear — {papPrice} each, according to the public price list. Result comments are usually ready within 14 days."
+      },
+      {
+        "question": "Does the exam price include tests?",
+        "answer": "The consultation and the tests are separate items. The Pap smear, vaginal swab, and ultrasound are charged separately unless you choose the full package."
       },
       {
         "question": "What does the full OB-GYN package include?",
@@ -577,10 +614,6 @@
       {
         "question": "Can I use my health insurance?",
         "answer": "Yes, the clinic works with {count} insurers for cashless visits. Coverage depends on your policy, so please check with your insurer in advance."
-      },
-      {
-        "question": "Does the price include tests?",
-        "answer": "The consultation and the tests are separate items. The Pap smear, vaginal swab, and ultrasound are charged separately unless you choose the full package."
       }
     ]
   },

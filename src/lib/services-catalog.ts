@@ -10,7 +10,7 @@ export type ServiceCategoryId =
   | "consultations"
   | "treatment";
 
-export const SERVICES_LAST_UPDATED = "2026-08-09";
+export const SERVICES_LAST_UPDATED = "2026-09-08";
 
 /**
  * Orientational visit length for UX cards — not a clinical guarantee.

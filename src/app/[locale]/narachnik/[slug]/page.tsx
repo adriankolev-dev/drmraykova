@@ -5,6 +5,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { locales, isLocale } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { BookCta } from "@/components/booking/BookCta";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ScientificSource } from "@/components/handbook/ScientificSource";
 import { FAQSection } from "@/components/services/FAQSection";
 import { Reveal } from "@/components/motion/Reveal";
@@ -205,7 +207,7 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           ) : null}
 
-          {(article.ctaLead || article.ctaLabel) && (
+          {(article.ctaLead || article.ctaLabel || article.ctaHref) && (
             <div
               className={`${article.closing ? "mt-8" : "mt-12"} rounded-lg border border-border/80 bg-card/70 px-5 py-6 sm:px-6`}
             >
@@ -215,17 +217,26 @@ export default async function ArticlePage({ params }: Props) {
                 </p>
               ) : null}
               <div className={article.ctaLead ? "mt-5" : undefined}>
-                <BookCta
-                  variant="superdoc"
-                  label={article.ctaLabel}
-                  utmCampaign={`article-${article.slug}`}
-                  mascotDock
-                />
+                {article.ctaHref ? (
+                  <Link
+                    href={article.ctaHref}
+                    className={cn(buttonVariants({ variant: "primary", size: "lg" }))}
+                  >
+                    {article.ctaLabel}
+                  </Link>
+                ) : (
+                  <BookCta
+                    variant="superdoc"
+                    label={article.ctaLabel}
+                    utmCampaign={`article-${article.slug}`}
+                    mascotDock
+                  />
+                )}
               </div>
             </div>
           )}
 
-          {!article.ctaLead && !article.ctaLabel ? (
+          {!article.ctaLead && !article.ctaLabel && !article.ctaHref ? (
             <div className="mt-10">
               <BookCta
                 variant="superdoc"

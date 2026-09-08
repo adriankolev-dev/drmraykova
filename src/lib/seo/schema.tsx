@@ -124,7 +124,7 @@ export function getClinicSchema() {
     "@type": ["MedicalClinic", "MedicalBusiness", "LocalBusiness"],
     "@id": CLINIC_ID,
     name: doctor.clinic.name,
-    alternateName: doctor.name,
+    alternateName: [doctor.name, "Филиал Добрила 10"],
     description: siteConfig.description,
     url: `${siteConfig.url}/kontakti`,
     image: [
@@ -135,6 +135,7 @@ export function getClinicSchema() {
     telephone: doctor.clinic.phoneHref.replace("tel:", ""),
     priceRange: "$$",
     address: clinicAddress(),
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.clinic.address)}`,
     medicalSpecialty: [...MEDICAL_SPECIALTIES],
     areaServed: {
       "@type": "City",

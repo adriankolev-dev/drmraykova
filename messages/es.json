@@ -4,18 +4,18 @@
     "description": "Atención obstétrica y ginecológica cuidadosa en Sofía. Revisiones preventivas, diagnóstico y consultas de salud femenina. Reserve cita online.",
     "aboutTitle": "Sobre la doctora",
     "aboutDescription": "Dra. Maria Raykova — obstetra-ginecóloga en Sofía. Formación, cualificaciones, experiencia y enfoque con la paciente.",
-    "servicesTitle": "Servicios ginecológicos en Sofía | Dra. Maria Raykova",
-    "servicesDescription": "Servicios ginecológicos en Sofía con la Dra. Maria Raykova: revisiones preventivas, ecografía, colposcopia, histeroscopia y consultas. Reserve online.",
+    "servicesTitle": "Servicios ginecológicos en Sofía — reserva de cita",
+    "servicesDescription": "Elija un servicio y reserve con la Dra. Maria Raykova en Sofía: revisiones, citología, colposcopia, ecografía e histeroscopia. Reserva online.",
     "handbookTitle": "Guía médica",
     "handbookDescription": "Artículos educativos sobre salud femenina, prevención y preparación para una consulta ginecológica.",
-    "contactTitle": "Contacto",
-    "contactDescription": "Dirección, teléfono, mapa y reserva de cita con la Dra. Maria Raykova — calle Dobrila 10, frente a VMA, Sofía.",
+    "contactTitle": "Contacto — Lyulin Med, sucursal Dobrila 10",
+    "contactDescription": "Dirección, teléfono, mapa y reserva de cita con la Dra. Maria Raykova — Centro Médico Lyulin Med, sucursal Dobrila 10, calle Dobrila 10, frente a VMA, Sofía.",
     "privacyTitle": "Política de privacidad y cookies",
     "privacyDescription": "Esta política describe cómo el sitio web de la Dra. Maria Raykova trata datos personales y utiliza cookies. El sitio es informativo y dirige la reserva de citas a Superdoc.",
     "faqTitle": "Preguntas frecuentes",
     "faqDescription": "Cómo reservar cita con la Dra. Maria Raykova, NHIF, alcance de la atención, idiomas y preparación para la primera visita.",
-    "pricingTitle": "Precios de las consultas ginecológicas en Sofía",
-    "pricingDescription": "Precios de las consultas con la Dra. Maria Raykova en Sofía. Revisión preventiva, ecografía, colposcopia y citología. Trabaja con NHIF y visitas sin efectivo con aseguradoras."
+    "pricingTitle": "Precios de consultas ginecológicas en Sofía 2026 | NHIF",
+    "pricingDescription": "Precio de la consulta primaria con la Dra. Maria Raykova en Sofía para 2026. Tarifario, visitas con NHIF, derivación y copagos de citología y microbiología."
   },
   "nav": {
     "home": "Inicio",
@@ -98,7 +98,7 @@
     "support": "Revisiones preventivas, diagnóstico y consultas — con atención, explicaciones claras y tiempo para sus preguntas.",
     "chipAppointment": "Con cita previa",
     "chipNhif": "NHIF",
-    "chipClinic": "Consulta · Sofía",
+    "chipClinic": "Dobrila 10 · Sofía",
     "ratingProof": "{rating} de 5 · {count} opiniones en Superdoc"
   },
   "intro": {
@@ -121,8 +121,8 @@
     "accessDetail": "Trabaja con NHIF y aseguradoras principales",
     "languagesValue": "3",
     "languagesDetail": "Búlgaro · Inglés · Español",
-    "locationValue": "VMA",
-    "locationDetail": "Calle Dobrila 10, frente a VMA"
+    "locationValue": "Dobrila 10",
+    "locationDetail": "Lyulin Med — sucursal Dobrila 10, frente a VMA"
   },
   "servicesHome": {
     "eyebrow": "04 · Servicios",
@@ -226,8 +226,8 @@
   },
   "clinic": {
     "eyebrow": "06 · Consulta",
-    "title": "La consulta en Lyulin Med",
-    "description": "Consultas y diagnóstico modernos — calle Dobrila 10, frente a VMA. Reserve online o llame.",
+    "title": "La consulta en Lyulin Med — sucursal Dobrila 10",
+    "description": "Centro Médico Lyulin Med — sucursal Dobrila 10, calle Dobrila 10, frente a VMA, Sofía. Reserve online o llame.",
     "imageAlt": "Consulta de la Dra. María Raykova — sillón de exploración y ecógrafo Mindray",
     "photoCaption": "La consulta"
   },
@@ -295,7 +295,7 @@
   "contact": {
     "eyebrow": "Contacto",
     "title": "Reserva fácil. Ubicación clara.",
-    "lead": "Reserve online por Superdoc o llame. La consulta está en el Centro Médico Lyulin Med, calle Dobrila 10, frente a VMA.",
+    "lead": "Reserve online por Superdoc o llame. La consulta está en el Centro Médico Lyulin Med — sucursal Dobrila 10, calle Dobrila 10, frente a VMA, Sofía.",
     "mapTitle": "Ubicación en el mapa",
     "hoursNote": "Con cita previa",
     "phoneLabel": "Teléfono",
@@ -346,7 +346,7 @@
     "eyebrow": "Servicios",
     "breadcrumbHome": "Inicio",
     "title": "Servicios ginecológicos en Sofía",
-    "lead": "Atención obstétrica y ginecológica calmada con la Dra. Maria Raykova — prevención, diagnóstico y consultas con explicación clara en cada paso.",
+    "lead": "Atención obstétrica y ginecológica calmada con la Dra. Maria Raykova en Sofía — prevención, diagnóstico y reserva de cita con explicación clara en cada paso.",
     "intro": "En esta página encontrará los servicios principales de la consulta: cómo discurre la visita, para quién es adecuada y cómo reservar. El objetivo es que llegue preparada y tranquila.",
     "browseCatalog": "Ver el catálogo de servicios",
     "cardCta": "Saber más",
@@ -495,6 +495,8 @@
     "relatedHeading": "Servicios relacionados",
     "relatedLead": "Siguientes pasos útiles según el contexto clínico.",
     "relatedCta": "Saber más",
+    "relatedReadingHeading": "Más en la guía",
+    "relatedReadingLead": "Artículos educativos sobre el tema — no sustituyen una consulta personal.",
     "withDoctor": "Con {name} en {city}, la visita es calmada, con tiempo para preguntas y explicación clara.",
     "bookHeading": "Reserve cita para {service}",
     "bookLead": "Online por Superdoc — rápido y cómodo.",
@@ -528,7 +530,7 @@
     "beforeVisitBody": "Lleve documentación médica previa si la tiene. Para orientarse, use el referente “frente a VMA”.",
     "prepChecklist": "Checklist de preparación →",
     "mapTitle": "Mapa — consulta Dra. Maria Raykova",
-    "mapCaption": "Calle Dobrila 10 · frente a VMA",
+    "mapCaption": "Sucursal Dobrila 10 · calle Dobrila 10 · frente a VMA",
     "openMaps": "Abrir en Google Maps",
     "finalTitle": "¿Lista para el siguiente paso?",
     "finalBody": "Reserve con {name} online o llame al {phone}.",
@@ -537,8 +539,8 @@
   "pricing": {
     "eyebrow": "Precios",
     "breadcrumbHome": "Inicio",
-    "title": "Precios de las consultas",
-    "lead": "Precios claros, sin sorpresas. La consulta trabaja con NHIF y con {count} aseguradoras de salud para visitas sin efectivo.",
+    "title": "Precios de las consultas ginecológicas en Sofía",
+    "lead": "Precios claros para {year}, sin sorpresas. La consulta trabaja con NHIF y con {count} aseguradoras de salud para visitas sin efectivo.",
     "intro": "Los precios corresponden a las consultas y pruebas en el gabinete de la Dra. Maria Raykova. Si no sabe qué visita necesita, reserve una consulta primaria — el plan se acuerda durante la visita.",
     "tableService": "Servicio",
     "tablePrice": "Precio",
@@ -546,8 +548,27 @@
     "priceHeading": "Precio",
     "priceOnRequest": "El precio se confirma tras la consulta. Llame al {phone} para un presupuesto.",
     "allPricesLink": "Todos los precios",
-    "nhifHeading": "Trabajo con NHIF",
-    "nhifBody": "La Dra. Raykova trabaja con NHIF (seguro público búlgaro). Con derivación, las pacientes copagan 25 euros (48,90 BGN) por Microbiología y por Citología, y los comentarios de los resultados están listos en un plazo de 14 días.",
+    "nhifEyebrow": "NHIF · {year}",
+    "nhifHeading": "Consultas ginecológicas con NHIF en Sofía",
+    "nhifLead": "La Dra. Maria Raykova trabaja con NHIF (seguro público búlgaro). La atención es en {clinic}, {address}. El resumen siguiente usa solo la información publicada sobre la consulta primaria, la derivación y los copagos — vigente para {year}.",
+    "nhifPrimaryHeading": "Consulta primaria con NHIF en {year}",
+    "nhifPrimaryBody": "En el tarifario de {year} la consulta primaria figura como {primaryPrice} — ese es el precio publicado de pago particular. La consulta trabaja con NHIF: con derivación se describe copago de microbiología y citología. La combinación exacta para su visita se confirma al reservar.",
+    "nhifReferralHeading": "Derivación",
+    "nhifReferralBody": "Los copagos de microbiología y citología se describen con derivación. Para derivaciones y cobertura concretas, confírmelo al reservar por Superdoc o por teléfono — {phone}.",
+    "nhifCopayHeading": "Copagos posibles",
+    "nhifCopayBody": "Con derivación, las pacientes copagan microbiología ({microPrice}) y citología ({papPrice}). Los comentarios de los resultados suelen estar listos en 14 días.",
+    "nhifIncludedHeading": "Qué está incluido y qué no",
+    "nhifIncludedItems": [
+      "La consulta trabaja con NHIF — es posible la atención con seguro público.",
+      "Con derivación se describe copago de microbiología y citología.",
+      "La consulta y las pruebas son partidas separadas en el tarifario. La citología, el frotis vaginal y la ecografía se cobran aparte, salvo que elija el paquete completo.",
+      "El precio del test de VPH y de la histeroscopia no está fijado en el tarifario público — se confirma tras la consulta.",
+      "El alcance del paquete obstétrico-ginecológico completo se determina según indicaciones — no está publicado como una lista fija de procedimientos."
+    ],
+    "nhifNote": "Los importes son a fecha {date}, fuente {source}. El precio vigente y las condiciones de NHIF se confirman al reservar.",
+    "nhifCopayHint": "NHIF: copago",
+    "nhifServicesLink": "Revisión preventiva",
+    "nhifPrimaryLink": "Consulta obstétrico-ginecológica",
     "insurersHeading": "Visitas sin efectivo con aseguradoras",
     "insurersLead": "Si tiene un seguro de salud con alguna de estas aseguradoras, su visita puede ser sin efectivo.",
     "insurersNote": "La cobertura depende de su póliza concreta. Consúltelo con su aseguradora antes de la visita.",
@@ -567,8 +588,24 @@
     "faqHeading": "Preguntas frecuentes sobre los precios",
     "faqs": [
       {
+        "question": "¿Cuál es el precio de la consulta primaria con NHIF en {year}?",
+        "answer": "En el tarifario público de {year} la consulta primaria es {primaryPrice} al pagar el precio publicado. La consulta trabaja con NHIF; con derivación se copaga microbiología ({microPrice}) y citología ({papPrice}). Las condiciones exactas se confirman al reservar."
+      },
+      {
         "question": "¿La consulta trabaja con NHIF?",
-        "answer": "Sí. Con derivación de NHIF solo se copaga la Microbiología y la Citología — 25 euros (48,90 BGN) cada una."
+        "answer": "Sí. Con derivación de NHIF se describe copago de microbiología ({microPrice}) y citología ({papPrice})."
+      },
+      {
+        "question": "¿Hace falta derivación para una visita con NHIF?",
+        "answer": "Los copagos de microbiología y citología se describen con derivación. Para derivaciones y cobertura concretas, confírmelo al reservar o por teléfono."
+      },
+      {
+        "question": "¿Qué se copaga en una visita con NHIF?",
+        "answer": "Con derivación, las pacientes copagan microbiología y citología — {papPrice} cada una, según el tarifario público. Los comentarios de los resultados suelen estar listos en 14 días."
+      },
+      {
+        "question": "¿El precio de la consulta incluye las pruebas?",
+        "answer": "La consulta y las pruebas son partidas separadas. La citología, el frotis vaginal y la ecografía se cobran aparte, salvo que elija el paquete completo."
       },
       {
         "question": "¿Qué incluye el paquete completo obstétrico-ginecológico?",
@@ -577,10 +614,6 @@
       {
         "question": "¿Puedo usar mi seguro de salud?",
         "answer": "Sí, la consulta trabaja con {count} aseguradoras para visitas sin efectivo. La cobertura depende de su póliza, así que consúltelo previamente con su aseguradora."
-      },
-      {
-        "question": "¿El precio incluye las pruebas?",
-        "answer": "La consulta y las pruebas son partidas separadas. La citología, el frotis vaginal y la ecografía se cobran aparte, salvo que elija el paquete completo."
       }
     ]
   },

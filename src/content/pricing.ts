@@ -10,6 +10,8 @@ export const EUR_TO_BGN = 1.95583;
 
 export const PRICES_LAST_UPDATED = "2026-08-04";
 export const PRICES_SOURCE = "Superdoc";
+/** Calendar year shown on the public price page — derived from the update date. */
+export const PRICES_YEAR = PRICES_LAST_UPDATED.slice(0, 4);
 
 export type PriceItem = {
   /** Key into the `pricing.items` message namespace. */
@@ -104,5 +106,9 @@ export const insurers = [
   "ЦКБ Живот",
 ] as const;
 
+export function getPriceItem(id: string): PriceItem | undefined {
+  return priceItems.find((item) => item.id === id);
+}
+
 /** NHIF co-payment applies to these price items. */
-export const nhifCopayItemIds = ["tsitonamazka"] as const;
+export const nhifCopayItemIds = ["tsitonamazka", "vlagalishten-sekret"] as const;

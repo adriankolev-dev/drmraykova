@@ -2,20 +2,24 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
 import { ClinicRule } from "@/components/brand/ClinicMotifs";
+import { ContentText } from "@/components/content/ContentText";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
 import { PriceTable } from "@/components/pricing/PriceTable";
 import { AppointmentCTA } from "@/components/services/AppointmentCTA";
 import { FAQSection } from "@/components/services/FAQSection";
+import { Link } from "@/i18n/navigation";
 import {
+  getPriceItem,
   insurers,
   PRICES_LAST_UPDATED,
   PRICES_SOURCE,
+  PRICES_YEAR,
 } from "@/content/pricing";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
 import { doctor } from "@/lib/doctor";
 import { localeOpenGraph } from "@/lib/navigation";
-import { eurAmount, getAllPrices } from "@/lib/pricing";
+import { eurAmount, formatBgn, formatEur, getAllPrices } from "@/lib/pricing";
 import { pageOpenGraph, pageTwitter } from "@/lib/seo/metadata";
 import {
   buildSchemaGraph,
@@ -78,10 +82,29 @@ export default async function PricingPage({ params }: Props) {
     name: names(item.id),
     priceEur: eurAmount(item.eur),
   }));
-  // t.raw skips ICU interpolation, so resolve each entry through t() for {count}.
+
+  const listedPrice = (id: string) => {
+    const item = getPriceItem(id);
+    if (!item) return "";
+    return `${formatEur(item.eur, raw)} (${formatBgn(item.eur, raw)})`;
+  };
+
+  const priceVars = {
+    year: PRICES_YEAR,
+    count: insurers.length,
+    clinic: doctor.clinic.name,
+    address: doctor.clinic.address,
+    phone: doctor.clinic.phoneDisplay,
+    primaryPrice: listedPrice("pervichen-pregled"),
+    papPrice: listedPrice("tsitonamazka"),
+    microPrice: listedPrice("vlagalishten-sekret"),
+    date: PRICES_LAST_UPDATED,
+    source: PRICES_SOURCE,
+  };
+
   const faqs = (t.raw("faqs") as unknown[]).map((_, index) => ({
-    question: t(`faqs.${index}.question`),
-    answer: t(`faqs.${index}.answer`, { count: insurers.length }),
+    question: t(`faqs.${index}.question`, priceVars),
+    answer: t(`faqs.${index}.answer`, priceVars),
   }));
 
   return (
@@ -90,7 +113,10 @@ export default async function PricingPage({ params }: Props) {
         data={buildSchemaGraph(
           getWebPageSchema({
             name: t("title"),
-            description: t("lead", { count: insurers.length }),
+            description: t("lead", {
+              count: insurers.length,
+              year: PRICES_YEAR,
+            }),
             url: pageUrl,
             inLanguage: schemaLanguage(raw),
           }),
@@ -116,7 +142,7 @@ export default async function PricingPage({ params }: Props) {
             {t("title")}
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            {t("lead", { count: insurers.length })}
+            {t("lead", { count: insurers.length, year: PRICES_YEAR })}
           </p>
         </Reveal>
       </div>
@@ -151,13 +177,72 @@ export default async function PricingPage({ params }: Props) {
       </div>
 
       {/* NHIF */}
-      <section className="container-page mt-16">
+      <section id="nzok" className="container-page mt-16">
         <Reveal className="rounded-lg border border-border bg-secondary/30 p-6 md:p-8">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-clinical">
-            {t("nhifHeading")}
+            {t("nhifEyebrow", { year: PRICES_YEAR })}
           </p>
+          <h2 className="mt-3 max-w-2xl font-display text-2xl font-medium tracking-tight md:text-3xl">
+            {t("nhifHeading")}
+          </h2>
+          <p className="mt-4 max-w-2xl leading-relaxed text-foreground/80">
+            {t("nhifLead", priceVars)}
+          </p>
+
+          <h3 className="mt-8 font-display text-xl font-medium tracking-tight">
+            {t("nhifPrimaryHeading", { year: PRICES_YEAR })}
+          </h3>
           <p className="mt-3 max-w-2xl leading-relaxed text-foreground/80">
-            {t("nhifBody")}
+            {t("nhifPrimaryBody", priceVars)}
+          </p>
+          <p className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <Link
+              href="/uslugi/profilaktichen-ginekologichen-pregled"
+              className="font-medium text-foreground underline-offset-4 hover:underline"
+            >
+              {t("nhifServicesLink")}
+            </Link>
+            <Link
+              href="/uslugi/akushero-ginekologichni-pregledi"
+              className="font-medium text-foreground underline-offset-4 hover:underline"
+            >
+              {t("nhifPrimaryLink")}
+            </Link>
+          </p>
+
+          <h3 className="mt-8 font-display text-xl font-medium tracking-tight">
+            {t("nhifReferralHeading")}
+          </h3>
+          <p className="mt-3 max-w-2xl leading-relaxed text-foreground/80">
+            <ContentText text={t("nhifReferralBody", priceVars)} />
+          </p>
+
+          <h3 className="mt-8 font-display text-xl font-medium tracking-tight">
+            {t("nhifCopayHeading")}
+          </h3>
+          <p className="mt-3 max-w-2xl leading-relaxed text-foreground/80">
+            {t("nhifCopayBody", priceVars)}
+          </p>
+
+          <h3 className="mt-8 font-display text-xl font-medium tracking-tight">
+            {t("nhifIncludedHeading")}
+          </h3>
+          <ul className="mt-4 max-w-2xl space-y-3">
+            {(t.raw("nhifIncludedItems") as string[]).map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 text-foreground/80 before:mt-2 before:size-1.5 before:shrink-0 before:rounded-full before:bg-primary before:content-['']"
+              >
+                <span className="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            {t("nhifNote", {
+              date: PRICES_LAST_UPDATED,
+              source: PRICES_SOURCE,
+            })}
           </p>
         </Reveal>
       </section>

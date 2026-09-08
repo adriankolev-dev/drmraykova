@@ -1,5 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import type { PriceItem } from "@/content/pricing";
+import { nhifCopayItemIds, type PriceItem } from "@/content/pricing";
 import type { Locale } from "@/i18n/routing";
 import { formatBgn, formatEur } from "@/lib/pricing";
 
@@ -42,6 +42,11 @@ export async function PriceTable({ items, className }: PriceTableProps) {
                 className="py-3 pr-4 text-[15px] font-normal leading-snug text-foreground"
               >
                 {names(item.id)}
+                {(nhifCopayItemIds as readonly string[]).includes(item.id) ? (
+                  <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                    {t("nhifCopayHint")}
+                  </span>
+                ) : null}
               </th>
               <td className="py-3 text-right align-baseline whitespace-nowrap">
                 <span className="font-display text-lg font-medium tracking-tight text-foreground tabular-nums">

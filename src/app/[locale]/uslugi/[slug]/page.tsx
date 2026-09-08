@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { ContentText } from "@/components/content/ContentText";
 import { Reveal } from "@/components/motion/Reveal";
 import { ServicePriceBlock } from "@/components/pricing/ServicePriceBlock";
 import { AppointmentCTA } from "@/components/services/AppointmentCTA";
 import { FAQSection } from "@/components/services/FAQSection";
 import { ProcessTimeline } from "@/components/services/ProcessTimeline";
 import { RelatedServices } from "@/components/services/RelatedServices";
+import { ServiceGuide } from "@/components/services/ServiceGuide";
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { Link } from "@/i18n/navigation";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
@@ -182,9 +184,13 @@ export default async function ServicePage({ params }: Props) {
             {t("suitableHeading")}
           </h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            {service.suitableFor}
+            <ContentText text={service.suitableFor} />
           </p>
         </Reveal>
+
+        {service.guideSections?.length ? (
+          <ServiceGuide sections={service.guideSections} />
+        ) : null}
 
         <Reveal delay={0.08}>
           <h2 className="mt-14 font-display text-2xl font-medium tracking-tight md:text-3xl">
@@ -215,6 +221,31 @@ export default async function ServicePage({ params }: Props) {
         <div className="mt-14">
           <FAQSection heading={t("faqHeading")} items={service.faqs} />
         </div>
+
+        {service.relatedReading?.length ? (
+          <Reveal>
+            <section className="mt-14">
+              <h2 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
+                {t("relatedReadingHeading")}
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                {t("relatedReadingLead")}
+              </p>
+              <ul className="mt-5 divide-y divide-border border-y border-border">
+                {service.relatedReading.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="group flex py-4 font-medium text-foreground underline-offset-4 hover:underline hover:decoration-primary/50"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </Reveal>
+        ) : null}
 
         <RelatedServices
           heading={t("relatedHeading")}

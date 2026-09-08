@@ -1,3 +1,4 @@
+import { ContentText } from "@/components/content/ContentText";
 import { Reveal } from "@/components/motion/Reveal";
 
 type ProcessTimelineProps = {
@@ -35,7 +36,7 @@ export function ProcessTimeline({
                 {stepLabel(index + 1)}
               </p>
               <p className="mt-1.5 leading-relaxed text-muted-foreground">
-                {step}
+                <ContentText text={step} />
               </p>
             </div>
           </li>
@@ -44,7 +45,9 @@ export function ProcessTimeline({
       {notes?.length ? (
         <ul className="mt-6 space-y-2 border-l-2 border-primary/30 pl-4 text-sm text-muted-foreground">
           {notes.map((note) => (
-            <li key={note}>{note}</li>
+            <li key={note}>
+              <ContentText text={note} />
+            </li>
           ))}
         </ul>
       ) : null}

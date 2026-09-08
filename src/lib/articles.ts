@@ -46,6 +46,8 @@ export type Article = {
   closing?: string;
   ctaLabel?: string;
   ctaLead?: string;
+  /** Internal path for the article CTA — used instead of Superdoc when set. */
+  ctaHref?: string;
 };
 
 function readingTimeMinutes(text: string) {
@@ -149,6 +151,12 @@ function loadArticles(locale: Locale): Article[] {
         closing: data.closing ? String(data.closing) : undefined,
         ctaLabel: data.ctaLabel ? String(data.ctaLabel) : undefined,
         ctaLead: data.ctaLead ? String(data.ctaLead) : undefined,
+        ctaHref:
+          typeof data.ctaHref === "string" &&
+          data.ctaHref.startsWith("/") &&
+          !data.ctaHref.startsWith("//")
+            ? data.ctaHref
+            : undefined,
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
