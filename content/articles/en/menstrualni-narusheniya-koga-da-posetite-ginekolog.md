@@ -4,7 +4,7 @@ excerpt: "What a typical cycle looks like, which changes deserve attention, and 
 category: "Women's health"
 date: "2026-07-05"
 updated: "2026-08-08"
-cover: "/blog/cover-menstrualni.webp"
+cover: "/blog/cover-cikul.webp"
 coverAlt: "Educational illustration about menstrual disorders and women's health"
 closing: "Not every cycle change means disease. Temporary fluctuations happen. Repeated, significant, or life-limiting changes should not be ignored — especially heavy bleeding, bleeding between periods, bleeding after sex, and pain that stops a normal day. An early conversation with an obstetrician-gynecologist often brings clarity: either because a benign cause is found, or because a clear plan is outlined in time."
 ctaLabel: "Book a consultation"

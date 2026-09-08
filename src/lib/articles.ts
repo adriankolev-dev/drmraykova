@@ -3,6 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
 import type { Locale } from "@/i18n/routing";
+import { getClusterForArticle } from "@/lib/article-clusters";
 
 const ARTICLES_ROOT = path.join(process.cwd(), "content/articles");
 
@@ -140,7 +141,7 @@ function loadArticles(locale: Locale): Article[] {
         category: String(data.category ?? "General"),
         date: String(data.date ?? ""),
         updated: data.updated ? String(data.updated) : undefined,
-        cover: String(data.cover ?? "/blog/cover-profilaktika.webp"),
+        cover: String(data.cover ?? "/blog/cover-dr-profilaktika.webp"),
         coverAlt: String(data.coverAlt ?? data.title ?? ""),
         content,
         html,
@@ -200,7 +201,7 @@ export function getArticlesByCategory(category: string, locale: Locale = "bg") {
   return articles.filter((article) => article.category === category);
 }
 
-/** Related articles: same category first, then most recent. */
+/** Related articles: same topical cluster first, then category, then recent. */
 export function getRelatedArticles(
   slug: string,
   locale: Locale = "bg",
@@ -209,17 +210,21 @@ export function getRelatedArticles(
   const current = getArticleBySlug(slug, locale);
   if (!current) return [];
 
-  const sameCategory = articlesFor(locale).filter(
-    (a) => a.slug !== slug && a.category === current.category,
-  );
-  const others = articlesFor(locale).filter(
+  const others = articlesFor(locale).filter((a) => a.slug !== slug);
+  const clusterSlugs = new Set(getClusterForArticle(slug)?.slugs ?? []);
+  const sameCluster = others.filter((a) => clusterSlugs.has(a.slug));
+  const sameCategory = others.filter(
     (a) =>
-      a.slug !== slug &&
-      a.category !== current.category &&
-      !sameCategory.some((s) => s.slug === a.slug),
+      a.category === current.category &&
+      !sameCluster.some((s) => s.slug === a.slug),
+  );
+  const remaining = others.filter(
+    (a) =>
+      !sameCluster.some((s) => s.slug === a.slug) &&
+      a.category !== current.category,
   );
 
-  return [...sameCategory, ...others].slice(0, limit);
+  return [...sameCluster, ...sameCategory, ...remaining].slice(0, limit);
 }
 
 export function formatArticleDate(date: string, locale: string = "bg") {

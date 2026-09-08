@@ -4,7 +4,7 @@ excerpt: "Artículo educativo: qué es la colposcopia, cuándo se indica y qué 
 category: "Condiciones ginecológicas"
 date: "2026-07-15"
 updated: "2026-09-08"
-cover: "/blog/cover-kolposkopiya.webp"
+cover: "/blog/cover-kolposkopiya-spokoystvo.webp"
 ctaLabel: "Ir a Colposcopia"
 ctaLead: "Este artículo de la guía es educativo. La reserva y la visita en consulta están en la página del servicio Colposcopia."
 ctaHref: "/uslugi/kolposkopiya"

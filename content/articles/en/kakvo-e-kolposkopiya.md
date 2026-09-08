@@ -4,7 +4,7 @@ excerpt: "Educational article: what colposcopy is, when it is recommended, and w
 category: "Gynecological conditions"
 date: "2026-07-15"
 updated: "2026-09-08"
-cover: "/blog/cover-kolposkopiya.webp"
+cover: "/blog/cover-kolposkopiya-spokoystvo.webp"
 ctaLabel: "Go to Colposcopy"
 ctaLead: "This handbook article is educational. Booking and the clinic visit are on the Colposcopy service page."
 ctaHref: "/uslugi/kolposkopiya"

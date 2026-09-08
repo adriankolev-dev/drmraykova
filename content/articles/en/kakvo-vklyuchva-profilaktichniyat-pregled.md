@@ -3,7 +3,7 @@ title: "What a preventive gynecological exam includes"
 excerpt: "A clear explanation of what to expect at a preventive visit and why regular check-ups matter."
 category: "Prevention"
 date: "2026-07-20"
-cover: "/blog/cover-profilaktika.webp"
+cover: "/blog/cover-dr-profilaktika.webp"
 ---
 
 A preventive gynecological exam is not only “if something is wrong.” It is a way to care for your health on time — calmly, without urgency, and with clear feedback.

@@ -3,7 +3,7 @@ title: "Qué incluye la revisión ginecológica preventiva"
 excerpt: "Una explicación clara de qué esperar en una revisión preventiva y por qué importa el control regular."
 category: "Prevención"
 date: "2026-07-20"
-cover: "/blog/cover-profilaktika.webp"
+cover: "/blog/cover-dr-profilaktika.webp"
 ---
 
 La revisión ginecológica preventiva no es “solo si hay un problema”. Es una forma de cuidar su salud a tiempo — con calma, sin urgencia y con una respuesta clara.

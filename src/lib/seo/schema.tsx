@@ -105,7 +105,7 @@ export function getPhysicianSchema() {
     description: siteConfig.description,
     medicalSpecialty: [...MEDICAL_SPECIALTIES],
     url: `${siteConfig.url}/za-lekarya`,
-    image: `${siteConfig.url}/icon-512.png`,
+    image: `${siteConfig.url}/doctor-about.webp`,
     address: clinicAddress(),
     telephone: doctor.clinic.phoneHref.replace("tel:", ""),
     knowsLanguage: [...SCHEMA_LANGUAGE_TAGS],

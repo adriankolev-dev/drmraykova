@@ -4,7 +4,7 @@ excerpt: "Qué se considera un ciclo habitual, qué cambios merecen atención y 
 category: "Salud femenina"
 date: "2026-07-05"
 updated: "2026-08-08"
-cover: "/blog/cover-menstrualni.webp"
+cover: "/blog/cover-cikul.webp"
 coverAlt: "Ilustración educativa sobre alteraciones menstruales y salud femenina"
 closing: "No todo cambio del ciclo menstrual significa enfermedad. Hay fluctuaciones temporales. Los cambios repetidos, significativos o que limitan la vida diaria no deben ignorarse — sobre todo el sangrado abundante, el sangrado entre menstruaciones, el sangrado tras el sexo y el dolor que detiene un día normal. Una conversación temprana con una obstetra-ginecóloga suele aportar claridad: o porque se encuentra una causa benigna, o porque a tiempo se traza un plan claro."
 ctaLabel: "Reservar consulta"

@@ -3,7 +3,7 @@ title: "Con qué frecuencia necesita una revisión ginecológica preventiva"
 excerpt: "No hay una respuesta única para todas — esto es lo que influye en la frecuencia de las visitas."
 category: "Prevención"
 date: "2026-07-18"
-cover: "/blog/cover-chestota.webp"
+cover: "/blog/cover-dr-profilaktika.webp"
 ---
 
 Una de las preguntas más frecuentes es: “¿Debo ir al ginecólogo cada año?” La respuesta breve: la frecuencia es individual.

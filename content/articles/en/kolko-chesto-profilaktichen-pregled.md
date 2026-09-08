@@ -3,7 +3,7 @@ title: "How often do you need a preventive gynecological exam"
 excerpt: "There is no one answer for everyone — here is what influences how often you should visit."
 category: "Prevention"
 date: "2026-07-18"
-cover: "/blog/cover-chestota.webp"
+cover: "/blog/cover-dr-profilaktika.webp"
 ---
 
 One of the most common questions is: “Should I see a gynecologist every year?” The short answer: frequency is individual.

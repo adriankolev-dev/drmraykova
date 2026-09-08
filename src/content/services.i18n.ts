@@ -26,7 +26,7 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "profilaktichen-ginekologichen-pregled",
       "title": "Профилактични гинекологични прегледи",
-      "seoTitle": "Профилактичен гинекологичен преглед София",
+      "seoTitle": "Профилактичен гинекологичен преглед в София",
       "seoDescription": "Профилактичен гинекологичен преглед в София при д-р Мария Райкова. Спокоен преглед, ясно обяснение и план за следващи стъпки.",
       "intro": "Профилактичният гинекологичен преглед е основата на грижата за женското здраве. Целта е ранно откриване на промени, спокойствие и ясна картина за вашето състояние — преди да се появят оплаквания.",
       "suitableFor": "Подходящ е за жени, които искат редовен контрол, първи преглед при нов специалист или профилактика след период без посещение при гинеколог. Не включва проследяване на бременност и прегледи на деца.",
@@ -38,6 +38,20 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       ],
       "notes": [
         "При индикации прегледът може да включи насочване към [цитонамазка](/uslugi/citonamazka), [HPV тест](/uslugi/hpv-test) или [колпоскопия](/uslugi/kolposkopiya)."
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/kakvo-vklyuchva-profilaktichniyat-pregled",
+          "label": "Какво включва профилактичният гинекологичен преглед"
+        },
+        {
+          "href": "/narachnik/kolko-chesto-profilaktichen-pregled",
+          "label": "Колко често е нужен профилактичен преглед"
+        },
+        {
+          "href": "/narachnik/kakvo-pokazva-citonamazkata",
+          "label": "Какво показва цитонамазката?"
+        }
       ],
       "faqs": [
         {
@@ -61,8 +75,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "akushero-ginekologichni-pregledi",
       "title": "Акушеро-гинекологични прегледи",
-      "seoTitle": "Акушеро-гинекологичен преглед София",
-      "seoDescription": "Акушеро-гинекологични прегледи и консултации в София при д-р Мария Райкова. Първичен и вторичен преглед с ясно обяснение.",
+      "seoTitle": "Гинекологичен преглед в София | Д-р Мария Райкова",
+      "seoDescription": "Гинекологичен преглед в София при д-р Мария Райкова — при оплаквания, контрол след изследвания или второ мнение. Първичен и вторичен преглед.",
       "intro": "Акушеро-гинекологичният преглед е за диагностика и консултация при оплаквания, контрол след лечение или оценка на конкретен симптом. Прегледът започва с разговор и завършва с разбираем план.",
       "suitableFor": "Подходящ при менструални нарушения, болка, вагинални оплаквания, контрол след изследвания или нужда от второ мнение. Д-р Райкова не проследява бременност и не преглежда деца.",
       "visitSteps": [
@@ -70,6 +84,20 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "Клиничен преглед и оценка на находките.",
         "Назначаване на изследвания при индикации.",
         "Обяснение на възможностите и следващите стъпки."
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/podgotovka-za-ginekologichen-pregled",
+          "label": "Подготовка за гинекологичен преглед"
+        },
+        {
+          "href": "/narachnik/neredoven-cikul-koga-e-problem",
+          "label": "Нередовен менструален цикъл — кога е проблем?"
+        },
+        {
+          "href": "/narachnik/menstrualni-narusheniya-koga-da-posetite-ginekolog",
+          "label": "Менструални нарушения — кога да посетите гинеколог"
+        }
       ],
       "faqs": [
         {
@@ -93,7 +121,7 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "ultrazvukovi-izsledvaniya",
       "title": "Ултразвукови изследвания",
-      "seoTitle": "Гинекологичен ултразвук София",
+      "seoTitle": "Гинекологичен ултразвук в София | Д-р Мария Райкова",
       "seoDescription": "Ултразвуково изследване на женската полова система в София при д-р Мария Райкова. Ясно обяснение на находките.",
       "intro": "Гинекологичният ултразвук помага за оценка на матката, яйчниците и съседните структури. Изследването е важна част от съвременната диагностика и се комбинира с клиничния преглед.",
       "suitableFor": "Подходящ при профилактика, болка, нередовен цикъл, проследяване на находки или когато лекарят прецени, че е нужна образна диагностика.",
@@ -128,8 +156,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "kolposkopiya",
       "title": "Колпоскопия",
-      "seoTitle": "Колпоскопия в София — какво е и как протича",
-      "seoDescription": "Какво е колпоскопия, кога се препоръчва след цитонамазка или HPV, как протича и как да се подготвите. Кабинет на д-р Мария Райкова в София.",
+      "seoTitle": "Колпоскопия в София | Д-р Мария Райкова",
+      "seoDescription": "Колпоскопия в София при д-р Мария Райкова. Кога се назначава след цитонамазка или HPV, как протича и как да запазите час.",
       "intro": "Колпоскопията е специализиран оглед на маточната шийка с увеличение. Назначава се най-често след отклонение в [цитонамазката](/uslugi/citonamazka) или при определен резултат от [HPV тест](/uslugi/hpv-test), за да се направи по-прецизна оценка. Целта е ранна диагностика — не задължително „лоша новина“.",
       "suitableFor": "Подходяща при отклонения в цитонамазката, положителен HPV с определени находки, видими изменения или когато лекарят препоръча допълнителна оценка на шийката. Решението е индивидуално — обикновено след [профилактичен гинекологичен преглед](/uslugi/profilaktichen-ginekologichen-pregled) или консултация по резултати.",
       "visitSteps": [
@@ -273,8 +301,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "citonamazka",
       "title": "Цитонамазка",
-      "seoTitle": "Цитонамазка София — профилактика",
-      "seoDescription": "Цитонамазка (Pap тест) в София при д-р Мария Райкова. Спокойно обяснение, подготовка и ясен план след резултата.",
+      "seoTitle": "Цитонамазка в София | Д-р Мария Райкова",
+      "seoDescription": "Цитонамазка (Pap тест) в София при д-р Мария Райкова. Подготовка, как протича вземането и какво следва при отклонение. Записване онлайн.",
       "intro": "Цитонамазката е основен скрининг за ранно откриване на клетъчни промени на маточната шийка. Целта е профилактика и спокойствие — с разбираемо обяснение на всяка стъпка.",
       "suitableFor": "Подходяща като част от профилактичен преглед, при контрол според възрастта и историята или когато лекарят препоръча скрининг. Не замества клиничния преглед.",
       "visitSteps": [
@@ -287,10 +315,70 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "Цената на цитонамазката е публикувана в ценоразписа. При работа с НЗОК може да има доплащане.",
         "При отклонение следващата стъпка може да е [HPV тест](/uslugi/hpv-test) или [колпоскопия](/uslugi/kolposkopiya). Скринингът често започва от [профилактичен преглед](/uslugi/profilaktichen-ginekologichen-pregled)."
       ],
+      "guideSections": [
+        {
+          "heading": "Какво е цитонамазка?",
+          "paragraphs": [
+            "Цитонамазката (Pap тест) е изследване на клетки от шийката на матката. Лабораторията търси клетъчни промени, които изискват допълнителна оценка — не поставя диагноза рак по самия резултат.",
+            "Често се комбинира с [HPV тест](/uslugi/hpv-test), но двата теста дават различна информация. Образователно: [Какво показва цитонамазката?](/narachnik/kakvo-pokazva-citonamazkata) и [HPV тест vs цитонамазка](/narachnik/hpv-test-vs-citonamazka)."
+          ]
+        },
+        {
+          "heading": "Как протича вземането?",
+          "paragraphs": [
+            "Пробата се взема по време на гинекологичен преглед — с мека четка или шпатула. Отнема секунди. Повечето жени описват кратко притискане, не силна болка."
+          ]
+        },
+        {
+          "heading": "Как да се подготвите?",
+          "paragraphs": [
+            "Подготовката е близка до тази за обикновен преглед. Ако лекарят е дал други указания, следвайте тях."
+          ],
+          "bullets": [
+            "Избягвайте вагинални кремове, тампони и спермициди 24–48 часа преди прегледа, ако не е казано друго.",
+            "Носете предишни резултати — цитонамазки, HPV тестове, колпоскопии.",
+            "Попитайте кога да очаквате резултата и как ще бъдете уведомена.",
+            "Вижте и [подготовката за гинекологичен преглед](/narachnik/podgotovka-za-ginekologichen-pregled)."
+          ]
+        },
+        {
+          "heading": "Какво следва след резултата?",
+          "paragraphs": [
+            "Нормалният резултат обикновено води към следващ [профилактичен преглед](/uslugi/profilaktichen-ginekologichen-pregled) според препоръките. При отклонение планът е индивидуален — наблюдение, HPV тест или [колпоскопия](/uslugi/kolposkopiya).",
+            "Отклонението не е диагноза рак. Подробно: [Какво следва след абнормна цитонамазка?](/narachnik/kakvo-sledva-sled-abnormalna-citonamazka)"
+          ]
+        }
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/kakvo-pokazva-citonamazkata",
+          "label": "Какво показва цитонамазката?"
+        },
+        {
+          "href": "/narachnik/kakvo-sledva-sled-abnormalna-citonamazka",
+          "label": "Какво следва след абнормна цитонамазка?"
+        },
+        {
+          "href": "/narachnik/hpv-test-vs-citonamazka",
+          "label": "HPV тест vs цитонамазка"
+        },
+        {
+          "href": "/narachnik/kakvo-e-kolposkopiya",
+          "label": "Какво е колпоскопия и кога се прави"
+        }
+      ],
       "faqs": [
         {
           "question": "Болезнена ли е цитонамазката?",
           "answer": "Обикновено усещането е краткотраен дискомфорт, подобен на обикновен преглед. Ако сте тревожна, кажете — обяснението помага."
+        },
+        {
+          "question": "Какви видове цитонамазка има?",
+          "answer": "Лабораториите използват конвенционална цитонамазка или течностна цитология (LBC). И двете оценяват клетки от шийката. Кой метод се прилага се уточнява при посещението — не избирате „по-добър“ вариант от интернет."
+        },
+        {
+          "question": "Какво следва при отклонение или цитонамазка IIIа?",
+          "answer": "Резултатът сам по себе си не е лечение и не е диагноза рак. Следващата стъпка — HPV тест, наблюдение или колпоскопия — се определя след преглед на целия резултат. Подробно: статията „Какво следва след абнормна цитонамазка?“"
         },
         {
           "question": "Колко време отнема резултатът?",
@@ -309,8 +397,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "hpv-test",
       "title": "HPV тест",
-      "seoTitle": "HPV тест София",
-      "seoDescription": "HPV тест в София при д-р Мария Райкова. Кога се прави, какво означава и как се комбинира с цитонамазка.",
+      "seoTitle": "HPV тест в София | Д-р Мария Райкова",
+      "seoDescription": "HPV тест (човешки папилома вирус) в София при д-р Мария Райкова. Какво показва, как се комбинира с цитонамазка и какво следва при положителен резултат.",
       "intro": "HPV тестът търси наличие на човешки папилома вирус — честа причина за клетъчни промени на шийката. При индикации се обсъжда като част от скрининга, заедно с цитонамазката и клиничната оценка.",
       "suitableFor": "Подходящ когато лекарят препоръча HPV скрининг според възрастта, историята или резултатите. Конкретният панел и лаборатория се уточняват при посещението.",
       "visitSteps": [
@@ -323,7 +411,58 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "Цената на HPV теста не е фиксирана в публичния ценоразпис — уточнява се при посещението според избрания панел.",
         "HPV тестът се комбинира с [цитонамазка](/uslugi/citonamazka). При определени резултати следващата стъпка може да е [колпоскопия](/uslugi/kolposkopiya)."
       ],
+      "guideSections": [
+        {
+          "heading": "Какво е HPV?",
+          "paragraphs": [
+            "Човешкият папилома вирус (HPV) е много чест. Според NHS повечето сексуално активни хора го срещат по някое време. При много жени организмът изчиства инфекцията без лечение.",
+            "Високорисковите типове са свързани с клетъчни промени на шийката. Положителният тест означава наличие на вируса — не диагноза рак. Подробно: [Какво означава положителен HPV тест?](/narachnik/pozitiven-hpv-test)"
+          ]
+        },
+        {
+          "heading": "Какво показва HPV тестът?",
+          "paragraphs": [
+            "Тестът търси генетичен материал на вируса в проба от шийката. Различава се от [цитонамазката](/uslugi/citonamazka), която оглежда самите клетки.",
+            "Конкретният панел (кои типове се изследват) се уточнява при посещението."
+          ]
+        },
+        {
+          "heading": "HPV тест и цитонамазка — каква е разликата?",
+          "paragraphs": [
+            "Цитонамазката описва клетките. HPV тестът търси вируса. Често се комбинират, но единият не замества автоматично другия. Изборът зависи от възрастта и клиничния контекст.",
+            "Образователно: [HPV тест vs цитонамазка](/narachnik/hpv-test-vs-citonamazka)"
+          ]
+        },
+        {
+          "heading": "Какво следва при положителен резултат?",
+          "paragraphs": [
+            "Не всеки положителен HPV води до [колпоскопия](/uslugi/kolposkopiya). Решението зависи от типа на резултата, цитонамазката и историята. Понякога е достатъчно наблюдение и повторен тест."
+          ]
+        }
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/pozitiven-hpv-test",
+          "label": "Какво означава положителен HPV тест?"
+        },
+        {
+          "href": "/narachnik/hpv-test-vs-citonamazka",
+          "label": "HPV тест vs цитонамазка"
+        },
+        {
+          "href": "/narachnik/kakvo-e-kolposkopiya",
+          "label": "Какво е колпоскопия и кога се прави"
+        },
+        {
+          "href": "/narachnik/kakvo-sledva-sled-abnormalna-citonamazka",
+          "label": "Какво следва след абнормна цитонамазка?"
+        }
+      ],
       "faqs": [
+        {
+          "question": "Какво е човешки папилома вирус (HPV)?",
+          "answer": "Чест вирус, който при много хора се изчиства от организма. Високорисковите типове са свързани с клетъчни промени на шийката. Положителният тест не означава рак."
+        },
         {
           "question": "HPV тестът замества ли цитонамазката?",
           "answer": "Не винаги. Двата теста дават различна информация. Кой е подходящ — или дали се комбинират — се решава според възрастта и клиничния контекст."
@@ -400,6 +539,20 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         "Ясни препоръки и план във времето.",
         "Насочване към подходяща услуга, ако е необходима."
       ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/menstrualni-narusheniya-koga-da-posetite-ginekolog",
+          "label": "Менструални нарушения — кога да посетите гинеколог"
+        },
+        {
+          "href": "/narachnik/neredoven-cikul-koga-e-problem",
+          "label": "Нередовен менструален цикъл — кога е проблем?"
+        },
+        {
+          "href": "/narachnik/podgotovka-za-ginekologichen-pregled",
+          "label": "Подготовка за гинекологичен преглед"
+        }
+      ],
       "faqs": [
         {
           "question": "Мога ли да запазя консултация на английски или испански?",
@@ -459,8 +612,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "akushero-ginekologichni-pregledi",
       "title": "Obstetric-gynecological exams",
-      "seoTitle": "Obstetric-gynecological exam in Sofia",
-      "seoDescription": "Obstetric-gynecological exams and consultations in Sofia with Dr. Maria Raykova. Primary and follow-up visits with clear explanations.",
+      "seoTitle": "Gynecological exam in Sofia | Dr. Maria Raykova",
+      "seoDescription": "Gynecological exam in Sofia with Dr. Maria Raykova — for symptoms, follow-up after tests, or a second opinion. Primary and follow-up visits.",
       "intro": "An obstetric-gynecological exam is for diagnosis and consultation for symptoms, follow-up after treatment, or assessment of a specific concern. The visit starts with a conversation and ends with a clear plan.",
       "suitableFor": "Suitable for menstrual disorders, pain, vaginal symptoms, follow-up after tests, or a second opinion. Dr. Raykova does not provide pregnancy follow-up and does not examine children.",
       "visitSteps": [
@@ -526,8 +679,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "kolposkopiya",
       "title": "Colposcopy",
-      "seoTitle": "Colposcopy in Sofia — what it is and how it goes",
-      "seoDescription": "What colposcopy is, when it is recommended after a Pap smear or HPV test, how it is done, and how to prepare. Dr. Maria Raykova’s clinic in Sofia.",
+      "seoTitle": "Colposcopy in Sofia | Dr. Maria Raykova",
+      "seoDescription": "Colposcopy in Sofia with Dr. Maria Raykova. When it is recommended after a Pap smear or HPV test, how the visit goes, and how to book.",
       "intro": "Colposcopy is a magnified examination of the cervix. It is most often recommended after an abnormal [Pap smear](/uslugi/citonamazka) or a specific [HPV test](/uslugi/hpv-test) result, for a more precise assessment. The aim is earlier diagnosis — not automatically “bad news”.",
       "suitableFor": "Suitable for abnormal Pap results, a positive HPV test with certain findings, visible changes, or when the doctor recommends further cervical assessment. The decision is individual — usually after a [preventive gynecological exam](/uslugi/profilaktichen-ginekologichen-pregled) or a consultation about results.",
       "visitSteps": [
@@ -671,8 +824,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "citonamazka",
       "title": "Pap smear (cytology)",
-      "seoTitle": "Pap smear in Sofia — cervical screening",
-      "seoDescription": "Pap smear (cytology) in Sofia with Dr. Maria Raykova. Clear preparation guidance and a calm plan after results.",
+      "seoTitle": "Pap smear in Sofia | Dr. Maria Raykova",
+      "seoDescription": "Pap smear (cytology) in Sofia with Dr. Maria Raykova. Preparation, how the sample is taken, and what follows if the result is abnormal. Book online.",
       "intro": "A Pap smear is a core screening test for early detection of cellular changes on the cervix. The goal is prevention and peace of mind — with a clear explanation at every step.",
       "suitableFor": "Suitable as part of a preventive exam, for age- and history-based screening, or when the doctor recommends cytology. It does not replace a clinical exam.",
       "visitSteps": [
@@ -684,6 +837,20 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       "notes": [
         "Pap smear pricing is listed on the price page. NHIF visits may still require co-payment.",
         "If the result is abnormal, the next step may be an [HPV test](/uslugi/hpv-test) or [colposcopy](/uslugi/kolposkopiya). Screening often starts with a [preventive exam](/uslugi/profilaktichen-ginekologichen-pregled)."
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/kakvo-pokazva-citonamazkata",
+          "label": "What does a Pap smear show?"
+        },
+        {
+          "href": "/narachnik/kakvo-sledva-sled-abnormalna-citonamazka",
+          "label": "What happens after an abnormal Pap smear?"
+        },
+        {
+          "href": "/narachnik/hpv-test-vs-citonamazka",
+          "label": "HPV test vs Pap smear"
+        }
       ],
       "faqs": [
         {
@@ -707,8 +874,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "hpv-test",
       "title": "HPV test",
-      "seoTitle": "HPV test in Sofia",
-      "seoDescription": "HPV testing in Sofia with Dr. Maria Raykova. When it is done, what it means, and how it pairs with a Pap smear.",
+      "seoTitle": "HPV test in Sofia | Dr. Maria Raykova",
+      "seoDescription": "HPV testing (human papillomavirus) in Sofia with Dr. Maria Raykova. What it shows, how it pairs with a Pap smear, and what a positive result means.",
       "intro": "An HPV test looks for human papillomavirus — a common cause of cervical cell changes. When indicated, it is discussed as part of screening alongside cytology and clinical assessment.",
       "suitableFor": "Suitable when the doctor recommends HPV screening based on age, history, or results. The exact panel and lab details are confirmed during the visit.",
       "visitSteps": [
@@ -720,6 +887,20 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       "notes": [
         "HPV test pricing is not fixed on the public price list — it is confirmed at the visit according to the chosen panel.",
         "An HPV test is often combined with a [Pap smear](/uslugi/citonamazka). With certain results, the next step may be [colposcopy](/uslugi/kolposkopiya)."
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/pozitiven-hpv-test",
+          "label": "What does a positive HPV test mean?"
+        },
+        {
+          "href": "/narachnik/hpv-test-vs-citonamazka",
+          "label": "HPV test vs Pap smear"
+        },
+        {
+          "href": "/narachnik/kakvo-e-kolposkopiya",
+          "label": "What is colposcopy and when is it done?"
+        }
       ],
       "faqs": [
         {
@@ -857,8 +1038,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "akushero-ginekologichni-pregledi",
       "title": "Consultas obstétrico-ginecológicas",
-      "seoTitle": "Consulta obstétrico-ginecológica en Sofía",
-      "seoDescription": "Consultas obstétrico-ginecológicas en Sofía con la Dra. Maria Raykova. Visita primaria o de seguimiento con explicación clara.",
+      "seoTitle": "Consulta ginecológica en Sofía | Dra. Maria Raykova",
+      "seoDescription": "Consulta ginecológica en Sofía con la Dra. Maria Raykova — por síntomas, control tras pruebas o una segunda opinión. Visita primaria o de seguimiento.",
       "intro": "La consulta obstétrico-ginecológica sirve para diagnóstico y orientación ante síntomas, control tras un tratamiento o valoración de un problema concreto. Empieza con una conversación y termina con un plan comprensible.",
       "suitableFor": "Indicada ante alteraciones menstruales, dolor, molestias vaginales, control tras pruebas o necesidad de una segunda opinión. La Dra. Raykova no realiza seguimiento del embarazo ni atiende a niños.",
       "visitSteps": [
@@ -924,8 +1105,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "kolposkopiya",
       "title": "Colposcopia",
-      "seoTitle": "Colposcopia en Sofía — qué es y cómo se realiza",
-      "seoDescription": "Qué es la colposcopia, cuándo se recomienda tras una citología o un test de VPH, cómo se realiza y cómo prepararse. Consulta de la Dra. Maria Raykova en Sofía.",
+      "seoTitle": "Colposcopia en Sofía | Dra. Maria Raykova",
+      "seoDescription": "Colposcopia en Sofía con la Dra. Maria Raykova. Cuándo se indica tras una citología o un test de VPH, cómo transcurre la visita y cómo reservar.",
       "intro": "La colposcopia es una exploración ampliada del cuello uterino. Se recomienda sobre todo tras una [citología](/uslugi/citonamazka) alterada o un resultado concreto de [test de VPH](/uslugi/hpv-test), para una valoración más precisa. El objetivo es un diagnóstico más temprano — no automáticamente una «mala noticia».",
       "suitableFor": "Indicada ante citologías alteradas, VPH positivo con determinados hallazgos, cambios visibles o cuando el médico recomienda una valoración adicional del cuello. La decisión es individual — habitualmente tras una [revisión ginecológica preventiva](/uslugi/profilaktichen-ginekologichen-pregled) o una consulta sobre resultados.",
       "visitSteps": [
@@ -1069,8 +1250,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "citonamazka",
       "title": "Citología (Pap)",
-      "seoTitle": "Citología en Sofía — prevención",
-      "seoDescription": "Citología (Pap) en Sofía con la Dra. Maria Raykova. Preparación clara y un plan tranquilo tras el resultado.",
+      "seoTitle": "Citología en Sofía | Dra. Maria Raykova",
+      "seoDescription": "Citología (Pap) en Sofía con la Dra. Maria Raykova. Preparación, cómo se toma la muestra y qué sigue si el resultado está alterado. Reserva online.",
       "intro": "La citología es un cribado clave para detectar a tiempo cambios celulares en el cuello uterino. El objetivo es prevención y tranquilidad — con una explicación comprensible en cada paso.",
       "suitableFor": "Indicada como parte de una revisión preventiva, según edad e historial, o cuando el médico recomienda cribado. No sustituye la exploración clínica.",
       "visitSteps": [
@@ -1082,6 +1263,20 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       "notes": [
         "El precio de la citología está publicado en el tarifario. Con NHIF puede haber copago.",
         "Si el resultado está alterado, el siguiente paso puede ser un [test de VPH](/uslugi/hpv-test) o una [colposcopia](/uslugi/kolposkopiya). El cribado suele empezar con una [revisión preventiva](/uslugi/profilaktichen-ginekologichen-pregled)."
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/kakvo-pokazva-citonamazkata",
+          "label": "¿Qué muestra la citología?"
+        },
+        {
+          "href": "/narachnik/kakvo-sledva-sled-abnormalna-citonamazka",
+          "label": "¿Qué sigue tras una citología alterada?"
+        },
+        {
+          "href": "/narachnik/hpv-test-vs-citonamazka",
+          "label": "Test de VPH vs citología"
+        }
       ],
       "faqs": [
         {
@@ -1105,8 +1300,8 @@ const byLocale: Record<Locale, ServiceContent[]> = {
     {
       "slug": "hpv-test",
       "title": "Test de VPH",
-      "seoTitle": "Test de VPH en Sofía",
-      "seoDescription": "Test de VPH en Sofía con la Dra. Maria Raykova. Cuándo se hace, qué significa y cómo se combina con la citología.",
+      "seoTitle": "Test de VPH en Sofía | Dra. Maria Raykova",
+      "seoDescription": "Test de VPH (virus del papiloma humano) en Sofía con la Dra. Maria Raykova. Qué muestra, cómo se combina con la citología y qué sigue si es positivo.",
       "intro": "El test de VPH busca la presencia del virus del papiloma humano — una causa frecuente de cambios celulares en el cuello. Cuando está indicado, se valora como parte del cribado junto con la citología y la evaluación clínica.",
       "suitableFor": "Indicado cuando el médico recomienda cribado de VPH según edad, historial o resultados. El panel concreto y el laboratorio se aclaran en la visita.",
       "visitSteps": [
@@ -1118,6 +1313,20 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       "notes": [
         "El precio del test de VPH no está fijado en el tarifario público — se confirma en la visita según el panel elegido.",
         "El test de VPH se combina con la [citología](/uslugi/citonamazka). Ante determinados resultados, el siguiente paso puede ser una [colposcopia](/uslugi/kolposkopiya)."
+      ],
+      "relatedReading": [
+        {
+          "href": "/narachnik/pozitiven-hpv-test",
+          "label": "¿Qué significa un test de VPH positivo?"
+        },
+        {
+          "href": "/narachnik/hpv-test-vs-citonamazka",
+          "label": "Test de VPH vs citología"
+        },
+        {
+          "href": "/narachnik/kakvo-e-kolposkopiya",
+          "label": "Qué es la colposcopia y cuándo se hace"
+        }
       ],
       "faqs": [
         {
