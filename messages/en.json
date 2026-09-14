@@ -15,7 +15,9 @@
     "faqTitle": "Questions before a gynecological visit | Dr. Maria Raykova",
     "faqDescription": "How to book with Dr. Maria Raykova, NHIF, scope of care, languages, and preparing for a first visit.",
     "pricingTitle": "Gynecology consultation prices in Sofia 2026 | NHIF",
-    "pricingDescription": "Primary consultation list price for 2026 — €40. The clinic works with NHIF; referrals may include co-payment for Pap smear and microbiology."
+    "pricingDescription": "Primary consultation list price for 2026 — €40. The clinic works with NHIF; referrals may include co-payment for Pap smear and microbiology.",
+    "nhifTitle": "Gynecological exam under NHIF in Sofia 2026 — fee and terms",
+    "nhifDescription": "A 1.60 € consumer fee for an NHIF gynecological visit with Dr. Maria Raykova in Sofia. What the referral covers, what is paid separately, and how to book."
   },
   "nav": {
     "home": "Home",
@@ -85,7 +87,6 @@
     "followInstagram": "Follow on Instagram",
     "facebook": "Facebook",
     "followFacebook": "Follow on Facebook",
-
     "openMap": "Open in Google Maps",
     "howToGet": "How to get there",
     "madeBy": "Built by",
@@ -94,7 +95,7 @@
   "hero": {
     "eyebrow": "Obstetrician-Gynecologist · Sofia",
     "brand": "Dr. Maria Raykova",
-    "headline": "Calm care for women's health",
+    "headline": "Calm care for women's health in Sofia",
     "support": "Preventive exams, diagnostics, and consultations — with attention, clear explanations, and time for your questions.",
     "chipAppointment": "By appointment",
     "chipNhif": "NHIF",
@@ -126,7 +127,7 @@
   },
   "servicesHome": {
     "eyebrow": "04 · Services",
-    "title": "Exams and diagnostics at the clinic",
+    "title": "Gynecological exams and diagnostics in Sofia",
     "description": "Prevention, ultrasound, colposcopy, and consultations — with time to talk and a clear explanation of findings.",
     "allServices": "All services →",
     "prev": "Previous service",
@@ -294,7 +295,7 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Easy booking. Clear location.",
+    "title": "Clear location: 10 Dobrila St, Sofia",
     "lead": "Book online via Superdoc or call. The clinic is at Lyulin Med Medical Center — Dobrila 10 Branch, 10 Dobrila St., opposite VMA, Sofia.",
     "mapTitle": "Location on the map",
     "hoursNote": "By appointment",
@@ -546,29 +547,12 @@
     "tablePrice": "Price",
     "fromLabel": "from {price}",
     "priceHeading": "Price",
-    "priceOnRequest": "The price is confirmed after consultation. Call {phone} for a quote.",
+    "priceOnRequest": "The price of this service is not in the published price list. Call {phone} to find out before you book.",
     "allPricesLink": "All prices",
     "nhifEyebrow": "NHIF · {year}",
-    "nhifHeading": "Gynecological exams with NHIF in Sofia",
-    "nhifLead": "Dr. Maria Raykova works with NHIF (Bulgarian public health insurance). Appointments are at {clinic}, {address}. The summary below uses only published information about the primary exam, referrals, and co-payments — current for {year}.",
-    "nhifPrimaryHeading": "Primary exam with NHIF in {year}",
-    "nhifPrimaryBody": "On the {year} price list, the primary exam is listed as {primaryPrice} — that is the listed self-pay price. The clinic works with NHIF: with a referral, co-payment is described for microbiology and Pap smear. The exact combination for your visit is confirmed when you book.",
-    "nhifReferralHeading": "Referral",
-    "nhifReferralBody": "Co-payments for microbiology and Pap smear are described with a referral. For specific referrals and coverage, confirm when booking via Superdoc or by phone — {phone}.",
-    "nhifCopayHeading": "Possible co-payments",
-    "nhifCopayBody": "With a referral, patients co-pay for microbiology ({microPrice}) and Pap smear ({papPrice}). Result comments are usually ready within 14 days.",
-    "nhifIncludedHeading": "What is and is not included",
-    "nhifIncludedItems": [
-      "The clinic works with NHIF — publicly insured visits are possible.",
-      "With a referral, co-payment is described for microbiology and Pap smear.",
-      "The exam and the tests are separate items on the price list. The Pap smear, vaginal swab, and ultrasound are charged separately unless you choose the full package.",
-      "HPV test and hysteroscopy prices are not fixed on the public list — they are confirmed after consultation.",
-      "The scope of the full OB-GYN package is determined by indications — it is not published as a fixed list of procedures."
-    ],
-    "nhifNote": "Figures are as of {date}, source {source}. The current price and NHIF terms are confirmed when you book.",
+    "nhifHeading": "Gynecological exams under NHIF in Sofia",
+    "nhifLead": "Dr. Maria Raykova works with NHIF. Health-fund visits take place at {clinic}, {address}. The consumer fee is {fee}, a GP referral is required, and microbiology and cytology are paid separately.",
     "nhifCopayHint": "NHIF: co-payment",
-    "nhifServicesLink": "Preventive exam",
-    "nhifPrimaryLink": "Obstetric-gynecological exam",
     "insurersHeading": "Cashless visits with insurers",
     "insurersLead": "If you hold health insurance with one of these insurers, your visit may be cashless.",
     "insurersNote": "Coverage depends on your specific policy. Please check with your insurer before the visit.",
@@ -588,20 +572,8 @@
     "faqHeading": "Frequently asked questions about prices",
     "faqs": [
       {
-        "question": "What is the price of a primary exam with NHIF in {year}?",
-        "answer": "On the public {year} price list, the primary exam is {primaryPrice} when paying the listed price. The clinic works with NHIF; with a referral, you co-pay for microbiology ({microPrice}) and Pap smear ({papPrice}). Exact terms are confirmed when you book."
-      },
-      {
         "question": "Does the clinic work with NHIF?",
         "answer": "Yes. With an NHIF referral, co-payment is described for microbiology ({microPrice}) and Pap smear ({papPrice})."
-      },
-      {
-        "question": "Do I need a referral for an NHIF visit?",
-        "answer": "Co-payments for microbiology and Pap smear are described with a referral. For specific referrals and coverage, confirm when booking or by phone."
-      },
-      {
-        "question": "What is co-paid on an NHIF visit?",
-        "answer": "With a referral, patients co-pay for microbiology and Pap smear — {papPrice} each, according to the public price list. Result comments are usually ready within 14 days."
       },
       {
         "question": "Does the exam price include tests?",
@@ -615,7 +587,8 @@
         "question": "Can I use my health insurance?",
         "answer": "Yes, the clinic works with {count} insurers for cashless visits. Coverage depends on your policy, so please check with your insurer in advance."
       }
-    ]
+    ],
+    "nhifMoreLink": "Full NHIF terms — fee, referral, and scope"
   },
   "cookies": {
     "title": "Cookies",
@@ -623,5 +596,57 @@
     "policyLink": "privacy policy",
     "accept": "Accept all",
     "essential": "Essential only"
+  },
+  "nhifPage": {
+    "eyebrow": "NHIF",
+    "breadcrumbPricing": "Prices",
+    "title": "Gynecological exam under NHIF",
+    "lead": "Dr. Maria Raykova works with the National Health Insurance Fund (НЗОК). NHIF visits take place at {clinic}, {address}. Below is exactly what the practice has confirmed — fee, referral, scope, and co-payments.",
+    "feeHeading": "What you pay for an NHIF visit",
+    "feeBody": "For an NHIF visit you pay a consumer fee of {fee}. That is the fee for the visit itself — the exam is covered by the health fund against a referral.",
+    "feeNote": "Whether you fall into a category exempt from the consumer fee is confirmed when you book.",
+    "coveredHeading": "What the referral covers",
+    "coveredLead": "With an NHIF referral the practice performs:",
+    "coveredNote": "The scope for your case depends on the indications and the type of referral. The exact combination is confirmed when you book.",
+    "referralHeading": "Is a referral required",
+    "referralBody": "Yes. An NHIF visit requires a referral from your general practitioner. Without one, the visit is charged according to the [practice's price list](/tseni).",
+    "copayHeading": "What is paid separately",
+    "copayBody": "Even with a referral, some tests are charged separately. With Dr. Raykova these are microbiology ({micro}) and cytology ({pap}). Result comments are usually ready within 14 days.",
+    "whereHeading": "Where the visit takes place",
+    "whereBody": "NHIF visits are held at {clinic} — {address}. Landmark: the building is opposite the Military Medical Academy (ВМА).",
+    "whereLink": "Map and contacts",
+    "bookHeading": "How to book",
+    "bookBody": "Book online through Superdoc or by calling the practice — {phone}. Visits are by appointment only, with no fixed walk-in hours. Bring your referral and any previous medical records.",
+    "sourceNote": "Terms confirmed by the practice on {date}. The consumer fee and the scope of the referral are confirmed when you book.",
+    "faqHeading": "Frequently asked questions about NHIF",
+    "ctaHeading": "Ready to book?",
+    "ctaLead": "Online through Superdoc or by phone.",
+    "otherPrices": "All prices without a referral",
+    "faqs": [
+      {
+        "question": "What is the consumer fee for an NHIF visit?",
+        "answer": "The consumer fee is {fee} per visit. The exam itself is covered by NHIF against a referral from a general practitioner."
+      },
+      {
+        "question": "What does the NHIF exam with Dr. Raykova cover?",
+        "answer": "With a referral the practice performs an examination, colposcopy, and ultrasound. The scope for a given case depends on the indications and the type of referral."
+      },
+      {
+        "question": "Do I need a referral from my GP?",
+        "answer": "Yes. An NHIF visit requires a referral from your general practitioner. Without one, the visit is charged according to the practice's price list."
+      },
+      {
+        "question": "What is paid separately under NHIF?",
+        "answer": "Microbiology ({micro}) and cytology ({pap}) are charged separately, even with a referral. Result comments are usually ready within 14 days."
+      },
+      {
+        "question": "Where do NHIF visits take place?",
+        "answer": "At {clinic}, {address} — opposite ВМА. This is the office where Dr. Raykova sees NHIF patients."
+      },
+      {
+        "question": "How do I book an NHIF appointment?",
+        "answer": "Online through Superdoc or by calling {phone}. Visits are by appointment only. Bring your referral and previous medical records."
+      }
+    ]
   }
 }

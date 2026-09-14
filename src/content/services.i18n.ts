@@ -460,6 +460,10 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       ],
       "faqs": [
         {
+          "question": "Колко струва HPV тестът?",
+          "answer": "Цената на HPV теста не е в публичния ценоразпис на кабинета. Обадете се на 0894 972 626 и ще ви я кажат преди да запазите час."
+        },
+        {
           "question": "Какво е човешки папилома вирус (HPV)?",
           "answer": "Чест вирус, който при много хора се изчиства от организма. Високорисковите типове са свързани с клетъчни промени на шийката. Положителният тест не означава рак."
         },
@@ -504,6 +508,10 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         }
       ],
       "faqs": [
+        {
+          "question": "Колко струва хистероскопията?",
+          "answer": "Цената на хистероскопията не е в публичния ценоразпис на кабинета, защото зависи от вида на процедурата. Обадете се на 0894 972 626, за да я уточните."
+        },
         {
           "question": "Какво е хистероскопия?",
           "answer": "Миниинвазивен оглед на маточната кухина с тънка камера. Може да е диагностична (офис) или оперативна. Обхватът и мястото се определят след консултация."
@@ -904,6 +912,10 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       ],
       "faqs": [
         {
+          "question": "How much does the HPV test cost?",
+          "answer": "The price of the HPV test is not in the practice's published price list. Call 0894 972 626 and they will tell you before you book."
+        },
+        {
           "question": "Does an HPV test replace a Pap smear?",
           "answer": "Not always. The two tests provide different information. Which is appropriate — or whether they are combined — depends on age and clinical context."
         },
@@ -944,6 +956,10 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         }
       ],
       "faqs": [
+        {
+          "question": "How much does a hysteroscopy cost?",
+          "answer": "The price of a hysteroscopy is not in the practice's published price list, as it depends on the type of procedure. Call 0894 972 626 to find out."
+        },
         {
           "question": "What is hysteroscopy?",
           "answer": "A minimally invasive look inside the uterine cavity with a thin camera. It may be diagnostic (office) or operative. Scope and setting are decided after consultation."
@@ -1330,6 +1346,10 @@ const byLocale: Record<Locale, ServiceContent[]> = {
       ],
       "faqs": [
         {
+          "question": "¿Cuánto cuesta la prueba del VPH?",
+          "answer": "El precio de la prueba del VPH no figura en la lista pública de precios de la consulta. Llame al 0894 972 626 y se lo indicarán antes de reservar."
+        },
+        {
           "question": "¿El test de VPH sustituye a la citología?",
           "answer": "No siempre. Las dos pruebas dan información distinta. Cuál conviene — o si se combinan — se decide según la edad y el contexto clínico."
         },
@@ -1370,6 +1390,10 @@ const byLocale: Record<Locale, ServiceContent[]> = {
         }
       ],
       "faqs": [
+        {
+          "question": "¿Cuánto cuesta la histeroscopia?",
+          "answer": "El precio de la histeroscopia no figura en la lista pública de precios, ya que depende del tipo de procedimiento. Llame al 0894 972 626 para consultarlo."
+        },
         {
           "question": "¿Qué es la histeroscopia?",
           "answer": "Una exploración mínimamente invasiva de la cavidad uterina con una cámara fina. Puede ser diagnóstica (de consulta) u operatoria. El alcance y el lugar se deciden tras la consulta."

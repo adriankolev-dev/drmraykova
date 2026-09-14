@@ -112,3 +112,24 @@ export function getPriceItem(id: string): PriceItem | undefined {
 
 /** NHIF co-payment applies to these price items. */
 export const nhifCopayItemIds = ["tsitonamazka", "vlagalishten-sekret"] as const;
+
+/**
+ * NHIF (НЗОК) terms as confirmed by the practice on 2026-09-14.
+ * These are the practice's own stated terms — not a general statement of NHIF
+ * policy. Do not extend this block with rules that were not confirmed, and
+ * re-confirm before changing any figure.
+ */
+export const NHIF_CONFIRMED_ON = "2026-09-14";
+
+/** Consumer fee (потребителска такса) paid per NHIF visit, in EUR. */
+export const NHIF_CONSUMER_FEE_EUR = 1.6;
+
+/** A GP referral (направление) is required for an NHIF visit. */
+export const NHIF_REQUIRES_REFERRAL = true;
+
+/** Services the NHIF referral covers at this practice. */
+export const NHIF_COVERED_SERVICE_SLUGS = [
+  "akushero-ginekologichni-pregledi",
+  "kolposkopiya",
+  "ultrazvukovi-izsledvaniya",
+] as const;

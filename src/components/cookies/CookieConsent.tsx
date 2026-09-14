@@ -1,33 +1,37 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import {
   readCookieConsent,
+  subscribeCookieConsent,
   writeCookieConsent,
 } from "@/lib/cookie-consent";
 import { cn } from "@/lib/utils";
 
 export function CookieConsent() {
   const t = useTranslations("cookies");
-  const [visible, setVisible] = useState(false);
+  /**
+   * localStorage is the source of truth, so subscribe to it rather than copying
+   * it into state. The server snapshot is `false` so the banner never renders
+   * before hydration — otherwise it would flash for people who already chose.
+   */
+  const showBanner = useSyncExternalStore(
+    subscribeCookieConsent,
+    () => readCookieConsent() === null,
+    () => false,
+  );
 
-  useEffect(() => {
-    setVisible(readCookieConsent() === null);
-  }, []);
-
-  if (!visible) return null;
+  if (!showBanner) return null;
 
   function acceptAll() {
     writeCookieConsent("accepted");
-    setVisible(false);
   }
 
   function acceptEssential() {
     writeCookieConsent("essential");
-    setVisible(false);
   }
 
   return (

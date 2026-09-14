@@ -21,6 +21,10 @@ export const serviceIcons: Record<string, LucideIcon> = {
   "zhensko-zdrave": MessageCircleHeart,
 };
 
-export function getServiceIcon(slug: string): LucideIcon {
-  return serviceIcons[slug] ?? Stethoscope;
-}
+/**
+ * Used when a slug has no dedicated icon. Look icons up from `serviceIcons`
+ * directly at the call site — routing them through a helper hides the map from
+ * the React compiler, which then treats the result as a component built during
+ * render.
+ */
+export const SERVICE_ICON_FALLBACK: LucideIcon = Stethoscope;

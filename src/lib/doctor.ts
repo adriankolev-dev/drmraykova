@@ -14,11 +14,21 @@ export const doctor = {
   languages: ["Български", "Английски", "Испански"] as const,
   rating: {
     value: 4.9,
-    count: 48,
+    count: 52,
     source: "Superdoc",
-    /** Star distribution from the Superdoc profile, 5★ → 1★. */
+    /** Verified against the Superdoc profile on 2026-09-14 (ratingValue 4.88, ratingCount 52). */
+    verifiedOn: "2026-09-14",
+    /**
+     * Star distribution from the Superdoc profile, 5★ → 1★.
+     * Superdoc paginates reviews client-side, so only the newest 20 render in
+     * the HTML. The remainder is fixed by arithmetic on the two published
+     * figures: round(total / 52, 2) === 4.88 forces total = 254 points, and the
+     * 4 reviews added since the previously verified 48-review split (234 points)
+     * must therefore contribute 20 — which only 5+5+5+5 satisfies.
+     * Re-check here whenever the count changes.
+     */
     distribution: [
-      { stars: 5, count: 46 },
+      { stars: 5, count: 50 },
       { stars: 4, count: 0 },
       { stars: 3, count: 1 },
       { stars: 2, count: 0 },
@@ -41,6 +51,8 @@ export const doctor = {
     "ПСАГБАЛ „Св. София“",
     "МЦ Люлин Мед",
   ] as const,
+  /** Hospital where she also sees patients — confirmed by the practice 2026-09-14. */
+  hospitalAffiliation: "ПСАГБАЛ „Св. София“",
   social: {
     instagram: {
       handle: "@drmariaraykova",
@@ -55,10 +67,22 @@ export const doctor = {
   clinic: {
     name: "МЦ Люлин Мед — Филиал Добрила 10",
     address: "ул. Добрила 10, срещу ВМА, София",
+    /**
+     * Confirmed by the practice 2026-09-14. No postal code is known, so none is
+     * published — an invented one would be worse than a missing one.
+     */
+    geo: { latitude: 42.685656, longitude: 23.304764 },
     phone: "0894972626",
     phoneDisplay: "0894 972 626",
     phoneHref: "tel:+359894972626",
     nhif: true,
+    /**
+     * NHIF visits happen at this office — confirmed by the practice 2026-09-14.
+     * There is no fixed schedule: appointments only, via Superdoc or by phone.
+     * Do not publish openingHours anywhere until a real schedule exists.
+     */
+    nhifAtThisOffice: true,
+    byAppointmentOnly: true,
   },
   /** Explicit scope boundaries from Superdoc — do not contradict on the site */
   doesNotOffer: [

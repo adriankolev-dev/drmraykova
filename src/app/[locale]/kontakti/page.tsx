@@ -69,9 +69,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const mapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.clinic.address)}`;
-const mapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(doctor.clinic.address)}&z=16&output=embed`;
-const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(doctor.clinic.address)}`;
+/**
+ * Pin from the exact coordinates rather than the address string: the practice
+ * has no Google Business Profile yet, so geocoding "ул. Добрила 10" can land on
+ * the wrong end of the street. The label keeps the pin human-readable.
+ */
+const mapsPoint = `${doctor.clinic.geo.latitude},${doctor.clinic.geo.longitude}`;
+const mapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${mapsPoint}`;
+const mapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(`${mapsPoint} (${doctor.clinic.name})`)}&z=17&output=embed`;
+const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapsPoint}`;
 
 export default async function ContactPage({ params }: Props) {
   const { locale: raw } = await params;

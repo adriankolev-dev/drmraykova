@@ -89,21 +89,31 @@ export default async function ServicesIndexPage({ params }: Props) {
     url: `${siteConfig.url}${prefix}/uslugi/${service.slug}`,
   }));
 
-  let serviceIndex = 0;
-  const categorizedServices = SERVICE_CATEGORIES.map((category) => ({
-    ...category,
-    services: category.slugs.map((slug) => {
-      serviceIndex += 1;
+  /**
+   * Services are numbered continuously across categories (01, 02, 03 …), so a
+   * category starts where the previous one ended. Derived rather than counted
+   * with a running variable, which would mutate across renders.
+   */
+  const categorizedServices = SERVICE_CATEGORIES.map(
+    (category, categoryIndex) => {
+      const startIndex = SERVICE_CATEGORIES.slice(0, categoryIndex).reduce(
+        (total, previous) => total + previous.slugs.length,
+        0,
+      );
+
       return {
-        slug,
-        title: names(slug),
-        description: blurbs(slug),
-        includes: includes(slug),
-        suitable: suitable(slug),
-        index: serviceIndex,
+        ...category,
+        services: category.slugs.map((slug, slugIndex) => ({
+          slug,
+          title: names(slug),
+          description: blurbs(slug),
+          includes: includes(slug),
+          suitable: suitable(slug),
+          index: startIndex + slugIndex + 1,
+        })),
       };
-    }),
-  }));
+    },
+  );
 
   return (
     <main className="pt-10 pb-[var(--space-section)] md:pt-14">

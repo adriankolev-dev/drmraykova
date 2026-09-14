@@ -14,7 +14,7 @@ La colposcopia inquieta a muchas mujeres — sobre todo porque el nombre es desc
 
 Esta página es un artículo educativo de la guía. Para reservar una visita en la consulta, abra [Colposcopia](/uslugi/kolposkopiya).
 
-## Cuándo se recomienda
+## Por qué el médico indica una colposcopia
 
 Con más frecuencia ante:
 
@@ -24,17 +24,17 @@ Con más frecuencia ante:
 
 El objetivo es un diagnóstico más temprano y preciso — no necesariamente “una mala noticia”.
 
-## Cómo se realiza
+## Qué ocurre durante la exploración
 
 La doctora examina el cuello con un colposcopio. Si es necesario, puede tomarse una muestra. La mayoría describe la sensación como una molestia similar a una exploración habitual.
 
-## Cómo prepararse
+## Qué conviene saber de antemano
 
 - Comparta resultados previos.
 - Pregunte de antemano qué se hará exactamente.
 - Si está nerviosa, dígalo: la explicación reduce la tensión.
 
-## Después del procedimiento
+## Qué esperar después
 
 La doctora explicará lo que ha visto y si hacen falta más pasos. Los plazos de resultados dependen de si se tomaron muestras.
 

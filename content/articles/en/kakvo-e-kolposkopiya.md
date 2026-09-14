@@ -14,7 +14,7 @@ Colposcopy sounds worrying to many women — mostly because the name is unfamili
 
 This page is an educational handbook article. To book a visit at the clinic, see [Colposcopy](/uslugi/kolposkopiya).
 
-## When it is recommended
+## Why a doctor orders a colposcopy
 
 Most often for:
 
@@ -24,17 +24,17 @@ Most often for:
 
 The goal is earlier, more accurate assessment — not necessarily “bad news.”
 
-## How it goes
+## What happens during the examination
 
 The doctor examines the cervix with a colposcope. A sample may be taken if needed. Most women describe the sensation as discomfort similar to a regular exam.
 
-## How to prepare
+## What is useful to know beforehand
 
 - Share previous results.
 - Ask in advance exactly what will be done.
 - If you feel anxious, say so — explanation reduces tension.
 
-## After the procedure
+## What to expect afterwards
 
 The doctor will explain what was seen and whether further steps are needed. Result timelines depend on whether samples were taken.
 

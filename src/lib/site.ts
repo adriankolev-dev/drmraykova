@@ -8,7 +8,7 @@ export const siteConfig = {
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
     process.env.URL ??
-    "https://drmariaraykova.bg",
+    "https://drmariaraykova.com",
   locale: "bg_BG",
   keywords: [
     "акушер гинеколог София",

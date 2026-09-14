@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { HandbookArticleCard } from "@/components/handbook/HandbookArticleCard";
@@ -41,18 +41,19 @@ function HandbookBlogExplorerInner({
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [activeCategory, setActiveCategory] = useState<string>(ALL);
+  /**
+   * The URL is the single source of truth for the filter, so it is read rather
+   * than mirrored into state — that also keeps back/forward and shared links
+   * working. An unknown ?category= falls back to showing everything.
+   */
+  const requestedCategory = searchParams.get("category") ?? ALL;
+  const activeCategory =
+    requestedCategory === ALL ||
+    categories.some((item) => item.name === requestedCategory)
+      ? requestedCategory
+      : ALL;
 
-  useEffect(() => {
-    const category = searchParams.get("category") ?? ALL;
-    const validCategory =
-      category === ALL || categories.some((item) => item.name === category)
-        ? category
-        : ALL;
-    setActiveCategory(validCategory);
-  }, [searchParams, categories]);
-
-  const updateUrl = useCallback(
+  const selectCategory = useCallback(
     (category: string) => {
       if (category === ALL) {
         router.replace(pathname, { scroll: false });
@@ -72,15 +73,7 @@ function HandbookBlogExplorerInner({
 
   const hasFilter = activeCategory !== ALL;
 
-  const clearFilters = () => {
-    setActiveCategory(ALL);
-    router.replace(pathname, { scroll: false });
-  };
-
-  const selectCategory = (name: string) => {
-    setActiveCategory(name);
-    updateUrl(name);
-  };
+  const clearFilters = () => selectCategory(ALL);
 
   return (
     <div className="mt-12">

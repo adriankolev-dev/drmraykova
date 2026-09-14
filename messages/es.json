@@ -15,7 +15,9 @@
     "faqTitle": "Preguntas antes de la consulta ginecológica | Dra. Maria Raykova",
     "faqDescription": "Cómo reservar cita con la Dra. Maria Raykova, NHIF, alcance de la atención, idiomas y preparación para la primera visita.",
     "pricingTitle": "Precios de consultas ginecológicas en Sofía 2026 | NHIF",
-    "pricingDescription": "Consulta primaria según tarifario 2026 — 40 €. La consulta trabaja con NHIF; con derivación puede haber copago de citología y microbiología."
+    "pricingDescription": "Consulta primaria según tarifario 2026 — 40 €. La consulta trabaja con NHIF; con derivación puede haber copago de citología y microbiología.",
+    "nhifTitle": "Consulta ginecológica por НЗОК en Sofía 2026 — tasa y condiciones",
+    "nhifDescription": "Tasa de usuario de 1,60 € para una consulta ginecológica por НЗОК con la Dra. Maria Raykova en Sofía. Qué cubre el volante y cómo reservar."
   },
   "nav": {
     "home": "Inicio",
@@ -85,7 +87,6 @@
     "followInstagram": "Seguir en Instagram",
     "facebook": "Facebook",
     "followFacebook": "Seguir en Facebook",
-
     "openMap": "Abrir en Google Maps",
     "howToGet": "Cómo llegar",
     "madeBy": "Hecho por",
@@ -94,7 +95,7 @@
   "hero": {
     "eyebrow": "Obstetra-ginecóloga · Sofía",
     "brand": "Dra. Maria Raykova",
-    "headline": "Cuidado sereno de la salud femenina",
+    "headline": "Cuidado sereno de la salud femenina en Sofía",
     "support": "Revisiones preventivas, diagnóstico y consultas — con atención, explicaciones claras y tiempo para sus preguntas.",
     "chipAppointment": "Con cita previa",
     "chipNhif": "NHIF",
@@ -126,7 +127,7 @@
   },
   "servicesHome": {
     "eyebrow": "04 · Servicios",
-    "title": "Consultas y diagnóstico en la consulta",
+    "title": "Consultas ginecológicas y diagnóstico en Sofía",
     "description": "Prevención, ecografía, colposcopia y consultas — con tiempo para hablar y una explicación clara de los hallazgos.",
     "allServices": "Todos los servicios →",
     "prev": "Servicio anterior",
@@ -294,7 +295,7 @@
   },
   "contact": {
     "eyebrow": "Contacto",
-    "title": "Reserva fácil. Ubicación clara.",
+    "title": "Ubicación clara: calle Dobrila 10, Sofía",
     "lead": "Reserve online por Superdoc o llame. La consulta está en el Centro Médico Lyulin Med — sucursal Dobrila 10, calle Dobrila 10, frente a VMA, Sofía.",
     "mapTitle": "Ubicación en el mapa",
     "hoursNote": "Con cita previa",
@@ -546,29 +547,12 @@
     "tablePrice": "Precio",
     "fromLabel": "desde {price}",
     "priceHeading": "Precio",
-    "priceOnRequest": "El precio se confirma tras la consulta. Llame al {phone} para un presupuesto.",
+    "priceOnRequest": "El precio de este servicio no figura en la lista pública de precios. Llame al {phone} para consultarlo antes de reservar.",
     "allPricesLink": "Todos los precios",
     "nhifEyebrow": "NHIF · {year}",
-    "nhifHeading": "Consultas ginecológicas con NHIF en Sofía",
-    "nhifLead": "La Dra. Maria Raykova trabaja con NHIF (seguro público búlgaro). La atención es en {clinic}, {address}. El resumen siguiente usa solo la información publicada sobre la consulta primaria, la derivación y los copagos — vigente para {year}.",
-    "nhifPrimaryHeading": "Consulta primaria con NHIF en {year}",
-    "nhifPrimaryBody": "En el tarifario de {year} la consulta primaria figura como {primaryPrice} — ese es el precio publicado de pago particular. La consulta trabaja con NHIF: con derivación se describe copago de microbiología y citología. La combinación exacta para su visita se confirma al reservar.",
-    "nhifReferralHeading": "Derivación",
-    "nhifReferralBody": "Los copagos de microbiología y citología se describen con derivación. Para derivaciones y cobertura concretas, confírmelo al reservar por Superdoc o por teléfono — {phone}.",
-    "nhifCopayHeading": "Copagos posibles",
-    "nhifCopayBody": "Con derivación, las pacientes copagan microbiología ({microPrice}) y citología ({papPrice}). Los comentarios de los resultados suelen estar listos en 14 días.",
-    "nhifIncludedHeading": "Qué está incluido y qué no",
-    "nhifIncludedItems": [
-      "La consulta trabaja con NHIF — es posible la atención con seguro público.",
-      "Con derivación se describe copago de microbiología y citología.",
-      "La consulta y las pruebas son partidas separadas en el tarifario. La citología, el frotis vaginal y la ecografía se cobran aparte, salvo que elija el paquete completo.",
-      "El precio del test de VPH y de la histeroscopia no está fijado en el tarifario público — se confirma tras la consulta.",
-      "El alcance del paquete obstétrico-ginecológico completo se determina según indicaciones — no está publicado como una lista fija de procedimientos."
-    ],
-    "nhifNote": "Los importes son a fecha {date}, fuente {source}. El precio vigente y las condiciones de NHIF se confirman al reservar.",
+    "nhifHeading": "Consultas ginecológicas por НЗОК en Sofía",
+    "nhifLead": "La Dra. Maria Raykova trabaja con НЗОК. Las consultas por la seguridad social se realizan en {clinic}, {address}. La tasa de usuario es de {fee}, se requiere volante del médico de cabecera y la microbiología y la citología se pagan aparte.",
     "nhifCopayHint": "NHIF: copago",
-    "nhifServicesLink": "Revisión preventiva",
-    "nhifPrimaryLink": "Consulta obstétrico-ginecológica",
     "insurersHeading": "Visitas sin efectivo con aseguradoras",
     "insurersLead": "Si tiene un seguro de salud con alguna de estas aseguradoras, su visita puede ser sin efectivo.",
     "insurersNote": "La cobertura depende de su póliza concreta. Consúltelo con su aseguradora antes de la visita.",
@@ -588,20 +572,8 @@
     "faqHeading": "Preguntas frecuentes sobre los precios",
     "faqs": [
       {
-        "question": "¿Cuál es el precio de la consulta primaria con NHIF en {year}?",
-        "answer": "En el tarifario público de {year} la consulta primaria es {primaryPrice} al pagar el precio publicado. La consulta trabaja con NHIF; con derivación se copaga microbiología ({microPrice}) y citología ({papPrice}). Las condiciones exactas se confirman al reservar."
-      },
-      {
         "question": "¿La consulta trabaja con NHIF?",
         "answer": "Sí. Con derivación de NHIF se describe copago de microbiología ({microPrice}) y citología ({papPrice})."
-      },
-      {
-        "question": "¿Hace falta derivación para una visita con NHIF?",
-        "answer": "Los copagos de microbiología y citología se describen con derivación. Para derivaciones y cobertura concretas, confírmelo al reservar o por teléfono."
-      },
-      {
-        "question": "¿Qué se copaga en una visita con NHIF?",
-        "answer": "Con derivación, las pacientes copagan microbiología y citología — {papPrice} cada una, según el tarifario público. Los comentarios de los resultados suelen estar listos en 14 días."
       },
       {
         "question": "¿El precio de la consulta incluye las pruebas?",
@@ -615,7 +587,8 @@
         "question": "¿Puedo usar mi seguro de salud?",
         "answer": "Sí, la consulta trabaja con {count} aseguradoras para visitas sin efectivo. La cobertura depende de su póliza, así que consúltelo previamente con su aseguradora."
       }
-    ]
+    ],
+    "nhifMoreLink": "Condiciones completas de НЗОК — tasa, volante y alcance"
   },
   "cookies": {
     "title": "Cookies",
@@ -623,5 +596,57 @@
     "policyLink": "política de privacidad",
     "accept": "Aceptar todas",
     "essential": "Solo necesarias"
+  },
+  "nhifPage": {
+    "eyebrow": "NHIF",
+    "breadcrumbPricing": "Precios",
+    "title": "Consulta ginecológica por la seguridad social (НЗОК)",
+    "lead": "La Dra. Maria Raykova trabaja con el fondo nacional de salud búlgaro (НЗОК). Las consultas por НЗОК se realizan en {clinic}, {address}. A continuación, exactamente lo que la consulta ha confirmado: tasa, volante, alcance y copagos.",
+    "feeHeading": "Cuánto se paga por una consulta por НЗОК",
+    "feeBody": "En una consulta por НЗОК se abona una tasa de usuario de {fee}. Es la tasa de la visita: la consulta en sí la cubre el fondo de salud con un volante.",
+    "feeNote": "Si pertenece a una categoría exenta de la tasa de usuario, se aclara al reservar la cita.",
+    "coveredHeading": "Qué cubre el volante",
+    "coveredLead": "Con un volante de НЗОК la consulta realiza:",
+    "coveredNote": "El alcance en su caso depende de las indicaciones y del tipo de volante. La combinación exacta se confirma al reservar.",
+    "referralHeading": "¿Hace falta volante?",
+    "referralBody": "Sí. Una consulta por НЗОК requiere un volante de su médico de cabecera. Sin él, la visita se cobra según la [lista de precios de la consulta](/tseni).",
+    "copayHeading": "Qué se paga aparte",
+    "copayBody": "Incluso con volante, algunas pruebas se cobran aparte. Con la Dra. Raykova son microbiología ({micro}) y citología ({pap}). Los comentarios de los resultados suelen estar listos en 14 días.",
+    "whereHeading": "Dónde se realiza la consulta",
+    "whereBody": "Las consultas por НЗОК se realizan en {clinic} — {address}. Referencia: el edificio está frente a la Academia Médica Militar (ВМА).",
+    "whereLink": "Mapa y contacto",
+    "bookHeading": "Cómo reservar cita",
+    "bookBody": "Reserve en línea por Superdoc o llamando a la consulta — {phone}. La atención es solo con cita previa, sin horario de paso libre. Traiga el volante y su documentación médica previa.",
+    "sourceNote": "Condiciones confirmadas por la consulta el {date}. La tasa de usuario y el alcance del volante se confirman al reservar la cita.",
+    "faqHeading": "Preguntas frecuentes sobre НЗОК",
+    "ctaHeading": "¿Lista para reservar?",
+    "ctaLead": "En línea por Superdoc o por teléfono.",
+    "otherPrices": "Todos los precios sin volante",
+    "faqs": [
+      {
+        "question": "¿Cuál es la tasa de usuario de una consulta por НЗОК?",
+        "answer": "La tasa de usuario es de {fee} por visita. La consulta en sí la cubre НЗОК con un volante del médico de cabecera."
+      },
+      {
+        "question": "¿Qué cubre la consulta por НЗОК con la Dra. Raykova?",
+        "answer": "Con volante, la consulta realiza exploración, colposcopia y ecografía. El alcance en cada caso depende de las indicaciones y del tipo de volante."
+      },
+      {
+        "question": "¿Necesito un volante de mi médico de cabecera?",
+        "answer": "Sí. Una consulta por НЗОК requiere volante de su médico de cabecera. Sin él, la visita se cobra según la lista de precios de la consulta."
+      },
+      {
+        "question": "¿Qué se paga aparte con НЗОК?",
+        "answer": "Microbiología ({micro}) y citología ({pap}) se cobran aparte, incluso con volante. Los comentarios de los resultados suelen estar listos en 14 días."
+      },
+      {
+        "question": "¿Dónde se realizan las consultas por НЗОК?",
+        "answer": "En {clinic}, {address} — frente a ВМА. Es la consulta donde la Dra. Raykova atiende por la seguridad social."
+      },
+      {
+        "question": "¿Cómo reservo una cita por НЗОК?",
+        "answer": "En línea por Superdoc o llamando al {phone}. La atención es solo con cita previa. Traiga el volante y su documentación médica previa."
+      }
+    ]
   }
 }

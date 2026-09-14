@@ -24,9 +24,12 @@ export function ServicesNavMenu({ variant, onNavigate }: ServicesNavMenuProps) {
 
   const servicesActive = pathname.startsWith("/uslugi");
 
-  useEffect(() => {
+  // Close the dropdown on navigation — see the note in Header.
+  const [lastPathname, setLastPathname] = useState(pathname);
+  if (pathname !== lastPathname) {
+    setLastPathname(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     if (!open || variant !== "desktop") return;

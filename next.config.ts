@@ -1,14 +1,13 @@
 import type { NextConfig } from "next";
-import path from "path";
-import { fileURLToPath } from "url";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
-const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  // A stray lockfile in the home directory makes Turbopack infer the wrong
+  // workspace root, so it is pinned here.
   turbopack: {
-    root: projectRoot,
+    root: import.meta.dirname,
   },
   images: {
     formats: ["image/avif", "image/webp"],

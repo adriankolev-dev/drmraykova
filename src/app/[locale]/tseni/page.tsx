@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BookCta } from "@/components/booking/BookCta";
 import { ClinicRule } from "@/components/brand/ClinicMotifs";
-import { ContentText } from "@/components/content/ContentText";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SectionEyebrow } from "@/components/layout/Section";
 import { PriceTable } from "@/components/pricing/PriceTable";
@@ -12,6 +11,7 @@ import { Link } from "@/i18n/navigation";
 import {
   getPriceItem,
   insurers,
+  NHIF_CONSUMER_FEE_EUR,
   PRICES_LAST_UPDATED,
   PRICES_SOURCE,
   PRICES_YEAR,
@@ -95,9 +95,9 @@ export default async function PricingPage({ params }: Props) {
     clinic: doctor.clinic.name,
     address: doctor.clinic.address,
     phone: doctor.clinic.phoneDisplay,
-    primaryPrice: listedPrice("pervichen-pregled"),
     papPrice: listedPrice("tsitonamazka"),
     microPrice: listedPrice("vlagalishten-sekret"),
+    fee: `${formatEur(NHIF_CONSUMER_FEE_EUR, raw)} (${formatBgn(NHIF_CONSUMER_FEE_EUR, raw)})`,
     date: PRICES_LAST_UPDATED,
     source: PRICES_SOURCE,
   };
@@ -176,7 +176,7 @@ export default async function PricingPage({ params }: Props) {
         </Reveal>
       </div>
 
-      {/* NHIF */}
+      {/* NHIF — summary only; /tseni/nzok owns the topic in depth */}
       <section id="nzok" className="container-page mt-16">
         <Reveal className="rounded-lg border border-border bg-secondary/30 p-6 md:p-8">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-clinical">
@@ -188,62 +188,12 @@ export default async function PricingPage({ params }: Props) {
           <p className="mt-4 max-w-2xl leading-relaxed text-foreground/80">
             {t("nhifLead", priceVars)}
           </p>
-
-          <h3 className="mt-8 font-display text-xl font-medium tracking-tight">
-            {t("nhifPrimaryHeading", { year: PRICES_YEAR })}
-          </h3>
-          <p className="mt-3 max-w-2xl leading-relaxed text-foreground/80">
-            {t("nhifPrimaryBody", priceVars)}
-          </p>
-          <p className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <Link
-              href="/uslugi/profilaktichen-ginekologichen-pregled"
-              className="font-medium text-foreground underline-offset-4 hover:underline"
-            >
-              {t("nhifServicesLink")}
-            </Link>
-            <Link
-              href="/uslugi/akushero-ginekologichni-pregledi"
-              className="font-medium text-foreground underline-offset-4 hover:underline"
-            >
-              {t("nhifPrimaryLink")}
-            </Link>
-          </p>
-
-          <h3 className="mt-8 font-display text-xl font-medium tracking-tight">
-            {t("nhifReferralHeading")}
-          </h3>
-          <p className="mt-3 max-w-2xl leading-relaxed text-foreground/80">
-            <ContentText text={t("nhifReferralBody", priceVars)} />
-          </p>
-
-          <h3 className="mt-8 font-display text-xl font-medium tracking-tight">
-            {t("nhifCopayHeading")}
-          </h3>
-          <p className="mt-3 max-w-2xl leading-relaxed text-foreground/80">
-            {t("nhifCopayBody", priceVars)}
-          </p>
-
-          <h3 className="mt-8 font-display text-xl font-medium tracking-tight">
-            {t("nhifIncludedHeading")}
-          </h3>
-          <ul className="mt-4 max-w-2xl space-y-3">
-            {(t.raw("nhifIncludedItems") as string[]).map((item) => (
-              <li
-                key={item}
-                className="flex gap-3 text-foreground/80 before:mt-2 before:size-1.5 before:shrink-0 before:rounded-full before:bg-primary before:content-['']"
-              >
-                <span className="leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            {t("nhifNote", {
-              date: PRICES_LAST_UPDATED,
-              source: PRICES_SOURCE,
-            })}
-          </p>
+          <Link
+            href="/tseni/nzok"
+            className="mt-5 inline-flex font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            {t("nhifMoreLink")} →
+          </Link>
         </Reveal>
       </section>
 

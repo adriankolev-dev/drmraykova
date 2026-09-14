@@ -110,6 +110,15 @@ export function getPhysicianSchema() {
     telephone: doctor.clinic.phoneHref.replace("tel:", ""),
     knowsLanguage: [...SCHEMA_LANGUAGE_TAGS],
     practicesAt: { "@id": CLINIC_ID },
+    hospitalAffiliation: {
+      "@type": "Hospital",
+      name: doctor.hospitalAffiliation,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: doctor.city,
+        addressCountry: "BG",
+      },
+    },
     aggregateRating: clinicAggregateRating(),
     sameAs: doctorProfiles,
   });
@@ -135,7 +144,12 @@ export function getClinicSchema() {
     telephone: doctor.clinic.phoneHref.replace("tel:", ""),
     priceRange: "$$",
     address: clinicAddress(),
-    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(doctor.clinic.address)}`,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: doctor.clinic.geo.latitude,
+      longitude: doctor.clinic.geo.longitude,
+    },
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${doctor.clinic.geo.latitude},${doctor.clinic.geo.longitude}`,
     medicalSpecialty: [...MEDICAL_SPECIALTIES],
     areaServed: {
       "@type": "City",

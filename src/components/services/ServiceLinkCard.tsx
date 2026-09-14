@@ -4,7 +4,7 @@ import { ArrowRight, ArrowUpRight, Clock3, MapPin, UserRound } from "lucide-reac
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { doctor } from "@/lib/doctor";
-import { getServiceIcon } from "@/lib/service-icons";
+import { serviceIcons, SERVICE_ICON_FALLBACK } from "@/lib/service-icons";
 import { cn } from "@/lib/utils";
 
 type ServiceLinkCardProps = {
@@ -31,7 +31,7 @@ export function ServiceLinkCard({
   tone = "plain",
   className,
 }: ServiceLinkCardProps) {
-  const Icon = getServiceIcon(slug);
+  const Icon = serviceIcons[slug] ?? SERVICE_ICON_FALLBACK;
   const t = useTranslations("serviceCardMeta");
   const tc = useTranslations("common");
 
