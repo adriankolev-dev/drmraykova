@@ -17,7 +17,7 @@
     "pricingTitle": "Precios de consultas ginecológicas en Sofía 2026 | NHIF",
     "pricingDescription": "Consulta primaria según tarifario 2026 — 40 €. La consulta trabaja con NHIF; con derivación puede haber copago de citología y microbiología.",
     "nhifTitle": "Consulta ginecológica por НЗОК en Sofía 2026 — tasa y condiciones",
-    "nhifDescription": "Tasa de usuario de 1,60 € para una consulta ginecológica por НЗОК con la Dra. Maria Raykova en Sofía. Qué cubre el volante y cómo reservar."
+    "nhifDescription": "Tasa de usuario de 1,48 € para una consulta ginecológica por НЗОК con la Dra. Maria Raykova en Sofía. Qué cubre el volante y cómo reservar."
   },
   "nav": {
     "home": "Inicio",
@@ -603,8 +603,8 @@
     "title": "Consulta ginecológica por la seguridad social (НЗОК)",
     "lead": "La Dra. Maria Raykova trabaja con el fondo nacional de salud búlgaro (НЗОК). Las consultas por НЗОК se realizan en {clinic}, {address}. A continuación, exactamente lo que la consulta ha confirmado: tasa, volante, alcance y copagos.",
     "feeHeading": "Cuánto se paga por una consulta por НЗОК",
-    "feeBody": "En una consulta por НЗОК se abona una tasa de usuario de {fee}. Es la tasa de la visita: la consulta en sí la cubre el fondo de salud con un volante.",
-    "feeNote": "Si pertenece a una categoría exenta de la tasa de usuario, se aclara al reservar la cita.",
+    "feeBody": "En una consulta por НЗОК se abona una tasa de usuario de {fee}. Los pensionistas abonan {feePensioner}. Es la tasa de la visita: la consulta en sí la cubre el fondo de salud con un volante.",
+    "feeNote": "La tasa de usuario está fijada por ley y es la misma en todos los centros con НЗОК — no la fija la consulta. Hay categorías exentas por ley; si le corresponde, se aclara al reservar.",
     "coveredHeading": "Qué cubre el volante",
     "coveredLead": "Con un volante de НЗОК la consulta realiza:",
     "coveredNote": "El alcance en su caso depende de las indicaciones y del tipo de volante. La combinación exacta se confirma al reservar.",
@@ -617,7 +617,7 @@
     "whereLink": "Mapa y contacto",
     "bookHeading": "Cómo reservar cita",
     "bookBody": "Reserve en línea por Superdoc o llamando a la consulta — {phone}. La atención es solo con cita previa, sin horario de paso libre. Traiga el volante y su documentación médica previa.",
-    "sourceNote": "Condiciones confirmadas por la consulta el {date}. La tasa de usuario y el alcance del volante se confirman al reservar la cita.",
+    "sourceNote": "Alcance, volante y copagos confirmados por la consulta el {date}. La tasa de usuario está fijada por ley y se aplica en todos los centros con НЗОК. Las condiciones vigentes se confirman al reservar.",
     "faqHeading": "Preguntas frecuentes sobre НЗОК",
     "ctaHeading": "¿Lista para reservar?",
     "ctaLead": "En línea por Superdoc o por teléfono.",
@@ -625,7 +625,7 @@
     "faqs": [
       {
         "question": "¿Cuál es la tasa de usuario de una consulta por НЗОК?",
-        "answer": "La tasa de usuario es de {fee} por visita. La consulta en sí la cubre НЗОК con un volante del médico de cabecera."
+        "answer": "La tasa de usuario es de {fee} por visita, o {feePensioner} para pensionistas. Está fijada por ley y es la misma en todos los centros con НЗОК. La consulta en sí la cubre НЗОК con un volante del médico de cabecera."
       },
       {
         "question": "¿Qué cubre la consulta por НЗОК con la Dra. Raykova?",

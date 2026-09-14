@@ -17,7 +17,7 @@
     "pricingTitle": "Gynecology consultation prices in Sofia 2026 | NHIF",
     "pricingDescription": "Primary consultation list price for 2026 — €40. The clinic works with NHIF; referrals may include co-payment for Pap smear and microbiology.",
     "nhifTitle": "Gynecological exam under NHIF in Sofia 2026 — fee and terms",
-    "nhifDescription": "A 1.60 € consumer fee for an NHIF gynecological visit with Dr. Maria Raykova in Sofia. What the referral covers, what is paid separately, and how to book."
+    "nhifDescription": "A 1.48 € consumer fee for an NHIF gynecological visit with Dr. Maria Raykova in Sofia. What the referral covers, what is paid separately, and how to book."
   },
   "nav": {
     "home": "Home",
@@ -603,8 +603,8 @@
     "title": "Gynecological exam under NHIF",
     "lead": "Dr. Maria Raykova works with the National Health Insurance Fund (НЗОК). NHIF visits take place at {clinic}, {address}. Below is exactly what the practice has confirmed — fee, referral, scope, and co-payments.",
     "feeHeading": "What you pay for an NHIF visit",
-    "feeBody": "For an NHIF visit you pay a consumer fee of {fee}. That is the fee for the visit itself — the exam is covered by the health fund against a referral.",
-    "feeNote": "Whether you fall into a category exempt from the consumer fee is confirmed when you book.",
+    "feeBody": "For an NHIF visit you pay a consumer fee of {fee}. Old-age pensioners pay {feePensioner}. That is the fee for the visit itself — the exam is covered by the health fund against a referral.",
+    "feeNote": "The consumer fee is set by law and is the same at every NHIF provider — the practice does not set it. Certain categories are exempt by law; whether you qualify is confirmed when you book.",
     "coveredHeading": "What the referral covers",
     "coveredLead": "With an NHIF referral the practice performs:",
     "coveredNote": "The scope for your case depends on the indications and the type of referral. The exact combination is confirmed when you book.",
@@ -617,7 +617,7 @@
     "whereLink": "Map and contacts",
     "bookHeading": "How to book",
     "bookBody": "Book online through Superdoc or by calling the practice — {phone}. Visits are by appointment only, with no fixed walk-in hours. Bring your referral and any previous medical records.",
-    "sourceNote": "Terms confirmed by the practice on {date}. The consumer fee and the scope of the referral are confirmed when you book.",
+    "sourceNote": "Scope, referral, and co-payments confirmed by the practice on {date}. The consumer fee is set by law and applies at every NHIF provider. Current terms are confirmed when you book.",
     "faqHeading": "Frequently asked questions about NHIF",
     "ctaHeading": "Ready to book?",
     "ctaLead": "Online through Superdoc or by phone.",
@@ -625,7 +625,7 @@
     "faqs": [
       {
         "question": "What is the consumer fee for an NHIF visit?",
-        "answer": "The consumer fee is {fee} per visit. The exam itself is covered by NHIF against a referral from a general practitioner."
+        "answer": "The consumer fee is {fee} per visit, or {feePensioner} for old-age pensioners. It is set by law and is the same at every NHIF provider. The exam itself is covered by NHIF against a referral from a general practitioner."
       },
       {
         "question": "What does the NHIF exam with Dr. Raykova cover?",

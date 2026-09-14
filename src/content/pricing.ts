@@ -114,15 +114,24 @@ export function getPriceItem(id: string): PriceItem | undefined {
 export const nhifCopayItemIds = ["tsitonamazka", "vlagalishten-sekret"] as const;
 
 /**
- * NHIF (НЗОК) terms as confirmed by the practice on 2026-09-14.
- * These are the practice's own stated terms — not a general statement of NHIF
- * policy. Do not extend this block with rules that were not confirmed, and
- * re-confirm before changing any figure.
+ * NHIF (НЗОК) terms. Two different provenances live here — keep them straight:
+ *
+ * - The consumer fee is set by law, identical at every NHIF provider, and is
+ *   NOT the practice's to choose. It converted to euro unchanged in value on
+ *   2026-01-01: 2.90 BGN / 1.95583 = 1.48 EUR, and 1.00 BGN = 0.51 EUR for
+ *   pensioners. Verify against nhif.bg before changing.
+ * - Everything else below (referral, covered services, co-payments) was
+ *   confirmed by the practice on 2026-09-14.
+ *
+ * Do not extend this block with rules that were not verified.
  */
 export const NHIF_CONFIRMED_ON = "2026-09-14";
 
-/** Consumer fee (потребителска такса) paid per NHIF visit, in EUR. */
-export const NHIF_CONSUMER_FEE_EUR = 1.6;
+/** Statutory consumer fee (потребителска такса) per NHIF visit, in EUR. */
+export const NHIF_CONSUMER_FEE_EUR = 1.48;
+
+/** Reduced statutory fee for old-age pensioners, in EUR. */
+export const NHIF_CONSUMER_FEE_PENSIONER_EUR = 0.51;
 
 /** A GP referral (направление) is required for an NHIF visit. */
 export const NHIF_REQUIRES_REFERRAL = true;

@@ -14,6 +14,7 @@ import {
   getPriceItem,
   NHIF_CONFIRMED_ON,
   NHIF_CONSUMER_FEE_EUR,
+  NHIF_CONSUMER_FEE_PENSIONER_EUR,
   NHIF_COVERED_SERVICE_SLUGS,
 } from "@/content/pricing";
 import { isLocale, locales, type Locale } from "@/i18n/routing";
@@ -88,6 +89,7 @@ export default async function NhifPage({ params }: Props) {
   /** Every figure below traces back to `src/content/pricing.ts`. */
   const vars = {
     fee: `${formatEur(NHIF_CONSUMER_FEE_EUR, raw)} (${formatBgn(NHIF_CONSUMER_FEE_EUR, raw)})`,
+    feePensioner: `${formatEur(NHIF_CONSUMER_FEE_PENSIONER_EUR, raw)} (${formatBgn(NHIF_CONSUMER_FEE_PENSIONER_EUR, raw)})`,
     micro: listedPrice("vlagalishten-sekret"),
     pap: listedPrice("tsitonamazka"),
     clinic: doctor.clinic.name,
